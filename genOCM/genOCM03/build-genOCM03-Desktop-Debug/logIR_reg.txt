@@ -1,0 +1,1609 @@
+schematicFile file is open for the first time in fillRowNodes
+****************************IR NODES***********************************************
+Node Alias=   %35 = sub i32 15, %j.02.i
+Node Name =   %35 = sub i32 15, %j.02.i
+Node Type = sub
+
+Node numInputs = 2
+Input Alias0 = NON36
+Input Name 0 = 15
+Input Type 0 = value
+Input Alias1 = %j.02.i
+Input Name 1 = %j.02.i
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON36
+Extended Input Name  0 = 15
+Extended Input Type  0 = value
+Extended Input Alias 1 = %j.02.i
+Extended Input Name  1 = %j.02.i
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Node Name =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 1
+Input Alias0 = %scevgep2
+Input Name 0 = %scevgep2
+Input Type 0 = reg
+
+Node numExtInputs = 1
+Extended Input Alias 0 = %scevgep2
+Extended Input Name  0 = %scevgep2
+Extended Input Type  0 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %37 = load i32* %scevgep, align 4, !tbaa !1
+Node Name =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 1
+Input Alias0 = %scevgep
+Input Name 0 = %scevgep
+Input Type 0 = reg
+
+Node numExtInputs = 1
+Extended Input Alias 0 = %scevgep
+Extended Input Name  0 = %scevgep
+Extended Input Type  0 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %38 = mul nsw i32 %37, %36
+Node Name =   %38 = mul nsw i32 %37, %36
+Node Type = mul
+
+Node numInputs = 2
+Input Alias0 = %37
+Input Name 0 = %37
+Input Type 0 = reg
+Input Alias1 = %36
+Input Name 1 = %36
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %37
+Extended Input Name  0 = %37
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %36
+Extended Input Name  1 = %36
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %39 = add nsw i32 %38, %temp.01.i
+Node Name =   %39 = add nsw i32 %38, %temp.01.i
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %38
+Input Name 0 = %38
+Input Type 0 = reg
+Input Alias1 = %temp.01.i
+Input Name 1 = %temp.01.i
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %38
+Extended Input Name  0 = %38
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %temp.01.i
+Extended Input Name  1 = %temp.01.i
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %40 = add nsw i32 %j.02.i, 1
+Node Name =   %40 = add nsw i32 %j.02.i, 1
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %j.02.i
+Input Name 0 = %j.02.i
+Input Type 0 = reg
+Input Alias1 = NON39
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %j.02.i
+Extended Input Name  0 = %j.02.i
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON39
+Extended Input Name  1 = 1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %41 = add i32 %.0.i, %total.02
+Node Name =   %41 = add i32 %.0.i, %total.02
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %.0.i
+Input Name 0 = %.0.i
+Input Type 0 = reg
+Input Alias1 = %total.02
+Input Name 1 = %total.02
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %.0.i
+Extended Input Name  0 = %.0.i
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %total.02
+Extended Input Name  1 = %total.02
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %i.01 = add i32 %indvar, 1
+Node Name =   %i.01 = add i32 %indvar, 1
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias1 = NON59
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar
+Extended Input Name  0 = %indvar
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON59
+Extended Input Name  1 = 1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %indvar.next = add i32 %indvar, 1
+Node Name =   %indvar.next = add i32 %indvar, 1
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias1 = NON61
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar
+Extended Input Name  0 = %indvar
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON61
+Extended Input Name  1 = 1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   %indvar.next5 = add i32 %indvar4, 1
+Node Name =   %indvar.next5 = add i32 %indvar4, 1
+Node Type = add
+
+Node numInputs = 2
+Input Alias0 = %indvar4
+Input Name 0 = %indvar4
+Input Type 0 = reg
+Input Alias1 = NON62
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar4
+Extended Input Name  0 = %indvar4
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON62
+Extended Input Name  1 = 1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %20, i32* %17, align 4, !tbaa !1
+Node Name =   store i32 %20, i32* %17, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %20
+Input Name 0 = %20
+Input Type 0 = reg
+Input Alias1 = %17
+Input Name 1 = %17
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %20
+Extended Input Name  0 = %20
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %17
+Extended Input Name  1 = %17
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %21, i32* %16, align 4, !tbaa !1
+Node Name =   store i32 %21, i32* %16, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %21
+Input Name 0 = %21
+Input Type 0 = reg
+Input Alias1 = %16
+Input Name 1 = %16
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %21
+Extended Input Name  0 = %21
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %16
+Extended Input Name  1 = %16
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %22, i32* %15, align 4, !tbaa !1
+Node Name =   store i32 %22, i32* %15, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %22
+Input Name 0 = %22
+Input Type 0 = reg
+Input Alias1 = %15
+Input Name 1 = %15
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %22
+Extended Input Name  0 = %22
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %15
+Extended Input Name  1 = %15
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %23, i32* %14, align 4, !tbaa !1
+Node Name =   store i32 %23, i32* %14, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %23
+Input Name 0 = %23
+Input Type 0 = reg
+Input Alias1 = %14
+Input Name 1 = %14
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %23
+Extended Input Name  0 = %23
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %14
+Extended Input Name  1 = %14
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %24, i32* %13, align 4, !tbaa !1
+Node Name =   store i32 %24, i32* %13, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %24
+Input Name 0 = %24
+Input Type 0 = reg
+Input Alias1 = %13
+Input Name 1 = %13
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %24
+Extended Input Name  0 = %24
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %13
+Extended Input Name  1 = %13
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %25, i32* %12, align 4, !tbaa !1
+Node Name =   store i32 %25, i32* %12, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %25
+Input Name 0 = %25
+Input Type 0 = reg
+Input Alias1 = %12
+Input Name 1 = %12
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %25
+Extended Input Name  0 = %25
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %12
+Extended Input Name  1 = %12
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %26, i32* %11, align 4, !tbaa !1
+Node Name =   store i32 %26, i32* %11, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %26
+Input Name 0 = %26
+Input Type 0 = reg
+Input Alias1 = %11
+Input Name 1 = %11
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %26
+Extended Input Name  0 = %26
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %11
+Extended Input Name  1 = %11
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %27, i32* %10, align 4, !tbaa !1
+Node Name =   store i32 %27, i32* %10, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %27
+Input Name 0 = %27
+Input Type 0 = reg
+Input Alias1 = %10
+Input Name 1 = %10
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %27
+Extended Input Name  0 = %27
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %10
+Extended Input Name  1 = %10
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %28, i32* %9, align 4, !tbaa !1
+Node Name =   store i32 %28, i32* %9, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %28
+Input Name 0 = %28
+Input Type 0 = reg
+Input Alias1 = %9
+Input Name 1 = %9
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %28
+Extended Input Name  0 = %28
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %9
+Extended Input Name  1 = %9
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %29, i32* %8, align 4, !tbaa !1
+Node Name =   store i32 %29, i32* %8, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %29
+Input Name 0 = %29
+Input Type 0 = reg
+Input Alias1 = %8
+Input Name 1 = %8
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %29
+Extended Input Name  0 = %29
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %8
+Extended Input Name  1 = %8
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %30, i32* %7, align 4, !tbaa !1
+Node Name =   store i32 %30, i32* %7, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %30
+Input Name 0 = %30
+Input Type 0 = reg
+Input Alias1 = %7
+Input Name 1 = %7
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %30
+Extended Input Name  0 = %30
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %7
+Extended Input Name  1 = %7
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %31, i32* %6, align 4, !tbaa !1
+Node Name =   store i32 %31, i32* %6, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %31
+Input Name 0 = %31
+Input Type 0 = reg
+Input Alias1 = %6
+Input Name 1 = %6
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %31
+Extended Input Name  0 = %31
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %6
+Extended Input Name  1 = %6
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %32, i32* %4, align 4, !tbaa !1
+Node Name =   store i32 %32, i32* %4, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %32
+Input Name 0 = %32
+Input Type 0 = reg
+Input Alias1 = %4
+Input Name 1 = %4
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %32
+Extended Input Name  0 = %32
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %4
+Extended Input Name  1 = %4
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %33, i32* %5, align 4, !tbaa !1
+Node Name =   store i32 %33, i32* %5, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %33
+Input Name 0 = %33
+Input Type 0 = reg
+Input Alias1 = %5
+Input Name 1 = %5
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %33
+Extended Input Name  0 = %33
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %5
+Extended Input Name  1 = %5
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %i.01, i32* %3, align 4, !tbaa !1
+Node Name =   store i32 %i.01, i32* %3, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %i.01
+Input Name 0 = %i.01
+Input Type 0 = reg
+Input Alias1 = %3
+Input Name 1 = %3
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %i.01
+Extended Input Name  0 = %i.01
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %3
+Extended Input Name  1 = %3
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 %indvar, i32* %18, align 4, !tbaa !1
+Node Name =   store i32 %indvar, i32* %18, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias1 = %18
+Input Name 1 = %18
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar
+Extended Input Name  0 = %indvar
+Extended Input Type  0 = reg
+Extended Input Alias 1 = %18
+Extended Input Name  1 = %18
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias=   store i32 0, i32* %s.i.0, align 4
+Node Name =   store i32 0, i32* %s.i.0, align 4
+Node Type = mem_dual_port
+
+Node numInputs = 2
+Input Alias0 = 0
+Input Name 0 = 0
+Input Type 0 = value
+Input Alias1 = %s.i.0
+Input Name 1 = %s.i.0
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = 0
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = %s.i.0
+Extended Input Name  1 = %s.i.0
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %.0.i
+Node Name =   %.0.i = phi i32 [ 0, %19 ], [ %39, %FIRFilterStreaming.exit.loopexit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %.0.i = phi i32 [ 0, %19 ], [ %39, %FIRFilterStreaming.exit.loopexit ]
+Input Name 0 =   %.0.i = phi i32 [ 0, %19 ], [ %39, %FIRFilterStreaming.exit.loopexit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON0
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = %39
+Extended Input Name  1 = %39
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %10
+Node Name =   %10 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 9
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %10 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 9
+Input Name 0 =   %10 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 9
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON1
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON2
+Extended Input Name  2 = 9
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %11
+Node Name =   %11 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 8
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %11 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 8
+Input Name 0 =   %11 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 8
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON3
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON4
+Extended Input Name  2 = 8
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %12
+Node Name =   %12 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 7
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %12 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 7
+Input Name 0 =   %12 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 7
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON5
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON6
+Extended Input Name  2 = 7
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %13
+Node Name =   %13 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 6
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %13 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 6
+Input Name 0 =   %13 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 6
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON7
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON8
+Extended Input Name  2 = 6
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %14
+Node Name =   %14 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 5
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %14 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 5
+Input Name 0 =   %14 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 5
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON9
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON10
+Extended Input Name  2 = 5
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %15
+Node Name =   %15 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 4
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %15 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 4
+Input Name 0 =   %15 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 4
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON11
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON12
+Extended Input Name  2 = 4
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %16
+Node Name =   %16 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 3
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %16 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 3
+Input Name 0 =   %16 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 3
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON13
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON14
+Extended Input Name  2 = 3
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %17
+Node Name =   %17 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 2
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %17 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 2
+Input Name 0 =   %17 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 2
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON15
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON16
+Extended Input Name  2 = 2
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %18
+Node Name =   %18 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %18 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 1
+Input Name 0 =   %18 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 1
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON17
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON18
+Extended Input Name  2 = 1
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %20
+Node Name =   %20 = phi i32 [ %indvar, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %20 = phi i32 [ %indvar, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %20 = phi i32 [ %indvar, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar
+Extended Input Name  0 = %indvar
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON19
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %21
+Node Name =   %21 = phi i32 [ %20, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %21 = phi i32 [ %20, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %21 = phi i32 [ %20, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %20
+Extended Input Name  0 = %20
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON20
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %22
+Node Name =   %22 = phi i32 [ %21, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %22 = phi i32 [ %21, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %22 = phi i32 [ %21, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %21
+Extended Input Name  0 = %21
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON21
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %23
+Node Name =   %23 = phi i32 [ %22, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %23 = phi i32 [ %22, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %23 = phi i32 [ %22, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %22
+Extended Input Name  0 = %22
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON22
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %24
+Node Name =   %24 = phi i32 [ %23, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %24 = phi i32 [ %23, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %24 = phi i32 [ %23, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %23
+Extended Input Name  0 = %23
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON23
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %25
+Node Name =   %25 = phi i32 [ %24, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %25 = phi i32 [ %24, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %25 = phi i32 [ %24, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %24
+Extended Input Name  0 = %24
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON24
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %26
+Node Name =   %26 = phi i32 [ %25, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %26 = phi i32 [ %25, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %26 = phi i32 [ %25, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %25
+Extended Input Name  0 = %25
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON25
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %27
+Node Name =   %27 = phi i32 [ %26, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %27 = phi i32 [ %26, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %27 = phi i32 [ %26, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %26
+Extended Input Name  0 = %26
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON26
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %28
+Node Name =   %28 = phi i32 [ %27, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %28 = phi i32 [ %27, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %28 = phi i32 [ %27, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %27
+Extended Input Name  0 = %27
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON27
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %29
+Node Name =   %29 = phi i32 [ %28, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %29 = phi i32 [ %28, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %29 = phi i32 [ %28, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %28
+Extended Input Name  0 = %28
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON28
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %3
+Node Name =   %3 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 0
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %3 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 0
+Input Name 0 =   %3 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 0
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON29
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON30
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %30
+Node Name =   %30 = phi i32 [ %29, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %30 = phi i32 [ %29, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %30 = phi i32 [ %29, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %29
+Extended Input Name  0 = %29
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON31
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %31
+Node Name =   %31 = phi i32 [ %30, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %31 = phi i32 [ %30, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %31 = phi i32 [ %30, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %30
+Extended Input Name  0 = %30
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON32
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %32
+Node Name =   %32 = phi i32 [ %31, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %32 = phi i32 [ %31, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %32 = phi i32 [ %31, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %31
+Extended Input Name  0 = %31
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON33
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %33
+Node Name =   %33 = phi i32 [ %32, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %33 = phi i32 [ %32, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %33 = phi i32 [ %32, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %32
+Extended Input Name  0 = %32
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON34
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %34
+Node Name =   %34 = icmp eq i32 %33, 0
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %34 = icmp eq i32 %33, 0
+Input Name 0 =   %34 = icmp eq i32 %33, 0
+Input Type 0 = icmp
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %33
+Extended Input Name  0 = %33
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON35
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %35
+Node Name =   %35 = sub i32 15, %j.02.i
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %35 = sub i32 15, %j.02.i
+Input Name 0 =   %35 = sub i32 15, %j.02.i
+Input Type 0 = sub
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %35 = sub i32 15, %j.02.i
+Extended Input Name  0 =   %35 = sub i32 15, %j.02.i
+Extended Input Type  0 = sub
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %36
+Node Name =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Input Name 0 =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Input Type 0 = mem_dual_port
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Extended Input Name  0 =   %36 = load i32* %scevgep2, align 4, !tbaa !1
+Extended Input Type  0 = mem_dual_port
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %37
+Node Name =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Input Name 0 =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Input Type 0 = mem_dual_port
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Extended Input Name  0 =   %37 = load i32* %scevgep, align 4, !tbaa !1
+Extended Input Type  0 = mem_dual_port
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %38
+Node Name =   %38 = mul nsw i32 %37, %36
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %38 = mul nsw i32 %37, %36
+Input Name 0 =   %38 = mul nsw i32 %37, %36
+Input Type 0 = mul
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %38 = mul nsw i32 %37, %36
+Extended Input Name  0 =   %38 = mul nsw i32 %37, %36
+Extended Input Type  0 = mul
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %39
+Node Name =   %39 = add nsw i32 %38, %temp.01.i
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %39 = add nsw i32 %38, %temp.01.i
+Input Name 0 =   %39 = add nsw i32 %38, %temp.01.i
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %39 = add nsw i32 %38, %temp.01.i
+Extended Input Name  0 =   %39 = add nsw i32 %38, %temp.01.i
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %4
+Node Name =   %4 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 14
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %4 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 14
+Input Name 0 =   %4 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 14
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON37
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON38
+Extended Input Name  2 = 14
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %40
+Node Name =   %40 = add nsw i32 %j.02.i, 1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %40 = add nsw i32 %j.02.i, 1
+Input Name 0 =   %40 = add nsw i32 %j.02.i, 1
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %40 = add nsw i32 %j.02.i, 1
+Extended Input Name  0 =   %40 = add nsw i32 %j.02.i, 1
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %41
+Node Name =   %41 = add i32 %.0.i, %total.02
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %41 = add i32 %.0.i, %total.02
+Input Name 0 =   %41 = add i32 %.0.i, %total.02
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %41 = add i32 %.0.i, %total.02
+Extended Input Name  0 =   %41 = add i32 %.0.i, %total.02
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %43
+Node Name =   %43 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i32 %41) #1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %43 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i32 %41) #1
+Input Name 0 =   %43 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i32 %41) #1
+Input Type 0 = tail
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON40
+Extended Input Name  0 = (i8*
+Extended Input Type  0 = value
+Extended Input Alias 1 = ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i32 %41) #1
+Extended Input Name  1 = ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str, i32 0, i32 0), i32 %41) #1
+Extended Input Type  1 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %44
+Node Name =   %44 = icmp eq i32 %41, 44880
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %44 = icmp eq i32 %41, 44880
+Input Name 0 =   %44 = icmp eq i32 %41, 44880
+Input Type 0 = icmp
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %41
+Extended Input Name  0 = %41
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON41
+Extended Input Name  1 = 44880
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %46
+Node Name =   %46 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0)) #1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %46 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0)) #1
+Input Name 0 =   %46 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0)) #1
+Input Type 0 = tail
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON42
+Extended Input Name  0 = (i8*
+Extended Input Type  0 = value
+Extended Input Alias 1 = NON43
+Extended Input Name  1 = ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str1, i32 0, i32 0)) #1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %48
+Node Name =   %48 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %48 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1
+Input Name 0 =   %48 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1
+Input Type 0 = tail
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON44
+Extended Input Name  0 = (i8*
+Extended Input Type  0 = value
+Extended Input Alias 1 = NON45
+Extended Input Name  1 = ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %5
+Node Name =   %5 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 15
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %5 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 15
+Input Name 0 =   %5 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 15
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON46
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON47
+Extended Input Name  2 = 15
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %6
+Node Name =   %6 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 13
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %6 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 13
+Input Name 0 =   %6 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 13
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON48
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON49
+Extended Input Name  2 = 13
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %7
+Node Name =   %7 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 12
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %7 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 12
+Input Name 0 =   %7 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 12
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON50
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON51
+Extended Input Name  2 = 12
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %8
+Node Name =   %8 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 11
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %8 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 11
+Input Name 0 =   %8 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 11
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON52
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON53
+Extended Input Name  2 = 11
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %9
+Node Name =   %9 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 10
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %9 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 10
+Input Name 0 =   %9 = getelementptr inbounds [16 x i32]* %previous, i32 0, i32 10
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON54
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON55
+Extended Input Name  2 = 10
+Extended Input Type  2 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %exitcond
+Node Name =   %exitcond = icmp eq i32 %indvar4, 16
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %exitcond = icmp eq i32 %indvar4, 16
+Input Name 0 =   %exitcond = icmp eq i32 %indvar4, 16
+Input Type 0 = icmp
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar4
+Extended Input Name  0 = %indvar4
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON56
+Extended Input Name  1 = 16
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %exitcond1
+Node Name =   %exitcond1 = icmp eq i32 %40, 16
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %exitcond1 = icmp eq i32 %40, 16
+Input Name 0 =   %exitcond1 = icmp eq i32 %40, 16
+Input Type 0 = icmp
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %40
+Extended Input Name  0 = %40
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON57
+Extended Input Name  1 = 16
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %exitcond3
+Node Name =   %exitcond3 = icmp eq i32 %indvar.next, 32
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %exitcond3 = icmp eq i32 %indvar.next, 32
+Input Name 0 =   %exitcond3 = icmp eq i32 %indvar.next, 32
+Input Type 0 = icmp
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar.next
+Extended Input Name  0 = %indvar.next
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON58
+Extended Input Name  1 = 32
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %i.01
+Node Name =   %i.01 = add i32 %indvar, 1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %i.01 = add i32 %indvar, 1
+Input Name 0 =   %i.01 = add i32 %indvar, 1
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %i.01 = add i32 %indvar, 1
+Extended Input Name  0 =   %i.01 = add i32 %indvar, 1
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %indvar
+Node Name =   %indvar = phi i32 [ %indvar.next, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %indvar = phi i32 [ %indvar.next, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %indvar = phi i32 [ %indvar.next, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar.next
+Extended Input Name  0 = %indvar.next
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %indvar.next
+Node Name =   %indvar.next = add i32 %indvar, 1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %indvar.next = add i32 %indvar, 1
+Input Name 0 =   %indvar.next = add i32 %indvar, 1
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 =   %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %indvar.next5
+Node Name =   %indvar.next5 = add i32 %indvar4, 1
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %indvar.next5 = add i32 %indvar4, 1
+Input Name 0 =   %indvar.next5 = add i32 %indvar4, 1
+Input Type 0 = add
+
+Node numExtInputs = 1
+Extended Input Alias 0 =   %indvar.next5 = add i32 %indvar4, 1
+Extended Input Name  0 =   %indvar.next5 = add i32 %indvar4, 1
+Extended Input Type  0 = add
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %indvar4
+Node Name =   %indvar4 = phi i32 [ %indvar.next5, %2 ], [ 0, %0 ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %indvar4 = phi i32 [ %indvar.next5, %2 ], [ 0, %0 ]
+Input Name 0 =   %indvar4 = phi i32 [ %indvar.next5, %2 ], [ 0, %0 ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %indvar.next5
+Extended Input Name  0 = %indvar.next5
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON63
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %j.02.i
+Node Name =   %j.02.i = phi i32 [ %40, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %j.02.i = phi i32 [ %40, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Input Name 0 =   %j.02.i = phi i32 [ %40, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %40
+Extended Input Name  0 = %40
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON64
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %s.i.0
+Node Name =   %s.i.0 = getelementptr [16 x i32]* %previous, i32 0, i32 %indvar4
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %s.i.0 = getelementptr [16 x i32]* %previous, i32 0, i32 %indvar4
+Input Name 0 =   %s.i.0 = getelementptr [16 x i32]* %previous, i32 0, i32 %indvar4
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON65
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = %indvar4
+Extended Input Name  2 = %indvar4
+Extended Input Type  2 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %scevgep
+Node Name =   %scevgep = getelementptr [16 x i32]* @main.coefficients, i32 0, i32 %j.02.i
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %scevgep = getelementptr [16 x i32]* @main.coefficients, i32 0, i32 %j.02.i
+Input Name 0 =   %scevgep = getelementptr [16 x i32]* @main.coefficients, i32 0, i32 %j.02.i
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = NON66
+Extended Input Name  0 = @main.coefficients
+Extended Input Type  0 = value
+Extended Input Alias 1 = NON67
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = %j.02.i
+Extended Input Name  2 = %j.02.i
+Extended Input Type  2 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %scevgep2
+Node Name =   %scevgep2 = getelementptr [16 x i32]* %previous, i32 0, i32 %35
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %scevgep2 = getelementptr [16 x i32]* %previous, i32 0, i32 %35
+Input Name 0 =   %scevgep2 = getelementptr [16 x i32]* %previous, i32 0, i32 %35
+Input Type 0 = getelementptr
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %previous
+Extended Input Name  0 = %previous
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON68
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = %35
+Extended Input Name  2 = %35
+Extended Input Type  2 = reg
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %temp.01.i
+Node Name =   %temp.01.i = phi i32 [ %39, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %temp.01.i = phi i32 [ %39, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Input Name 0 =   %temp.01.i = phi i32 [ %39, %.preheader.i ], [ 0, %.preheader.i.preheader ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %39
+Extended Input Name  0 = %39
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON69
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
+****************************IR NODES***********************************************
+Node Alias= %total.02
+Node Name =   %total.02 = phi i32 [ %41, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Node Type = reg
+
+Node numInputs = 1
+Input Alias0 =   %total.02 = phi i32 [ %41, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Name 0 =   %total.02 = phi i32 [ %41, %FIRFilterStreaming.exit ], [ 0, %legup_memset_4.exit ]
+Input Type 0 = phi
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %41
+Extended Input Name  0 = %41
+Extended Input Type  0 = reg
+Extended Input Alias 1 = NON70
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+##################################################################################
