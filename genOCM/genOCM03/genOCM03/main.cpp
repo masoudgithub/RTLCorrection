@@ -16,12 +16,12 @@ int main(int argc, char *argv[])
         fillEmptyAliases(IRNodeMap);
         returnNumberOfreducedNodes(IRNodeMap, IRreducedNodeMap);
         findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
-        //showNodeMap (IRreducedNodeMap, "IR Reduced Node");
+        showNodeMap (IRreducedNodeMap, "IR Reduced Node");
         // creating OCM node Map
         nodeMap ocmNodeMap;
         nodeMap reducedNodeMap;
         std::string dotFileName;
-        nodeMap::iterator ite;
+        nMapIt ite;
         for (int i = 2; i < argc-1; i++)
         {
             dotFileName = argv[i];
@@ -49,6 +49,15 @@ int main(int argc, char *argv[])
         {
             std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
         }
+
+        nMapIt ittest1 = reducedNodeMap.begin();
+        nMapIt ittest2 = IRNodeMap.begin();
+        while (ittest2 != IRNodeMap.end())
+        {
+            int test = retDissimilarity(ittest1, reducedNodeMap, ittest2, IRNodeMap);
+            ittest2++;
+        }
+
         return 0;
     }
     else

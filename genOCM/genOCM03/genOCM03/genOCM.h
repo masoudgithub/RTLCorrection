@@ -2,7 +2,7 @@
 #include <map>
 #include <string>
 
-class Node
+class mainNode
 {
 public:
     std::string inOutType = "NON";
@@ -33,28 +33,31 @@ public:
     void clearEXPInputIndex() {expandedInputIndex = 0;}
 };
 
-typedef std::map<std::string,Node> nodeMap;
+typedef std::map<std::string,mainNode> nodeMap;
+typedef nodeMap::iterator nMapIt;
+
 void fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName);
-void fillIRRowNodes(const char *fileName, std::map <std::string, Node> &IRNodeMap);
-void findConnections(const char *fileName, std::map <std::string, Node> &ocmNodeMap);
-void fillInOutType(std::map <std::string, Node> &ocmNodeMap);
-int returnNumberOfreducedNodes(std::map <std::string, Node> &ocmNodeMap, std::map <std::string, Node> &reducedNodeMap);
-void findExpandedInputsOfReducedNodeMap(std::map <std::string, Node> &ocmNodeMap, std::map <std::string, Node> &reducedNodeMap);
-void findExpandedInputsforNode(std::string aliasOCM, std::map <std::string, Node> &ocmNodeMap, std::string aliasRED, std::map <std::string, Node> &reducedNodeMap);
-void fillExpandedInputsforNode(std::string aliasOCM, std::map <std::string, Node> &ocmNodeMap, std::string aliasRED, std::map <std::string, Node> &reducedNodeMap);
+void fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap);
+void findConnections(const char *fileName, nodeMap &ocmNodeMap);
+void fillInOutType(nodeMap &ocmNodeMap);
+int returnNumberOfreducedNodes(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap);
+void findExpandedInputsOfReducedNodeMap(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap);
+void findExpandedInputsNumforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap);
+void fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap);
 bool isItMainType(std::string type);
 bool isItStopType(std::string type);
 bool isItGateType(std::string type);
 bool isItShadowType(std::string type);
-void findPort(std::string line, Node &tempNode);
+void findPort(std::string line, mainNode &tempNode);
 bool isItDataConnection(std::string line, std::string childNodeAlias, nodeMap &ocmNodeMap);
 bool isOperation(std::string line);
-bool fillTempNodes(Node &tempNode1, Node &tempNode2, std::string line);
-void fillGetelemData(Node &tempNode2, std::string line);
-void fillGetphiData(Node &tempNode2, std::string line);
-void fillGetloadData(Node &tempNode2, std::string line);
-void fillotherOprData(Node &tempNode2, std::string line);
-void fillEmptyAliases(std::map <std::string, Node> &IRNodeMap);
-void findAndReplaceDuplicatedNodes(std::map <std::string, Node> &ocmNodeMap);
-void showNodeMap (std::map <std::string, Node> &showNodeMap, const char* name);
-void supportHierarchy(std::map <std::string, Node> &ocmNodeMap);
+bool fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line);
+void fillGetelemData(mainNode &tempNode2, std::string line);
+void fillGetphiData(mainNode &tempNode2, std::string line);
+void fillGetloadData(mainNode &tempNode2, std::string line);
+void fillotherOprData(mainNode &tempNode2, std::string line);
+void fillEmptyAliases(nodeMap &IRNodeMap);
+void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap);
+void showNodeMap (nodeMap &showNodeMap, const char* name);
+void supportHierarchy(nodeMap &ocmNodeMap);
+int retDissimilarity(nMapIt ocmIt, nodeMap &ocmNodeMap, nMapIt IRIt, nodeMap &IRNodeMap);
