@@ -60,4 +60,5 @@ void fillEmptyAliases(nodeMap &IRNodeMap);
 void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap);
 void showNodeMap (nodeMap &showNodeMap, const char* name);
 void supportHierarchy(nodeMap &ocmNodeMap);
-int retDissimilarity(nMapIt ocmIt, nodeMap &ocmNodeMap, nMapIt IRIt, nodeMap &IRNodeMap);
+int retDissimilarity( nMapIt IRIt, nMapIt ocmIt);
+void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa);

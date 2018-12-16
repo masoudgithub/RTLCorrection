@@ -865,7 +865,7 @@ void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
             {
                 flag =1;
                 temp.push_back(j.first);
-                std::cout<<i.first<<" "<<i.second.name<<" dup "<<j.first<<" "<<j.second.name<<std::endl;
+               /* std::cout<<i.first<<" "<<i.second.name<<" dup "<<j.first<<" "<<j.second.name<<std::endl;*/
             }
         }
         if (flag)
@@ -873,11 +873,11 @@ void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
             c1++;
             //temp.push_back(i.first);
             dupNodeList.push_back(i.first);
-            for (auto& k: temp)
+            /*for (auto& k: temp)
             {
                 std::cout<< k <<" ";
             }
-            std::cout<<std::endl;
+            std::cout<<std::endl;*/
             aliasMap.insert(std::pair<std::string, std::vector <std::string>>(i.first,temp));
         }
     }
@@ -894,10 +894,10 @@ void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
                     if (o.second.inputAliases[in] == k)// replace the duplicated by main one
                     {
                         std::string str1 = o.second.inputAliases[in];
-                        std::cout<<"in "<< in<<" before replace= "<<str1<<std::endl;
+                       /* std::cout<<"in "<< in<<" before replace= "<<str1<<std::endl;*/
                         o.second.inputAliases[in] = a.first;
                         std::string str2 = o.second.inputAliases[in];
-                        std::cout<<"after replace= "<<str2<<std::endl;
+                        /*std::cout<<"after replace= "<<str2<<std::endl;*/
                         c2++;
                     }
                 }
@@ -905,8 +905,8 @@ void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
         }
     }
     //
-    std::cout<<"c1 = "<<c1<<std::endl;
-    std::cout<<"c2 = "<<c2<<std::endl;
+   /* std::cout<<"c1 = "<<c1<<std::endl;
+    std::cout<<"c2 = "<<c2<<std::endl;*/
 
     for (auto& a: aliasMap) // removing duplicated nodes
     {
@@ -942,7 +942,7 @@ void supportHierarchy(nodeMap &ocmNodeMap)
                     inputAlias = i.first;
                     outputAlias = j.first;
                     temp.push_back(j.first);
-                    std::cout<<i.first<<" in "<<i.second.name<<" dup "<<j.first<<" out "<<j.second.name<<std::endl;
+                    /*std::cout<<i.first<<" in "<<i.second.name<<" dup "<<j.first<<" out "<<j.second.name<<std::endl;*/
                     break;
                 }
                 else if ((i.second.inOutType == "out") && (j.second.inOutType == "in"))
@@ -951,7 +951,7 @@ void supportHierarchy(nodeMap &ocmNodeMap)
                     inputAlias = j.first;
                     outputAlias = i.first;
                     temp.push_back(j.first);
-                    std::cout<<i.first<<" out "<<i.second.name<<" dup "<<j.first<<" in "<<j.second.name<<std::endl;
+                    /*std::cout<<i.first<<" out "<<i.second.name<<" dup "<<j.first<<" in "<<j.second.name<<std::endl;*/
                     break;
                 }
 
@@ -967,7 +967,7 @@ void supportHierarchy(nodeMap &ocmNodeMap)
             {
                 std::cout<< k <<" ";
             }*/
-            std::cout<<std::endl;
+            /*std::cout<<std::endl;*/
             aliasMap.insert(std::pair<std::string, std::vector <std::string>>(i.first,temp));
             numberOfInputs = ocmNodeMap.at(inputAlias).numberOfInputs;
             ocmNodeMap.at(inputAlias).inputAliases[numberOfInputs-1] = outputAlias;
@@ -1049,9 +1049,26 @@ void fillInOutType(nodeMap &ocmNodeMap)
         }
     }
 }
-int retDissimilarity(nMapIt ocmIt, nodeMap &ocmNodeMap, nMapIt IRIt, nodeMap &IRNodeMap)
+
+void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa)
 {
-    std::cout<<IRIt->second.type <<std::endl;
+    for(auto& i: IRNodeMap)
+    {
+        if ( (i.second.name == name) && (i.second.type == type) )
+        {
+            instrAlisa = i.first;
+        }
+    }
+}
+
+int retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
+{
+
+ /*   std::cout<< IRIt->second.type <<std::endl;*/
+    if (IRIt->second.type == "mul")
+    {
+     std::cout <<ocmIt->second.type<<std::endl;
+    }
     int numberOfDiffInputs = IRIt->second.expandedNumberOfInputs;
     if (IRIt->second.type == ocmIt->second.type)
     {
@@ -1059,10 +1076,24 @@ int retDissimilarity(nMapIt ocmIt, nodeMap &ocmNodeMap, nMapIt IRIt, nodeMap &IR
         {
             for (int j = 0; j < ocmIt->second.expandedNumberOfInputs; j++)
             {
-                if (IRIt->second.expandedInputTypes[i] == ocmIt->second.expandedInputTypes[j])
+                if  (IRIt->second.expandedInputTypes[i] == "value")
                 {
-                    numberOfDiffInputs--;
-                    break;
+                    if (IRIt->second.expandedInputTypes[i] == ocmIt->second.expandedInputTypes[j])
+                    {
+                        if (IRIt->second.expandedInputNames[i] == ocmIt->second.expandedInputNames[j])
+                        {
+                            numberOfDiffInputs--;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                     if (IRIt->second.expandedInputTypes[i] == ocmIt->second.expandedInputTypes[j])
+                     {
+                        numberOfDiffInputs--;
+                        break;
+                     }
                 }
             }
         }

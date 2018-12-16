@@ -50,11 +50,21 @@ int main(int argc, char *argv[])
             std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
         }
 
-        nMapIt ittest1 = reducedNodeMap.begin();
-        nMapIt ittest2 = IRNodeMap.begin();
-        while (ittest2 != IRNodeMap.end())
+        nMapIt ittest1 = IRreducedNodeMap.begin();
+        nMapIt ittest2 = reducedNodeMap.begin();
+        std::string str;
+        findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
+
+        ittest1 = IRreducedNodeMap.find(str);
+        int mindissimi = 100;
+        int dissimTemp = 100;
+        while ( ittest2 != reducedNodeMap.end())
         {
-            int test = retDissimilarity(ittest1, reducedNodeMap, ittest2, IRNodeMap);
+            dissimTemp = retDissimilarity(ittest1, ittest2);
+            if (dissimTemp < mindissimi)
+            {
+                mindissimi = dissimTemp;
+            }
             ittest2++;
         }
 
