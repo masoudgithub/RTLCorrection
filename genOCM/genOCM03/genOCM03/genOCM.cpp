@@ -154,9 +154,9 @@ void fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
                 mainNode tempNode2;
                 if(line.find(" store ",0) < 10000)
                 {
-                    tempNode1.alias = line;
+                    tempNode1.alias = line.substr(2,line.size()-2);
                     tempNode1.type = "mem_dual_port";
-                    tempNode1.name = line;
+                    tempNode1.name = line.substr(2,line.size()-2);
                     tempNode1.numberOfInputs = 2;
                     tempNode1.inputAliases = new std::string[2];
                     tempNode1.inputNames = new std::string[2];
@@ -626,8 +626,8 @@ bool fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line)
         std::size_t posSpace3 = line.find(" ",posSpace2+1);
         std::string tempString = line.substr(posSpace2+1, posSpace3- posSpace2 -1);
         tempNode2.type = tempString;
-        tempNode2.name = line;
-        tempNode2.alias = line;
+        tempNode2.name = line.substr(2,line.size()-2);;
+        tempNode2.alias = line.substr(2,line.size()-2);;
         if (tempNode2.type == "getelementptr")
         {
             fillGetelemData(tempNode2, line);
@@ -650,7 +650,7 @@ bool fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line)
         if (tempString.find("%") < 10000)
         {
             tempNode1.type = "reg";
-            tempNode1.name = line;
+            tempNode1.name = line.substr(2,line.size()-2);;
             tempNode1.alias = tempString;
         }
         return true;

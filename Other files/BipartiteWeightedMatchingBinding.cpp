@@ -36,7 +36,7 @@
 #include "LVA.h"
 #include "RTL.h"
 #include "utils.h"
-#include "genOCM.h"
+//#include "genOCM.h"
 #include <iostream>
 #include <iomanip>
 
@@ -107,8 +107,8 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
     if (argc >= 3)
     {
         // creating IR node map
-        nodeMap IRNodeMap;
-        nodeMap IRreducedNodeMap;
+        /*nodeMap IRNodeMap;*/ /*this is declared in BipartiteWeightedMatchingBinding class*/
+        /*nodeMap IRreducedNodeMap;*/ /*this is declared in BipartiteWeightedMatchingBinding class*/
         std::string IRFileName = argv[1];
         fillIRRowNodes(IRFileName.c_str(),IRNodeMap);
         fillEmptyAliases(IRNodeMap);
@@ -116,10 +116,11 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
         findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
         showNodeMap (IRreducedNodeMap, "IR Reduced Node");
         // creating OCM node Map
-        nodeMap ocmNodeMap;
+        /*nodeMap ocmNodeMap;
         nodeMap reducedNodeMap;
+        nodeMap::iterator ite;*//*these are declared in BipartiteWeightedMatchingBinding class*/
         std::string dotFileName;
-        nodeMap::iterator ite;
+
         for (int i = 2; i < argc-1; i++)
         {
             dotFileName = argv[i];
