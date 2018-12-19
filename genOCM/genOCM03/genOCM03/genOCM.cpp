@@ -1052,11 +1052,20 @@ void fillInOutType(nodeMap &ocmNodeMap)
 
 void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa)
 {
+    name = name.substr(2,name.size()-2);
     for(auto& i: IRNodeMap)
     {
-        if ( (i.second.name == name) && (i.second.type == type) )
+        if ( (i.second.name == name) /*&& (i.second.type == type) */)
         {
-            instrAlisa = i.first;
+            std::cout<<"i.second.name = "<<i.second.name<<std::endl;
+            std::cout<<"         name = "<<name<<std::endl;
+            std::cout<<"i.second.type = "<<i.second.type<<std::endl;
+            std::cout<<"         type = "<<type<<std::endl;
+
+            if (i.second.type == type)
+            {
+                instrAlisa = i.first;
+            }
         }
     }
 }
