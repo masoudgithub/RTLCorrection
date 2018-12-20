@@ -7,7 +7,4 @@ genOCM/genOCM02/
 *.o
 *.pro
 *.log
-!*.cpp
-!*.h
-!*.c
 
