@@ -4,4 +4,7 @@ fir_rtl correction/
 genOCM/genOCM00/
 genOCM/genOCM01/
 genOCM/genOCM02/
+*.o
+*.pro
+*.log
 
