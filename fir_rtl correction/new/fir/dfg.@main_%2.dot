@@ -1,6 +1,0 @@
-digraph {
-Node0x2b12e10[label="  %s.i.0 = getelementptr [16 x i32]* %pr..."];
-Node0x2b12e10 -> Node0x2b12e10[label="D:20.00ns L:0",color=blue];
-Node0x2b13010[label="  %indvar.next5 = add i32 %indvar4, 1"];
-Node0x2b13010 -> Node0x2b13010[label="D:2.50ns L:0",color=blue];
-}
