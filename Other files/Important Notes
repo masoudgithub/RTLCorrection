@@ -1,0 +1,3 @@
+we can get compelete name of instructions by 
+"std::string instStr1 = getValueStr(I);"
+
