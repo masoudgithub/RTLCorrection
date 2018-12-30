@@ -2,3 +2,4 @@ build-editDotfile-Desktop-Debug/*
 build-genOCM-Desktop-Debug/*
 *.pro*
 *.o
+*~*
