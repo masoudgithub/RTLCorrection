@@ -1,0 +1,1086 @@
+**************************** IR Reduced Node ***********************************************
+Node Alias= %35 = sub i32 15, %j.02.i
+Node Module = 
+Node Name = %35 = sub i32 15, %j.02.i
+Node Type = sub
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = NON36
+Input Name 0 = 15
+Input Type 0 = value
+Input Alias 1 = %j.02.i
+Input Name 1 = %j.02.i
+Input Type 1 = reg
+
+Node numExtInputs = 3
+Extended Input Alias 0 = NON36
+Extended Input Name  0 = 15
+Extended Input Type  0 = value
+Extended Input Alias 1 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Name  1 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Type  1 = add
+Extended Input Alias 2 = NON64
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %36 = load i32* %scevgep2, align 4, !tbaa !1
+Node Module = 
+Node Name = %36 = load i32* %scevgep2, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 1
+Input Alias 0 = %scevgep2
+Input Name 0 = %scevgep2
+Input Type 0 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = NON68
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = %35 = sub i32 15, %j.02.i
+Extended Input Name  1 = %35 = sub i32 15, %j.02.i
+Extended Input Type  1 = sub
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %37 = load i32* %scevgep, align 4, !tbaa !1
+Node Module = 
+Node Name = %37 = load i32* %scevgep, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 1
+Input Alias 0 = %scevgep
+Input Name 0 = %scevgep
+Input Type 0 = reg
+
+Node numExtInputs = 4
+Extended Input Alias 0 = NON66
+Extended Input Name  0 = @main.coefficients
+Extended Input Type  0 = value
+Extended Input Alias 1 = NON67
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Name  2 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Type  2 = add
+Extended Input Alias 3 = NON64
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %38 = mul nsw i32 %37, %36
+Node Module = 
+Node Name = %38 = mul nsw i32 %37, %36
+Node Type = mul
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %37
+Input Name 0 = %37
+Input Type 0 = reg
+Input Alias 1 = %36
+Input Name 1 = %36
+Input Type 1 = reg
+
+Node numExtInputs = 2
+Extended Input Alias 0 = %37 = load i32* %scevgep, align 4, !tbaa !1
+Extended Input Name  0 = %37 = load i32* %scevgep, align 4, !tbaa !1
+Extended Input Type  0 = mem_dual_port
+Extended Input Alias 1 = %36 = load i32* %scevgep2, align 4, !tbaa !1
+Extended Input Name  1 = %36 = load i32* %scevgep2, align 4, !tbaa !1
+Extended Input Type  1 = mem_dual_port
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %39 = add nsw i32 %38, %temp.01.i
+Node Module = 
+Node Name = %39 = add nsw i32 %38, %temp.01.i
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %38
+Input Name 0 = %38
+Input Type 0 = reg
+Input Alias 1 = %temp.01.i
+Input Name 1 = %temp.01.i
+Input Type 1 = reg
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %38 = mul nsw i32 %37, %36
+Extended Input Name  0 = %38 = mul nsw i32 %37, %36
+Extended Input Type  0 = mul
+Extended Input Alias 1 = %39 = add nsw i32 %38, %temp.01.i
+Extended Input Name  1 = %39 = add nsw i32 %38, %temp.01.i
+Extended Input Type  1 = add
+Extended Input Alias 2 = NON69
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %40 = add nsw i32 %j.02.i, 1
+Node Module = 
+Node Name = %40 = add nsw i32 %j.02.i, 1
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %j.02.i
+Input Name 0 = %j.02.i
+Input Type 0 = reg
+Input Alias 1 = NON39
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Name  0 = %40 = add nsw i32 %j.02.i, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON64
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON39
+Extended Input Name  2 = 1
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %41 = add i32 %.0.i, %total.02
+Node Module = 
+Node Name = %41 = add i32 %.0.i, %total.02
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %.0.i
+Input Name 0 = %.0.i
+Input Type 0 = reg
+Input Alias 1 = %total.02
+Input Name 1 = %total.02
+Input Type 1 = reg
+
+Node numExtInputs = 4
+Extended Input Alias 0 = NON0
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = %39 = add nsw i32 %38, %temp.01.i
+Extended Input Name  1 = %39 = add nsw i32 %38, %temp.01.i
+Extended Input Type  1 = add
+Extended Input Alias 2 = %41 = add i32 %.0.i, %total.02
+Extended Input Name  2 = %41 = add i32 %.0.i, %total.02
+Extended Input Type  2 = add
+Extended Input Alias 3 = NON70
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %i.01 = add i32 %indvar, 1
+Node Module = 
+Node Name = %i.01 = add i32 %indvar, 1
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias 1 = NON59
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON59
+Extended Input Name  2 = 1
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %indvar.next = add i32 %indvar, 1
+Node Module = 
+Node Name = %indvar.next = add i32 %indvar, 1
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias 1 = NON61
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON61
+Extended Input Name  2 = 1
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= %indvar.next5 = add i32 %indvar4, 1
+Node Module = 
+Node Name = %indvar.next5 = add i32 %indvar4, 1
+Node Type = add
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %indvar4
+Input Name 0 = %indvar4
+Input Type 0 = reg
+Input Alias 1 = NON62
+Input Name 1 = 1
+Input Type 1 = value
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %indvar.next5 = add i32 %indvar4, 1
+Extended Input Name  0 = %indvar.next5 = add i32 %indvar4, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON63
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON62
+Extended Input Name  2 = 1
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %20, i32* %17, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %20, i32* %17, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %20
+Input Name 0 = %20
+Input Type 0 = reg
+Input Alias 1 = %17
+Input Name 1 = %17
+Input Type 1 = reg
+
+Node numExtInputs = 5
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON15
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON16
+Extended Input Name  4 = 2
+Extended Input Type  4 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %21, i32* %16, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %21, i32* %16, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %21
+Input Name 0 = %21
+Input Type 0 = reg
+Input Alias 1 = %16
+Input Name 1 = %16
+Input Type 1 = reg
+
+Node numExtInputs = 6
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON13
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON14
+Extended Input Name  5 = 3
+Extended Input Type  5 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %22, i32* %15, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %22, i32* %15, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %22
+Input Name 0 = %22
+Input Type 0 = reg
+Input Alias 1 = %15
+Input Name 1 = %15
+Input Type 1 = reg
+
+Node numExtInputs = 7
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON11
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON12
+Extended Input Name  6 = 4
+Extended Input Type  6 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %23, i32* %14, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %23, i32* %14, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %23
+Input Name 0 = %23
+Input Type 0 = reg
+Input Alias 1 = %14
+Input Name 1 = %14
+Input Type 1 = reg
+
+Node numExtInputs = 8
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON9
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON10
+Extended Input Name  7 = 5
+Extended Input Type  7 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %24, i32* %13, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %24, i32* %13, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %24
+Input Name 0 = %24
+Input Type 0 = reg
+Input Alias 1 = %13
+Input Name 1 = %13
+Input Type 1 = reg
+
+Node numExtInputs = 9
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON7
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON8
+Extended Input Name  8 = 6
+Extended Input Type  8 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %25, i32* %12, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %25, i32* %12, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %25
+Input Name 0 = %25
+Input Type 0 = reg
+Input Alias 1 = %12
+Input Name 1 = %12
+Input Type 1 = reg
+
+Node numExtInputs = 10
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON5
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON6
+Extended Input Name  9 = 7
+Extended Input Type  9 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %26, i32* %11, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %26, i32* %11, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %26
+Input Name 0 = %26
+Input Type 0 = reg
+Input Alias 1 = %11
+Input Name 1 = %11
+Input Type 1 = reg
+
+Node numExtInputs = 11
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON3
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON4
+Extended Input Name  10 = 8
+Extended Input Type  10 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %27, i32* %10, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %27, i32* %10, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %27
+Input Name 0 = %27
+Input Type 0 = reg
+Input Alias 1 = %10
+Input Name 1 = %10
+Input Type 1 = reg
+
+Node numExtInputs = 12
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON1
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON2
+Extended Input Name  11 = 9
+Extended Input Type  11 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %28, i32* %9, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %28, i32* %9, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %28
+Input Name 0 = %28
+Input Type 0 = reg
+Input Alias 1 = %9
+Input Name 1 = %9
+Input Type 1 = reg
+
+Node numExtInputs = 13
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON54
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON55
+Extended Input Name  12 = 10
+Extended Input Type  12 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %29, i32* %8, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %29, i32* %8, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %29
+Input Name 0 = %29
+Input Type 0 = reg
+Input Alias 1 = %8
+Input Name 1 = %8
+Input Type 1 = reg
+
+Node numExtInputs = 14
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON28
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON52
+Extended Input Name  12 = 0
+Extended Input Type  12 = value
+Extended Input Alias 13 = NON53
+Extended Input Name  13 = 11
+Extended Input Type  13 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %30, i32* %7, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %30, i32* %7, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %30
+Input Name 0 = %30
+Input Type 0 = reg
+Input Alias 1 = %7
+Input Name 1 = %7
+Input Type 1 = reg
+
+Node numExtInputs = 15
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON28
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON31
+Extended Input Name  12 = 0
+Extended Input Type  12 = value
+Extended Input Alias 13 = NON50
+Extended Input Name  13 = 0
+Extended Input Type  13 = value
+Extended Input Alias 14 = NON51
+Extended Input Name  14 = 12
+Extended Input Type  14 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %31, i32* %6, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %31, i32* %6, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %31
+Input Name 0 = %31
+Input Type 0 = reg
+Input Alias 1 = %6
+Input Name 1 = %6
+Input Type 1 = reg
+
+Node numExtInputs = 16
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON28
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON31
+Extended Input Name  12 = 0
+Extended Input Type  12 = value
+Extended Input Alias 13 = NON32
+Extended Input Name  13 = 0
+Extended Input Type  13 = value
+Extended Input Alias 14 = NON48
+Extended Input Name  14 = 0
+Extended Input Type  14 = value
+Extended Input Alias 15 = NON49
+Extended Input Name  15 = 13
+Extended Input Type  15 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %32, i32* %4, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %32, i32* %4, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %32
+Input Name 0 = %32
+Input Type 0 = reg
+Input Alias 1 = %4
+Input Name 1 = %4
+Input Type 1 = reg
+
+Node numExtInputs = 17
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON28
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON31
+Extended Input Name  12 = 0
+Extended Input Type  12 = value
+Extended Input Alias 13 = NON32
+Extended Input Name  13 = 0
+Extended Input Type  13 = value
+Extended Input Alias 14 = NON33
+Extended Input Name  14 = 0
+Extended Input Type  14 = value
+Extended Input Alias 15 = NON37
+Extended Input Name  15 = 0
+Extended Input Type  15 = value
+Extended Input Alias 16 = NON38
+Extended Input Name  16 = 14
+Extended Input Type  16 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %33, i32* %5, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %33, i32* %5, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %33
+Input Name 0 = %33
+Input Type 0 = reg
+Input Alias 1 = %5
+Input Name 1 = %5
+Input Type 1 = reg
+
+Node numExtInputs = 18
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON19
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON20
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+Extended Input Alias 4 = NON21
+Extended Input Name  4 = 0
+Extended Input Type  4 = value
+Extended Input Alias 5 = NON22
+Extended Input Name  5 = 0
+Extended Input Type  5 = value
+Extended Input Alias 6 = NON23
+Extended Input Name  6 = 0
+Extended Input Type  6 = value
+Extended Input Alias 7 = NON24
+Extended Input Name  7 = 0
+Extended Input Type  7 = value
+Extended Input Alias 8 = NON25
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = NON26
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = NON27
+Extended Input Name  10 = 0
+Extended Input Type  10 = value
+Extended Input Alias 11 = NON28
+Extended Input Name  11 = 0
+Extended Input Type  11 = value
+Extended Input Alias 12 = NON31
+Extended Input Name  12 = 0
+Extended Input Type  12 = value
+Extended Input Alias 13 = NON32
+Extended Input Name  13 = 0
+Extended Input Type  13 = value
+Extended Input Alias 14 = NON33
+Extended Input Name  14 = 0
+Extended Input Type  14 = value
+Extended Input Alias 15 = NON34
+Extended Input Name  15 = 0
+Extended Input Type  15 = value
+Extended Input Alias 16 = NON46
+Extended Input Name  16 = 0
+Extended Input Type  16 = value
+Extended Input Alias 17 = NON47
+Extended Input Name  17 = 15
+Extended Input Type  17 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %i.01, i32* %3, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %i.01, i32* %3, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %i.01
+Input Name 0 = %i.01
+Input Type 0 = reg
+Input Alias 1 = %3
+Input Name 1 = %3
+Input Type 1 = reg
+
+Node numExtInputs = 3
+Extended Input Alias 0 = %i.01 = add i32 %indvar, 1
+Extended Input Name  0 = %i.01 = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON29
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON30
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 %indvar, i32* %18, align 4, !tbaa !1
+Node Module = 
+Node Name = store i32 %indvar, i32* %18, align 4, !tbaa !1
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = %indvar
+Input Name 0 = %indvar
+Input Type 0 = reg
+Input Alias 1 = %18
+Input Name 1 = %18
+Input Type 1 = reg
+
+Node numExtInputs = 4
+Extended Input Alias 0 = %indvar.next = add i32 %indvar, 1
+Extended Input Name  0 = %indvar.next = add i32 %indvar, 1
+Extended Input Type  0 = add
+Extended Input Alias 1 = NON60
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = NON17
+Extended Input Name  2 = 0
+Extended Input Type  2 = value
+Extended Input Alias 3 = NON18
+Extended Input Name  3 = 1
+Extended Input Type  3 = value
+##################################################################################
+**************************** IR Reduced Node ***********************************************
+Node Alias= store i32 0, i32* %s.i.0, align 4
+Node Module = 
+Node Name = store i32 0, i32* %s.i.0, align 4
+Node Type = mem_dual_port
+
+Node inOutType = NON
+
+Node numInputs = 2
+Input Alias 0 = 0
+Input Name 0 = 0
+Input Type 0 = value
+Input Alias 1 = %s.i.0
+Input Name 1 = %s.i.0
+Input Type 1 = reg
+
+Node numExtInputs = 4
+Extended Input Alias 0 = 0
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = NON65
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = %indvar.next5 = add i32 %indvar4, 1
+Extended Input Name  2 = %indvar.next5 = add i32 %indvar4, 1
+Extended Input Type  2 = add
+Extended Input Alias 3 = NON63
+Extended Input Name  3 = 0
+Extended Input Type  3 = value
+##################################################################################
