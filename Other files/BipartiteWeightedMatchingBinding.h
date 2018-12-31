@@ -27,10 +27,7 @@ namespace legup {
 /// using bipartite weighted matching
 class BipartiteWeightedMatchingBinding : public Binding {
 public:
-    nodeMap IRNodeMap;
-    nodeMap IRreducedNodeMap;
-    nodeMap ocmNodeMap;
-    nodeMap reducedNodeMap;
+	genOCM mainGenOCM;
     BipartiteWeightedMatchingBinding (Allocation *alloc, FiniteStateMachine
             *fsm, Function *Fp, MinimizeBitwidth *_MBW) :
         Binding(alloc, fsm, Fp, _MBW) {}

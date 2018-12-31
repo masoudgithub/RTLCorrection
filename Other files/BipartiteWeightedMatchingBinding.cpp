@@ -36,7 +36,7 @@
 #include "LVA.h"
 #include "RTL.h"
 #include "utils.h"
-//#include "genOCM.h"
+#include "genOCM.h"
 #include <iostream>
 #include <iomanip>
 
@@ -50,58 +50,8 @@ namespace legup {
 // modifies BindingInstrFU member variable
 void BipartiteWeightedMatchingBinding::operatorAssignment() {
 
-    int argc = 5;
-    const char *argv[5] = {"", "IR.ll", "memory_controller.dot", "top.dot", "total.dot"};
-    if (argc >= 3)
-    {
-        // creating IR node map
-        /*nodeMap IRNodeMap;*/ /*this is declared in BipartiteWeightedMatchingBinding class*/
-        /*nodeMap IRreducedNodeMap;*/ /*this is declared in BipartiteWeightedMatchingBinding class*/
-        std::string IRFileName = argv[1];
-        fillIRRowNodes(IRFileName.c_str(),IRNodeMap);
-        fillEmptyAliases(IRNodeMap);
-        returnNumberOfreducedNodes(IRNodeMap, IRreducedNodeMap);
-        findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
-        showNodeMap (IRreducedNodeMap, "IR Reduced Node");
-        // creating OCM node Map
-        /*nodeMap ocmNodeMap;
-        nodeMap reducedNodeMap;
-        nodeMap::iterator ite;*//*these are declared in BipartiteWeightedMatchingBinding class*/
-        std::string dotFileName;
 
-        for (int i = 2; i < argc-1; i++)
-        {
-            dotFileName = argv[i];
-            std::size_t pos = dotFileName.find(".");
-            std::string moduleName = dotFileName.substr(0,pos);
-            fillOCMRowNodes(dotFileName.c_str(), ocmNodeMap, moduleName);
-            //findConnections(dotFileName.c_str(), ocmNodeMap);
-        }
-        findConnections(argv[argc-1], ocmNodeMap);
-        fillInOutType(ocmNodeMap);
-        showNodeMap (ocmNodeMap, "OCM Node");
-        //findAndReplaceDuplicatedNodes(ocmNodeMap);
-        supportHierarchy(ocmNodeMap);
-        showNodeMap (ocmNodeMap, "OCM dup Node");
-        returnNumberOfreducedNodes(ocmNodeMap, reducedNodeMap);
-        findExpandedInputsOfReducedNodeMap(ocmNodeMap, reducedNodeMap);
-        showNodeMap (reducedNodeMap, "OCM Reduced Node");
-
-        std::map <std::string,int> availableFus;
-        availableFus.insert({"add",2});
-        availableFus.insert({"sub",1});
-        availableFus.insert({"mul",1});
-        availableFus.insert({"mem_dual_port",2});
-        /*for (auto& it:availableFus)
-        {
-            std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
-        }*/
-        //return 0;
-    }
-    else
-    {
-        //return -1;
-    }
+    mainGenOCM.generate_OCM();
 
     // numFuncUnitsMap maps:
     // functional unit type -> number of functional units available
@@ -302,7 +252,7 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         Instruction *I, int operationIdx, std::string funcUnitType, int
         numFuncUnitsAvail, AssignmentInfo &assigned, Table &weights) {
     std::string instrAlisa;
-    findInstrAlias(getValueStr(I), funcUnitType, IRreducedNodeMap, instrAlisa);
+    mainGenOCM.findInstrAlias(getValueStr(I), funcUnitType, mainGenOCM.IRreducedNodeMap, instrAlisa);
 
     int existingMuxInputsFactor = 1;
     int newMuxInputsFactor = 10;
