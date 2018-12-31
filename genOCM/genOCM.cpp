@@ -3,7 +3,7 @@
 #include <fstream>
 #include <regex>
 
-void fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName)
+void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName)
 {
 
     std::string line;
@@ -139,7 +139,7 @@ void fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string modu
 }
 
 
-void fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
+void genOCM::fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
 {
 
     std::string line;
@@ -220,7 +220,7 @@ void fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
         }
 }
 
-void findConnections(const char *fileName, nodeMap &ocmNodeMap)
+void genOCM::findConnections(const char *fileName, nodeMap &ocmNodeMap)
 {
     std::string line;
     std::ifstream schematicFile;
@@ -332,7 +332,7 @@ void findConnections(const char *fileName, nodeMap &ocmNodeMap)
     }*/
 }
 
-int returnNumberOfreducedNodes(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
+int genOCM::returnNumberOfreducedNodes(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
 {
     mainNode tempNode;
 
@@ -348,7 +348,7 @@ int returnNumberOfreducedNodes(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
     return reducedNodeMap.size();
 }
 
-void findExpandedInputsOfReducedNodeMap(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
+void genOCM::findExpandedInputsOfReducedNodeMap(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
 {
     for (auto& itr: reducedNodeMap)
     {
@@ -377,7 +377,7 @@ void findExpandedInputsOfReducedNodeMap(nodeMap &ocmNodeMap, nodeMap &reducedNod
     }
 }
 
-void findExpandedInputsNumforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap)
+void genOCM::findExpandedInputsNumforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap)
 {
     nMapIt itrocm = ocmNodeMap.find(aliasOCM);
     nMapIt itrred = reducedNodeMap.find(aliasRED);
@@ -419,7 +419,7 @@ void findExpandedInputsNumforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std
 
 }
 
-void fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap)
+void genOCM::fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::string aliasRED, nodeMap &reducedNodeMap)
 {
     nMapIt itrocm = ocmNodeMap.find(aliasOCM);
     nMapIt itrred = reducedNodeMap.find(aliasRED);
@@ -452,7 +452,7 @@ void fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap, std::s
 }
 
 
-bool isItMainType(std::string type)
+bool genOCM::isItMainType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
         (type == "sub")  /*|| (type == "reg") */||
@@ -466,7 +466,7 @@ bool isItMainType(std::string type)
     }
 }
 
-bool isItStopType(std::string type)
+bool genOCM::isItStopType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
         (type == "sub") || (type == "value") ||
@@ -481,7 +481,7 @@ bool isItStopType(std::string type)
     }
 }
 
-bool isItGateType(std::string type)
+bool genOCM::isItGateType(std::string type)
 {
     if ((type == "and") || (type == "or") || (type == "xor") ||
         (type == "not") ||
@@ -496,7 +496,7 @@ bool isItGateType(std::string type)
 }
 
 
-bool isItShadowType(std::string type)
+bool genOCM::isItShadowType(std::string type)
 {
     return true;
     if ((type == "reg") || (type == "mux") || (type == "wire"))
@@ -508,7 +508,7 @@ bool isItShadowType(std::string type)
         return false;
     }
 }
-void findPort(std::string line, mainNode &tempNode)
+void genOCM::findPort(std::string line, mainNode &tempNode)
 {
     std::size_t pos1, pos2;
 
@@ -558,7 +558,7 @@ void findPort(std::string line, mainNode &tempNode)
     }
 }
 
-bool isItDataConnection(std::string line, std::string childNodeAlias, nodeMap &ocmNodeMap)
+bool genOCM::isItDataConnection(std::string line, std::string childNodeAlias, nodeMap &ocmNodeMap)
 {
     nMapIt itr = ocmNodeMap.find(childNodeAlias);
     if (itr != ocmNodeMap.end())
@@ -598,7 +598,7 @@ bool isItDataConnection(std::string line, std::string childNodeAlias, nodeMap &o
         return false;
     }
 }
-bool isOperation(std::string line)
+bool genOCM::isOperation(std::string line)
 {
     if (line.find(" = ") < 10000)
     {
@@ -613,7 +613,7 @@ bool isOperation(std::string line)
     return false;
 }
 
-bool fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line)
+bool genOCM::fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line)
 {
     if ( (line.find (" sub ") < 10000) || (line.find(" add ") < 1000) ||
          (line.find (" mul ") < 10000) || (line.find(" load ") < 1000) ||
@@ -658,7 +658,7 @@ bool fillTempNodes(mainNode &tempNode1, mainNode &tempNode2, std::string line)
     return false;
 }
 
-void fillGetelemData(mainNode &tempNode2, std::string line)
+void genOCM::fillGetelemData(mainNode &tempNode2, std::string line)
 {
     tempNode2.numberOfInputs = 3;
     tempNode2.inputAliases = new std::string[3];
@@ -712,7 +712,7 @@ void fillGetelemData(mainNode &tempNode2, std::string line)
     }
 }
 
-void fillGetphiData(mainNode &tempNode2, std::string line)
+void genOCM::fillGetphiData(mainNode &tempNode2, std::string line)
 {
     tempNode2.numberOfInputs = 2;
     tempNode2.inputAliases = new std::string[2];
@@ -751,7 +751,7 @@ void fillGetphiData(mainNode &tempNode2, std::string line)
     }
 }
 
-void fillGetloadData(mainNode &tempNode2, std::string line)
+void genOCM::fillGetloadData(mainNode &tempNode2, std::string line)
 {
 
     tempNode2.numberOfInputs = 1;
@@ -775,7 +775,7 @@ void fillGetloadData(mainNode &tempNode2, std::string line)
         tempNode2.inputTypes[0] = "value";
     }
 }
-void fillotherOprData(mainNode &tempNode2, std::string line)
+void genOCM::fillotherOprData(mainNode &tempNode2, std::string line)
 {
     tempNode2.numberOfInputs = 2;
     tempNode2.inputAliases = new std::string[2];
@@ -814,7 +814,7 @@ void fillotherOprData(mainNode &tempNode2, std::string line)
 
 }
 
-void fillEmptyAliases(nodeMap &IRNodeMap)
+void genOCM::fillEmptyAliases(nodeMap &IRNodeMap)
 {
     int aliasNum = 0;
 
@@ -837,7 +837,7 @@ void fillEmptyAliases(nodeMap &IRNodeMap)
     }
 }
 
-inline bool notExistIn(std::vector<std::string> &AlreadyAddedNodes, std::string nodeAlias)
+bool genOCM::notExistIn(std::vector<std::string> &AlreadyAddedNodes, std::string nodeAlias)
 {
     if ( std::find(AlreadyAddedNodes.begin(), AlreadyAddedNodes.end(), nodeAlias) != AlreadyAddedNodes.end() )
        return false;
@@ -845,7 +845,7 @@ inline bool notExistIn(std::vector<std::string> &AlreadyAddedNodes, std::string 
        return true;
 }
 
-void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
+void genOCM::findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
 {
     // findind duplicated nodes
     int flag, c1 = 0, c2 = 0;
@@ -917,7 +917,7 @@ void findAndReplaceDuplicatedNodes(nodeMap &ocmNodeMap)
     }
 }
 
-void supportHierarchy(nodeMap &ocmNodeMap)
+void genOCM::supportHierarchy(nodeMap &ocmNodeMap)
 {
     // findind duplicated nodes
     int flag, c1 = 0, numberOfInputs;
@@ -998,7 +998,7 @@ void supportHierarchy(nodeMap &ocmNodeMap)
     }*/
 }
 
-void showNodeMap (nodeMap &showNodeMap, const char* name)
+void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
 {
     std::ofstream logFile;
     std::string logFileName = std::string(name) + ".log";
@@ -1032,7 +1032,7 @@ void showNodeMap (nodeMap &showNodeMap, const char* name)
     }
 }
 
-void fillInOutType(nodeMap &ocmNodeMap)
+void genOCM::fillInOutType(nodeMap &ocmNodeMap)
 {
     for(auto& o: ocmNodeMap)
     {
@@ -1050,7 +1050,7 @@ void fillInOutType(nodeMap &ocmNodeMap)
     }
 }
 
-void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa)
+void genOCM::findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa)
 {
     for(auto& i: IRNodeMap)
     {
@@ -1069,7 +1069,7 @@ void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std:
     }
 }
 
-int retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
+int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 {
 
  /*   std::cout<< IRIt->second.type <<std::endl;*/
@@ -1109,4 +1109,72 @@ int retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
     }
     else
         return 100;
+}
+
+int genOCM::generate_OCM(void)
+{
+    int argc = 5;
+    const char *argv[5] = {"", "IR.ll", "memory_controller.dot", "top.dot", "total.dot"};
+    genOCM mainGenOCM;
+    // creating IR node map
+    /*nodeMap IRNodeMap;
+    nodeMap IRreducedNodeMap;*/
+    std::string IRFileName = argv[1];
+    fillIRRowNodes(IRFileName.c_str(),IRNodeMap);
+    fillEmptyAliases(IRNodeMap);
+    returnNumberOfreducedNodes(IRNodeMap, IRreducedNodeMap);
+    findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
+    showNodeMap (IRreducedNodeMap, "IR Reduced Node");
+    // creating OCM node Map
+    /*nodeMap ocmNodeMap;
+    nodeMap reducedNodeMap;*/
+    std::string dotFileName;
+    nMapIt ite;
+    for (int i = 2; i < argc-1; i++)
+    {
+        dotFileName = argv[i];
+        std::size_t pos = dotFileName.find(".");
+        std::string moduleName = dotFileName.substr(0,pos);
+        fillOCMRowNodes(dotFileName.c_str(), ocmNodeMap, moduleName);
+        //findConnections(dotFileName.c_str(), ocmNodeMap);
+    }
+    findConnections(argv[argc-1], ocmNodeMap);
+    fillInOutType(ocmNodeMap);
+    showNodeMap (ocmNodeMap, "OCM Node");
+    //findAndReplaceDuplicatedNodes(ocmNodeMap);
+    supportHierarchy(ocmNodeMap);
+    showNodeMap (ocmNodeMap, "OCM dup Node");
+    returnNumberOfreducedNodes(ocmNodeMap, reducedNodeMap);
+    findExpandedInputsOfReducedNodeMap(ocmNodeMap, reducedNodeMap);
+    showNodeMap (reducedNodeMap, "OCM Reduced Node");
+
+    std::map <std::string,int> availableFus;
+    availableFus.insert({"add",2});
+    availableFus.insert({"sub",1});
+    availableFus.insert({"mul",1});
+    availableFus.insert({"mem_dual_port",2});
+    for (auto& it:availableFus)
+    {
+        std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
+    }
+
+    nMapIt ittest1 = IRreducedNodeMap.begin();
+    nMapIt ittest2 = reducedNodeMap.begin();
+    std::string str;
+    findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
+
+    ittest1 = IRreducedNodeMap.find(str);
+    int mindissimi = 100;
+    int dissimTemp = 100;
+    while ( ittest2 != reducedNodeMap.end())
+    {
+        dissimTemp = retDissimilarity(ittest1, ittest2);
+        if (dissimTemp < mindissimi)
+        {
+            mindissimi = dissimTemp;
+        }
+        ittest2++;
+    }
+
+    return 0;
 }
