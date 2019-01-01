@@ -9,6 +9,7 @@ public:
     std::string moduleName;
     std::string alias;
     std::string name;
+    std::string nameNumbered;
     std::string type;
     std::string portA;
     std::string portB;

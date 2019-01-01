@@ -1127,7 +1127,7 @@ int genOCM::generate_OCM(void)
     showNodeMap (IRreducedNodeMap, "IR Reduced Node");
     // creating OCM node Map
     /*nodeMap ocmNodeMap;
-    nodeMap reducedNodeMap;*/
+    nodeMap ocmReducedNodeMap;*/
     std::string dotFileName;
     nMapIt ite;
     for (int i = 2; i < argc-1; i++)
@@ -1144,9 +1144,9 @@ int genOCM::generate_OCM(void)
     //findAndReplaceDuplicatedNodes(ocmNodeMap);
     supportHierarchy(ocmNodeMap);
     showNodeMap (ocmNodeMap, "OCM dup Node");
-    returnNumberOfreducedNodes(ocmNodeMap, reducedNodeMap);
-    findExpandedInputsOfReducedNodeMap(ocmNodeMap, reducedNodeMap);
-    showNodeMap (reducedNodeMap, "OCM Reduced Node");
+    returnNumberOfreducedNodes(ocmNodeMap, ocmReducedNodeMap);
+    findExpandedInputsOfReducedNodeMap(ocmNodeMap, ocmReducedNodeMap);
+    showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
 
     std::map <std::string,int> availableFus;
     availableFus.insert({"add",2});
@@ -1159,14 +1159,14 @@ int genOCM::generate_OCM(void)
     }
 
     nMapIt ittest1 = IRreducedNodeMap.begin();
-    nMapIt ittest2 = reducedNodeMap.begin();
+    nMapIt ittest2 = ocmReducedNodeMap.begin();
     std::string str;
     findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
 
     ittest1 = IRreducedNodeMap.find(str);
     int mindissimi = 100;
     int dissimTemp = 100;
-    while ( ittest2 != reducedNodeMap.end())
+    while ( ittest2 != ocmReducedNodeMap.end())
     {
         dissimTemp = retDissimilarity(ittest1, ittest2);
         if (dissimTemp < mindissimi)
