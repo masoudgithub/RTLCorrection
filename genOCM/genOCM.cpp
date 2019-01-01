@@ -1010,6 +1010,7 @@ void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
         logFile<<"Node Alias= "<<it.first<<"\n";
         logFile<<"Node Module = "<<it.second.moduleName<<std::endl;
         logFile<<"Node Name = "<<it.second.name<<std::endl;
+        logFile<<"Node NumberedName = "<<it.second.nameNumbered<<std::endl;
         logFile<<"Node Type = "<<it.second.type<<std::endl<<std::endl;
         logFile<<"Node inOutType = "<<it.second.inOutType<<std::endl<<std::endl;
         logFile<<"Node numInputs = "<<it.second.numberOfInputs<<std::endl;
@@ -1146,14 +1147,10 @@ int genOCM::generate_OCM(void)
     showNodeMap (ocmNodeMap, "OCM dup Node");
     returnNumberOfreducedNodes(ocmNodeMap, ocmReducedNodeMap);
     findExpandedInputsOfReducedNodeMap(ocmNodeMap, ocmReducedNodeMap);
+    assignNumberedNames(ocmReducedNodeMap);
     showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
 
-    std::map <std::string,int> availableFus;
-    availableFus.insert({"add",2});
-    availableFus.insert({"sub",1});
-    availableFus.insert({"mul",1});
-    availableFus.insert({"mem_dual_port",2});
-    for (auto& it:availableFus)
+    for (auto& it:NumberOfavailableFus)
     {
         std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
     }
@@ -1178,3 +1175,23 @@ int genOCM::generate_OCM(void)
 
     return 0;
 }
+
+void genOCM::assignNumberedNames(nodeMap &ocmReducedNodeMap)
+{
+    std::string type = "";
+    for (auto& n:ocmReducedNodeMap)
+    {
+        type = n.second.type;
+        if (NumberOfavailableFus.find(type) == NumberOfavailableFus.end()) /* the fu type is not existed before*/
+        {
+            n.second.nameNumbered = type+"_0";
+            NumberOfavailableFus.insert({type,1});
+        }
+        else /* the fu exists in prior*/
+        {
+            n.second.nameNumbered = type + "_" + std::to_string (NumberOfavailableFus.at(type));
+            NumberOfavailableFus.at(type) = NumberOfavailableFus.at(type) + 1;
+        }
+    }
+}
+

@@ -17,6 +17,7 @@ public:
     nodeMap IRreducedNodeMap;
     nodeMap ocmNodeMap;
     nodeMap ocmReducedNodeMap;
+    std::map <std::string,int> NumberOfavailableFus;
 
     void fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName);
     void fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap);
@@ -39,7 +40,7 @@ public:
     void supportHierarchy(nodeMap &ocmNodeMap);
     int retDissimilarity( nMapIt IRIt, nMapIt ocmIt);
     void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa);
-    void assignNumberednames(nodeMap &IRreducedNodeMap);
+    void assignNumberedNames(nodeMap &ocmReducedNodeMap);
     int generate_OCM(void);
 
 private:
