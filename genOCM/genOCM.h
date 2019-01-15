@@ -50,7 +50,8 @@ private:
     bool isItGateType(std::string type);
     bool isItShadowType(std::string type);
     void findPort(std::string line, mainNode &tempNode);
-
+    int returnInputWidth(std::string name);
+    void fillInputWidth(nodeMap &ocmNodeMap);
 
 };
 #endif /*GENOCM_H*/

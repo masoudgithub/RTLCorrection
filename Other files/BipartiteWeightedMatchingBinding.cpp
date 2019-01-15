@@ -57,6 +57,15 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
     // functional unit type -> number of functional units available
     std::map <std::string, int> &numFuncUnitsMap =
         this->alloc->getNumFuncUnits(this->Fp);
+    for (auto& n: mainGenOCM.NumberOfavailableFus)
+    {
+        cout<<"FU = "<<n.first<<" Num = "<<n.second<<endl;
+    }
+
+    for (auto& n: numFuncUnitsMap)
+    {
+        cout<<"leg FU = "<<n.first<<" Num = "<<n.second<<endl;
+    }
 
     // find the set of all instructions that will be shared
     std::set<Instruction*> Instructions;
@@ -259,7 +268,7 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
     // note: this is negative, a shared output register reduces the cost
     int outputRegisterSharableFactor = -5;
     std::string instStr = getValueStr(I);
-    std::cout<<"Instr name = " << instStr<< std::endl;
+    //std::cout<<"Instr name = " << instStr<< std::endl;
     for (int fu = 0; fu < numFuncUnitsAvail; fu++) {
         int weight = 0;
         std::string fuId = this->alloc->verilogNameFunction(this->Fp, this->Fp)

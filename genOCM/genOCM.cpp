@@ -18,6 +18,7 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
             tempNode.moduleName = moduleName;
             if(line.find("->",0) > 10000)
             {
+
                 // find alias
                 std::size_t pos1 = 0;
                 std::size_t pos2 = line.find(" ");
@@ -64,6 +65,7 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                 else if (tempNode.name.find("reg") < 10000)
                 {
                     tempNode.type = "reg";
+                    tempNode.inputWidth = returnInputWidth(tempNode.name);
                 }
                 else if (tempNode.name.find("$dff") < 10000)
                 {
@@ -108,6 +110,7 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                 else if ((tempNode.name.find("_bit") < 10000) && (tempNode.type != "reg"))
                 {
                     tempNode.type = "wire";
+                    tempNode.inputWidth = returnInputWidth(tempNode.name);
                 }
                 else if ((tempNode.name.find("<s") < 10000))
                 {
@@ -1014,6 +1017,7 @@ void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
         logFile<<"Node Type = "<<it.second.type<<std::endl<<std::endl;
         logFile<<"Node inOutType = "<<it.second.inOutType<<std::endl<<std::endl;
         logFile<<"Node numInputs = "<<it.second.numberOfInputs<<std::endl;
+        logFile<<"Node inputWidth = "<<it.second.inputWidth<<std::endl;
         for (int i = 0; i < it.second.numberOfInputs; i++)
         {
             logFile<<"Input Alias "<<i<<" = "<<it.second.inputAliases[i]<<std::endl;
@@ -1057,10 +1061,10 @@ void genOCM::findInstrAlias(std::string name, std::string type, nodeMap &IRNodeM
     {
         if ( (i.second.name == name) /*&& (i.second.type == type) */)
         {
-            std::cout<<"i.second.name = "<<i.second.name<<std::endl;
+            /*std::cout<<"i.second.name = "<<i.second.name<<std::endl;
             std::cout<<"         name = "<<name<<std::endl;
             std::cout<<"i.second.type = "<<i.second.type<<std::endl;
-            std::cout<<"         type = "<<type<<std::endl;
+            std::cout<<"         type = "<<type<<std::endl;*/
 
             if (i.second.type == type)
             {
@@ -1115,7 +1119,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 int genOCM::generate_OCM(void)
 {
     int argc = 5;
-    const char *argv[5] = {"", "IR.ll", "memory_controller.dot", "top.dot", "total.dot"};
+    const char *argv[5] = {"", "IR.ll", "top.dot", "memory_controller.dot", "total.dot"};
     genOCM mainGenOCM;
     // creating IR node map
     /*nodeMap IRNodeMap;
@@ -1141,6 +1145,7 @@ int genOCM::generate_OCM(void)
     }
     findConnections(argv[argc-1], ocmNodeMap);
     fillInOutType(ocmNodeMap);
+    fillInputWidth(ocmNodeMap);
     showNodeMap (ocmNodeMap, "OCM Node");
     //findAndReplaceDuplicatedNodes(ocmNodeMap);
     supportHierarchy(ocmNodeMap);
@@ -1149,11 +1154,6 @@ int genOCM::generate_OCM(void)
     findExpandedInputsOfReducedNodeMap(ocmNodeMap, ocmReducedNodeMap);
     assignNumberedNames(ocmReducedNodeMap);
     showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
-
-    for (auto& it:NumberOfavailableFus)
-    {
-        std::cout<< "FU = "<< it.first << " num = "<<it.second<<std::endl;
-    }
 
     nMapIt ittest1 = IRreducedNodeMap.begin();
     nMapIt ittest2 = ocmReducedNodeMap.begin();
@@ -1195,3 +1195,34 @@ void genOCM::assignNumberedNames(nodeMap &ocmReducedNodeMap)
     }
 }
 
+int genOCM::returnInputWidth(std::string name)
+{
+    int pos2 = name.find("_bit");
+    int pos1 = name.rfind("_",pos2-1);
+    std::string inputWidth = name.substr(pos1+1,pos2-pos1-1);
+    return std::stoi(inputWidth);
+}
+
+void genOCM::fillInputWidth(nodeMap &ocmNodeMap)
+{
+    std::cout<<"********************************\n";
+    int cnt = 0;
+    for (auto& o:ocmNodeMap)
+    {
+        for (int i = 0; i < o.second.numberOfInputs; i++)
+        {
+            std::string tempAlias = o.second.inputAliases[i];
+            if (ocmNodeMap.at(tempAlias).inputWidth > o.second.inputWidth)
+            {
+                o.second.inputWidth = ocmNodeMap.at(tempAlias).inputWidth;
+                std::cout<<ocmNodeMap.at(tempAlias).inputWidth<<std::endl;
+                cnt++;
+            }
+
+        }
+    }
+    if (cnt > 0)
+    {
+        fillInputWidth(ocmNodeMap);
+    }
+}
