@@ -53,6 +53,9 @@ private:
     int returnInputWidth(std::string name);
     void fillInputWidth(nodeMap &ocmNodeMap);
     void fillTypeComplete(nodeMap &ocmNodeMap);
+    void fillIRinputWidth(nodeMap &IRNodeMap);
+    void fillIRTypeComplete(nodeMap &IRNodeMap);
+
 
 };
 #endif /*GENOCM_H*/

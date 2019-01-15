@@ -1128,6 +1128,8 @@ int genOCM::generate_OCM(void)
     std::string IRFileName = argv[1];
     fillIRRowNodes(IRFileName.c_str(),IRNodeMap);
     fillEmptyAliases(IRNodeMap);
+    fillIRinputWidth(IRNodeMap);
+    fillIRTypeComplete(IRNodeMap);
     returnNumberOfreducedNodes(IRNodeMap, IRreducedNodeMap);
     findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
     showNodeMap (IRreducedNodeMap, "IR Reduced Node");
@@ -1256,3 +1258,40 @@ void genOCM::fillTypeComplete(nodeMap &ocmNodeMap)
     }
 }
 
+void genOCM::fillIRinputWidth(nodeMap &IRNodeMap)
+{
+    for (auto& o:IRNodeMap)
+    {
+        if(o.first.find("i8") < 10000)
+        {
+            o.second.inputWidth = 8;
+        }
+        else if (o.first.find("i16") < 10000)
+        {
+            o.second.inputWidth = 16;
+        }
+        else if (o.first.find("i32") < 10000)
+        {
+            o.second.inputWidth = 32;
+        }
+    }
+}
+void genOCM::fillIRTypeComplete(nodeMap &IRNodeMap)
+{
+    std::string temp = "";
+    for (auto& o:IRNodeMap)
+    {
+        if (o.second.type == "mul")
+        {
+            o.second.typeComplete = temp + "signed_multiply_" + std::to_string(o.second.inputWidth);
+        }
+        else if (o.second.type == "add")
+        {
+            o.second.typeComplete = temp + "signed_add_" + std::to_string(o.second.inputWidth);
+        }
+        else if (o.second.type == "sub")
+        {
+            o.second.typeComplete = temp + "signed_subtract_" + std::to_string(o.second.inputWidth);
+        }
+    }
+}
