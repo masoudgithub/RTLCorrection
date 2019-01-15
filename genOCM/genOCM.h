@@ -52,6 +52,7 @@ private:
     void findPort(std::string line, mainNode &tempNode);
     int returnInputWidth(std::string name);
     void fillInputWidth(nodeMap &ocmNodeMap);
+    void fillTypeComplete(nodeMap &ocmNodeMap);
 
 };
 #endif /*GENOCM_H*/

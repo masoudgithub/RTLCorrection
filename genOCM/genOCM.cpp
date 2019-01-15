@@ -1015,6 +1015,7 @@ void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
         logFile<<"Node Name = "<<it.second.name<<std::endl;
         logFile<<"Node NumberedName = "<<it.second.nameNumbered<<std::endl;
         logFile<<"Node Type = "<<it.second.type<<std::endl<<std::endl;
+        logFile<<"Node completeType = "<<it.second.typeComplete<<std::endl<<std::endl;
         logFile<<"Node inOutType = "<<it.second.inOutType<<std::endl<<std::endl;
         logFile<<"Node numInputs = "<<it.second.numberOfInputs<<std::endl;
         logFile<<"Node inputWidth = "<<it.second.inputWidth<<std::endl;
@@ -1146,6 +1147,7 @@ int genOCM::generate_OCM(void)
     findConnections(argv[argc-1], ocmNodeMap);
     fillInOutType(ocmNodeMap);
     fillInputWidth(ocmNodeMap);
+    fillTypeComplete(ocmNodeMap);
     showNodeMap (ocmNodeMap, "OCM Node");
     //findAndReplaceDuplicatedNodes(ocmNodeMap);
     supportHierarchy(ocmNodeMap);
@@ -1181,7 +1183,7 @@ void genOCM::assignNumberedNames(nodeMap &ocmReducedNodeMap)
     std::string type = "";
     for (auto& n:ocmReducedNodeMap)
     {
-        type = n.second.type;
+        type = n.second.typeComplete;
         if (NumberOfavailableFus.find(type) == NumberOfavailableFus.end()) /* the fu type is not existed before*/
         {
             n.second.nameNumbered = type+"_0";
@@ -1205,20 +1207,22 @@ int genOCM::returnInputWidth(std::string name)
 
 void genOCM::fillInputWidth(nodeMap &ocmNodeMap)
 {
-    std::cout<<"********************************\n";
+    /*std::cout<<"********************************\n";*/
     int cnt = 0;
     for (auto& o:ocmNodeMap)
     {
         for (int i = 0; i < o.second.numberOfInputs; i++)
         {
-            std::string tempAlias = o.second.inputAliases[i];
-            if (ocmNodeMap.at(tempAlias).inputWidth > o.second.inputWidth)
+            if ( (o.second.inputTypes[i] == "wire") || (o.second.inputTypes[i] == "reg"))
             {
-                o.second.inputWidth = ocmNodeMap.at(tempAlias).inputWidth;
-                std::cout<<ocmNodeMap.at(tempAlias).inputWidth<<std::endl;
-                cnt++;
+                std::string tempAlias = o.second.inputAliases[i];
+                if (ocmNodeMap.at(tempAlias).inputWidth > o.second.inputWidth)
+                {
+                    o.second.inputWidth = ocmNodeMap.at(tempAlias).inputWidth;
+                   /* std::cout<<ocmNodeMap.at(tempAlias).inputWidth<<std::endl;*/
+                    cnt++;
+                }
             }
-
         }
     }
     if (cnt > 0)
@@ -1226,3 +1230,29 @@ void genOCM::fillInputWidth(nodeMap &ocmNodeMap)
         fillInputWidth(ocmNodeMap);
     }
 }
+
+void genOCM::fillTypeComplete(nodeMap &ocmNodeMap)
+{
+    std::string temp;
+    for (auto& o:ocmNodeMap)
+    {
+        temp = "";
+        if(o.second.type == "add")
+        {
+            o.second.typeComplete = temp + "signed_" + "add_" + std::to_string(o.second.inputWidth);
+        }
+        else if (o.second.type == "mul")
+        {
+            o.second.typeComplete = temp + "signed_" + "multiply_" + std::to_string(o.second.inputWidth);
+        }
+        else if (o.second.type == "sub")
+        {
+            o.second.typeComplete = temp + "signed_" + "subtract_" + std::to_string(o.second.inputWidth);
+        }
+        else
+        {
+            o.second.typeComplete = o.second.type;
+        }
+    }
+}
+

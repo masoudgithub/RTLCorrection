@@ -10,6 +10,7 @@ public:
     std::string alias;
     std::string name;
     std::string nameNumbered;
+    std::string typeComplete;
     std::string type;
     std::string portA;
     std::string portB;
