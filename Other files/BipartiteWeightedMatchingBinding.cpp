@@ -273,6 +273,10 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         int weight = 0;
         std::string fuId = this->alloc->verilogNameFunction(this->Fp, this->Fp)
             + "_" + funcUnitType + "_" + utostr(fu);
+        std::string fuId1 = funcUnitType + "_" + utostr(fu);
+
+        int diss = mainGenOCM.findInstrFUmatch(instStr.substr(2,instStr.length()-2), funcUnitType, fuId1);
+        std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
 
         // check both operands
         for (User::op_iterator i = I->op_begin(), e =
