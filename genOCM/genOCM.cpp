@@ -1084,7 +1084,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
      std::cout <<ocmIt->second.type<<std::endl;
     }
     int numberOfDiffInputs = IRIt->second.expandedNumberOfInputs;
-    if (IRIt->second.type == ocmIt->second.type)
+    if (IRIt->second.typeComplete == ocmIt->second.typeComplete)
     {
         for (int i = 0; i < IRIt->second.expandedNumberOfInputs; i++)
         {
@@ -1162,10 +1162,23 @@ int genOCM::generate_OCM(void)
     nMapIt ittest1 = IRreducedNodeMap.begin();
     nMapIt ittest2 = ocmReducedNodeMap.begin();
     std::string str;
-    findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
 
-    ittest1 = IRreducedNodeMap.find(str);
-    int mindissimi = 100;
+    for (nMapIt it1 = IRreducedNodeMap.begin(); it1 != IRreducedNodeMap.end(); it1++)
+    {
+        for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++)
+        {
+            int dis = findInstrFUmatch(it1->second.name, it1->second.type, it2->second.nameNumbered);
+            if (dis < 100)
+                    {std::cout<<"dis "<< it1->second.name <<"   and   " << it2->second.nameNumbered<< "    = "<< dis<<std::endl;}
+        }
+
+    }
+
+    /*findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
+    ittest1 = IRreducedNodeMap.find(str);*/
+
+
+    /*int mindissimi = 100;
     int dissimTemp = 100;
     while ( ittest2 != ocmReducedNodeMap.end())
     {
@@ -1175,7 +1188,7 @@ int genOCM::generate_OCM(void)
             mindissimi = dissimTemp;
         }
         ittest2++;
-    }
+    }*/
 
     return 0;
 }
@@ -1293,5 +1306,39 @@ void genOCM::fillIRTypeComplete(nodeMap &IRNodeMap)
         {
             o.second.typeComplete = temp + "signed_subtract_" + std::to_string(o.second.inputWidth);
         }
+        else
+        {
+            o.second.typeComplete = o.second.type;
+        }
     }
 }
+
+int genOCM::findInstrFUmatch(std::string InstrName, std::string InstrType, std::string FUname)
+{
+
+    std::string InstrAlias;
+    findInstrAlias(InstrName, InstrType, IRreducedNodeMap, InstrAlias);
+    nMapIt InstrIt = IRreducedNodeMap.find(InstrAlias);
+
+    std::string FUalias = returnFUAlias(FUname, ocmReducedNodeMap);
+    nMapIt FUIt = ocmReducedNodeMap.find(FUalias);
+
+    int disSimValue = retDissimilarity(InstrIt, FUIt);
+    //std::cout<<"disSimValue = "<<disSimValue<<std::endl;
+    return disSimValue;
+}
+
+std::string genOCM::returnFUAlias(std::string FUname, nodeMap &ocmReducedNodeMap)
+{
+    std::string temp = "";
+    for (auto& o:ocmReducedNodeMap)
+    {
+        if (o.second.nameNumbered == FUname)
+        {
+            return o.first;
+        }
+        temp = o.first;
+    }
+    return temp;
+}
+

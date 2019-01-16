@@ -41,6 +41,7 @@ public:
     int retDissimilarity( nMapIt IRIt, nMapIt ocmIt);
     void findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa);
     void assignNumberedNames(nodeMap &ocmReducedNodeMap);
+    int findInstrFUmatch(std::string InstrName, std::string InstrType, std::string FUname);
     int generate_OCM(void);
 
 private:
@@ -55,7 +56,7 @@ private:
     void fillTypeComplete(nodeMap &ocmNodeMap);
     void fillIRinputWidth(nodeMap &IRNodeMap);
     void fillIRTypeComplete(nodeMap &IRNodeMap);
-
+    std::string returnFUAlias(std::string FUname, nodeMap &ocmReducedNodeMap);
 
 };
 #endif /*GENOCM_H*/
