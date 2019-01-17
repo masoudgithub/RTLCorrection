@@ -1058,6 +1058,7 @@ void genOCM::fillInOutType(nodeMap &ocmNodeMap)
 
 void genOCM::findInstrAlias(std::string name, std::string type, nodeMap &IRNodeMap, std::string &instrAlisa)
 {
+    instrAlisa = "NULL";
     for(auto& i: IRNodeMap)
     {
         if ( (i.second.name == name) /*&& (i.second.type == type) */)
@@ -1067,7 +1068,7 @@ void genOCM::findInstrAlias(std::string name, std::string type, nodeMap &IRNodeM
             std::cout<<"i.second.type = "<<i.second.type<<std::endl;
             std::cout<<"         type = "<<type<<std::endl;*/
 
-            if (i.second.type == type)
+            if (i.second.typeComplete == type)
             {
                 instrAlisa = i.first;
             }
@@ -1167,9 +1168,11 @@ int genOCM::generate_OCM(void)
     {
         for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++)
         {
-            int dis = findInstrFUmatch(it1->second.name, it1->second.type, it2->second.nameNumbered);
+            int dis = findInstrFUmatch(it1->second.name, it1->second.typeComplete, it2->second.nameNumbered);
             if (dis < 100)
-                    {std::cout<<"dis "<< it1->second.name <<"   and   " << it2->second.nameNumbered<< "    = "<< dis<<std::endl;}
+            {
+                std::cout<<"dis "<< it1->second.name <<"   and   " << it2->second.nameNumbered<< "    = "<< dis<<std::endl;
+            }
         }
 
     }
@@ -1318,10 +1321,21 @@ int genOCM::findInstrFUmatch(std::string InstrName, std::string InstrType, std::
 
     std::string InstrAlias;
     findInstrAlias(InstrName, InstrType, IRreducedNodeMap, InstrAlias);
+   /* std::cout<<"InstrAlias 1322 = "<<InstrAlias<<std::endl;*/
     nMapIt InstrIt = IRreducedNodeMap.find(InstrAlias);
+    if (InstrIt == IRreducedNodeMap.end())
+    {
+        std::cout<<"Instruction *"<< InstrName<<"* not found in IRreducedNodeMap"<<std::endl;
+        return 100;
+    }
 
     std::string FUalias = returnFUAlias(FUname, ocmReducedNodeMap);
     nMapIt FUIt = ocmReducedNodeMap.find(FUalias);
+    if (InstrIt == ocmReducedNodeMap.end())
+    {
+        std::cout<<"FU *"<<FUname<<"* not found in ocmReducedNodeMap"<<std::endl;
+        return 100;
+    }
 
     int disSimValue = retDissimilarity(InstrIt, FUIt);
     //std::cout<<"disSimValue = "<<disSimValue<<std::endl;

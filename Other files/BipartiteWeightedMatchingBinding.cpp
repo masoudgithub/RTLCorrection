@@ -57,6 +57,8 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
     // functional unit type -> number of functional units available
     std::map <std::string, int> &numFuncUnitsMap =
         this->alloc->getNumFuncUnits(this->Fp);
+
+    numFuncUnitsMap = mainGenOCM.NumberOfavailableFus;
     for (auto& n: mainGenOCM.NumberOfavailableFus)
     {
         cout<<"FU = "<<n.first<<" Num = "<<n.second<<endl;
@@ -66,6 +68,7 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
     {
         cout<<"leg FU = "<<n.first<<" Num = "<<n.second<<endl;
     }
+
 
     // find the set of all instructions that will be shared
     std::set<Instruction*> Instructions;
@@ -112,8 +115,6 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
                     assigned);
         }
     }
-
-
 
     out << "\n";
 }
@@ -277,6 +278,7 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
 
         int diss = mainGenOCM.findInstrFUmatch(instStr.substr(2,instStr.length()-2), funcUnitType, fuId1);
         std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
+        weight += diss*20;
 
         // check both operands
         for (User::op_iterator i = I->op_begin(), e =
