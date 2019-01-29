@@ -40,6 +40,7 @@
 #include <iostream>
 #include <iomanip>
 
+#define RTLCorrect
 
 using namespace llvm;
 using namespace legup;
@@ -51,13 +52,15 @@ namespace legup {
 void BipartiteWeightedMatchingBinding::operatorAssignment() {
 
 
-    mainGenOCM.generate_OCM();
 
     // numFuncUnitsMap maps:
     // functional unit type -> number of functional units available
     std::map <std::string, int> &numFuncUnitsMap =
         this->alloc->getNumFuncUnits(this->Fp);
 
+#ifdef RTLCorrect
+
+    mainGenOCM.generate_OCM();
     numFuncUnitsMap = mainGenOCM.NumberOfavailableFus;
     for (auto& n: mainGenOCM.NumberOfavailableFus)
     {
@@ -68,6 +71,8 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
     {
         cout<<"leg FU = "<<n.first<<" Num = "<<n.second<<endl;
     }
+#endif
+
 
 
     // find the set of all instructions that will be shared
@@ -275,10 +280,11 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         std::string fuId = this->alloc->verilogNameFunction(this->Fp, this->Fp)
             + "_" + funcUnitType + "_" + utostr(fu);
         std::string fuId1 = funcUnitType + "_" + utostr(fu);
-
+#ifdef RTLCorrect
         int diss = mainGenOCM.findInstrFUmatch(instStr.substr(2,instStr.length()-2), funcUnitType, fuId1);
         std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
-        weight += diss*20;
+        weight += diss*50;
+#endif
 
         // check both operands
         for (User::op_iterator i = I->op_begin(), e =
