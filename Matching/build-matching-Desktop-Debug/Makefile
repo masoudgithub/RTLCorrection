@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG
 CFLAGS        = -m64 -pipe -g -Wall -W -fPIE $(DEFINES)
-CXXFLAGS      = -m64 -pipe -g -Wall -W -fPIE $(DEFINES)
+CXXFLAGS      = -m64 -pipe -std=c++11 -g -Wall -W -fPIE $(DEFINES)
 INCPATH       = -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I../matching -I.
 LINK          = g++
 LFLAGS        = -m64
@@ -46,9 +46,13 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../matching/main.cpp \
-		../matching/Hungarian.cpp 
+		../matching/Hungarian.cpp \
+		../matching/genOCM.cpp \
+		../matching/mainNode.cpp 
 OBJECTS       = main.o \
-		Hungarian.o
+		Hungarian.o \
+		genOCM.o \
+		mainNode.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -283,11 +287,20 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../matching/main.cpp ../matching/Hungarian.h
+main.o: ../matching/main.cpp ../matching/genOCM.h \
+		../matching/mainNode.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../matching/main.cpp
 
 Hungarian.o: ../matching/Hungarian.cpp ../matching/Hungarian.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Hungarian.o ../matching/Hungarian.cpp
+
+genOCM.o: ../matching/genOCM.cpp ../matching/genOCM.h \
+		../matching/mainNode.h \
+		../matching/Hungarian.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o genOCM.o ../matching/genOCM.cpp
+
+mainNode.o: ../matching/mainNode.cpp ../matching/mainNode.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainNode.o ../matching/mainNode.cpp
 
 ####### Install
 
