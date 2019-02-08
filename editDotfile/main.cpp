@@ -15,7 +15,7 @@ int main()
     std::ifstream dotfile;
     std::ofstream outfile;
     outfile.open("outfile.dot", std::ofstream::out);
-    dotfile.open("memory_conroller.dot",std::ifstream::in);
+    dotfile.open("memory_controller.dot",std::ifstream::in);
 
     if (dotfile.is_open())
     {

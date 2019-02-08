@@ -14,8 +14,9 @@ public:
     typedef nodeMap::iterator nMapIt;
     typedef std::vector< std::vector<int> > Table;
 
-    nodeMap IRNodeMap;
     nodeMap IRreducedNodeMap;
+    nodeMap c_ocmNodeMap;
+    nodeMap c_ocmReducedNodeMap;
     nodeMap ocmNodeMap;
     nodeMap ocmReducedNodeMap;
     std::map <std::string,int> NumberOfavailableFus;

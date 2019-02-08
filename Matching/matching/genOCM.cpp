@@ -1118,40 +1118,29 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
         return numberOfDiffInputs;
     }
     else
-        return 100;
+        return 1000;
 }
 
 int genOCM::generate_OCM(void)
 {
-    int argc = 5;
-    int numRedNode = 0;
-    const char *argv[5] = {"", "IR.ll", "top.dot", "memory_controller.dot", "total.dot"};
+
+    int numRedNode = 0, c_numRedNode = 0;
+    const char *argv[6] = {"main.dot", "memory_controller.dot", "total.dot", "c_main.dot", "c_memory_controller.dot", "c_total.dot"};
     genOCM mainGenOCM;
-    // creating IR node map
-    /*nodeMap IRNodeMap;
-    nodeMap IRreducedNodeMap;*/
-    std::string IRFileName = argv[1];
-    fillIRRowNodes(IRFileName.c_str(),IRNodeMap);
-    fillEmptyAliases(IRNodeMap);
-    fillIRinputWidth(IRNodeMap);
-    fillIRTypeComplete(IRNodeMap);
-    returnNumberOfreducedNodes(IRNodeMap, IRreducedNodeMap);
-    findExpandedInputsOfReducedNodeMap(IRNodeMap, IRreducedNodeMap);
-    showNodeMap (IRreducedNodeMap, "IR Reduced Node");
-    // creating OCM node Map
-    /*nodeMap ocmNodeMap;
-    nodeMap ocmReducedNodeMap;*/
+
     std::string dotFileName;
-    nMapIt ite;
-    for (int i = 2; i < argc-1; i++)
-    {
-        dotFileName = argv[i];
-        std::size_t pos = dotFileName.find(".");
-        std::string moduleName = dotFileName.substr(0,pos);
-        fillOCMRowNodes(dotFileName.c_str(), ocmNodeMap, moduleName);
-        //findConnections(dotFileName.c_str(), ocmNodeMap);
-    }
-    findConnections(argv[argc-1], ocmNodeMap);
+    std::size_t pos;
+    std::string moduleName;
+
+    dotFileName = argv[0];
+    pos = dotFileName.find(".");
+    moduleName = dotFileName.substr(0,pos);
+    fillOCMRowNodes(dotFileName.c_str(), ocmNodeMap, moduleName);
+    dotFileName = argv[1];
+    pos = dotFileName.find(".");
+    moduleName = dotFileName.substr(0,pos);
+    fillOCMRowNodes(dotFileName.c_str(), ocmNodeMap, moduleName);
+    findConnections(argv[2], ocmNodeMap);
     fillInOutType(ocmNodeMap);
     fillInputWidth(ocmNodeMap);
     fillTypeComplete(ocmNodeMap);
@@ -1164,23 +1153,58 @@ int genOCM::generate_OCM(void)
     assignNumberedNames(ocmReducedNodeMap);
     showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
 
-    hungarian_problem_t p;
-    Table weights(numRedNode, std::vector<int>(numRedNode));
-    Table assignments(numRedNode, std::vector<int>(numRedNode));
+    dotFileName = argv[3];
+    pos = dotFileName.find(".");
+    moduleName = dotFileName.substr(0,pos);
+    fillOCMRowNodes(dotFileName.c_str(), c_ocmNodeMap, moduleName);
+    dotFileName = argv[4];
+    pos = dotFileName.find(".");
+    moduleName = dotFileName.substr(0,pos);
+    fillOCMRowNodes(dotFileName.c_str(), c_ocmNodeMap, moduleName);
+    findConnections(argv[5], c_ocmNodeMap);
+    fillInOutType(c_ocmNodeMap);
+    fillInputWidth(c_ocmNodeMap);
+    fillTypeComplete(c_ocmNodeMap);
+    showNodeMap (c_ocmNodeMap, "OCM Node");
+    //findAndReplaceDuplicatedNodes(ocmNodeMap);
+    supportHierarchy(c_ocmNodeMap);
+    showNodeMap (c_ocmNodeMap, "OCM dup Node");
+    c_numRedNode = returnNumberOfreducedNodes(c_ocmNodeMap, c_ocmReducedNodeMap);
+    findExpandedInputsOfReducedNodeMap(c_ocmNodeMap, c_ocmReducedNodeMap);
+    assignNumberedNames(c_ocmReducedNodeMap);
+    showNodeMap (c_ocmReducedNodeMap, "OCM Reduced Node");
 
-
-    int i = 0 , j = 0;
-    for (nMapIt it1 = ocmReducedNodeMap.begin(); it1 != ocmReducedNodeMap.end(); it1++)
+    int max_numNode = c_numRedNode;
+    if (numRedNode > c_numRedNode)
     {
+        max_numNode = numRedNode;
+    }
 
-        for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++)
+    hungarian_problem_t p;
+    Table weights(max_numNode, std::vector<int>(max_numNode));
+    Table assignments(max_numNode, std::vector<int>(max_numNode));
+    for (int i = 0; i < max_numNode; i++)
+    {
+        for (int j = 0; j < max_numNode; j++)
+        {
+            weights[i][j] = 100;
+        }
+    }
+
+    {
+        int i = 0 , j = 0;
+        for (nMapIt it1 = ocmReducedNodeMap.begin(); it1 != ocmReducedNodeMap.end(); it1++)
         {
 
-            weights[i][j] = retDissimilarity(it1, it2);
-            j++;
+            for (nMapIt it2 = c_ocmReducedNodeMap.begin(); it2 != c_ocmReducedNodeMap.end(); it2++)
+            {
+
+                weights[i][j] = retDissimilarity(it1, it2);
+                j++;
+            }
+            j = 0;
+            i++;
         }
-        j = 0;
-        i++;
     }
 
     int rows = numRedNode;
@@ -1204,6 +1228,29 @@ int genOCM::generate_OCM(void)
     for(int i = 0; i < rows; i++) {
         for(int j = 0; j < cols; j++) {
             assignments[i][j] = p.assignment[i][j];
+        }
+    }
+    int matched = 0;
+    int cost = 0;
+    int num_notMatched = 0;
+    for (int i = 0; i < max_numNode; i++)
+    {
+        matched = 0;
+        for (int j = 0; j < max_numNode; j++)
+        {
+            if (assignments[i][j] == 1)
+            {
+                cost += weights[i][j];
+                matched = 1;
+                if (weights[i][j] == 1000)
+                {
+                    std::cout<<i<< " matcged to "<<j << " with cost "<<weights[i][j]<<std::endl;
+                }
+            }
+        }
+        if (!matched)
+        {
+            num_notMatched++;
         }
     }
 
