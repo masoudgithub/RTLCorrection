@@ -461,7 +461,7 @@ void genOCM::fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap
 bool genOCM::isItMainType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
-        (type == "sub")  /*|| (type == "reg") */||
+        (type == "sub")  || (type == "reg") ||
         (type == "mem_dual_port"))
     {
         return true;
@@ -476,7 +476,7 @@ bool genOCM::isItStopType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
         (type == "sub") || (type == "value") ||
-        (type == "mem_dual_port") /*|| (type == "reg")*/)
+        (type == "mem_dual_port") || (type == "reg"))
      /*|| (type == "reg"))*/
     {
         return true;
@@ -1187,16 +1187,16 @@ int genOCM::generate_OCM(void)
     {
         for (int j = 0; j < max_numNode; j++)
         {
-            weights[i][j] = 100;
+            weights[i][j] = 2000;
         }
     }
 
     {
         int i = 0 , j = 0;
-        for (nMapIt it1 = ocmReducedNodeMap.begin(); it1 != ocmReducedNodeMap.end(); it1++)
+        for (nMapIt it1 = c_ocmReducedNodeMap.begin(); it1 != c_ocmReducedNodeMap.end(); it1++)
         {
 
-            for (nMapIt it2 = c_ocmReducedNodeMap.begin(); it2 != c_ocmReducedNodeMap.end(); it2++)
+            for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++)
             {
 
                 weights[i][j] = retDissimilarity(it1, it2);
@@ -1207,9 +1207,9 @@ int genOCM::generate_OCM(void)
         }
     }
 
-    int rows = numRedNode;
+    int rows = max_numNode;
     //assert(rows > 0);
-    int cols = numRedNode;
+    int cols = max_numNode;
     //assert(cols > 0);
 
     // not necessary but good to enforce
