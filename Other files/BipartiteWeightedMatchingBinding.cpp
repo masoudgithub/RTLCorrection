@@ -61,8 +61,21 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
 #ifdef RTLCorrect
 
     mainGenOCM.generate_OCM();
-    numFuncUnitsMap = mainGenOCM.NumberOfavailableFus;
-    for (auto& n: mainGenOCM.NumberOfavailableFus)
+    std::map <std::string, int> &numFuncUnitsMap2 = mainGenOCM.NumberOfavailableFus;
+
+    for (std::map<std::string, int>::iterator f = numFuncUnitsMap.begin(),
+            fe = numFuncUnitsMap.end(); f != fe; ++f) {
+        for (std::map<std::string, int>::iterator f2 = numFuncUnitsMap2.begin(),
+                fe2 = numFuncUnitsMap2.end(); f2 != fe2; ++f2) {
+            if (f->first == f2->first) {
+                if (f2->second > f->second) {
+                    f->second = f2->second;
+                }
+            }
+        }
+    }
+
+    for (auto& n: numFuncUnitsMap2)
     {
         cout<<"FU = "<<n.first<<" Num = "<<n.second<<endl;
     }
@@ -283,7 +296,8 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
 #ifdef RTLCorrect
         int diss = mainGenOCM.findInstrFUmatch(instStr.substr(2,instStr.length()-2), funcUnitType, fuId1);
         std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
-        weight += diss*50;
+        out<<"dis "<< instStr <<"   and  " << fuId1 << "    = "<< diss<<"\n";
+        weight += diss*10;
 #endif
 
         // check both operands

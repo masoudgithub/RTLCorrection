@@ -1121,7 +1121,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 int genOCM::generate_OCM(void)
 {
     int argc = 5;
-    const char *argv[5] = {"", "IR.ll", "top.dot", "memory_controller.dot", "total.dot"};
+    const char *argv[5] = {"", "fir.ll", "main.dot", "memory_controller.dot", "total.dot"};
     genOCM mainGenOCM;
     // creating IR node map
     /*nodeMap IRNodeMap;
