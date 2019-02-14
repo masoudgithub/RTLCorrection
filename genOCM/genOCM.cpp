@@ -8,25 +8,30 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
 
     std::string line;
     std::ifstream schematicFile (fileName);
-
+    int cnt = 0;
     if (schematicFile.is_open())
     {
-        std::cout<<"schematicFile file is open for the first time in fillRowNodes"<<std::endl;
+        std::cout<<"schematicFile file is open for the first time in fillOCMRowNodes"<<std::endl;
         while (getline (schematicFile,line))
         {
             mainNode tempNode;
             tempNode.moduleName = moduleName;
             if(line.find("->",0) > 10000)
             {
-
+                cnt++;
+                std::cout<<"\ncnt = "<<cnt<<std::endl;
                 // find alias
+                 std::cout<<"23"<<std::endl;
                 std::size_t pos1 = 0;
                 std::size_t pos2 = line.find(" ");
                 tempNode.alias = line.substr(pos1,pos2-pos1);
                 //std::cout<<"rowNodes[node].alias = "<<tempNode.alias<<std::endl;
                 // find name
+                 std::cout<<"29"<<std::endl;
                 pos1 = line.find("\"",0);
                 pos2 = line.find("\"",pos1+1);
+                std::cout<<"pos1 = "<<pos1<<" pos2 = "<<pos2<<std::endl;
+                std::cout<<"line = "<<line<<std::endl;
                 if ((pos1 < 10000) && (pos2 < 10000))
                 {
                     tempNode.name = line.substr(pos1+1,pos2-pos1-1);
@@ -36,7 +41,7 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                     tempNode.name = "";
                 }
                 //std::cout<<"rowNodes[node].name = "<<tempNode.name<<std::endl;
-
+                std::cout<<"39"<<std::endl;
                 // find type
                 if (tempNode.name.find("$add") < 10000)
                 {
@@ -129,8 +134,10 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                     tempNode.type = "NON";
                 }
                 //finding ports A, B, D, S, CLK
+                std::cout<<"type found"<<std::endl;
                 findPort(line,tempNode);
                 ocmNodeMap.insert(std::pair<std::string,mainNode>(tempNode.alias,tempNode));
+                std::cout<<"node added"<<std::endl;
             }
         }
         schematicFile.close();
@@ -139,6 +146,7 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
     {
         std::cout<<"Error: there is no " <<fileName<<" file."<<std::endl;
     }
+    std::cout<<"filling ocm row nodes done. "<<std::endl;
 }
 
 
@@ -150,7 +158,7 @@ void genOCM::fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
     int nodeID = 0;
         if (IRFile.is_open())
         {
-            std::cout<<"schematicFile file is open for the first time in fillRowNodes"<<std::endl;
+            std::cout<<"IR file is open for the first time in fillIRRowNodes"<<std::endl;
             while (getline (IRFile,line))
             {
                 mainNode tempNode1;
@@ -221,6 +229,7 @@ void genOCM::fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
         {
             std::cout <<"Error: there is no "<<fileName<<" file."<<std::endl;
         }
+        std::cout<<"filling ir nodes done. "<<std::endl;
 }
 
 void genOCM::findConnections(const char *fileName, nodeMap &ocmNodeMap)
@@ -315,7 +324,7 @@ void genOCM::findConnections(const char *fileName, nodeMap &ocmNodeMap)
     }
     else
     {
-        std::cout<<"Error: cannot open the dot file!";
+        std::cout<<"Error: cannot open the dot file!\n";
     }
     schematicFile.close();
 
@@ -333,6 +342,7 @@ void genOCM::findConnections(const char *fileName, nodeMap &ocmNodeMap)
         }
         std::cout<<std::endl;
     }*/
+     std::cout<<"filling connections done.\n";
 }
 
 int genOCM::returnNumberOfreducedNodes(nodeMap &ocmNodeMap, nodeMap &reducedNodeMap)
@@ -1079,11 +1089,6 @@ void genOCM::findInstrAlias(std::string name, std::string type, nodeMap &IRNodeM
 int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 {
 
- /*   std::cout<< IRIt->second.type <<std::endl;*/
-    if (IRIt->second.type == "mul")
-    {
-     std::cout <<ocmIt->second.type<<std::endl;
-    }
     int numberOfDiffInputs = IRIt->second.expandedNumberOfInputs;
     if (IRIt->second.typeComplete == ocmIt->second.typeComplete)
     {
@@ -1325,7 +1330,7 @@ int genOCM::findInstrFUmatch(std::string InstrName, std::string InstrType, std::
     nMapIt InstrIt = IRreducedNodeMap.find(InstrAlias);
     if (InstrIt == IRreducedNodeMap.end())
     {
-        std::cout<<"Instruction *"<< InstrName<<"* not found in IRreducedNodeMap"<<std::endl;
+        //std::cout<<"Instruction *"<< InstrName<<"* not found in IRreducedNodeMap"<<std::endl;
         return 100;
     }
 
@@ -1333,7 +1338,7 @@ int genOCM::findInstrFUmatch(std::string InstrName, std::string InstrType, std::
     nMapIt FUIt = ocmReducedNodeMap.find(FUalias);
     if (InstrIt == ocmReducedNodeMap.end())
     {
-        std::cout<<"FU *"<<FUname<<"* not found in ocmReducedNodeMap"<<std::endl;
+        //std::cout<<"FU *"<<FUname<<"* not found in ocmReducedNodeMap"<<std::endl;
         return 100;
     }
 

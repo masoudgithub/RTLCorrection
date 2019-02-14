@@ -308,6 +308,11 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
             if (assigned.existingOperands[fuId].find(operand) ==
                     assigned.existingOperands[fuId].end()) {
                 weight += newMuxInputsFactor;
+#ifdef RTLCorrect
+                if (diss == 0){
+                    weight -= newMuxInputsFactor;
+                }
+#endif
             } else {
                 std::string instStr = getValueStr(I);
                 limitString(instStr, 30);
@@ -342,7 +347,11 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         }
 
         weight += existingMuxInputsFactor * assigned.muxInputs[fuId];
-
+#ifdef RTLCorrect
+                if (diss == 0){
+                    weight -= existingMuxInputsFactor * assigned.muxInputs[fuId];
+                }
+#endif
         weights[fu][operationIdx] = weight;
 
         //errs() << "weight " << fu << " " << operationIdx << " = " <<
