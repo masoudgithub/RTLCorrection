@@ -1,5 +1,5 @@
 build-editDotfile-Desktop-Debug/*
 build-genOCM-Desktop-Debug/*
-*.pro*
+*.pro.user*
 *.o
 *~*

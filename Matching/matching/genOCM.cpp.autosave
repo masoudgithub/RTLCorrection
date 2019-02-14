@@ -1187,7 +1187,7 @@ int genOCM::generate_OCM(void)
     {
         for (int j = 0; j < max_numNode; j++)
         {
-            weights[i][j] = Not_Matched_Cost;
+            weights[i][j] = 2000;
         }
     }
 
@@ -1236,60 +1236,27 @@ int genOCM::generate_OCM(void)
 
     nMapIt it1 = c_ocmReducedNodeMap.begin();
     nMapIt it2 = ocmReducedNodeMap.begin();
-    std::cout<<std::endl;
+
     for (int i = 0; i < max_numNode; i++)
     {
         matched = 0;
         it2 = ocmReducedNodeMap.begin();
-        for (int j = 0; j < max_numNode; j++) {
-            if (assignments[i][j] == 1) {
+        for (int j = 0; j < max_numNode; j++)
+        {
+            if (assignments[i][j] == 1)
+            {
                 cost += weights[i][j];
                 matched = 1;
-                if (weights[i][j] == Not_Matched_Cost) {
-                    std::cout<<it1->second.nameNumbered<< " Not Matched"<<std::endl;
+                if (weights[i][j] == 1000)
+                {
+                    std::cout<<it1->second.<< " matcged to "<<j << " with cost "<<weights[i][j]<<std::endl;
                 }
             }
-            it2++;
         }
-        it1++;
-    }
-
-    std::cout<<std::endl;
-    it1 = c_ocmReducedNodeMap.begin();
-    for (int i = 0; i < max_numNode; i++)
-    {
-        matched = 0;
-        it2 = ocmReducedNodeMap.begin();
-        for (int j = 0; j < max_numNode; j++) {
-            if (assignments[i][j] == 1) {
-
-                matched = 1;
-                if (weights[i][j] == 0) {
-                    std::cout<<it1->second.nameNumbered<< " matched to "<<it1->second.nameNumbered << " with cost \t"<<weights[i][j]<<std::endl;
-                }
-            }
-            it2++;
+        if (!matched)
+        {
+            num_notMatched++;
         }
-        it1++;
-    }
-
-    std::cout<<std::endl;
-    it1 = c_ocmReducedNodeMap.begin();
-    for (int i = 0; i < max_numNode; i++)
-    {
-        matched = 0;
-        it2 = ocmReducedNodeMap.begin();
-        for (int j = 0; j < max_numNode; j++) {
-            if (assignments[i][j] == 1) {
-
-                matched = 1;
-                if ((weights[i][j] < Not_Matched_Cost) && (weights[i][j] > 0)) {
-                    std::cout<<it1->second.nameNumbered<< " matched to "<<it1->second.nameNumbered << " with cost "<<weights[i][j]<<std::endl;
-                }
-            }
-            it2++;
-        }
-        it1++;
     }
 
     /* free used memory */

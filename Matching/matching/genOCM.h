@@ -8,6 +8,8 @@
 #include <regex>
 #include "mainNode.h"
 
+#define Not_Matched_Cost 1000
+
 class genOCM : public mainNode {
 public:
     typedef std::map<std::string,mainNode> nodeMap;
