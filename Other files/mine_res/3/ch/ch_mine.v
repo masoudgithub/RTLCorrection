@@ -1413,4 +1413,3 @@ module hex_digits(x, hex_LEDs);
                             (~x[3] & x[2] & x[1] & x[0]);
     
 endmodule
-

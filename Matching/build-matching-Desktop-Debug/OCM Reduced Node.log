@@ -2,7 +2,7 @@
 Node Alias= 0c94
 Node Module = c_memory_controller
 Node Name = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Node NumberedName = mem_dual_port_1
+Node NumberedName = mem_dual_port_0
 Node Type = mem_dual_port
 
 Node completeType = mem_dual_port
@@ -46,40 +46,40 @@ Input Name 10 =
 Input Type 10 = 
 
 Node numExtInputs = 14
-Extended Input Alias 0 = v59
+Extended Input Alias 0 = v69
 Extended Input Name  0 = 64'0000000000000000000000000000000000000000000000000000000000000000
 Extended Input Type  0 = value
-Extended Input Alias 1 = v61
+Extended Input Alias 1 = v71
 Extended Input Name  1 = 64'0000000000000000000000000000000000000000000000000000000000000000
 Extended Input Type  1 = value
 Extended Input Alias 2 = 0n11
 Extended Input Name  2 = clk_1_bit
 Extended Input Type  2 = port
-Extended Input Alias 3 = v30
+Extended Input Alias 3 = v32
 Extended Input Name  3 = 0
 Extended Input Type  3 = value
-Extended Input Alias 4 = v31
+Extended Input Alias 4 = v33
 Extended Input Name  4 = 16777216
 Extended Input Type  4 = value
-Extended Input Alias 5 = v29
+Extended Input Alias 5 = v31
 Extended Input Name  5 = 16777224
 Extended Input Type  5 = value
 Extended Input Alias 6 = 0v9
 Extended Input Name  6 = 9'000000010
 Extended Input Type  6 = value
-Extended Input Alias 7 = v37
+Extended Input Alias 7 = v39
 Extended Input Name  7 = 0
 Extended Input Type  7 = value
-Extended Input Alias 8 = v38
+Extended Input Alias 8 = v40
 Extended Input Name  8 = 16777220
 Extended Input Type  8 = value
 Extended Input Alias 9 = 0v11
 Extended Input Name  9 = 9'000000010
 Extended Input Type  9 = value
-Extended Input Alias 10 = v63
+Extended Input Alias 10 = v73
 Extended Input Name  10 = 1'0
 Extended Input Type  10 = value
-Extended Input Alias 11 = v65
+Extended Input Alias 11 = v75
 Extended Input Name  11 = 1'0
 Extended Input Type  11 = value
 Extended Input Alias 12 = 0v16
@@ -93,7 +93,7 @@ Extended Input Type  13 = value
 Node Alias= 0n11
 Node Module = c_memory_controller
 Node Name = clk_1_bit
-Node NumberedName = port_8
+Node NumberedName = port_0
 Node Type = port
 
 Node completeType = port
@@ -109,87 +109,148 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= 0n43
-Node Module = c_memory_controller
-Node Name = select_inData_reg_a_2_bit
-Node NumberedName = reg_9
-Node Type = reg
+Node Alias= c111
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$128\n$add|{<p110> Y}}
+Node NumberedName = signed_add_32_0
+Node Type = add
 
-Node completeType = reg
+Node completeType = signed_add_32
 
 Node inOutType = NON
 
 Node numInputs = 3
-Node inputWidth = 2
-Input Alias 0 = 0x12
-Input Name 0 = <0s0> 0:0 - 1:1 
-Input Type 0 = NON
-Input Alias 1 = 0x22
-Input Name 1 = <0s0> 0:0 - 0:0 
-Input Type 1 = NON
+Node inputWidth = 32
+Input Alias 0 = n71
+Input Name 0 = main_signed_add_32_0_op0_32_bit
+Input Type 0 = wire
+Input Alias 1 = n72
+Input Name 1 = main_signed_add_32_0_op1_32_bit
+Input Type 1 = wire
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
-Node numExtInputs = 5
-Extended Input Alias 0 = 0n43
-Extended Input Name  0 = select_inData_reg_a_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = v30
-Extended Input Name  1 = 0
+Node numExtInputs = 10
+Extended Input Alias 0 = v32
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = v33
+Extended Input Name  1 = 16777216
 Extended Input Type  1 = value
 Extended Input Alias 2 = v31
-Extended Input Name  2 = 16777216
+Extended Input Name  2 = 16777224
 Extended Input Type  2 = value
-Extended Input Alias 3 = v29
-Extended Input Name  3 = 16777224
+Extended Input Alias 3 = 0v9
+Extended Input Name  3 = 9'000000010
 Extended Input Type  3 = value
-Extended Input Alias 4 = 0v9
-Extended Input Name  4 = 9'000000010
-Extended Input Type  4 = value
+Extended Input Alias 4 = 0c94
+Extended Input Name  4 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  4 = mem_dual_port
+Extended Input Alias 5 = v37
+Extended Input Name  5 = 1'0
+Extended Input Type  5 = value
+Extended Input Alias 6 = v38
+Extended Input Name  6 = 1'1
+Extended Input Type  6 = value
+Extended Input Alias 7 = v30
+Extended Input Name  7 = 1'1
+Extended Input Type  7 = value
+Extended Input Alias 8 = c112
+Extended Input Name  8 = {{<p108> A|<p109> B}|$144\n$add|{<p110> Y}}
+Extended Input Type  8 = add
+Extended Input Alias 9 = c128
+Extended Input Name  9 = {{<p108> A|<p109> B}|$157\n$mul|{<p110> Y}}
+Extended Input Type  9 = mul
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= 0n44
-Node Module = c_memory_controller
-Node Name = select_inData_reg_b_2_bit
-Node NumberedName = reg_10
-Node Type = reg
+Node Alias= c112
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$144\n$add|{<p110> Y}}
+Node NumberedName = signed_add_32_1
+Node Type = add
 
-Node completeType = reg
+Node completeType = signed_add_32
 
 Node inOutType = NON
 
 Node numInputs = 3
-Node inputWidth = 2
-Input Alias 0 = 0x13
-Input Name 0 = <0s0> 0:0 - 1:1 
-Input Type 0 = NON
-Input Alias 1 = 0x23
-Input Name 1 = <0s0> 0:0 - 0:0 
-Input Type 1 = NON
+Node inputWidth = 32
+Input Alias 0 = n74
+Input Name 0 = main_signed_add_32_1_op0_32_bit
+Input Type 0 = wire
+Input Alias 1 = n75
+Input Name 1 = main_signed_add_32_1_op1_32_bit
+Input Type 1 = wire
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
 Node numExtInputs = 4
-Extended Input Alias 0 = 0n44
-Extended Input Name  0 = select_inData_reg_b_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = v37
+Extended Input Alias 0 = c182
+Extended Input Name  0 = {{<p108> A|<p109> B}|$162\n$sub|{<p110> Y}}
+Extended Input Type  0 = sub
+Extended Input Alias 1 = c111
+Extended Input Name  1 = {{<p108> A|<p109> B}|$128\n$add|{<p110> Y}}
+Extended Input Type  1 = add
+Extended Input Alias 2 = c129
+Extended Input Name  2 = {{<p108> A|<p109> B}|$169\n$mul|{<p110> Y}}
+Extended Input Type  2 = mul
+Extended Input Alias 3 = c127
+Extended Input Name  3 = {{<p108> A|<p109> B}|$137\n$mul|{<p110> Y}}
+Extended Input Type  3 = mul
+##################################################################################
+**************************** OCM Reduced Node ***********************************************
+Node Alias= c113
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$148\n$add|{<p110> Y}}
+Node NumberedName = signed_add_32_2
+Node Type = add
+
+Node completeType = signed_add_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n52
+Input Name 0 = main_0_12_32_bit
+Input Type 0 = wire
+Input Alias 1 = n59
+Input Name 1 = main_0_2_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 7
+Extended Input Alias 0 = c112
+Extended Input Name  0 = {{<p108> A|<p109> B}|$144\n$add|{<p110> Y}}
+Extended Input Type  0 = add
+Extended Input Alias 1 = v39
 Extended Input Name  1 = 0
 Extended Input Type  1 = value
-Extended Input Alias 2 = v38
+Extended Input Alias 2 = v40
 Extended Input Name  2 = 16777220
 Extended Input Type  2 = value
 Extended Input Alias 3 = 0v11
 Extended Input Name  3 = 9'000000010
 Extended Input Type  3 = value
+Extended Input Alias 4 = 0c94
+Extended Input Name  4 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  4 = mem_dual_port
+Extended Input Alias 5 = v37
+Extended Input Name  5 = 1'0
+Extended Input Type  5 = value
+Extended Input Alias 6 = v38
+Extended Input Name  6 = 1'1
+Extended Input Type  6 = value
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= c110
+Node Alias= c127
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$126\n$mul|{<p94> Y}}
-Node NumberedName = signed_multiply_32_2
+Node Name = {{<p108> A|<p109> B}|$137\n$mul|{<p110> Y}}
+Node NumberedName = signed_multiply_32_0
 Node Type = mul
 
 Node completeType = signed_multiply_32
@@ -198,47 +259,62 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = n67
+Input Alias 0 = n80
 Input Name 0 = main_signed_multiply_32_0_op0_32_bit
 Input Type 0 = wire
-Input Alias 1 = n68
+Input Alias 1 = n81
 Input Name 1 = main_signed_multiply_32_0_op1_32_bit
 Input Type 1 = wire
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
-Node numExtInputs = 8
-Extended Input Alias 0 = 0n43
-Extended Input Name  0 = select_inData_reg_a_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = 0c94
-Extended Input Name  1 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  1 = mem_dual_port
-Extended Input Alias 2 = v35
-Extended Input Name  2 = 1'0
+Node numExtInputs = 13
+Extended Input Alias 0 = v32
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = v33
+Extended Input Name  1 = 16777216
+Extended Input Type  1 = value
+Extended Input Alias 2 = v31
+Extended Input Name  2 = 16777224
 Extended Input Type  2 = value
-Extended Input Alias 3 = v36
-Extended Input Name  3 = 1'1
+Extended Input Alias 3 = 0v9
+Extended Input Name  3 = 9'000000010
 Extended Input Type  3 = value
-Extended Input Alias 4 = v28
-Extended Input Name  4 = 1'1
-Extended Input Type  4 = value
-Extended Input Alias 5 = n55
-Extended Input Name  5 = main_0_6_stage0_reg_32_bit
-Extended Input Type  5 = reg
-Extended Input Alias 6 = 0n44
-Extended Input Name  6 = select_inData_reg_b_2_bit
-Extended Input Type  6 = reg
-Extended Input Alias 7 = 0c94
-Extended Input Name  7 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  7 = mem_dual_port
+Extended Input Alias 4 = 0c94
+Extended Input Name  4 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  4 = mem_dual_port
+Extended Input Alias 5 = v37
+Extended Input Name  5 = 1'0
+Extended Input Type  5 = value
+Extended Input Alias 6 = v38
+Extended Input Name  6 = 1'1
+Extended Input Type  6 = value
+Extended Input Alias 7 = v30
+Extended Input Name  7 = 1'1
+Extended Input Type  7 = value
+Extended Input Alias 8 = c128
+Extended Input Name  8 = {{<p108> A|<p109> B}|$157\n$mul|{<p110> Y}}
+Extended Input Type  8 = mul
+Extended Input Alias 9 = v39
+Extended Input Name  9 = 0
+Extended Input Type  9 = value
+Extended Input Alias 10 = v40
+Extended Input Name  10 = 16777220
+Extended Input Type  10 = value
+Extended Input Alias 11 = 0v11
+Extended Input Name  11 = 9'000000010
+Extended Input Type  11 = value
+Extended Input Alias 12 = 0c94
+Extended Input Name  12 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  12 = mem_dual_port
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= c111
+Node Alias= c128
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$138\n$mul|{<p94> Y}}
-Node NumberedName = signed_multiply_32_3
+Node Name = {{<p108> A|<p109> B}|$157\n$mul|{<p110> Y}}
+Node NumberedName = signed_multiply_32_1
 Node Type = mul
 
 Node completeType = signed_multiply_32
@@ -250,38 +326,105 @@ Node inputWidth = 32
 Input Alias 0 = x9
 Input Name 0 = <s0> 31:0 - 31:0 
 Input Type 0 = wire
-Input Alias 1 = n47
-Input Name 1 = main_0_1_reg_32_bit
-Input Type 1 = reg
+Input Alias 1 = n81
+Input Name 1 = main_signed_multiply_32_0_op1_32_bit
+Input Type 1 = wire
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
-Node numExtInputs = 6
-Extended Input Alias 0 = 0n43
-Extended Input Name  0 = select_inData_reg_a_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = 0c94
-Extended Input Name  1 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  1 = mem_dual_port
-Extended Input Alias 2 = v35
-Extended Input Name  2 = 1'0
+Node numExtInputs = 12
+Extended Input Alias 0 = v32
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = v33
+Extended Input Name  1 = 16777216
+Extended Input Type  1 = value
+Extended Input Alias 2 = v31
+Extended Input Name  2 = 16777224
 Extended Input Type  2 = value
-Extended Input Alias 3 = v36
-Extended Input Name  3 = 1'1
+Extended Input Alias 3 = 0v9
+Extended Input Name  3 = 9'000000010
 Extended Input Type  3 = value
-Extended Input Alias 4 = v28
-Extended Input Name  4 = 1'1
-Extended Input Type  4 = value
-Extended Input Alias 5 = n47
-Extended Input Name  5 = main_0_1_reg_32_bit
-Extended Input Type  5 = reg
+Extended Input Alias 4 = 0c94
+Extended Input Name  4 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  4 = mem_dual_port
+Extended Input Alias 5 = v37
+Extended Input Name  5 = 1'0
+Extended Input Type  5 = value
+Extended Input Alias 6 = v38
+Extended Input Name  6 = 1'1
+Extended Input Type  6 = value
+Extended Input Alias 7 = v30
+Extended Input Name  7 = 1'1
+Extended Input Type  7 = value
+Extended Input Alias 8 = v39
+Extended Input Name  8 = 0
+Extended Input Type  8 = value
+Extended Input Alias 9 = v40
+Extended Input Name  9 = 16777220
+Extended Input Type  9 = value
+Extended Input Alias 10 = 0v11
+Extended Input Name  10 = 9'000000010
+Extended Input Type  10 = value
+Extended Input Alias 11 = 0c94
+Extended Input Name  11 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  11 = mem_dual_port
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= c158
+Node Alias= c129
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$131\n$sub|{<p94> Y}}
-Node NumberedName = signed_subtract_32_2
+Node Name = {{<p108> A|<p109> B}|$169\n$mul|{<p110> Y}}
+Node NumberedName = signed_multiply_32_2
+Node Type = mul
+
+Node completeType = signed_multiply_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x10
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = x11
+Input Name 1 = <s0> 31:0 - 31:0 
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 8
+Extended Input Alias 0 = v32
+Extended Input Name  0 = 0
+Extended Input Type  0 = value
+Extended Input Alias 1 = v33
+Extended Input Name  1 = 16777216
+Extended Input Type  1 = value
+Extended Input Alias 2 = v31
+Extended Input Name  2 = 16777224
+Extended Input Type  2 = value
+Extended Input Alias 3 = 0v9
+Extended Input Name  3 = 9'000000010
+Extended Input Type  3 = value
+Extended Input Alias 4 = 0c94
+Extended Input Name  4 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
+Extended Input Type  4 = mem_dual_port
+Extended Input Alias 5 = v37
+Extended Input Name  5 = 1'0
+Extended Input Type  5 = value
+Extended Input Alias 6 = v38
+Extended Input Name  6 = 1'1
+Extended Input Type  6 = value
+Extended Input Alias 7 = v30
+Extended Input Name  7 = 1'1
+Extended Input Type  7 = value
+##################################################################################
+**************************** OCM Reduced Node ***********************************************
+Node Alias= c182
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$162\n$sub|{<p110> Y}}
+Node NumberedName = signed_subtract_32_0
 Node Type = sub
 
 Node completeType = signed_subtract_32
@@ -290,147 +433,98 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = n53
-Input Name 0 = main_0_5_reg_32_bit
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
 Input Type 0 = reg
-Input Alias 1 = n55
-Input Name 1 = main_0_6_stage0_reg_32_bit
+Input Alias 1 = n66
+Input Name 1 = main_0_7_reg_32_bit
 Input Type 1 = reg
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
 Node numExtInputs = 2
-Extended Input Alias 0 = n53
-Extended Input Name  0 = main_0_5_reg_32_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = n55
-Extended Input Name  1 = main_0_6_stage0_reg_32_bit
-Extended Input Type  1 = reg
+Extended Input Alias 0 = c127
+Extended Input Name  0 = {{<p108> A|<p109> B}|$137\n$mul|{<p110> Y}}
+Extended Input Type  0 = mul
+Extended Input Alias 1 = c113
+Extended Input Name  1 = {{<p108> A|<p109> B}|$148\n$add|{<p110> Y}}
+Extended Input Type  1 = add
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= c95
+Node Alias= n105
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$113\n$add|{<p94> Y}}
-Node NumberedName = signed_add_32_2
-Node Type = add
+Node Name = reset_1_bit
+Node NumberedName = port_1
+Node Type = port
 
-Node completeType = signed_add_32
+Node completeType = port
 
-Node inOutType = NON
+Node inOutType = in
 
-Node numInputs = 3
+Node numInputs = 1
 Node inputWidth = 32
-Input Alias 0 = n61
-Input Name 0 = main_signed_add_32_0_op0_32_bit
-Input Type 0 = wire
-Input Alias 1 = n62
-Input Name 1 = main_signed_add_32_0_op1_32_bit
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
 
-Node numExtInputs = 8
-Extended Input Alias 0 = 0n43
-Extended Input Name  0 = select_inData_reg_a_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = 0c94
-Extended Input Name  1 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  1 = mem_dual_port
-Extended Input Alias 2 = v35
-Extended Input Name  2 = 1'0
-Extended Input Type  2 = value
-Extended Input Alias 3 = v36
-Extended Input Name  3 = 1'1
-Extended Input Type  3 = value
-Extended Input Alias 4 = v28
-Extended Input Name  4 = 1'1
-Extended Input Type  4 = value
-Extended Input Alias 5 = c158
-Extended Input Name  5 = {{<p92> A|<p93> B}|$131\n$sub|{<p94> Y}}
-Extended Input Type  5 = sub
-Extended Input Alias 6 = n47
-Extended Input Name  6 = main_0_1_reg_32_bit
-Extended Input Type  6 = reg
-Extended Input Alias 7 = n59
-Extended Input Name  7 = main_0_9_stage0_reg_32_bit
-Extended Input Type  7 = reg
+Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= c96
+Node Alias= n106
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$117\n$add|{<p94> Y}}
-Node NumberedName = signed_add_32_3
-Node Type = add
+Node Name = return_val_32_bit
+Node NumberedName = port_2
+Node Type = port
 
-Node completeType = signed_add_32
+Node completeType = port
 
-Node inOutType = NON
+Node inOutType = out
 
-Node numInputs = 3
+Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
-Input Alias 1 = n49
-Input Name 1 = main_0_2_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
+Input Alias 0 = c144
+Input Name 0 = {{<p130> CLK|<p131> D}|$763\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
 
-Node numExtInputs = 2
-Extended Input Alias 0 = c95
-Extended Input Name  0 = {{<p92> A|<p93> B}|$113\n$add|{<p94> Y}}
-Extended Input Type  0 = add
-Extended Input Alias 1 = n49
-Extended Input Name  1 = main_0_2_reg_32_bit
-Extended Input Type  1 = reg
+Node numExtInputs = 3
+Extended Input Alias 0 = n106
+Extended Input Name  0 = return_val_32_bit
+Extended Input Type  0 = port
+Extended Input Alias 1 = v41
+Extended Input Name  1 = 0
+Extended Input Type  1 = value
+Extended Input Alias 2 = c111
+Extended Input Name  2 = {{<p108> A|<p109> B}|$128\n$add|{<p110> Y}}
+Extended Input Type  2 = add
 ##################################################################################
 **************************** OCM Reduced Node ***********************************************
-Node Alias= n36
+Node Alias= n107
+Node Module = c_main
+Node Name = start_1_bit
+Node NumberedName = port_3
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Reduced Node ***********************************************
+Node Alias= n39
 Node Module = c_main
 Node Name = clk_1_bit
-Node NumberedName = port_9
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n37
-Node Module = c_main
-Node Name = clk1x_follower_1_bit
-Node NumberedName = port_10
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n38
-Node Module = c_main
-Node Name = clk2x_1_bit
-Node NumberedName = port_11
+Node NumberedName = port_4
 Node Type = port
 
 Node completeType = port
@@ -448,8 +542,46 @@ Node numExtInputs = 0
 **************************** OCM Reduced Node ***********************************************
 Node Alias= n40
 Node Module = c_main
+Node Name = clk1x_follower_1_bit
+Node NumberedName = port_5
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Reduced Node ***********************************************
+Node Alias= n41
+Node Module = c_main
+Node Name = clk2x_1_bit
+Node NumberedName = port_6
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Reduced Node ***********************************************
+Node Alias= n43
+Node Module = c_main
 Node Name = finish_1_bit
-Node NumberedName = port_12
+Node NumberedName = port_7
 Node Type = port
 
 Node completeType = port
@@ -458,291 +590,33 @@ Node inOutType = out
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = c115
-Input Name 0 = {{<p112> CLK|<p113> D}|$700\n$dff|{<p114> Q}}
+Input Alias 0 = c133
+Input Name 0 = {{<p130> CLK|<p131> D}|$752\n$dff|{<p132> Q}}
 Input Type 0 = dff
-Input Alias 1 = c123
-Input Name 1 = {{<p112> CLK|<p113> D}|$708\n$dff|{<p114> Q}}
+Input Alias 1 = c143
+Input Name 1 = {{<p130> CLK|<p131> D}|$762\n$dff|{<p132> Q}}
 Input Type 1 = dff
 Input Alias 2 = 
 Input Name 2 = 
 Input Type 2 = 
 
 Node numExtInputs = 6
-Extended Input Alias 0 = n40
+Extended Input Alias 0 = n43
 Extended Input Name  0 = finish_1_bit
 Extended Input Type  0 = port
-Extended Input Alias 1 = v10
+Extended Input Alias 1 = v12
 Extended Input Name  1 = 1'0
 Extended Input Type  1 = value
-Extended Input Alias 2 = n40
+Extended Input Alias 2 = n43
 Extended Input Name  2 = finish_1_bit
 Extended Input Type  2 = port
-Extended Input Alias 3 = n40
+Extended Input Alias 3 = n43
 Extended Input Name  3 = finish_1_bit
 Extended Input Type  3 = port
-Extended Input Alias 4 = n40
+Extended Input Alias 4 = n43
 Extended Input Name  4 = finish_1_bit
 Extended Input Type  4 = port
-Extended Input Alias 5 = v27
+Extended Input Alias 5 = v29
 Extended Input Name  5 = 1'0
 Extended Input Type  5 = value
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n45
-Node Module = c_main
-Node Name = main_0_10_reg_32_bit
-Node NumberedName = reg_11
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c120
-Input Name 0 = {{<p112> CLK|<p113> D}|$705\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 2
-Extended Input Alias 0 = c95
-Extended Input Name  0 = {{<p92> A|<p93> B}|$113\n$add|{<p94> Y}}
-Extended Input Type  0 = add
-Extended Input Alias 1 = n45
-Extended Input Name  1 = main_0_10_reg_32_bit
-Extended Input Type  1 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n47
-Node Module = c_main
-Node Name = main_0_1_reg_32_bit
-Node NumberedName = reg_12
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c117
-Input Name 0 = {{<p112> CLK|<p113> D}|$702\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 6
-Extended Input Alias 0 = 0n43
-Extended Input Name  0 = select_inData_reg_a_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = 0c94
-Extended Input Name  1 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  1 = mem_dual_port
-Extended Input Alias 2 = v35
-Extended Input Name  2 = 1'0
-Extended Input Type  2 = value
-Extended Input Alias 3 = v36
-Extended Input Name  3 = 1'1
-Extended Input Type  3 = value
-Extended Input Alias 4 = v28
-Extended Input Name  4 = 1'1
-Extended Input Type  4 = value
-Extended Input Alias 5 = n47
-Extended Input Name  5 = main_0_1_reg_32_bit
-Extended Input Type  5 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n49
-Node Module = c_main
-Node Name = main_0_2_reg_32_bit
-Node NumberedName = reg_13
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c118
-Input Name 0 = {{<p112> CLK|<p113> D}|$703\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 5
-Extended Input Alias 0 = 0n44
-Extended Input Name  0 = select_inData_reg_b_2_bit
-Extended Input Type  0 = reg
-Extended Input Alias 1 = 0c94
-Extended Input Name  1 = {{<0p83> address_a|<0p84> address_b|<0p85> byteena_a|<0p86> byteena_b|<0p11> clk|<0p87> clken|<0p88> data_a|<0p89> data_b|<0p90> wren_a|<0p91> wren_b}|inData\n$paramod$20f6dd0a70b910c94627662218420a2a0f10f86bac0b20e9e\\ram_dual_port|{<0p92> q_a|<0p93> q_b}}
-Extended Input Type  1 = mem_dual_port
-Extended Input Alias 2 = v35
-Extended Input Name  2 = 1'0
-Extended Input Type  2 = value
-Extended Input Alias 3 = v36
-Extended Input Name  3 = 1'1
-Extended Input Type  3 = value
-Extended Input Alias 4 = n49
-Extended Input Name  4 = main_0_2_reg_32_bit
-Extended Input Type  4 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n53
-Node Module = c_main
-Node Name = main_0_5_reg_32_bit
-Node NumberedName = reg_14
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c119
-Input Name 0 = {{<p112> CLK|<p113> D}|$704\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 2
-Extended Input Alias 0 = c96
-Extended Input Name  0 = {{<p92> A|<p93> B}|$117\n$add|{<p94> Y}}
-Extended Input Type  0 = add
-Extended Input Alias 1 = n53
-Extended Input Name  1 = main_0_5_reg_32_bit
-Extended Input Type  1 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n55
-Node Module = c_main
-Node Name = main_0_6_stage0_reg_32_bit
-Node NumberedName = reg_15
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c121
-Input Name 0 = {{<p112> CLK|<p113> D}|$706\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 2
-Extended Input Alias 0 = c110
-Extended Input Name  0 = {{<p92> A|<p93> B}|$126\n$mul|{<p94> Y}}
-Extended Input Type  0 = mul
-Extended Input Alias 1 = n55
-Extended Input Name  1 = main_0_6_stage0_reg_32_bit
-Extended Input Type  1 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n59
-Node Module = c_main
-Node Name = main_0_9_stage0_reg_32_bit
-Node NumberedName = reg_16
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c122
-Input Name 0 = {{<p112> CLK|<p113> D}|$707\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 2
-Extended Input Alias 0 = c111
-Extended Input Name  0 = {{<p92> A|<p93> B}|$138\n$mul|{<p94> Y}}
-Extended Input Type  0 = mul
-Extended Input Alias 1 = n59
-Extended Input Name  1 = main_0_9_stage0_reg_32_bit
-Extended Input Type  1 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n89
-Node Module = c_main
-Node Name = reset_1_bit
-Node NumberedName = port_13
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n90
-Node Module = c_main
-Node Name = return_val_32_bit
-Node NumberedName = port_14
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c124
-Input Name 0 = {{<p112> CLK|<p113> D}|$709\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 3
-Extended Input Alias 0 = n90
-Extended Input Name  0 = return_val_32_bit
-Extended Input Type  0 = port
-Extended Input Alias 1 = v39
-Extended Input Name  1 = 0
-Extended Input Type  1 = value
-Extended Input Alias 2 = n45
-Extended Input Name  2 = main_0_10_reg_32_bit
-Extended Input Type  2 = reg
-##################################################################################
-**************************** OCM Reduced Node ***********************************************
-Node Alias= n91
-Node Module = c_main
-Node Name = start_1_bit
-Node NumberedName = port_15
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
 ##################################################################################

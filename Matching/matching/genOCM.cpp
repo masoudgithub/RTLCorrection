@@ -461,7 +461,7 @@ void genOCM::fillExpandedInputsforNode(std::string aliasOCM, nodeMap &ocmNodeMap
 bool genOCM::isItMainType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
-        (type == "sub")  || (type == "reg") ||
+        (type == "sub")  || /*(type == "reg") ||*/
         (type == "mem_dual_port"))
     {
         return true;
@@ -476,7 +476,7 @@ bool genOCM::isItStopType(std::string type)
 {
     if ((type == "port") || (type == "mul") || (type == "add") ||
         (type == "sub") || (type == "value") ||
-        (type == "mem_dual_port") || (type == "reg"))
+        (type == "mem_dual_port") /*|| (type == "reg")*/)
      /*|| (type == "reg"))*/
     {
         return true;
@@ -1319,6 +1319,7 @@ void genOCM::assignNumberedNames(nodeMap &ocmReducedNodeMap)
             NumberOfavailableFus.at(type) = NumberOfavailableFus.at(type) + 1;
         }
     }
+    NumberOfavailableFus.clear();
 }
 
 int genOCM::returnInputWidth(std::string name)

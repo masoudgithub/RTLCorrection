@@ -2150,1348 +2150,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= c100
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$74\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v2
-Input Name 1 = 4'0011
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c101
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$90\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v3
-Input Name 1 = 4'0100
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c102
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$107\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
-Input Alias 1 = v4
-Input Name 1 = 30
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c103
-Node Module = c_main
-Node Name = {{<p92> A}|$123\n$not|{<p94> Y}}
-Node NumberedName = 
-Node Type = not
-
-Node completeType = not
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n85
-Input Name 0 = memory_controller_waitrequest_1_bit
-Input Type 0 = shadow_port
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c104
-Node Module = c_main
-Node Name = {{<p92> A}|$141\n$logic_not|{<p94> Y}}
-Node NumberedName = 
-Node Type = NON
-
-Node completeType = NON
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c105
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$144\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v5
-Input Name 1 = 4'1000
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c106
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$153\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v6
-Input Name 1 = 4'0001
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c107
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$154\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v7
-Input Name 1 = 4'0010
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c108
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$61\n$eqx|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c157
-Input Name 0 = {{<p92> A}|$60\n$reduce_xor|{<p94> Y}}
-Input Type 0 = NON
-Input Alias 1 = v8
-Input Name 1 = 1'x
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c109
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$62\n$logic_and|{<p94> Y}}
-Node NumberedName = 
-Node Type = NON
-
-Node completeType = NON
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c99
-Input Name 0 = {{<p92> A}|$59\n$not|{<p94> Y}}
-Input Type 0 = not
-Input Alias 1 = c108
-Input Name 1 = {{<p92> A|<p93> B}|$61\n$eqx|{<p94> Y}}
-Input Type 1 = eq
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c110
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$126\n$mul|{<p94> Y}}
-Node NumberedName = 
-Node Type = mul
-
-Node completeType = signed_multiply_32
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n67
-Input Name 0 = main_signed_multiply_32_0_op0_32_bit
-Input Type 0 = wire
-Input Alias 1 = n68
-Input Name 1 = main_signed_multiply_32_0_op1_32_bit
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
 Node Alias= c111
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$138\n$mul|{<p94> Y}}
-Node NumberedName = 
-Node Type = mul
-
-Node completeType = signed_multiply_32
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x9
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = n47
-Input Name 1 = main_0_1_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c115
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$700\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c128
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$494\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c116
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$701\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c130
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$500\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c117
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$702\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c136
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$549\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c118
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$703\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c137
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$552\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c119
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$704\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c138
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$555\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c120
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$705\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c139
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$558\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c121
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$706\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c144
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$573\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c122
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$707\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c145
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$576\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c123
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$708\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c147
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$582\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c124
-Node Module = c_main
-Node Name = {{<p112> CLK|<p113> D}|$709\n$dff|{<p114> Q}}
-Node NumberedName = 
-Node Type = dff
-
-Node completeType = dff
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c156
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$644\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c126
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$490\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n40
-Input Name 0 = finish_1_bit
-Input Type 0 = port
-Input Alias 1 = v10
-Input Name 1 = 1'0
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c127
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$492\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c126
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$490\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = n40
-Input Name 1 = finish_1_bit
-Input Type 1 = port
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c128
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$494\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c127
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$492\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = n40
-Input Name 1 = finish_1_bit
-Input Type 1 = port
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c129
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$497\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = n88
-Input Name 1 = next_state_4_bit
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c130
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$500\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c129
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$497\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = v11
-Input Name 1 = 4'0000
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c131
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$519\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = v12
-Input Name 0 = 4'0111
-Input Type 0 = value
-Input Alias 1 = v13
-Input Name 1 = 4'0110
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c132
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$533\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v14
-Input Name 1 = 4'0001
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c133
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$538\n$pmux|{<p94> Y}}
-Node NumberedName = 
-Node Type = pmux
-
-Node completeType = pmux
-
-Node inOutType = NON
-
-Node numInputs = 4
-Node inputWidth = 32
-Input Alias 0 = x15
-Input Name 0 = <s3> 3:0 - 31:28 |<s2> 15:0 - 27:12 |<s1> 3:0 - 11:8 |<s0> 7:0 - 7:0 
-Input Type 0 = wire
-Input Alias 1 = x18
-Input Name 1 = <s7> 0:0 - 7:7 |<s6> 0:0 - 6:6 |<s5> 0:0 - 5:5 |<s4> 0:0 - 4:4 |<s3> 0:0 - 3:3 |<s2> 0:0 - 2:2 |<s1> 0:0 - 1:1 |<s0> 0:0 - 0:0 
-Input Type 1 = wire
-Input Alias 2 = n39
-Input Name 2 = cur_state_4_bit
-Input Type 2 = wire
-Input Alias 3 = 
-Input Name 3 = 
-Input Type 3 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c134
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$540_CMP0\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v19
-Input Name 1 = 4'0111
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c135
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$541_CMP0\n$eq|{<p94> Y}}
-Node NumberedName = 
-Node Type = eq
-
-Node completeType = eq
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n39
-Input Name 0 = cur_state_4_bit
-Input Type 0 = wire
-Input Alias 1 = v20
-Input Name 1 = 4'0110
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c136
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$549\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x21
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = n47
-Input Name 1 = main_0_1_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c137
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$552\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x22
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = n49
-Input Name 1 = main_0_2_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c138
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$555\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n52
-Input Name 0 = main_0_5_32_bit
-Input Type 0 = wire
-Input Alias 1 = n53
-Input Name 1 = main_0_5_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c139
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$558\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
-Input Alias 1 = n45
-Input Name 1 = main_0_10_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c140
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$561\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x23
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = n57
-Input Name 1 = main_0_8_32_bit
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c141
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$564\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n47
-Input Name 0 = main_0_1_reg_32_bit
-Input Type 0 = reg
-Input Alias 1 = n59
-Input Name 1 = main_0_9_stage0_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c142
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$567\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x24
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = n55
-Input Name 1 = main_0_6_stage0_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c143
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$570\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = x25
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = x26
-Input Name 1 = <s0> 31:0 - 31:0 
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c144
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$573\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c110
-Input Name 0 = {{<p92> A|<p93> B}|$126\n$mul|{<p94> Y}}
-Input Type 0 = mul
-Input Alias 1 = n55
-Input Name 1 = main_0_6_stage0_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c145
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$576\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c111
-Input Name 0 = {{<p92> A|<p93> B}|$138\n$mul|{<p94> Y}}
-Input Type 0 = mul
-Input Alias 1 = n59
-Input Name 1 = main_0_9_stage0_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c146
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$579\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n40
-Input Name 0 = finish_1_bit
-Input Type 0 = port
-Input Alias 1 = v27
-Input Name 1 = 1'0
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c147
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$582\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c146
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$579\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = n41
-Input Name 1 = lpm_mult_main_0_6_en_1_bit
-Input Type 1 = wire
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c148
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$585\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n78
-Input Name 0 = memory_controller_enable_b_1_bit
-Input Type 0 = shadow_port
-Input Alias 1 = v28
-Input Name 1 = 1'1
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c149
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$593\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c150
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$596\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = v29
-Input Name 1 = 16777224
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c150
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$596\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = v30
-Input Name 0 = 0
-Input Type 0 = value
-Input Alias 1 = v31
-Input Name 1 = 16777216
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c151
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$611\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n84
-Input Name 0 = memory_controller_size_b_2_bit
-Input Type 0 = shadow_port
-Input Alias 1 = v32
-Input Name 1 = 2'10
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c152
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$614\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = v33
-Input Name 0 = 2'00
-Input Type 0 = value
-Input Alias 1 = v34
-Input Name 1 = 2'10
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c153
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$619\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = v35
-Input Name 0 = 1'0
-Input Type 0 = value
-Input Alias 1 = v36
-Input Name 1 = 1'1
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c154
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$624\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = v37
-Input Name 0 = 0
-Input Type 0 = value
-Input Alias 1 = v38
-Input Name 1 = 16777220
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c155
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$641\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n90
-Input Name 0 = return_val_32_bit
-Input Type 0 = port
-Input Alias 1 = v39
-Input Name 1 = 0
-Input Type 1 = value
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c156
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B|<p125> S}|$644\n$mux|{<p94> Y}}
-Node NumberedName = 
-Node Type = mux
-
-Node completeType = mux
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = c155
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$641\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = n45
-Input Name 1 = main_0_10_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c157
-Node Module = c_main
-Node Name = {{<p92> A}|$60\n$reduce_xor|{<p94> Y}}
-Node NumberedName = 
-Node Type = NON
-
-Node completeType = NON
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c158
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$131\n$sub|{<p94> Y}}
-Node NumberedName = 
-Node Type = sub
-
-Node completeType = signed_subtract_32
-
-Node inOutType = NON
-
-Node numInputs = 3
-Node inputWidth = 32
-Input Alias 0 = n53
-Input Name 0 = main_0_5_reg_32_bit
-Input Type 0 = reg
-Input Alias 1 = n55
-Input Name 1 = main_0_6_stage0_reg_32_bit
-Input Type 1 = reg
-Input Alias 2 = 
-Input Name 2 = 
-Input Type 2 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= c95
-Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$113\n$add|{<p94> Y}}
+Node Name = {{<p108> A|<p109> B}|$128\n$add|{<p110> Y}}
 Node NumberedName = 
 Node Type = add
 
@@ -3501,10 +2162,10 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = n61
+Input Alias 0 = n71
 Input Name 0 = main_signed_add_32_0_op0_32_bit
 Input Type 0 = wire
-Input Alias 1 = n62
+Input Alias 1 = n72
 Input Name 1 = main_signed_add_32_0_op1_32_bit
 Input Type 1 = wire
 Input Alias 2 = 
@@ -3514,9 +2175,9 @@ Input Type 2 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= c96
+Node Alias= c112
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$117\n$add|{<p94> Y}}
+Node Name = {{<p108> A|<p109> B}|$144\n$add|{<p110> Y}}
 Node NumberedName = 
 Node Type = add
 
@@ -3526,10 +2187,35 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
+Input Alias 0 = n74
+Input Name 0 = main_signed_add_32_1_op0_32_bit
 Input Type 0 = wire
-Input Alias 1 = n49
+Input Alias 1 = n75
+Input Name 1 = main_signed_add_32_1_op1_32_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c113
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$148\n$add|{<p110> Y}}
+Node NumberedName = 
+Node Type = add
+
+Node completeType = signed_add_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n52
+Input Name 0 = main_0_12_32_bit
+Input Type 0 = wire
+Input Alias 1 = n59
 Input Name 1 = main_0_2_reg_32_bit
 Input Type 1 = reg
 Input Alias 2 = 
@@ -3539,9 +2225,9 @@ Input Type 2 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= c97
+Node Alias= c114
 Node Module = c_main
-Node Name = {{<p92> A}|$722\n$reduce_or|{<p94> Y}}
+Node Name = {{<p108> A}|$776\n$reduce_or|{<p110> Y}}
 Node NumberedName = 
 Node Type = reduce_or
 
@@ -3561,9 +2247,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= c98
+Node Alias= c115
 Node Module = c_main
-Node Name = {{<p92> A|<p93> B}|$58\n$eq|{<p94> Y}}
+Node Name = {{<p108> A|<p109> B}|$58\n$eq|{<p110> Y}}
 Node NumberedName = 
 Node Type = eq
 
@@ -3573,7 +2259,7 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = n39
+Input Alias 0 = n42
 Input Name 0 = cur_state_4_bit
 Input Type 0 = wire
 Input Alias 1 = v1
@@ -3586,9 +2272,9 @@ Input Type 2 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= c99
+Node Alias= c116
 Node Module = c_main
-Node Name = {{<p92> A}|$59\n$not|{<p94> Y}}
+Node Name = {{<p108> A}|$59\n$not|{<p110> Y}}
 Node NumberedName = 
 Node Type = not
 
@@ -3598,12 +2284,1520 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n89
+Input Alias 0 = n105
 Input Name 0 = reset_1_bit
 Input Type 0 = port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c117
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$74\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v2
+Input Name 1 = 4'0011
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c118
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$92\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v3
+Input Name 1 = 4'0100
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c119
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$122\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n54
+Input Name 0 = main_0_14_32_bit
+Input Type 0 = wire
+Input Alias 1 = v4
+Input Name 1 = 30
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c120
+Node Module = c_main
+Node Name = {{<p108> A}|$134\n$not|{<p110> Y}}
+Node NumberedName = 
+Node Type = not
+
+Node completeType = not
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n101
+Input Name 0 = memory_controller_waitrequest_1_bit
+Input Type 0 = shadow_port
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c121
+Node Module = c_main
+Node Name = {{<p108> A}|$172\n$logic_not|{<p110> Y}}
+Node NumberedName = 
+Node Type = NON
+
+Node completeType = NON
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c122
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$175\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v5
+Input Name 1 = 4'1000
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c123
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$184\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v6
+Input Name 1 = 4'0001
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c124
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$185\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v7
+Input Name 1 = 4'0010
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c125
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$61\n$eqx|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c181
+Input Name 0 = {{<p108> A}|$60\n$reduce_xor|{<p110> Y}}
+Input Type 0 = NON
+Input Alias 1 = v8
+Input Name 1 = 1'x
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c126
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$62\n$logic_and|{<p110> Y}}
+Node NumberedName = 
+Node Type = NON
+
+Node completeType = NON
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c116
+Input Name 0 = {{<p108> A}|$59\n$not|{<p110> Y}}
+Input Type 0 = not
+Input Alias 1 = c125
+Input Name 1 = {{<p108> A|<p109> B}|$61\n$eqx|{<p110> Y}}
+Input Type 1 = eq
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c127
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$137\n$mul|{<p110> Y}}
+Node NumberedName = 
+Node Type = mul
+
+Node completeType = signed_multiply_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n80
+Input Name 0 = main_signed_multiply_32_0_op0_32_bit
+Input Type 0 = wire
+Input Alias 1 = n81
+Input Name 1 = main_signed_multiply_32_0_op1_32_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c128
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$157\n$mul|{<p110> Y}}
+Node NumberedName = 
+Node Type = mul
+
+Node completeType = signed_multiply_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x9
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = n81
+Input Name 1 = main_signed_multiply_32_0_op1_32_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c129
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$169\n$mul|{<p110> Y}}
+Node NumberedName = 
+Node Type = mul
+
+Node completeType = signed_multiply_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x10
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = x11
+Input Name 1 = <s0> 31:0 - 31:0 
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c133
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$752\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c148
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$525\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c134
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$753\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c150
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$531\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c135
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$754\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c156
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$580\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c136
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$755\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c157
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$583\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c137
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$756\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c158
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$586\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c138
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$757\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c159
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$592\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c139
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$758\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c160
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$595\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c140
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$759\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c164
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$610\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c141
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$760\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c168
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$625\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c142
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$761\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c169
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$628\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c143
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$762\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c171
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$634\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c144
+Node Module = c_main
+Node Name = {{<p130> CLK|<p131> D}|$763\n$dff|{<p132> Q}}
+Node NumberedName = 
+Node Type = dff
+
+Node completeType = dff
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c180
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$696\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c146
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$521\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n43
+Input Name 0 = finish_1_bit
+Input Type 0 = port
+Input Alias 1 = v12
+Input Name 1 = 1'0
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c147
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$523\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c146
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$521\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = n43
+Input Name 1 = finish_1_bit
+Input Type 1 = port
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c148
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$525\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c147
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$523\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = n43
+Input Name 1 = finish_1_bit
+Input Type 1 = port
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c149
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$528\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n104
+Input Name 0 = next_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = n42
+Input Name 1 = cur_state_4_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c150
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$531\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c149
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$528\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = v13
+Input Name 1 = 4'0000
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c151
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$550\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = v14
+Input Name 0 = 4'0111
+Input Type 0 = value
+Input Alias 1 = v15
+Input Name 1 = 4'0110
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c152
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$564\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v16
+Input Name 1 = 4'0001
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c153
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$569\n$pmux|{<p110> Y}}
+Node NumberedName = 
+Node Type = pmux
+
+Node completeType = pmux
+
+Node inOutType = NON
+
+Node numInputs = 4
+Node inputWidth = 32
+Input Alias 0 = x17
+Input Name 0 = <s3> 3:0 - 31:28 |<s2> 15:0 - 27:12 |<s1> 3:0 - 11:8 |<s0> 7:0 - 7:0 
+Input Type 0 = wire
+Input Alias 1 = x20
+Input Name 1 = <s7> 0:0 - 7:7 |<s6> 0:0 - 6:6 |<s5> 0:0 - 5:5 |<s4> 0:0 - 4:4 |<s3> 0:0 - 3:3 |<s2> 0:0 - 2:2 |<s1> 0:0 - 1:1 |<s0> 0:0 - 0:0 
+Input Type 1 = wire
+Input Alias 2 = n42
+Input Name 2 = cur_state_4_bit
+Input Type 2 = wire
+Input Alias 3 = 
+Input Name 3 = 
+Input Type 3 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c154
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$571_CMP0\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v21
+Input Name 1 = 4'0111
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c155
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$572_CMP0\n$eq|{<p110> Y}}
+Node NumberedName = 
+Node Type = eq
+
+Node completeType = eq
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n42
+Input Name 0 = cur_state_4_bit
+Input Type 0 = wire
+Input Alias 1 = v22
+Input Name 1 = 4'0110
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c156
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$580\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x23
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = n57
+Input Name 1 = main_0_1_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c157
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$583\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x24
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = n59
+Input Name 1 = main_0_2_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c158
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$586\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n65
+Input Name 0 = main_0_7_32_bit
+Input Type 0 = wire
+Input Alias 1 = n66
+Input Name 1 = main_0_7_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c159
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$592\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n50
+Input Name 0 = main_0_11_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = n51
+Input Name 1 = main_0_11_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c160
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$595\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n54
+Input Name 0 = main_0_14_32_bit
+Input Type 0 = wire
+Input Alias 1 = n55
+Input Name 1 = main_0_14_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c161
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$598\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x25
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = n52
+Input Name 1 = main_0_12_32_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c162
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$601\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n57
+Input Name 0 = main_0_1_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = n68
+Input Name 1 = main_0_8_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c163
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$604\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x26
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = n68
+Input Name 1 = main_0_8_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c164
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$610\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c127
+Input Name 0 = {{<p108> A|<p109> B}|$137\n$mul|{<p110> Y}}
+Input Type 0 = mul
+Input Alias 1 = n63
+Input Name 1 = main_0_5_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c165
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$613\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n48
+Input Name 0 = main_0_10_32_bit
+Input Type 0 = wire
+Input Alias 1 = n54
+Input Name 1 = main_0_14_32_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c166
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$616\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n50
+Input Name 0 = main_0_11_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = n63
+Input Name 1 = main_0_5_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c167
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$622\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = x27
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = x28
+Input Name 1 = <s0> 31:0 - 31:0 
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c168
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$625\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c128
+Input Name 0 = {{<p108> A|<p109> B}|$157\n$mul|{<p110> Y}}
+Input Type 0 = mul
+Input Alias 1 = n68
+Input Name 1 = main_0_8_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c169
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$628\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c129
+Input Name 0 = {{<p108> A|<p109> B}|$169\n$mul|{<p110> Y}}
+Input Type 0 = mul
+Input Alias 1 = n51
+Input Name 1 = main_0_11_stage0_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c170
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$631\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n43
+Input Name 0 = finish_1_bit
+Input Type 0 = port
+Input Alias 1 = v29
+Input Name 1 = 1'0
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c171
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$634\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c170
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$631\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = n44
+Input Name 1 = lpm_mult_main_0_11_en_1_bit
+Input Type 1 = wire
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c172
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$637\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n94
+Input Name 0 = memory_controller_enable_b_1_bit
+Input Type 0 = shadow_port
+Input Alias 1 = v30
+Input Name 1 = 1'1
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c173
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$645\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c174
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$648\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = v31
+Input Name 1 = 16777224
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c174
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$648\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = v32
+Input Name 0 = 0
+Input Type 0 = value
+Input Alias 1 = v33
+Input Name 1 = 16777216
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c175
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$663\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n100
+Input Name 0 = memory_controller_size_b_2_bit
+Input Type 0 = shadow_port
+Input Alias 1 = v34
+Input Name 1 = 2'10
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c176
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$666\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = v35
+Input Name 0 = 2'00
+Input Type 0 = value
+Input Alias 1 = v36
+Input Name 1 = 2'10
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c177
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$671\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = v37
+Input Name 0 = 1'0
+Input Type 0 = value
+Input Alias 1 = v38
+Input Name 1 = 1'1
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c178
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$676\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = v39
+Input Name 0 = 0
+Input Type 0 = value
+Input Alias 1 = v40
+Input Name 1 = 16777220
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c179
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$693\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n106
+Input Name 0 = return_val_32_bit
+Input Type 0 = port
+Input Alias 1 = v41
+Input Name 1 = 0
+Input Type 1 = value
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c180
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B|<p145> S}|$696\n$mux|{<p110> Y}}
+Node NumberedName = 
+Node Type = mux
+
+Node completeType = mux
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = c179
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$693\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = n55
+Input Name 1 = main_0_14_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c181
+Node Module = c_main
+Node Name = {{<p108> A}|$60\n$reduce_xor|{<p110> Y}}
+Node NumberedName = 
+Node Type = NON
+
+Node completeType = NON
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n54
+Input Name 0 = main_0_14_32_bit
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= c182
+Node Module = c_main
+Node Name = {{<p108> A|<p109> B}|$162\n$sub|{<p110> Y}}
+Node NumberedName = 
+Node Type = sub
+
+Node completeType = signed_subtract_32
+
+Node inOutType = NON
+
+Node numInputs = 3
+Node inputWidth = 32
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = n66
+Input Name 1 = main_0_7_reg_32_bit
+Input Type 1 = reg
+Input Alias 2 = 
+Input Name 2 = 
+Input Type 2 = 
 
 Node numExtInputs = 0
 ##################################################################################
@@ -3665,24 +3859,169 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n16
+Node Alias= n100
 Node Module = c_main
-Node Name = 
+Node Name = memory_controller_size_b_2_bit
 Node NumberedName = 
-Node Type = NON
+Node Type = shadow_port
 
-Node completeType = NON
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c176
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$666\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n101
+Node Module = c_main
+Node Name = memory_controller_waitrequest_1_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n102
+Node Module = c_main
+Node Name = memory_controller_write_enable_a_1_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x74
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n103
+Node Module = c_main
+Node Name = memory_controller_write_enable_b_1_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x76
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n104
+Node Module = c_main
+Node Name = next_state_4_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
 
 Node inOutType = NON
 
 Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c98
-Input Name 0 = {{<p92> A|<p93> B}|$58\n$eq|{<p94> Y}}
-Input Type 0 = eq
+Node inputWidth = 4
+Input Alias 0 = c153
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$569\n$pmux|{<p110> Y}}
+Input Type 0 = pmux
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n105
+Node Module = c_main
+Node Name = reset_1_bit
+Node NumberedName = 
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n106
+Node Module = c_main
+Node Name = return_val_32_bit
+Node NumberedName = 
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c144
+Input Name 0 = {{<p130> CLK|<p131> D}|$763\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n107
+Node Module = c_main
+Node Name = start_1_bit
+Node NumberedName = 
+Node Type = port
+
+Node completeType = port
+
+Node inOutType = in
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
 
 Node numExtInputs = 0
 ##################################################################################
@@ -3699,30 +4038,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c100
-Input Name 0 = {{<p92> A|<p93> B}|$74\n$eq|{<p94> Y}}
-Input Type 0 = eq
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n19
-Node Module = c_main
-Node Name = 
-Node NumberedName = 
-Node Type = NON
-
-Node completeType = NON
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c101
-Input Name 0 = {{<p92> A|<p93> B}|$90\n$eq|{<p94> Y}}
+Input Alias 0 = c115
+Input Name 0 = {{<p108> A|<p109> B}|$58\n$eq|{<p110> Y}}
 Input Type 0 = eq
 Input Alias 1 = 
 Input Name 1 = 
@@ -3743,9 +4060,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c104
-Input Name 0 = {{<p92> A}|$141\n$logic_not|{<p94> Y}}
-Input Type 0 = NON
+Input Alias 0 = c117
+Input Name 0 = {{<p108> A|<p109> B}|$74\n$eq|{<p110> Y}}
+Input Type 0 = eq
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -3765,8 +4082,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c105
-Input Name 0 = {{<p92> A|<p93> B}|$144\n$eq|{<p94> Y}}
+Input Alias 0 = c118
+Input Name 0 = {{<p108> A|<p109> B}|$92\n$eq|{<p110> Y}}
 Input Type 0 = eq
 Input Alias 1 = 
 Input Name 1 = 
@@ -3787,9 +4104,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c106
-Input Name 0 = {{<p92> A|<p93> B}|$153\n$eq|{<p94> Y}}
-Input Type 0 = eq
+Input Alias 0 = c121
+Input Name 0 = {{<p108> A}|$172\n$logic_not|{<p110> Y}}
+Input Type 0 = NON
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -3809,8 +4126,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c107
-Input Name 0 = {{<p92> A|<p93> B}|$154\n$eq|{<p94> Y}}
+Input Alias 0 = c122
+Input Name 0 = {{<p108> A|<p109> B}|$175\n$eq|{<p110> Y}}
 Input Type 0 = eq
 Input Alias 1 = 
 Input Name 1 = 
@@ -3819,7 +4136,51 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n36
+Node Alias= n24
+Node Module = c_main
+Node Name = 
+Node NumberedName = 
+Node Type = NON
+
+Node completeType = NON
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c123
+Input Name 0 = {{<p108> A|<p109> B}|$184\n$eq|{<p110> Y}}
+Input Type 0 = eq
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n25
+Node Module = c_main
+Node Name = 
+Node NumberedName = 
+Node Type = NON
+
+Node completeType = NON
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c124
+Input Name 0 = {{<p108> A|<p109> B}|$185\n$eq|{<p110> Y}}
+Input Type 0 = eq
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n39
 Node Module = c_main
 Node Name = clk_1_bit
 Node NumberedName = 
@@ -3838,7 +4199,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n37
+Node Alias= n40
 Node Module = c_main
 Node Name = clk1x_follower_1_bit
 Node NumberedName = 
@@ -3857,7 +4218,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n38
+Node Alias= n41
 Node Module = c_main
 Node Name = clk2x_1_bit
 Node NumberedName = 
@@ -3876,7 +4237,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n39
+Node Alias= n42
 Node Module = c_main
 Node Name = cur_state_4_bit
 Node NumberedName = 
@@ -3888,8 +4249,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 4
-Input Alias 0 = c116
-Input Name 0 = {{<p112> CLK|<p113> D}|$701\n$dff|{<p114> Q}}
+Input Alias 0 = c134
+Input Name 0 = {{<p130> CLK|<p131> D}|$753\n$dff|{<p132> Q}}
 Input Type 0 = dff
 Input Alias 1 = 
 Input Name 1 = 
@@ -3898,7 +4259,7 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n40
+Node Alias= n43
 Node Module = c_main
 Node Name = finish_1_bit
 Node NumberedName = 
@@ -3910,11 +4271,11 @@ Node inOutType = out
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = c115
-Input Name 0 = {{<p112> CLK|<p113> D}|$700\n$dff|{<p114> Q}}
+Input Alias 0 = c133
+Input Name 0 = {{<p130> CLK|<p131> D}|$752\n$dff|{<p132> Q}}
 Input Type 0 = dff
-Input Alias 1 = c123
-Input Name 1 = {{<p112> CLK|<p113> D}|$708\n$dff|{<p114> Q}}
+Input Alias 1 = c143
+Input Name 1 = {{<p130> CLK|<p131> D}|$762\n$dff|{<p132> Q}}
 Input Type 1 = dff
 Input Alias 2 = 
 Input Name 2 = 
@@ -3923,9 +4284,9 @@ Input Type 2 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n41
+Node Alias= n44
 Node Module = c_main
-Node Name = lpm_mult_main_0_6_en_1_bit
+Node Name = lpm_mult_main_0_11_en_1_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -3935,8 +4296,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 1
-Input Alias 0 = c103
-Input Name 0 = {{<p92> A}|$123\n$not|{<p94> Y}}
+Input Alias 0 = c120
+Input Name 0 = {{<p108> A}|$134\n$not|{<p110> Y}}
 Input Type 0 = not
 Input Alias 1 = 
 Input Name 1 = 
@@ -3945,9 +4306,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n42
+Node Alias= n45
 Node Module = c_main
-Node Name = lpm_mult_main_0_9_en_1_bit
+Node Name = lpm_mult_main_0_5_en_1_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -3957,7 +4318,7 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 1
-Input Alias 0 = x40
+Input Alias 0 = x42
 Input Name 0 = BUF
 Input Type 0 = BUF
 Input Alias 1 = 
@@ -3967,7 +4328,29 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n43
+Node Alias= n46
+Node Module = c_main
+Node Name = lpm_mult_main_0_8_en_1_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 1
+Input Alias 0 = x43
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n47
 Node Module = c_main
 Node Name = main_0_1_32_bit
 Node NumberedName = 
@@ -3979,7 +4362,7 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = x41
+Input Alias 0 = x44
 Input Name 0 = <s0> 31:0 - 31:0 
 Input Type 0 = wire
 Input Alias 1 = 
@@ -3989,7 +4372,7 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n44
+Node Alias= n48
 Node Module = c_main
 Node Name = main_0_10_32_bit
 Node NumberedName = 
@@ -4001,97 +4384,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c95
-Input Name 0 = {{<p92> A|<p93> B}|$113\n$add|{<p94> Y}}
-Input Type 0 = add
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n45
-Node Module = c_main
-Node Name = main_0_10_reg_32_bit
-Node NumberedName = 
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c120
-Input Name 0 = {{<p112> CLK|<p113> D}|$705\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n46
-Node Module = c_main
-Node Name = main_0_12_1_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 1
-Input Alias 0 = c102
-Input Name 0 = {{<p92> A|<p93> B}|$107\n$eq|{<p94> Y}}
-Input Type 0 = eq
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n47
-Node Module = c_main
-Node Name = main_0_1_reg_32_bit
-Node NumberedName = 
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c117
-Input Name 0 = {{<p112> CLK|<p113> D}|$702\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n48
-Node Module = c_main
-Node Name = main_0_2_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = x42
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
+Input Alias 0 = c182
+Input Name 0 = {{<p108> A|<p109> B}|$162\n$sub|{<p110> Y}}
+Input Type 0 = sub
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4101,117 +4396,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n49
 Node Module = c_main
-Node Name = main_0_2_reg_32_bit
-Node NumberedName = 
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c118
-Input Name 0 = {{<p112> CLK|<p113> D}|$703\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n50
-Node Module = c_main
-Node Name = main_0_3_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = x43
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n51
-Node Module = c_main
-Node Name = main_0_4_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = x44
-Input Name 0 = BUF
-Input Type 0 = BUF
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n52
-Node Module = c_main
-Node Name = main_0_5_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c96
-Input Name 0 = {{<p92> A|<p93> B}|$117\n$add|{<p94> Y}}
-Input Type 0 = add
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n53
-Node Module = c_main
-Node Name = main_0_5_reg_32_bit
-Node NumberedName = 
-Node Type = reg
-
-Node completeType = reg
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c119
-Input Name 0 = {{<p112> CLK|<p113> D}|$704\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n54
-Node Module = c_main
-Node Name = main_0_6_32_bit
+Node Name = main_0_11_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4231,9 +4416,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n55
+Node Alias= n50
 Node Module = c_main
-Node Name = main_0_6_stage0_reg_32_bit
+Node Name = main_0_11_reg_32_bit
 Node NumberedName = 
 Node Type = reg
 
@@ -4243,8 +4428,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c121
-Input Name 0 = {{<p112> CLK|<p113> D}|$706\n$dff|{<p114> Q}}
+Input Alias 0 = c138
+Input Name 0 = {{<p130> CLK|<p131> D}|$757\n$dff|{<p132> Q}}
 Input Type 0 = dff
 Input Alias 1 = 
 Input Name 1 = 
@@ -4253,9 +4438,53 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n56
+Node Alias= n51
 Node Module = c_main
-Node Name = main_0_7_32_bit
+Node Name = main_0_11_stage0_reg_32_bit
+Node NumberedName = 
+Node Type = reg
+
+Node completeType = reg
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c142
+Input Name 0 = {{<p130> CLK|<p131> D}|$761\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n52
+Node Module = c_main
+Node Name = main_0_12_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c112
+Input Name 0 = {{<p108> A|<p109> B}|$144\n$add|{<p110> Y}}
+Input Type 0 = add
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n53
+Node Module = c_main
+Node Name = main_0_13_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4275,9 +4504,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n57
+Node Alias= n54
 Node Module = c_main
-Node Name = main_0_8_32_bit
+Node Name = main_0_14_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4287,9 +4516,75 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c158
-Input Name 0 = {{<p92> A|<p93> B}|$131\n$sub|{<p94> Y}}
-Input Type 0 = sub
+Input Alias 0 = c111
+Input Name 0 = {{<p108> A|<p109> B}|$128\n$add|{<p110> Y}}
+Input Type 0 = add
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n55
+Node Module = c_main
+Node Name = main_0_14_reg_32_bit
+Node NumberedName = 
+Node Type = reg
+
+Node completeType = reg
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c139
+Input Name 0 = {{<p130> CLK|<p131> D}|$758\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n56
+Node Module = c_main
+Node Name = main_0_16_1_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 1
+Input Alias 0 = c119
+Input Name 0 = {{<p108> A|<p109> B}|$122\n$eq|{<p110> Y}}
+Input Type 0 = eq
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n57
+Node Module = c_main
+Node Name = main_0_1_reg_32_bit
+Node NumberedName = 
+Node Type = reg
+
+Node completeType = reg
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c135
+Input Name 0 = {{<p130> CLK|<p131> D}|$754\n$dff|{<p132> Q}}
+Input Type 0 = dff
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4299,7 +4594,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n58
 Node Module = c_main
-Node Name = main_0_9_32_bit
+Node Name = main_0_2_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4310,8 +4605,8 @@ Node inOutType = NON
 Node numInputs = 2
 Node inputWidth = 32
 Input Alias 0 = x47
-Input Name 0 = BUF
-Input Type 0 = BUF
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4321,7 +4616,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n59
 Node Module = c_main
-Node Name = main_0_9_stage0_reg_32_bit
+Node Name = main_0_2_reg_32_bit
 Node NumberedName = 
 Node Type = reg
 
@@ -4331,8 +4626,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c122
-Input Name 0 = {{<p112> CLK|<p113> D}|$707\n$dff|{<p114> Q}}
+Input Alias 0 = c136
+Input Name 0 = {{<p130> CLK|<p131> D}|$755\n$dff|{<p132> Q}}
 Input Type 0 = dff
 Input Alias 1 = 
 Input Name 1 = 
@@ -4343,7 +4638,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n60
 Node Module = c_main
-Node Name = main_signed_add_32_0_32_bit
+Node Name = main_0_3_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4354,8 +4649,8 @@ Node inOutType = NON
 Node numInputs = 2
 Node inputWidth = 32
 Input Alias 0 = x48
-Input Name 0 = BUF
-Input Type 0 = BUF
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4365,51 +4660,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n61
 Node Module = c_main
-Node Name = main_signed_add_32_0_op0_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c140
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$561\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n62
-Node Module = c_main
-Node Name = main_signed_add_32_0_op1_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c141
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$564\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n63
-Node Module = c_main
-Node Name = main_signed_add_32_1_32_bit
+Node Name = main_0_4_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4429,9 +4680,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n64
+Node Alias= n62
 Node Module = c_main
-Node Name = main_signed_add_32_1_op0_32_bit
+Node Name = main_0_5_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4451,9 +4702,31 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n65
+Node Alias= n63
 Node Module = c_main
-Node Name = main_signed_add_32_1_op1_32_bit
+Node Name = main_0_5_stage0_reg_32_bit
+Node NumberedName = 
+Node Type = reg
+
+Node completeType = reg
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c140
+Input Name 0 = {{<p130> CLK|<p131> D}|$759\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n64
+Node Module = c_main
+Node Name = main_0_6_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4473,9 +4746,53 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
+Node Alias= n65
+Node Module = c_main
+Node Name = main_0_7_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c113
+Input Name 0 = {{<p108> A|<p109> B}|$148\n$add|{<p110> Y}}
+Input Type 0 = add
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
 Node Alias= n66
 Node Module = c_main
-Node Name = main_signed_multiply_32_0_32_bit
+Node Name = main_0_7_reg_32_bit
+Node NumberedName = 
+Node Type = reg
+
+Node completeType = reg
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c137
+Input Name 0 = {{<p130> CLK|<p131> D}|$756\n$dff|{<p132> Q}}
+Input Type 0 = dff
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n67
+Node Module = c_main
+Node Name = main_0_8_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4495,43 +4812,21 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n67
-Node Module = c_main
-Node Name = main_signed_multiply_32_0_op0_32_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c142
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$567\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
 Node Alias= n68
 Node Module = c_main
-Node Name = main_signed_multiply_32_0_op1_32_bit
+Node Name = main_0_8_stage0_reg_32_bit
 Node NumberedName = 
-Node Type = wire
+Node Type = reg
 
-Node completeType = wire
+Node completeType = reg
 
 Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c143
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$570\n$mux|{<p94> Y}}
-Input Type 0 = mux
+Input Alias 0 = c141
+Input Name 0 = {{<p130> CLK|<p131> D}|$760\n$dff|{<p132> Q}}
+Input Type 0 = dff
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4541,7 +4836,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n69
 Node Module = c_main
-Node Name = main_signed_multiply_32_1_32_bit
+Node Name = main_0_9_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4563,7 +4858,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n70
 Node Module = c_main
-Node Name = main_signed_multiply_32_1_op0_32_bit
+Node Name = main_signed_add_32_0_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4585,7 +4880,51 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= n71
 Node Module = c_main
-Node Name = main_signed_multiply_32_1_op1_32_bit
+Node Name = main_signed_add_32_0_op0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c161
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$598\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n72
+Node Module = c_main
+Node Name = main_signed_add_32_0_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c162
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$601\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n73
+Node Module = c_main
+Node Name = main_signed_add_32_1_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4596,8 +4935,8 @@ Node inOutType = NON
 Node numInputs = 2
 Node inputWidth = 32
 Input Alias 0 = x55
-Input Name 0 = <s0> 31:0 - 31:0 
-Input Type 0 = wire
+Input Name 0 = BUF
+Input Type 0 = BUF
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -4605,9 +4944,53 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n72
+Node Alias= n74
 Node Module = c_main
-Node Name = main_signed_subtract_32_0_32_bit
+Node Name = main_signed_add_32_1_op0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c165
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$613\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n75
+Node Module = c_main
+Node Name = main_signed_add_32_1_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c166
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$616\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n76
+Node Module = c_main
+Node Name = main_signed_add_32_2_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4627,9 +5010,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n73
+Node Alias= n77
 Node Module = c_main
-Node Name = main_signed_subtract_32_0_op0_32_bit
+Node Name = main_signed_add_32_2_op0_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4649,9 +5032,9 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n74
+Node Alias= n78
 Node Module = c_main
-Node Name = main_signed_subtract_32_0_op1_32_bit
+Node Name = main_signed_add_32_2_op1_32_bit
 Node NumberedName = 
 Node Type = wire
 
@@ -4671,103 +5054,81 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n75
-Node Module = c_main
-Node Name = memory_controller_address_a_32_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c149
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$593\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n76
-Node Module = c_main
-Node Name = memory_controller_address_b_32_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c154
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$624\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n77
-Node Module = c_main
-Node Name = memory_controller_enable_a_1_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c148
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$585\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n78
-Node Module = c_main
-Node Name = memory_controller_enable_b_1_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c153
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$619\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
 Node Alias= n79
 Node Module = c_main
-Node Name = memory_controller_in_a_64_bit
+Node Name = main_signed_multiply_32_0_32_bit
 Node NumberedName = 
-Node Type = shadow_port
+Node Type = wire
 
-Node completeType = shadow_port
+Node completeType = wire
 
-Node inOutType = out
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x59
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n80
+Node Module = c_main
+Node Name = main_signed_multiply_32_0_op0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c163
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$604\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n81
+Node Module = c_main
+Node Name = main_signed_multiply_32_0_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c167
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$622\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n82
+Node Module = c_main
+Node Name = main_signed_multiply_32_1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
@@ -4781,15 +5142,37 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n80
+Node Alias= n83
 Node Module = c_main
-Node Name = memory_controller_in_b_64_bit
+Node Name = main_signed_multiply_32_1_op0_32_bit
 Node NumberedName = 
-Node Type = shadow_port
+Node Type = wire
 
-Node completeType = shadow_port
+Node completeType = wire
 
-Node inOutType = out
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x61
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n84
+Node Module = c_main
+Node Name = main_signed_multiply_32_1_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
@@ -4803,7 +5186,271 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n81
+Node Alias= n85
+Node Module = c_main
+Node Name = main_signed_multiply_32_2_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x63
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n86
+Node Module = c_main
+Node Name = main_signed_multiply_32_2_op0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x64
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n87
+Node Module = c_main
+Node Name = main_signed_multiply_32_2_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x65
+Input Name 0 = <s0> 31:0 - 31:0 
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n88
+Node Module = c_main
+Node Name = main_signed_subtract_32_0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x66
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n89
+Node Module = c_main
+Node Name = main_signed_subtract_32_0_op0_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x67
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n90
+Node Module = c_main
+Node Name = main_signed_subtract_32_0_op1_32_bit
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x68
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n91
+Node Module = c_main
+Node Name = memory_controller_address_a_32_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c173
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$645\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n92
+Node Module = c_main
+Node Name = memory_controller_address_b_32_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c178
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$676\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n93
+Node Module = c_main
+Node Name = memory_controller_enable_a_1_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c172
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$637\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n94
+Node Module = c_main
+Node Name = memory_controller_enable_b_1_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = c177
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$671\n$mux|{<p110> Y}}
+Input Type 0 = mux
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n95
+Node Module = c_main
+Node Name = memory_controller_in_a_64_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x70
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n96
+Node Module = c_main
+Node Name = memory_controller_in_b_64_bit
+Node NumberedName = 
+Node Type = shadow_port
+
+Node completeType = shadow_port
+
+Node inOutType = out
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = x72
+Input Name 0 = BUF
+Input Type 0 = BUF
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= n97
 Node Module = c_main
 Node Name = memory_controller_out_a_64_bit
 Node NumberedName = 
@@ -4822,7 +5469,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n82
+Node Alias= n98
 Node Module = c_main
 Node Name = memory_controller_out_b_64_bit
 Node NumberedName = 
@@ -4841,7 +5488,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= n83
+Node Alias= n99
 Node Module = c_main
 Node Name = memory_controller_size_a_2_bit
 Node NumberedName = 
@@ -4853,179 +5500,12 @@ Node inOutType = out
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = c151
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$611\n$mux|{<p94> Y}}
+Input Alias 0 = c175
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$663\n$mux|{<p110> Y}}
 Input Type 0 = mux
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n84
-Node Module = c_main
-Node Name = memory_controller_size_b_2_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c152
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$614\n$mux|{<p94> Y}}
-Input Type 0 = mux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n85
-Node Module = c_main
-Node Name = memory_controller_waitrequest_1_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n86
-Node Module = c_main
-Node Name = memory_controller_write_enable_a_1_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = x64
-Input Name 0 = BUF
-Input Type 0 = BUF
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n87
-Node Module = c_main
-Node Name = memory_controller_write_enable_b_1_bit
-Node NumberedName = 
-Node Type = shadow_port
-
-Node completeType = shadow_port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = x66
-Input Name 0 = BUF
-Input Type 0 = BUF
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n88
-Node Module = c_main
-Node Name = next_state_4_bit
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 4
-Input Alias 0 = c133
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$538\n$pmux|{<p94> Y}}
-Input Type 0 = pmux
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n89
-Node Module = c_main
-Node Name = reset_1_bit
-Node NumberedName = 
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n90
-Node Module = c_main
-Node Name = return_val_32_bit
-Node NumberedName = 
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = out
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = c124
-Input Name 0 = {{<p112> CLK|<p113> D}|$709\n$dff|{<p114> Q}}
-Input Type 0 = dff
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= n91
-Node Module = c_main
-Node Name = start_1_bit
-Node NumberedName = 
-Node Type = port
-
-Node completeType = port
-
-Node inOutType = in
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
 
 Node numExtInputs = 0
 ##################################################################################
@@ -5087,7 +5567,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v10
+Node Alias= v12
 Node Module = c_main
 Node Name = 1'0
 Node NumberedName = 
@@ -5106,7 +5586,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v11
+Node Alias= v13
 Node Module = c_main
 Node Name = 4'0000
 Node NumberedName = 
@@ -5125,7 +5605,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v12
+Node Alias= v14
 Node Module = c_main
 Node Name = 4'0111
 Node NumberedName = 
@@ -5144,7 +5624,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v13
+Node Alias= v15
 Node Module = c_main
 Node Name = 4'0110
 Node NumberedName = 
@@ -5163,7 +5643,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v14
+Node Alias= v16
 Node Module = c_main
 Node Name = 4'0001
 Node NumberedName = 
@@ -5182,7 +5662,7 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v16
+Node Alias= v18
 Node Module = c_main
 Node Name = 16'0010001101000101
 Node NumberedName = 
@@ -5201,28 +5681,9 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v17
-Node Module = c_main
-Node Name = 8'10000000
-Node NumberedName = 
-Node Type = value
-
-Node completeType = value
-
-Node inOutType = NON
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
 Node Alias= v19
 Node Module = c_main
-Node Name = 4'0111
+Node Name = 8'10000000
 Node NumberedName = 
 Node Type = value
 
@@ -5258,7 +5719,26 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v20
+Node Alias= v21
+Node Module = c_main
+Node Name = 4'0111
+Node NumberedName = 
+Node Type = value
+
+Node completeType = value
+
+Node inOutType = NON
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= v22
 Node Module = c_main
 Node Name = 4'0110
 Node NumberedName = 
@@ -5277,47 +5757,9 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v27
-Node Module = c_main
-Node Name = 1'0
-Node NumberedName = 
-Node Type = value
-
-Node completeType = value
-
-Node inOutType = NON
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= v28
-Node Module = c_main
-Node Name = 1'1
-Node NumberedName = 
-Node Type = value
-
-Node completeType = value
-
-Node inOutType = NON
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
 Node Alias= v29
 Node Module = c_main
-Node Name = 16777224
+Node Name = 1'0
 Node NumberedName = 
 Node Type = value
 
@@ -5355,7 +5797,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v30
 Node Module = c_main
-Node Name = 0
+Node Name = 1'1
 Node NumberedName = 
 Node Type = value
 
@@ -5374,7 +5816,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v31
 Node Module = c_main
-Node Name = 16777216
+Node Name = 16777224
 Node NumberedName = 
 Node Type = value
 
@@ -5393,7 +5835,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v32
 Node Module = c_main
-Node Name = 2'10
+Node Name = 0
 Node NumberedName = 
 Node Type = value
 
@@ -5412,7 +5854,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v33
 Node Module = c_main
-Node Name = 2'00
+Node Name = 16777216
 Node NumberedName = 
 Node Type = value
 
@@ -5450,7 +5892,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v35
 Node Module = c_main
-Node Name = 1'0
+Node Name = 2'00
 Node NumberedName = 
 Node Type = value
 
@@ -5469,7 +5911,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v36
 Node Module = c_main
-Node Name = 1'1
+Node Name = 2'10
 Node NumberedName = 
 Node Type = value
 
@@ -5488,7 +5930,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v37
 Node Module = c_main
-Node Name = 0
+Node Name = 1'0
 Node NumberedName = 
 Node Type = value
 
@@ -5507,7 +5949,7 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= v38
 Node Module = c_main
-Node Name = 16777220
+Node Name = 1'1
 Node NumberedName = 
 Node Type = value
 
@@ -5562,9 +6004,9 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v5
+Node Alias= v40
 Node Module = c_main
-Node Name = 4'1000
+Node Name = 16777220
 Node NumberedName = 
 Node Type = value
 
@@ -5581,9 +6023,28 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v59
+Node Alias= v41
 Node Module = c_main
-Node Name = 64'0000000000000000000000000000000000000000000000000000000000000000
+Node Name = 0
+Node NumberedName = 
+Node Type = value
+
+Node completeType = value
+
+Node inOutType = NON
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= v5
+Node Module = c_main
+Node Name = 4'1000
 Node NumberedName = 
 Node Type = value
 
@@ -5619,47 +6080,9 @@ Input Type 0 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= v61
+Node Alias= v69
 Node Module = c_main
 Node Name = 64'0000000000000000000000000000000000000000000000000000000000000000
-Node NumberedName = 
-Node Type = value
-
-Node completeType = value
-
-Node inOutType = NON
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= v63
-Node Module = c_main
-Node Name = 1'0
-Node NumberedName = 
-Node Type = value
-
-Node completeType = value
-
-Node inOutType = NON
-
-Node numInputs = 1
-Node inputWidth = 32
-Input Alias 0 = 
-Input Name 0 = 
-Input Type 0 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= v65
-Node Module = c_main
-Node Name = 1'0
 Node NumberedName = 
 Node Type = value
 
@@ -5679,6 +6102,63 @@ Node numExtInputs = 0
 Node Alias= v7
 Node Module = c_main
 Node Name = 4'0010
+Node NumberedName = 
+Node Type = value
+
+Node completeType = value
+
+Node inOutType = NON
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= v71
+Node Module = c_main
+Node Name = 64'0000000000000000000000000000000000000000000000000000000000000000
+Node NumberedName = 
+Node Type = value
+
+Node completeType = value
+
+Node inOutType = NON
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= v73
+Node Module = c_main
+Node Name = 1'0
+Node NumberedName = 
+Node Type = value
+
+Node completeType = value
+
+Node inOutType = NON
+
+Node numInputs = 1
+Node inputWidth = 32
+Input Alias 0 = 
+Input Name 0 = 
+Input Type 0 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= v75
+Node Module = c_main
+Node Name = 1'0
 Node NumberedName = 
 Node Type = value
 
@@ -5726,11 +6206,11 @@ Node inOutType = NON
 
 Node numInputs = 3
 Node inputWidth = 32
-Input Alias 0 = c134
-Input Name 0 = {{<p92> A|<p93> B}|$540_CMP0\n$eq|{<p94> Y}}
+Input Alias 0 = c154
+Input Name 0 = {{<p108> A|<p109> B}|$571_CMP0\n$eq|{<p110> Y}}
 Input Type 0 = eq
-Input Alias 1 = c135
-Input Name 1 = {{<p92> A|<p93> B}|$541_CMP0\n$eq|{<p94> Y}}
+Input Alias 1 = c155
+Input Name 1 = {{<p108> A|<p109> B}|$572_CMP0\n$eq|{<p110> Y}}
 Input Type 1 = eq
 Input Alias 2 = 
 Input Name 2 = 
@@ -5739,7 +6219,51 @@ Input Type 2 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= x15
+Node Alias= x10
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x11
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x17
 Node Module = c_main
 Node Name = <s3> 3:0 - 31:28 |<s2> 15:0 - 27:12 |<s1> 3:0 - 11:8 |<s0> 7:0 - 7:0 
 Node NumberedName = 
@@ -5751,16 +6275,16 @@ Node inOutType = NON
 
 Node numInputs = 5
 Node inputWidth = 32
-Input Alias 0 = c132
-Input Name 0 = {{<p92> A|<p93> B|<p125> S}|$533\n$mux|{<p94> Y}}
+Input Alias 0 = c152
+Input Name 0 = {{<p108> A|<p109> B|<p145> S}|$564\n$mux|{<p110> Y}}
 Input Type 0 = mux
-Input Alias 1 = c131
-Input Name 1 = {{<p92> A|<p93> B|<p125> S}|$519\n$mux|{<p94> Y}}
+Input Alias 1 = c151
+Input Name 1 = {{<p108> A|<p109> B|<p145> S}|$550\n$mux|{<p110> Y}}
 Input Type 1 = mux
-Input Alias 2 = v16
+Input Alias 2 = v18
 Input Name 2 = 16'0010001101000101
 Input Type 2 = value
-Input Alias 3 = v17
+Input Alias 3 = v19
 Input Name 3 = 8'10000000
 Input Type 3 = value
 Input Alias 4 = 
@@ -5770,7 +6294,7 @@ Input Type 4 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= x18
+Node Alias= x20
 Node Module = c_main
 Node Name = <s7> 0:0 - 7:7 |<s6> 0:0 - 6:6 |<s5> 0:0 - 5:5 |<s4> 0:0 - 4:4 |<s3> 0:0 - 3:3 |<s2> 0:0 - 2:2 |<s1> 0:0 - 1:1 |<s0> 0:0 - 0:0 
 Node NumberedName = 
@@ -5782,77 +6306,33 @@ Node inOutType = NON
 
 Node numInputs = 9
 Node inputWidth = 32
-Input Alias 0 = c97
-Input Name 0 = {{<p92> A}|$722\n$reduce_or|{<p94> Y}}
+Input Alias 0 = c114
+Input Name 0 = {{<p108> A}|$776\n$reduce_or|{<p110> Y}}
 Input Type 0 = reduce_or
-Input Alias 1 = n16
+Input Alias 1 = n18
 Input Name 1 = 
 Input Type 1 = NON
-Input Alias 2 = n18
+Input Alias 2 = n20
 Input Name 2 = 
 Input Type 2 = NON
-Input Alias 3 = n19
+Input Alias 3 = n21
 Input Name 3 = 
 Input Type 3 = NON
-Input Alias 4 = n20
+Input Alias 4 = n22
 Input Name 4 = 
 Input Type 4 = NON
-Input Alias 5 = n21
+Input Alias 5 = n23
 Input Name 5 = 
 Input Type 5 = NON
-Input Alias 6 = n22
+Input Alias 6 = n24
 Input Name 6 = 
 Input Type 6 = NON
-Input Alias 7 = n23
+Input Alias 7 = n25
 Input Name 7 = 
 Input Type 7 = NON
 Input Alias 8 = 
 Input Name 8 = 
 Input Type 8 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= x21
-Node Module = c_main
-Node Name = <s0> 31:0 - 31:0 
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n81
-Input Name 0 = memory_controller_out_a_64_bit
-Input Type 0 = shadow_port
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= x22
-Node Module = c_main
-Node Name = <s0> 31:0 - 31:0 
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n82
-Input Name 0 = memory_controller_out_b_64_bit
-Input Type 0 = shadow_port
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
 
 Node numExtInputs = 0
 ##################################################################################
@@ -5869,7 +6349,7 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
+Input Alias 0 = n97
 Input Name 0 = memory_controller_out_a_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 
@@ -5891,8 +6371,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
-Input Name 0 = memory_controller_out_a_64_bit
+Input Alias 0 = n98
+Input Name 0 = memory_controller_out_b_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
@@ -5913,7 +6393,7 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
+Input Alias 0 = n97
 Input Name 0 = memory_controller_out_a_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 
@@ -5935,8 +6415,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n82
-Input Name 0 = memory_controller_out_b_64_bit
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
@@ -5945,29 +6425,7 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= x40
-Node Module = c_main
-Node Name = BUF
-Node NumberedName = 
-Node Type = BUF
-
-Node completeType = BUF
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n41
-Input Name 0 = lpm_mult_main_0_6_en_1_bit
-Input Type 0 = wire
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= x41
+Node Alias= x27
 Node Module = c_main
 Node Name = <s0> 31:0 - 31:0 
 Node NumberedName = 
@@ -5979,8 +6437,30 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
+Input Alias 0 = n97
 Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x28
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n98
+Input Name 0 = memory_controller_out_b_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
@@ -5990,50 +6470,6 @@ Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
 Node Alias= x42
-Node Module = c_main
-Node Name = <s0> 31:0 - 31:0 
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n82
-Input Name 0 = memory_controller_out_b_64_bit
-Input Type 0 = shadow_port
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= x43
-Node Module = c_main
-Node Name = <s0> 31:0 - 31:0 
-Node NumberedName = 
-Node Type = wire
-
-Node completeType = wire
-
-Node inOutType = NON
-
-Node numInputs = 2
-Node inputWidth = 32
-Input Alias 0 = n81
-Input Name 0 = memory_controller_out_a_64_bit
-Input Type 0 = shadow_port
-Input Alias 1 = 
-Input Name 1 = 
-Input Type 1 = 
-
-Node numExtInputs = 0
-##################################################################################
-**************************** OCM Node ***********************************************
-Node Alias= x44
 Node Module = c_main
 Node Name = BUF
 Node NumberedName = 
@@ -6046,8 +6482,52 @@ Node inOutType = NON
 Node numInputs = 2
 Node inputWidth = 32
 Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
+Input Name 0 = lpm_mult_main_0_11_en_1_bit
 Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x43
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n44
+Input Name 0 = lpm_mult_main_0_11_en_1_bit
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x44
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6067,8 +6547,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n55
-Input Name 0 = main_0_6_stage0_reg_32_bit
+Input Alias 0 = n51
+Input Name 0 = main_0_11_stage0_reg_32_bit
 Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
@@ -6089,8 +6569,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n55
-Input Name 0 = main_0_6_stage0_reg_32_bit
+Input Alias 0 = n68
+Input Name 0 = main_0_8_stage0_reg_32_bit
 Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
@@ -6101,19 +6581,19 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= x47
 Node Module = c_main
-Node Name = BUF
+Node Name = <s0> 31:0 - 31:0 
 Node NumberedName = 
-Node Type = BUF
+Node Type = wire
 
-Node completeType = BUF
+Node completeType = wire
 
 Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n59
-Input Name 0 = main_0_9_stage0_reg_32_bit
-Input Type 0 = reg
+Input Alias 0 = n98
+Input Name 0 = memory_controller_out_b_64_bit
+Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6123,19 +6603,19 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= x48
 Node Module = c_main
-Node Name = BUF
+Node Name = <s0> 31:0 - 31:0 
 Node NumberedName = 
-Node Type = BUF
+Node Type = wire
 
-Node completeType = BUF
+Node completeType = wire
 
 Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6155,8 +6635,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n52
-Input Name 0 = main_0_5_32_bit
+Input Alias 0 = n54
+Input Name 0 = main_0_14_32_bit
 Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
@@ -6177,9 +6657,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n44
-Input Name 0 = main_0_10_32_bit
-Input Type 0 = wire
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
+Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6199,9 +6679,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n49
-Input Name 0 = main_0_2_reg_32_bit
-Input Type 0 = reg
+Input Alias 0 = n52
+Input Name 0 = main_0_12_32_bit
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6221,8 +6701,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n55
-Input Name 0 = main_0_6_stage0_reg_32_bit
+Input Alias 0 = n68
+Input Name 0 = main_0_8_stage0_reg_32_bit
 Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
@@ -6243,8 +6723,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n59
-Input Name 0 = main_0_9_stage0_reg_32_bit
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
 Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
@@ -6265,9 +6745,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n47
-Input Name 0 = main_0_1_reg_32_bit
-Input Type 0 = reg
+Input Alias 0 = n54
+Input Name 0 = main_0_14_32_bit
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6277,19 +6757,19 @@ Node numExtInputs = 0
 **************************** OCM Node ***********************************************
 Node Alias= x55
 Node Module = c_main
-Node Name = <s0> 31:0 - 31:0 
+Node Name = BUF
 Node NumberedName = 
-Node Type = wire
+Node Type = BUF
 
-Node completeType = wire
+Node completeType = BUF
 
 Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
-Input Name 0 = memory_controller_out_a_64_bit
-Input Type 0 = shadow_port
+Input Alias 0 = n52
+Input Name 0 = main_0_12_32_bit
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6309,8 +6789,8 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n57
-Input Name 0 = main_0_8_32_bit
+Input Alias 0 = n65
+Input Name 0 = main_0_7_32_bit
 Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
@@ -6331,9 +6811,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n53
-Input Name 0 = main_0_5_reg_32_bit
-Input Type 0 = reg
+Input Alias 0 = n52
+Input Name 0 = main_0_12_32_bit
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6353,8 +6833,30 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n55
-Input Name 0 = main_0_6_stage0_reg_32_bit
+Input Alias 0 = n59
+Input Name 0 = main_0_2_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x59
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
 Input Type 0 = reg
 Input Alias 1 = 
 Input Name 1 = 
@@ -6375,9 +6877,31 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = v59
-Input Name 0 = 64'0000000000000000000000000000000000000000000000000000000000000000
-Input Type 0 = value
+Input Alias 0 = n68
+Input Name 0 = main_0_8_stage0_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x61
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6397,9 +6921,9 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = v61
-Input Name 0 = 64'0000000000000000000000000000000000000000000000000000000000000000
-Input Type 0 = value
+Input Alias 0 = n81
+Input Name 0 = main_signed_multiply_32_0_op1_32_bit
+Input Type 0 = wire
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6407,7 +6931,7 @@ Input Type 1 =
 Node numExtInputs = 0
 ##################################################################################
 **************************** OCM Node ***********************************************
-Node Alias= x64
+Node Alias= x63
 Node Module = c_main
 Node Name = BUF
 Node NumberedName = 
@@ -6419,9 +6943,53 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = v63
-Input Name 0 = 1'0
-Input Type 0 = value
+Input Alias 0 = n51
+Input Name 0 = main_0_11_stage0_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x64
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x65
+Node Module = c_main
+Node Name = <s0> 31:0 - 31:0 
+Node NumberedName = 
+Node Type = wire
+
+Node completeType = wire
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n97
+Input Name 0 = memory_controller_out_a_64_bit
+Input Type 0 = shadow_port
 Input Alias 1 = 
 Input Name 1 = 
 Input Type 1 = 
@@ -6441,7 +7009,139 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = v65
+Input Alias 0 = n48
+Input Name 0 = main_0_10_32_bit
+Input Type 0 = wire
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x67
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n66
+Input Name 0 = main_0_7_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x68
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = n63
+Input Name 0 = main_0_5_stage0_reg_32_bit
+Input Type 0 = reg
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x70
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = v69
+Input Name 0 = 64'0000000000000000000000000000000000000000000000000000000000000000
+Input Type 0 = value
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x72
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = v71
+Input Name 0 = 64'0000000000000000000000000000000000000000000000000000000000000000
+Input Type 0 = value
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x74
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = v73
+Input Name 0 = 1'0
+Input Type 0 = value
+Input Alias 1 = 
+Input Name 1 = 
+Input Type 1 = 
+
+Node numExtInputs = 0
+##################################################################################
+**************************** OCM Node ***********************************************
+Node Alias= x76
+Node Module = c_main
+Node Name = BUF
+Node NumberedName = 
+Node Type = BUF
+
+Node completeType = BUF
+
+Node inOutType = NON
+
+Node numInputs = 2
+Node inputWidth = 32
+Input Alias 0 = v75
 Input Name 0 = 1'0
 Input Type 0 = value
 Input Alias 1 = 
@@ -6463,7 +7163,7 @@ Node inOutType = NON
 
 Node numInputs = 2
 Node inputWidth = 32
-Input Alias 0 = n81
+Input Alias 0 = n97
 Input Name 0 = memory_controller_out_a_64_bit
 Input Type 0 = shadow_port
 Input Alias 1 = 

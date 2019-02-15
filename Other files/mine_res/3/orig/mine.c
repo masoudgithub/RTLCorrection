@@ -19,8 +19,8 @@ int main() {
     int sqrt = max(x, x-(x>>3)+(y>>1));*/
 	//int total = f * g + h - f*g*h ;
 	
-	//int total = a * b + c + a + b - a*b*c + b*b + c*c; // orig
-	  int total = a * b + c + a + b - a*b*c + a*a + c*c;//cor and ch
+	int total = a * b + c + a + b - a*b*c + b*b + c*c; // orig
+	//  int total = a * b + c + a + b - a*b*c + a*a + c*c;//cor and ch
     printf("Result: %d\n", total);
     if (total == 30) {
         printf("RESULT: PASS\n");

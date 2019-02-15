@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Fri Feb 15 11:57:04 2019
+// Date: Fri Feb 15 15:10:47 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -554,13 +554,13 @@ always @(*) begin
 end
 always @(posedge clk) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_0_11_reg <= main_0_11;
 		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); /*$finish;*/ end
 	end
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_0_11_reg <= main_0_11;
 		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); /*$finish;*/ end
@@ -572,7 +572,7 @@ always @(*) begin
 		main_0_12 = main_signed_add_32_2;
 end
 always @(*) begin
-	main_0_13 = main_signed_multiply_32_2;
+	main_0_13 = main_signed_multiply_32_0;
 end
 always @(*) begin
 	/* main: %0*/
@@ -622,12 +622,26 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %4 = mul nsw i32 %1, %2*/
+	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_signed_multiply_32_0_op0 = main_0_1;
+	end
+	/* main: %0*/
+	/*   %13 = mul nsw i32 %3, %3*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
+		main_signed_multiply_32_0_op0 = main_0_3;
+	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %4 = mul nsw i32 %1, %2*/
+	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_signed_multiply_32_0_op1 = main_0_2;
+	end
+	/* main: %0*/
+	/*   %13 = mul nsw i32 %3, %3*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
+		main_signed_multiply_32_0_op1 = main_0_3;
+	end
 end
 always @(*) begin
 	lpm_mult_main_0_4_en = (memory_controller_waitrequest == 1'd0);
@@ -734,34 +748,20 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
-		main_signed_multiply_32_2_op0 = main_0_2;
-	end
-	/* main: %0*/
-	/*   %13 = mul nsw i32 %3, %3*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
-		main_signed_multiply_32_2_op0 = main_0_3;
-	end
+	/*   %11 = mul nsw i32 %1, %1*/
+		main_signed_multiply_32_2_op0 = main_0_1;
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
-		main_signed_multiply_32_2_op1 = main_0_2;
-	end
-	/* main: %0*/
-	/*   %13 = mul nsw i32 %3, %3*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
-		main_signed_multiply_32_2_op1 = main_0_3;
-	end
+	/*   %11 = mul nsw i32 %1, %1*/
+		main_signed_multiply_32_2_op1 = main_0_1;
 end
 always @(*) begin
 	lpm_mult_main_0_11_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((lpm_mult_main_0_11_en == 1'd1)) begin
 		main_0_11_stage0_reg <= (main_signed_multiply_32_2_op0 * main_signed_multiply_32_2_op1);
 	end

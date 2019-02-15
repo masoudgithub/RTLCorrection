@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Fri Feb 15 11:57:04 2019
+// Date: Fri Feb 15 15:13:59 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -223,7 +223,7 @@ begin
 	if (prevAddr_a[2:0] & select_not_struct_a[2:0] != 0 && memory_controller_enable_a)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 
 	prevSize_a_and[0] = prevSize_a[1] | prevSize_a[0];
@@ -232,7 +232,7 @@ begin
 	if ((prevAddr_a & prevSize_a_and) != 0 && memory_controller_enable_a)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 	memory_controller_out_prev_a = memory_controller_out_reg_a & { 64{!memory_controller_enable_reg_a}};
 	memory_controller_out_a = 1'b0 | memory_controller_out_prev_a | memory_controller_inData_out_a;
@@ -277,7 +277,7 @@ begin
 	if (prevAddr_b[2:0] & select_not_struct_b[2:0] != 0 && memory_controller_enable_b)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 
 	prevSize_b_and[0] = prevSize_b[1] | prevSize_b[0];
@@ -286,7 +286,7 @@ begin
 	if ((prevAddr_b & prevSize_b_and) != 0 && memory_controller_enable_b)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 	memory_controller_out_prev_b = memory_controller_out_reg_b & { 64{!memory_controller_enable_reg_b}};
 	memory_controller_out_b = 1'b0 | memory_controller_out_prev_b | memory_controller_inData_out_b;
@@ -391,17 +391,17 @@ reg [31:0] main_0_13;
 reg [31:0] main_0_14;
 reg [31:0] main_0_14_reg;
 reg  main_0_16;
-reg [31:0] main_signed_add_32_0_op0;
-reg [31:0] main_signed_add_32_0_op1;
-reg [31:0] main_signed_add_32_0;
+reg [31:0] main_signed_add_32_1_op0;
+reg [31:0] main_signed_add_32_1_op1;
+reg [31:0] main_signed_add_32_1;
 reg [31:0] main_signed_multiply_32_0_op0;
 reg [31:0] main_signed_multiply_32_0_op1;
 reg  lpm_mult_main_0_4_en;
 reg [31:0] main_0_4_stage0_reg;
 reg [31:0] main_signed_multiply_32_0;
-reg [31:0] main_signed_add_32_1_op0;
-reg [31:0] main_signed_add_32_1_op1;
-reg [31:0] main_signed_add_32_1;
+reg [31:0] main_signed_add_32_0_op0;
+reg [31:0] main_signed_add_32_0_op1;
+reg [31:0] main_signed_add_32_0;
 reg [31:0] main_signed_add_32_2_op0;
 reg [31:0] main_signed_add_32_2_op1;
 reg [31:0] main_signed_add_32_2;
@@ -491,7 +491,7 @@ always @(posedge clk) begin
 	/*   %1 = load i32* getelementptr inbounds ([3 x i32]* @inData, i32 0, i32 0), align 4*/
 	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_0_1_reg <= main_0_1;
-		if (start == 1'b0 && ^(main_0_1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_1_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_1_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -504,7 +504,7 @@ always @(posedge clk) begin
 	/*   %2 = load i32* getelementptr inbounds ([3 x i32]* @inData, i32 0, i32 1), align 4*/
 	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_0_2_reg <= main_0_2;
-		if (start == 1'b0 && ^(main_0_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_2_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_2_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -535,14 +535,14 @@ always @(posedge clk) begin
 	/*   %7 = add nsw i32 %6, %2*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_0_7_reg <= main_0_7;
-		if (start == 1'b0 && ^(main_0_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_7_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_7_reg"); $finish; end
 	end
 end
 always @(*) begin
 	main_0_8 = main_signed_multiply_32_1;
 end
 always @(*) begin
-	main_0_9 = main_signed_multiply_32_1;
+	main_0_9 = main_signed_multiply_32_0;
 end
 always @(*) begin
 	/* main: %0*/
@@ -554,37 +554,37 @@ always @(*) begin
 end
 always @(posedge clk) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_0_11_reg <= main_0_11;
-		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); $finish; end
 	end
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_0_11_reg <= main_0_11;
-		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %12 = add nsw i32 %10, %11*/
-		main_0_12 = main_signed_add_32_2;
+		main_0_12 = main_signed_add_32_0;
 end
 always @(*) begin
-	main_0_13 = main_signed_multiply_32_2;
+	main_0_13 = main_signed_multiply_32_1;
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %14 = add nsw i32 %12, %13*/
-		main_0_14 = main_signed_add_32_0;
+		main_0_14 = main_signed_add_32_1;
 end
 always @(posedge clk) begin
 	/* main: %0*/
 	/*   %14 = add nsw i32 %12, %13*/
 	if ((cur_state == LEGUP_F_main_BB__0_5)) begin
 		main_0_14_reg <= main_0_14;
-		if (start == 1'b0 && ^(main_0_14) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_14_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_14) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_14_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -594,40 +594,54 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %5 = add nsw i32 %4, %3*/
+	/*   %6 = add nsw i32 %5, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
-		main_signed_add_32_0_op0 = main_0_4;
+		main_signed_add_32_1_op0 = main_0_5;
 	end
 	/* main: %0*/
 	/*   %14 = add nsw i32 %12, %13*/
 	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
-		main_signed_add_32_0_op0 = main_0_12;
+		main_signed_add_32_1_op0 = main_0_12;
 	end
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %5 = add nsw i32 %4, %3*/
+	/*   %6 = add nsw i32 %5, %1*/
 	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
-		main_signed_add_32_0_op1 = main_0_3;
+		main_signed_add_32_1_op1 = main_0_1_reg;
 	end
 	/* main: %0*/
 	/*   %14 = add nsw i32 %12, %13*/
 	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
-		main_signed_add_32_0_op1 = main_0_13;
+		main_signed_add_32_1_op1 = main_0_13;
 	end
 end
 always @(*) begin
-	main_signed_add_32_0 = (main_signed_add_32_0_op0 + main_signed_add_32_0_op1);
+	main_signed_add_32_1 = (main_signed_add_32_1_op0 + main_signed_add_32_1_op1);
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %4 = mul nsw i32 %1, %2*/
+	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_signed_multiply_32_0_op0 = main_0_1;
+	end
+	/* main: %0*/
+	/*   %9 = mul nsw i32 %8, %3*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
+		main_signed_multiply_32_0_op0 = main_0_8;
+	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %4 = mul nsw i32 %1, %2*/
+	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
 		main_signed_multiply_32_0_op1 = main_0_2;
+	end
+	/* main: %0*/
+	/*   %9 = mul nsw i32 %8, %3*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
+		main_signed_multiply_32_0_op1 = main_0_3;
+	end
 end
 always @(*) begin
 	lpm_mult_main_0_4_en = (memory_controller_waitrequest == 1'd0);
@@ -644,40 +658,40 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %6 = add nsw i32 %5, %1*/
-		main_signed_add_32_1_op0 = main_0_5;
+	/*   %5 = add nsw i32 %4, %3*/
+	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
+		main_signed_add_32_0_op0 = main_0_4;
+	end
+	/* main: %0*/
+	/*   %12 = add nsw i32 %10, %11*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
+		main_signed_add_32_0_op0 = main_0_10;
+	end
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %6 = add nsw i32 %5, %1*/
-		main_signed_add_32_1_op1 = main_0_1_reg;
+	/*   %5 = add nsw i32 %4, %3*/
+	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
+		main_signed_add_32_0_op1 = main_0_3;
+	end
+	/* main: %0*/
+	/*   %12 = add nsw i32 %10, %11*/
+	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
+		main_signed_add_32_0_op1 = main_0_11_reg;
+	end
 end
 always @(*) begin
-	main_signed_add_32_1 = (main_signed_add_32_1_op0 + main_signed_add_32_1_op1);
+	main_signed_add_32_0 = (main_signed_add_32_0_op0 + main_signed_add_32_0_op1);
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %7 = add nsw i32 %6, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_signed_add_32_2_op0 = main_0_6;
-	end
-	/* main: %0*/
-	/*   %12 = add nsw i32 %10, %11*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
-		main_signed_add_32_2_op0 = main_0_10;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %7 = add nsw i32 %6, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_4)) begin
 		main_signed_add_32_2_op1 = main_0_2_reg;
-	end
-	/* main: %0*/
-	/*   %12 = add nsw i32 %10, %11*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_5)) */ begin
-		main_signed_add_32_2_op1 = main_0_11_reg;
-	end
 end
 always @(*) begin
 	main_signed_add_32_2 = (main_signed_add_32_2_op0 + main_signed_add_32_2_op1);
@@ -689,9 +703,9 @@ always @(*) begin
 		main_signed_multiply_32_1_op0 = main_0_1;
 	end
 	/* main: %0*/
-	/*   %9 = mul nsw i32 %8, %3*/
+	/*   %13 = mul nsw i32 %3, %3*/
 	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
-		main_signed_multiply_32_1_op0 = main_0_8;
+		main_signed_multiply_32_1_op0 = main_0_3;
 	end
 end
 always @(*) begin
@@ -701,7 +715,7 @@ always @(*) begin
 		main_signed_multiply_32_1_op1 = main_0_2;
 	end
 	/* main: %0*/
-	/*   %9 = mul nsw i32 %8, %3*/
+	/*   %13 = mul nsw i32 %3, %3*/
 	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
 		main_signed_multiply_32_1_op1 = main_0_3;
 	end
@@ -734,34 +748,20 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
-		main_signed_multiply_32_2_op0 = main_0_2;
-	end
-	/* main: %0*/
-	/*   %13 = mul nsw i32 %3, %3*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
-		main_signed_multiply_32_2_op0 = main_0_3;
-	end
+	/*   %11 = mul nsw i32 %1, %1*/
+		main_signed_multiply_32_2_op0 = main_0_1;
 end
 always @(*) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
-	if ((cur_state == LEGUP_F_main_BB__0_3)) begin
-		main_signed_multiply_32_2_op1 = main_0_2;
-	end
-	/* main: %0*/
-	/*   %13 = mul nsw i32 %3, %3*/
-	else /* if ((cur_state == LEGUP_F_main_BB__0_4)) */ begin
-		main_signed_multiply_32_2_op1 = main_0_3;
-	end
+	/*   %11 = mul nsw i32 %1, %1*/
+		main_signed_multiply_32_2_op1 = main_0_1;
 end
 always @(*) begin
 	lpm_mult_main_0_11_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
 	/* main: %0*/
-	/*   %11 = mul nsw i32 %2, %2*/
+	/*   %11 = mul nsw i32 %1, %1*/
 	if ((lpm_mult_main_0_11_en == 1'd1)) begin
 		main_0_11_stage0_reg <= (main_signed_multiply_32_2_op0 * main_signed_multiply_32_2_op1);
 	end
@@ -772,13 +772,13 @@ end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		finish <= 1'd0;
-		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 	/* main: %21*/
 	/*   ret i32 %14*/
 	if ((cur_state == LEGUP_F_main_BB__21_8)) begin
 		finish <= (memory_controller_waitrequest == 1'd0);
-		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 end
 always @(*) begin
@@ -904,13 +904,13 @@ end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		return_val <= 0;
-		if (start == 1'b0 && ^(0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); /*$finish;*/ end
+		if (start == 1'b0 && ^(0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
 	/* main: %21*/
 	/*   ret i32 %14*/
 	if ((cur_state == LEGUP_F_main_BB__21_8)) begin
 		return_val <= main_0_14_reg;
-		if (start == 1'b0 && ^(main_0_14_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_14_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
 end
 
@@ -1413,3 +1413,61 @@ module hex_digits(x, hex_LEDs);
                             (~x[3] & x[2] & x[1] & x[0]);
     
 endmodule
+`timescale 1 ns / 1 ns
+module main_tb
+(
+);
+
+reg  clk;
+reg  reset;
+reg  start;
+reg  waitrequest;
+wire [31:0] return_val;
+wire  finish;
+
+
+top top_inst (
+	.clk (clk),
+	.reset (reset),
+	.start (start),
+	.waitrequest (waitrequest),
+	.finish (finish),
+	.return_val (return_val)
+);
+
+
+
+
+initial 
+    clk = 0;
+always @(clk)
+    clk <= #10 ~clk;
+
+initial begin
+//$monitor("At t=%t clk=%b %b %b %b %d", $time, clk, reset, start, finish, return_val);
+@(negedge clk);
+reset <= 1;
+@(negedge clk);
+reset <= 0;
+start <= 1;
+@(negedge clk);
+start <= 0;
+end
+
+always@(finish) begin
+    if (finish == 1) begin
+        $display("At t=%t clk=%b finish=%b return_val=%d", $time, clk, finish, return_val);
+        $display("Cycles: %d", ($time-50)/20);
+        $finish;
+    end
+end
+
+initial begin
+waitrequest <= 1;
+@(negedge clk);
+@(negedge clk);
+waitrequest <= 0;
+end
+
+
+endmodule 
