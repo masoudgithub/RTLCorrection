@@ -1299,7 +1299,6 @@ int genOCM::generate_OCM(void)
     }
     free(m);
 
-
     return 0;
 }
 
