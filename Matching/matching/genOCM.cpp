@@ -1083,7 +1083,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 {
 
  /*   std::cout<< IRIt->second.type <<std::endl;*/
-    if (IRIt->second.type == "mul")
+    if ((IRIt->second.type == "mul") && (ocmIt->second.type == "mul"))
     {
      std::cout <<ocmIt->second.type<<std::endl;
     }
@@ -1118,7 +1118,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
         return numberOfDiffInputs;
     }
     else
-        return 1000;
+        return Not_Matched_Cost;
 }
 
 int genOCM::generate_OCM(void)
@@ -1265,7 +1265,7 @@ int genOCM::generate_OCM(void)
 
                 matched = 1;
                 if (weights[i][j] == 0) {
-                    std::cout<<it1->second.nameNumbered<< " matched to "<<it1->second.nameNumbered << " with cost \t"<<weights[i][j]<<std::endl;
+                    std::cout<<it1->second.nameNumbered<< " matched to "<<it2->second.nameNumbered << " with cost \t"<<weights[i][j]<<std::endl;
                 }
             }
             it2++;
@@ -1284,7 +1284,7 @@ int genOCM::generate_OCM(void)
 
                 matched = 1;
                 if ((weights[i][j] < Not_Matched_Cost) && (weights[i][j] > 0)) {
-                    std::cout<<it1->second.nameNumbered<< " matched to "<<it1->second.nameNumbered << " with cost "<<weights[i][j]<<std::endl;
+                    std::cout<<it1->second.nameNumbered<< " matched to "<<it2->second.nameNumbered << " with cost "<<weights[i][j]<<std::endl;
                 }
             }
             it2++;

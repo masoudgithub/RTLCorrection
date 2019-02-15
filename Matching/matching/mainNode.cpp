@@ -5,7 +5,7 @@ mainNode::mainNode (void)
 {
     inputIndex = 0;
     expandedInputIndex = 0;
-    inputWidth = 0; // initial value
+    inputWidth = 32; // initial value
     /*std::cout<<"mainNode created."<<std::endl;*/
 }
 
