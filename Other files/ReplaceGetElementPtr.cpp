@@ -155,6 +155,13 @@ virtual bool runOnFunction(Function &F) {
 		numOprands = instr->getNumOperands() ;
 		if (instr->getOpcode() == Instruction::GetElementPtr) {
 			std::cout<<"there is GetElementPtr function with " << numOprands <<" oprands\n";
+			for (int i = 0; i < numOprands; i++){
+				Value *Opi = instr->getOperand(i);
+				Type *opType = Opi->getType();
+				//std::string typeStr = getTypeName(opType);
+				std::string typeStr = Opi->getName();
+				std::cout<<"operand Type is " << opType->getTypeID() <<"with name="<< typeStr << "\n";
+			}
 		}
       ++I;
 		//isChanged |= replaceInst(instr);
