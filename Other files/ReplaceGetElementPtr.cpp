@@ -146,33 +146,52 @@ bool replaceInst(Instruction *inst) const {
 }
 
 virtual bool runOnFunction(Function &F) {
-  bool isChanged = false;
-	/* */
+	
+	bool isChanged = false;
 	int numOprands = 0;
-  for (Function::iterator BB = F.begin(), EE = F.end(); BB != EE; ++BB) {
-    for (BasicBlock::iterator I = BB->begin(), E = BB->end(); I != E;) {
-        Instruction *instr = I;
-		numOprands = instr->getNumOperands() ;
-		if (instr->getOpcode() == Instruction::GetElementPtr) {
-			std::cout<<"there is GetElementPtr function with " << numOprands <<" oprands\n";
-			for (int i = 0; i < numOprands; i++){
-				Value *Opi = instr->getOperand(i);
-				Type *opType = Opi->getType();
-				//std::string typeStr = getTypeName(opType);
-				std::string typeStr = Opi->getName();
-				std::cout<<"operand Type is " << opType->getTypeID() <<"with name="<< typeStr << "\n";
+	Value * in1, * in2;
+	Instruction *zext1, *zext2; 
+	IntegerType * type32 = IntegerType::get(Mod->getContext(), 32);
+  
+	for (Function::iterator BB = F.begin(), EE = F.end(); BB != EE; ++BB) {
+		for (BasicBlock::iterator I = BB->begin(), E = BB->end(); I != E;) {
+		    Instruction *instr = I;
+			numOprands = instr->getNumOperands() ;
+			if (instr->getOpcode() == Instruction::GetElementPtr) {
+				std::cout<<"there is GetElementPtr function with " << numOprands <<" oprands\n";
+				for (int i = 0; i < numOprands; i++){
+					Value *Opi = instr->getOperand(i);
+					Type *opType = Opi->getType();
+					//std::string typeStr = getTypeName(opType);
+					std::string typeStr = Opi->getName();
+					std::cout<<"operand Type is " << opType->getTypeID() <<" with name="<< typeStr <<"\n";
+				}
+				
+				if (numOprands == 3) {
+					in1 = instr->getOperand(1);
+					in2 = instr->getOperand(2);
+					zext1 = CastInst::CreateZExtOrBitCast(in1, type32, "",  (Instruction*) NULL);
+					zext2 = CastInst::CreateZExtOrBitCast(in2, type32, "",  (Instruction*) NULL);
+				} /*else {
+					in1 = instr->getOperand(0);
+					in2 = instr->getOperand(1);			
+				}*/
+				BinaryOperator * bo = BinaryOperator::Create(BinaryOperator::Add, zext1, zext2, "", (Instruction*) NULL);
+				std::cout<<"Operation is created but not casted yet!\n";
+				Instruction *result = CastInst::CreateTruncOrBitCast(bo, instr->getType(), "");
+				std::cout<<"Operation is casted but not replaced yet!\n";
+				llvm::ReplaceInstWithInst(instr, result);
 			}
+		  ++I;
+			//isChanged |= replaceInst(instr);
+		  /*if (instr->getOpcode() == Instruction::UDiv) {
+		    isChanged |= lowerUDiv(instr);
+		  } else if (instr->getOpcode() == Instruction::SDiv) {
+		    isChanged |= lowerSDiv(instr);
+		  }*/
 		}
-      ++I;
-		//isChanged |= replaceInst(instr);
-      /*if (instr->getOpcode() == Instruction::UDiv) {
-        isChanged |= lowerUDiv(instr);
-      } else if (instr->getOpcode() == Instruction::SDiv) {
-        isChanged |= lowerSDiv(instr);
-      }*/
-    }
-  }
-  return isChanged;
+	}
+	  return isChanged;
 }
 
 private:
