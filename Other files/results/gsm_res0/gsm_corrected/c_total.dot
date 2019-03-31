@@ -1195,9 +1195,9 @@ n2985 [ shape=diamond, label="main_signed_multiply_32_9_op0_32_bit", color="blac
 n2986 [ shape=diamond, label="main_signed_multiply_32_9_op1_32_bit", color="black", fontcolor="black" ];
 n2987 [ shape=diamond, label="main_signed_subtract_16_0_16_bit", color="black", fontcolor="black" ];
 n2988 [ shape=diamond, label="main_signed_subtract_16_0_op1_16_bit", color="black", fontcolor="black" ];
-n2989 [ shape=diamond, label="main_signed_subtract_32_0_32_bit", color="black", fontcolor="black" ];
-n2990 [ shape=diamond, label="main_signed_subtract_32_0_op0_32_bit", color="black", fontcolor="black" ];
-n2991 [ shape=diamond, label="main_signed_subtract_32_0_op1_32_bit", color="black", fontcolor="black" ];
+n2989 [ shape=diamond, label="main_signed_subtract_32_1_32_bit", color="black", fontcolor="black" ];
+n2990 [ shape=diamond, label="main_signed_subtract_32_1_op0_32_bit", color="black", fontcolor="black" ];
+n2991 [ shape=diamond, label="main_signed_subtract_32_1_op1_32_bit", color="black", fontcolor="black" ];
 n2992 [ shape=diamond, label="main_thread102i_576_16_bit", color="black", fontcolor="black" ];
 n2993 [ shape=diamond, label="main_thread102i_576_reg_16_bit", color="black", fontcolor="black" ];
 n2994 [ shape=diamond, label="main_thread102i_577_32_bit", color="black", fontcolor="black" ];

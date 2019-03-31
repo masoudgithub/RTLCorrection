@@ -1083,10 +1083,10 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 {
 
  /*   std::cout<< IRIt->second.type <<std::endl;*/
-    if ((IRIt->second.type == "mul") && (ocmIt->second.type == "mul"))
+    /*if ((IRIt->second.type == "mul") && (ocmIt->second.type == "mul"))
     {
      std::cout <<ocmIt->second.type<<std::endl;
-    }
+    }*/
     int numberOfDiffInputs = IRIt->second.expandedNumberOfInputs;
     if (IRIt->second.typeComplete == ocmIt->second.typeComplete)
     {
@@ -1247,6 +1247,7 @@ int genOCM::generate_OCM(void)
                 matched = 1;
                 if (weights[i][j] == Not_Matched_Cost) {
                     std::cout<<it1->second.nameNumbered<< " Not Matched"<<std::endl;
+                    num_notMatched++;
                 }
             }
             it2++;
