@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Sat Mar 30 06:42:32 2019
+// Date: Sun Mar 31 03:12:41 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -497,7 +497,7 @@ begin
 	if (prevAddr_a[2:0] & select_not_struct_a[2:0] != 0 && memory_controller_enable_a)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 
 	prevSize_a_and[0] = prevSize_a[1] | prevSize_a[0];
@@ -506,7 +506,7 @@ begin
 	if ((prevAddr_a & prevSize_a_and) != 0 && memory_controller_enable_a)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 	memory_controller_out_prev_a = memory_controller_out_reg_a & { 64{!memory_controller_enable_reg_a}};
 	memory_controller_out_a = 1'b0 | memory_controller_out_prev_a | memory_controller_maincoefficients_out_a | memory_controller_main_0_previous_out_a | memory_controller_legup_memset_4_0_1_out_a | memory_controller_legup_memset_4_0_2_out_a | memory_controller_legup_memset_4_0_3_out_a | memory_controller_legup_memset_4_0_c_out_a | memory_controller_legup_memset_4_0_s_out_a;
@@ -623,7 +623,7 @@ begin
 	if (prevAddr_b[2:0] & select_not_struct_b[2:0] != 0 && memory_controller_enable_b)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 
 	prevSize_b_and[0] = prevSize_b[1] | prevSize_b[0];
@@ -632,7 +632,7 @@ begin
 	if ((prevAddr_b & prevSize_b_and) != 0 && memory_controller_enable_b)
 	begin
 		$display("Error: memory address not aligned to ram word size!");
-		/*$finish;*/
+		$finish;
 	end
 	memory_controller_out_prev_b = memory_controller_out_reg_b & { 64{!memory_controller_enable_reg_b}};
 	memory_controller_out_b = 1'b0 | memory_controller_out_prev_b | memory_controller_maincoefficients_out_b | memory_controller_main_0_previous_out_b | memory_controller_legup_memset_4_0_1_out_b | memory_controller_legup_memset_4_0_2_out_b | memory_controller_legup_memset_4_0_3_out_b | memory_controller_legup_memset_4_0_c_out_b | memory_controller_legup_memset_4_0_s_out_b;
@@ -913,7 +913,7 @@ end
 always @(*) begin
 	/* legup_memset_4: %18*/
 	/*   %19 = load i32* %3, align 4*/
-		legup_memset_4_18_19 = memory_controller_out_b[31:0];
+		legup_memset_4_18_19 = memory_controller_out_a[31:0];
 end
 always @(*) begin
 	/* legup_memset_4: %18*/
@@ -930,18 +930,18 @@ always @(posedge clk) begin
 	/*   %21 = icmp ne i32 %19, 0*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
 		legup_memset_4_18_21_reg <= legup_memset_4_18_21;
-		if (start == 1'b0 && ^(legup_memset_4_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_18_21_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(legup_memset_4_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_18_21_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* legup_memset_4: %22*/
 	/*   %23 = load i32* %c, align 4*/
-		legup_memset_4_22_23 = memory_controller_out_b[31:0];
+		legup_memset_4_22_23 = memory_controller_out_a[31:0];
 end
 always @(*) begin
 	/* legup_memset_4: %22*/
 	/*   %24 = load i32** %s, align 4*/
-		legup_memset_4_22_24 = memory_controller_out_a[`MEMORY_CONTROLLER_ADDR_SIZE-1:0];
+		legup_memset_4_22_24 = memory_controller_out_b[`MEMORY_CONTROLLER_ADDR_SIZE-1:0];
 end
 always @(*) begin
 	/* legup_memset_4: %22*/
@@ -988,13 +988,13 @@ end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		finish <= 1'd0;
-		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 	/* legup_memset_4: %26*/
 	/*   ret void*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__26_21)) begin
 		finish <= (memory_controller_waitrequest == 1'd0);
-		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 end
 always @(*) begin
@@ -1010,6 +1010,11 @@ always @(*) begin
 	/* legup_memset_4: %0*/
 	/*   store i32 %n, i32* %3, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_2)) begin
+		memory_controller_enable_a = 1'd1;
+	end
+	/* legup_memset_4: %0*/
+	/*   store i32 %5, i32* %c, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
 		memory_controller_enable_a = 1'd1;
 	end
 	/* legup_memset_4: %0*/
@@ -1042,8 +1047,18 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_enable_a = 1'd1;
 	end
+	/* legup_memset_4: %18*/
+	/*   %19 = load i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
+		memory_controller_enable_a = 1'd1;
+	end
+	/* legup_memset_4: %18*/
+	/*   store i32 %20, i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
+		memory_controller_enable_a = 1'd1;
+	end
 	/* legup_memset_4: %22*/
-	/*   %24 = load i32** %s, align 4*/
+	/*   %23 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_enable_a = 1'd1;
 	end
@@ -1069,6 +1084,11 @@ always @(*) begin
 		memory_controller_address_a = `TAG_legup_memset_4_0_3_a;
 	end
 	/* legup_memset_4: %0*/
+	/*   store i32 %5, i32* %c, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
+		memory_controller_address_a = `TAG_legup_memset_4_0_c_a;
+	end
+	/* legup_memset_4: %0*/
 	/*   %6 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_5)) begin
 		memory_controller_address_a = `TAG_legup_memset_4_0_c_a;
@@ -1098,10 +1118,20 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_address_a = `TAG_legup_memset_4_0_s_a;
 	end
+	/* legup_memset_4: %18*/
+	/*   %19 = load i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
+		memory_controller_address_a = `TAG_legup_memset_4_0_3_a;
+	end
+	/* legup_memset_4: %18*/
+	/*   store i32 %20, i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
+		memory_controller_address_a = `TAG_legup_memset_4_0_3_a;
+	end
 	/* legup_memset_4: %22*/
-	/*   %24 = load i32** %s, align 4*/
+	/*   %23 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
-		memory_controller_address_a = `TAG_legup_memset_4_0_s_a;
+		memory_controller_address_a = `TAG_legup_memset_4_0_c_a;
 	end
 	/* legup_memset_4: %22*/
 	/*   store i32* %25, i32** %s, align 4*/
@@ -1122,6 +1152,11 @@ always @(*) begin
 	/* legup_memset_4: %0*/
 	/*   store i32 %n, i32* %3, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_2)) begin
+		memory_controller_write_enable_a = 1'd1;
+	end
+	/* legup_memset_4: %0*/
+	/*   store i32 %5, i32* %c, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
 		memory_controller_write_enable_a = 1'd1;
 	end
 	/* legup_memset_4: %0*/
@@ -1154,8 +1189,18 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_write_enable_a = 1'd1;
 	end
+	/* legup_memset_4: %18*/
+	/*   %19 = load i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
+		memory_controller_write_enable_a = 1'd0;
+	end
+	/* legup_memset_4: %18*/
+	/*   store i32 %20, i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
+		memory_controller_write_enable_a = 1'd1;
+	end
 	/* legup_memset_4: %22*/
-	/*   %24 = load i32** %s, align 4*/
+	/*   %23 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_write_enable_a = 1'd0;
 	end
@@ -1181,6 +1226,11 @@ always @(*) begin
 		memory_controller_in_a = arg_n;
 	end
 	/* legup_memset_4: %0*/
+	/*   store i32 %5, i32* %c, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
+		memory_controller_in_a = legup_memset_4_0_5;
+	end
+	/* legup_memset_4: %0*/
 	/*   store i32 %9, i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_7)) begin
 		memory_controller_in_a = legup_memset_4_0_9;
@@ -1194,6 +1244,11 @@ always @(*) begin
 	/*   store i32* %15, i32** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_in_a = legup_memset_4_0_15;
+	end
+	/* legup_memset_4: %18*/
+	/*   store i32 %20, i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
+		memory_controller_in_a = legup_memset_4_18_20;
 	end
 	/* legup_memset_4: %22*/
 	/*   store i32* %25, i32** %s, align 4*/
@@ -1214,6 +1269,11 @@ always @(*) begin
 	/* legup_memset_4: %0*/
 	/*   store i32 %n, i32* %3, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_2)) begin
+		memory_controller_size_a = 2'd2;
+	end
+	/* legup_memset_4: %0*/
+	/*   store i32 %5, i32* %c, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
 		memory_controller_size_a = 2'd2;
 	end
 	/* legup_memset_4: %0*/
@@ -1246,8 +1306,18 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_size_a = 2'd2;
 	end
+	/* legup_memset_4: %18*/
+	/*   %19 = load i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
+		memory_controller_size_a = 2'd2;
+	end
+	/* legup_memset_4: %18*/
+	/*   store i32 %20, i32* %3, align 4*/
+	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
+		memory_controller_size_a = 2'd2;
+	end
 	/* legup_memset_4: %22*/
-	/*   %24 = load i32** %s, align 4*/
+	/*   %23 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_size_a = 2'd2;
 	end
@@ -1273,11 +1343,6 @@ always @(*) begin
 		memory_controller_enable_b = 1'd1;
 	end
 	/* legup_memset_4: %0*/
-	/*   store i32 %5, i32* %c, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
-		memory_controller_enable_b = 1'd1;
-	end
-	/* legup_memset_4: %0*/
 	/*   %8 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_5)) begin
 		memory_controller_enable_b = 1'd1;
@@ -1297,18 +1362,8 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_enable_b = 1'd1;
 	end
-	/* legup_memset_4: %18*/
-	/*   %19 = load i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
-		memory_controller_enable_b = 1'd1;
-	end
-	/* legup_memset_4: %18*/
-	/*   store i32 %20, i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
-		memory_controller_enable_b = 1'd1;
-	end
 	/* legup_memset_4: %22*/
-	/*   %23 = load i32* %c, align 4*/
+	/*   %24 = load i32** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_enable_b = 1'd1;
 	end
@@ -1334,11 +1389,6 @@ always @(*) begin
 		memory_controller_address_b = `TAG_legup_memset_4_0_2_a;
 	end
 	/* legup_memset_4: %0*/
-	/*   store i32 %5, i32* %c, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
-		memory_controller_address_b = `TAG_legup_memset_4_0_c_a;
-	end
-	/* legup_memset_4: %0*/
 	/*   %8 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_5)) begin
 		memory_controller_address_b = `TAG_legup_memset_4_0_c_a;
@@ -1358,20 +1408,10 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_address_b = `TAG_legup_memset_4_0_3_a;
 	end
-	/* legup_memset_4: %18*/
-	/*   %19 = load i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
-		memory_controller_address_b = `TAG_legup_memset_4_0_3_a;
-	end
-	/* legup_memset_4: %18*/
-	/*   store i32 %20, i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
-		memory_controller_address_b = `TAG_legup_memset_4_0_3_a;
-	end
 	/* legup_memset_4: %22*/
-	/*   %23 = load i32* %c, align 4*/
+	/*   %24 = load i32** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
-		memory_controller_address_b = `TAG_legup_memset_4_0_c_a;
+		memory_controller_address_b = `TAG_legup_memset_4_0_s_a;
 	end
 	/* legup_memset_4: %22*/
 	/*   store i32 %23, i32* %24, align 4*/
@@ -1395,11 +1435,6 @@ always @(*) begin
 		memory_controller_write_enable_b = 1'd0;
 	end
 	/* legup_memset_4: %0*/
-	/*   store i32 %5, i32* %c, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
-		memory_controller_write_enable_b = 1'd1;
-	end
-	/* legup_memset_4: %0*/
 	/*   %8 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_5)) begin
 		memory_controller_write_enable_b = 1'd0;
@@ -1419,18 +1454,8 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_write_enable_b = 1'd1;
 	end
-	/* legup_memset_4: %18*/
-	/*   %19 = load i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
-		memory_controller_write_enable_b = 1'd0;
-	end
-	/* legup_memset_4: %18*/
-	/*   store i32 %20, i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
-		memory_controller_write_enable_b = 1'd1;
-	end
 	/* legup_memset_4: %22*/
-	/*   %23 = load i32* %c, align 4*/
+	/*   %24 = load i32** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_write_enable_b = 1'd0;
 	end
@@ -1451,19 +1476,9 @@ always @(*) begin
 		memory_controller_in_b = arg_c1;
 	end
 	/* legup_memset_4: %0*/
-	/*   store i32 %5, i32* %c, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
-		memory_controller_in_b = legup_memset_4_0_5;
-	end
-	/* legup_memset_4: %0*/
 	/*   store i32 %17, i32* %3, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_in_b = legup_memset_4_0_17;
-	end
-	/* legup_memset_4: %18*/
-	/*   store i32 %20, i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
-		memory_controller_in_b = legup_memset_4_18_20;
 	end
 	/* legup_memset_4: %22*/
 	/*   store i32 %23, i32* %24, align 4*/
@@ -1487,11 +1502,6 @@ always @(*) begin
 		memory_controller_size_b = 2'd0;
 	end
 	/* legup_memset_4: %0*/
-	/*   store i32 %5, i32* %c, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_4)) begin
-		memory_controller_size_b = 2'd2;
-	end
-	/* legup_memset_4: %0*/
 	/*   %8 = load i32* %c, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_5)) begin
 		memory_controller_size_b = 2'd2;
@@ -1511,18 +1521,8 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__0_11)) begin
 		memory_controller_size_b = 2'd2;
 	end
-	/* legup_memset_4: %18*/
-	/*   %19 = load i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_13)) begin
-		memory_controller_size_b = 2'd2;
-	end
-	/* legup_memset_4: %18*/
-	/*   store i32 %20, i32* %3, align 4*/
-	if ((cur_state == LEGUP_F_legup_memset_4_BB__18_15)) begin
-		memory_controller_size_b = 2'd2;
-	end
 	/* legup_memset_4: %22*/
-	/*   %23 = load i32* %c, align 4*/
+	/*   %24 = load i32** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_4_BB__22_17)) begin
 		memory_controller_size_b = 2'd2;
 	end
@@ -1636,7 +1636,6 @@ reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_4;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_4_reg;
 reg [31:0] main_0_gep_int4;
 reg [31:0] main_0_gep5;
-reg [31:0] main_0_gep5_reg;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_5;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_5_reg;
 reg [31:0] main_0_gep_int6;
@@ -2027,7 +2026,7 @@ always @(posedge clk) begin
 	/*   %2 = inttoptr i32 %gep_int to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_2_reg <= main_0_2;
-		if (start == 1'b0 && ^(main_0_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_2_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_2_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2051,7 +2050,7 @@ always @(posedge clk) begin
 	/*   %3 = inttoptr i32 %gep to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_3_reg <= main_0_3;
-		if (start == 1'b0 && ^(main_0_3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_3_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_3_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2075,7 +2074,7 @@ always @(posedge clk) begin
 	/*   %4 = inttoptr i32 %gep3 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_4_reg <= main_0_4;
-		if (start == 1'b0 && ^(main_0_4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_4_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_4_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2089,20 +2088,6 @@ always @(*) begin
 	/*   %gep5 = add i32 %gep_int4, 52*/
 		main_0_gep5 = main_signed_add_32_2;
 end
-always @(posedge clk) begin
-	/* main: %0*/
-	/*   %gep5 = add i32 %gep_int4, 52*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
-		main_0_gep5_reg <= main_0_gep5;
-		if (start == 1'b0 && ^(main_0_gep5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep5_reg"); /*$finish;*/ end
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_0_gep5_reg <= main__crit_edgei_45;
-		if (start == 1'b0 && ^(main__crit_edgei_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep5_reg"); /*$finish;*/ end
-	end
-end
 always @(*) begin
 	/* main: %0*/
 	/*   %5 = inttoptr i32 %gep5 to i32**/
@@ -2113,7 +2098,7 @@ always @(posedge clk) begin
 	/*   %5 = inttoptr i32 %gep5 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_5_reg <= main_0_5;
-		if (start == 1'b0 && ^(main_0_5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_5_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_5_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2137,7 +2122,7 @@ always @(posedge clk) begin
 	/*   %6 = inttoptr i32 %gep7 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_6_reg <= main_0_6;
-		if (start == 1'b0 && ^(main_0_6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_6_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_6_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2161,7 +2146,7 @@ always @(posedge clk) begin
 	/*   %7 = inttoptr i32 %gep9 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_7_reg <= main_0_7;
-		if (start == 1'b0 && ^(main_0_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_7_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_7_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2185,7 +2170,7 @@ always @(posedge clk) begin
 	/*   %8 = inttoptr i32 %gep11 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_8_reg <= main_0_8;
-		if (start == 1'b0 && ^(main_0_8) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_8_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_8) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_8_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2209,7 +2194,7 @@ always @(posedge clk) begin
 	/*   %9 = inttoptr i32 %gep13 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_9_reg <= main_0_9;
-		if (start == 1'b0 && ^(main_0_9) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_9_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_9) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_9_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2233,7 +2218,7 @@ always @(posedge clk) begin
 	/*   %10 = inttoptr i32 %gep15 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_10_reg <= main_0_10;
-		if (start == 1'b0 && ^(main_0_10) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_10_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_10) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_10_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2257,7 +2242,7 @@ always @(posedge clk) begin
 	/*   %11 = inttoptr i32 %gep17 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_11_reg <= main_0_11;
-		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_11_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2281,7 +2266,7 @@ always @(posedge clk) begin
 	/*   %12 = inttoptr i32 %gep19 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_12_reg <= main_0_12;
-		if (start == 1'b0 && ^(main_0_12) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_12_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_12) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_12_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2305,7 +2290,7 @@ always @(posedge clk) begin
 	/*   %13 = inttoptr i32 %gep21 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_13_reg <= main_0_13;
-		if (start == 1'b0 && ^(main_0_13) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_13_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_13) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_13_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2329,7 +2314,7 @@ always @(posedge clk) begin
 	/*   %14 = inttoptr i32 %gep23 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_14_reg <= main_0_14;
-		if (start == 1'b0 && ^(main_0_14) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_14_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_14) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_14_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2353,7 +2338,7 @@ always @(posedge clk) begin
 	/*   %15 = inttoptr i32 %gep25 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_15_reg <= main_0_15;
-		if (start == 1'b0 && ^(main_0_15) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_15_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_15) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_15_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2377,7 +2362,7 @@ always @(posedge clk) begin
 	/*   %16 = inttoptr i32 %gep27 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_16_reg <= main_0_16;
-		if (start == 1'b0 && ^(main_0_16) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_16_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_16) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_16_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2401,7 +2386,7 @@ always @(posedge clk) begin
 	/*   %17 = inttoptr i32 %gep29 to i32**/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_0_17_reg <= main_0_17;
-		if (start == 1'b0 && ^(main_0_17) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_17_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_17) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_17_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2421,13 +2406,13 @@ always @(posedge clk) begin
 	/*   %19 = phi i32 [ 0, %0 ], [ %i.03, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_19_reg <= main_18_19;
-		if (start == 1'b0 && ^(main_18_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_19_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_19_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %19 = phi i32 [ 0, %0 ], [ %i.03, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_19_reg <= main_18_19;
-		if (start == 1'b0 && ^(main_18_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_19_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_19_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2447,13 +2432,13 @@ always @(posedge clk) begin
 	/*   %20 = phi i32 [ 0, %0 ], [ %19, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_20_reg <= main_18_20;
-		if (start == 1'b0 && ^(main_18_20) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_20_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_20) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_20_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %20 = phi i32 [ 0, %0 ], [ %19, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_20_reg <= main_18_20;
-		if (start == 1'b0 && ^(main_18_20) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_20_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_20) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_20_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2473,13 +2458,13 @@ always @(posedge clk) begin
 	/*   %21 = phi i32 [ 0, %0 ], [ %20, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_21_reg <= main_18_21;
-		if (start == 1'b0 && ^(main_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_21_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_21_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %21 = phi i32 [ 0, %0 ], [ %20, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_21_reg <= main_18_21;
-		if (start == 1'b0 && ^(main_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_21_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_21_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2499,13 +2484,13 @@ always @(posedge clk) begin
 	/*   %22 = phi i32 [ 0, %0 ], [ %21, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_22_reg <= main_18_22;
-		if (start == 1'b0 && ^(main_18_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_22_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_22_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %22 = phi i32 [ 0, %0 ], [ %21, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_22_reg <= main_18_22;
-		if (start == 1'b0 && ^(main_18_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_22_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_22_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2525,13 +2510,13 @@ always @(posedge clk) begin
 	/*   %23 = phi i32 [ 0, %0 ], [ %22, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_23_reg <= main_18_23;
-		if (start == 1'b0 && ^(main_18_23) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_23_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_23) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_23_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %23 = phi i32 [ 0, %0 ], [ %22, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_23_reg <= main_18_23;
-		if (start == 1'b0 && ^(main_18_23) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_23_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_23) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_23_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2551,13 +2536,13 @@ always @(posedge clk) begin
 	/*   %24 = phi i32 [ 0, %0 ], [ %23, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_24_reg <= main_18_24;
-		if (start == 1'b0 && ^(main_18_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_24_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_24_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %24 = phi i32 [ 0, %0 ], [ %23, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_24_reg <= main_18_24;
-		if (start == 1'b0 && ^(main_18_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_24_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_24_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2577,13 +2562,13 @@ always @(posedge clk) begin
 	/*   %25 = phi i32 [ 0, %0 ], [ %24, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_25_reg <= main_18_25;
-		if (start == 1'b0 && ^(main_18_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_25_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_25_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %25 = phi i32 [ 0, %0 ], [ %24, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_25_reg <= main_18_25;
-		if (start == 1'b0 && ^(main_18_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_25_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_25_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2603,13 +2588,13 @@ always @(posedge clk) begin
 	/*   %26 = phi i32 [ 0, %0 ], [ %25, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_26_reg <= main_18_26;
-		if (start == 1'b0 && ^(main_18_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_26_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_26_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %26 = phi i32 [ 0, %0 ], [ %25, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_26_reg <= main_18_26;
-		if (start == 1'b0 && ^(main_18_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_26_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_26_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2629,13 +2614,13 @@ always @(posedge clk) begin
 	/*   %27 = phi i32 [ 0, %0 ], [ %26, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_27_reg <= main_18_27;
-		if (start == 1'b0 && ^(main_18_27) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_27_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_27) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_27_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %27 = phi i32 [ 0, %0 ], [ %26, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_27_reg <= main_18_27;
-		if (start == 1'b0 && ^(main_18_27) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_27_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_27) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_27_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2655,13 +2640,13 @@ always @(posedge clk) begin
 	/*   %28 = phi i32 [ 0, %0 ], [ %27, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_28_reg <= main_18_28;
-		if (start == 1'b0 && ^(main_18_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_28_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_28_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %28 = phi i32 [ 0, %0 ], [ %27, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_28_reg <= main_18_28;
-		if (start == 1'b0 && ^(main_18_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_28_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_28_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2681,13 +2666,13 @@ always @(posedge clk) begin
 	/*   %29 = phi i32 [ 0, %0 ], [ %28, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_29_reg <= main_18_29;
-		if (start == 1'b0 && ^(main_18_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_29_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_29_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %29 = phi i32 [ 0, %0 ], [ %28, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_29_reg <= main_18_29;
-		if (start == 1'b0 && ^(main_18_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_29_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_29_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2707,13 +2692,13 @@ always @(posedge clk) begin
 	/*   %30 = phi i32 [ 0, %0 ], [ %29, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_30_reg <= main_18_30;
-		if (start == 1'b0 && ^(main_18_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_30_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_30_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %30 = phi i32 [ 0, %0 ], [ %29, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_30_reg <= main_18_30;
-		if (start == 1'b0 && ^(main_18_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_30_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_30_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2733,13 +2718,13 @@ always @(posedge clk) begin
 	/*   %31 = phi i32 [ 0, %0 ], [ %30, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_31_reg <= main_18_31;
-		if (start == 1'b0 && ^(main_18_31) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_31_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_31) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_31_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %31 = phi i32 [ 0, %0 ], [ %30, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_31_reg <= main_18_31;
-		if (start == 1'b0 && ^(main_18_31) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_31_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_31) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_31_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2759,13 +2744,13 @@ always @(posedge clk) begin
 	/*   %32 = phi i32 [ 0, %0 ], [ %31, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_32_reg <= main_18_32;
-		if (start == 1'b0 && ^(main_18_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_32_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_32_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %32 = phi i32 [ 0, %0 ], [ %31, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_32_reg <= main_18_32;
-		if (start == 1'b0 && ^(main_18_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_32_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_32_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2785,13 +2770,13 @@ always @(posedge clk) begin
 	/*   %33 = phi i32 [ 0, %0 ], [ %32, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_33_reg <= main_18_33;
-		if (start == 1'b0 && ^(main_18_33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_33_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_33_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %33 = phi i32 [ 0, %0 ], [ %32, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_33_reg <= main_18_33;
-		if (start == 1'b0 && ^(main_18_33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_33_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_33_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2811,13 +2796,13 @@ always @(posedge clk) begin
 	/*   %total.04 = phi i32 [ 0, %0 ], [ %46, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_total04_reg <= main_18_total04;
-		if (start == 1'b0 && ^(main_18_total04) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_total04_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_total04) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_total04_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %total.04 = phi i32 [ 0, %0 ], [ %46, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_total04_reg <= main_18_total04;
-		if (start == 1'b0 && ^(main_18_total04) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_total04_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_total04) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_total04_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2837,13 +2822,13 @@ always @(posedge clk) begin
 	/*   %i.03 = phi i32 [ 1, %0 ], [ %47, %FIRFilterStreaming.exit ]*/
 	if (((cur_state == LEGUP_F_main_BB__0_3) & (memory_controller_waitrequest == 1'd0))) begin
 		main_18_i03_reg <= main_18_i03;
-		if (start == 1'b0 && ^(main_18_i03) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_i03_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_i03) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_i03_reg"); $finish; end
 	end
 	/* main: %18*/
 	/*   %i.03 = phi i32 [ 1, %0 ], [ %47, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd0))) begin
 		main_18_i03_reg <= main_18_i03;
-		if (start == 1'b0 && ^(main_18_i03) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_i03_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_i03) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_i03_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2856,7 +2841,7 @@ always @(posedge clk) begin
 	/*   %34 = icmp eq i32 %33, 0*/
 	if ((cur_state == LEGUP_F_main_BB__18_4)) begin
 		main_18_34_reg <= main_18_34;
-		if (start == 1'b0 && ^(main_18_34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_34_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_18_34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_18_34_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2889,13 +2874,13 @@ always @(posedge clk) begin
 	/*   %.pre.i = phi i32 [ %19, %.preheader.i.preheader ], [ %.pre.i.pre, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB_preheaderipreheader_22) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_prei_reg <= main__crit_edgei_prei;
-		if (start == 1'b0 && ^(main__crit_edgei_prei) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_prei_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_prei) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_prei_reg"); $finish; end
 	end
 	/* main: %._crit_edge.i*/
 	/*   %.pre.i = phi i32 [ %19, %.preheader.i.preheader ], [ %.pre.i.pre, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_32) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_prei_reg <= main__crit_edgei_prei;
-		if (start == 1'b0 && ^(main__crit_edgei_prei) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_prei_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_prei) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_prei_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2915,13 +2900,13 @@ always @(posedge clk) begin
 	/*   %36 = phi i32 [ 1, %.preheader.i.preheader ], [ %45, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB_preheaderipreheader_22) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_36_reg <= main__crit_edgei_36;
-		if (start == 1'b0 && ^(main__crit_edgei_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_36_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_36_reg"); $finish; end
 	end
 	/* main: %._crit_edge.i*/
 	/*   %36 = phi i32 [ 1, %.preheader.i.preheader ], [ %45, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_32) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_36_reg <= main__crit_edgei_36;
-		if (start == 1'b0 && ^(main__crit_edgei_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_36_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_36_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2941,13 +2926,13 @@ always @(posedge clk) begin
 	/*   %37 = phi i32 [ %35, %.preheader.i.preheader ], [ %44, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB_preheaderipreheader_22) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_37_reg <= main__crit_edgei_37;
-		if (start == 1'b0 && ^(main__crit_edgei_37) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_37_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_37) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_37_reg"); $finish; end
 	end
 	/* main: %._crit_edge.i*/
 	/*   %37 = phi i32 [ %35, %.preheader.i.preheader ], [ %44, %._crit_edge.i.._crit_edge.i_crit_edge ]*/
 	if (((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_32) & (memory_controller_waitrequest == 1'd0))) begin
 		main__crit_edgei_37_reg <= main__crit_edgei_37;
-		if (start == 1'b0 && ^(main__crit_edgei_37) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_37_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_37) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_37_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2960,7 +2945,7 @@ always @(posedge clk) begin
 	/*   %38 = sub i32 15, %36*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_38_reg <= main__crit_edgei_38;
-		if (start == 1'b0 && ^(main__crit_edgei_38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_38_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_38_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2974,7 +2959,7 @@ always @(posedge clk) begin
 	/*   %gep_int30 = ptrtoint [16 x i32]* %previous to i32*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_gep_int30_reg <= main__crit_edgei_gep_int30;
-		if (start == 1'b0 && ^(main__crit_edgei_gep_int30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_int30_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_gep_int30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_int30_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -2987,13 +2972,13 @@ always @(posedge clk) begin
 	/*   %gep_array = mul i32 %38, 4*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_24)) begin
 		main__crit_edgei_gep_array_reg <= main__crit_edgei_gep_array;
-		if (start == 1'b0 && ^(main__crit_edgei_gep_array) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_array_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_gep_array) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_array_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %gep31 = add i32 %gep_int30, %gep_array*/
-		main__crit_edgei_gep31 = main_signed_add_32_4;
+		main__crit_edgei_gep31 = main_signed_add_32_0;
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
@@ -3016,7 +3001,7 @@ always @(posedge clk) begin
 	/*   %gep_int32 = ptrtoint [16 x i32]* @main.coefficients to i32*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_gep_int32_reg <= main__crit_edgei_gep_int32;
-		if (start == 1'b0 && ^(main__crit_edgei_gep_int32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_int32_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_gep_int32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_int32_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3029,13 +3014,13 @@ always @(posedge clk) begin
 	/*   %gep_array33 = mul i32 %36, 4*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_gep_array33_reg <= main__crit_edgei_gep_array33;
-		if (start == 1'b0 && ^(main__crit_edgei_gep_array33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_array33_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_gep_array33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_gep_array33_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %gep34 = add i32 %gep_int32, %gep_array33*/
-		main__crit_edgei_gep34 = main_signed_add_32_3;
+		main__crit_edgei_gep34 = main_signed_add_32_0;
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
@@ -3052,7 +3037,7 @@ always @(posedge clk) begin
 	/*   %42 = load i32* %41, align 4, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_26)) begin
 		main__crit_edgei_42_reg <= main__crit_edgei_42;
-		if (start == 1'b0 && ^(main__crit_edgei_42) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_42_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_42) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_42_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3073,7 +3058,13 @@ always @(posedge clk) begin
 	/*   %43 = add i32 %37, %.pre.i*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_43_reg <= main__crit_edgei_43;
-		if (start == 1'b0 && ^(main__crit_edgei_43) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_43_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_43) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_43_reg"); $finish; end
+	end
+	/* main: %FIRFilterStreaming.exit*/
+	/*   %47 = add nsw i32 %i.03, 1*/
+	if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) begin
+		main__crit_edgei_43_reg <= main_FIRFilterStreamingexit_47;
+		if (start == 1'b0 && ^(main_FIRFilterStreamingexit_47) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_43_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3086,18 +3077,21 @@ always @(posedge clk) begin
 	/*   %44 = add i32 %43, %tmp1.i*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_28)) begin
 		main__crit_edgei_44_reg <= main__crit_edgei_44;
-		if (start == 1'b0 && ^(main__crit_edgei_44) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_44_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_44) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_44_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %45 = add nsw i32 %36, 1*/
-		main__crit_edgei_45 = main_signed_add_32_2;
+		main__crit_edgei_45 = main_signed_add_32_0;
 end
-always @(*) begin
-/* main: %._crit_edge.i*/
-/*   %45 = add nsw i32 %36, 1*/
-	main__crit_edgei_45_reg = main_0_gep5_reg;
+always @(posedge clk) begin
+	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main__crit_edgei_45_reg <= main__crit_edgei_45;
+		if (start == 1'b0 && ^(main__crit_edgei_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_45_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
@@ -3109,7 +3103,7 @@ always @(posedge clk) begin
 	/*   %exitcond.i = icmp eq i32 %45, 16*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
 		main__crit_edgei_exitcondi_reg <= main__crit_edgei_exitcondi;
-		if (start == 1'b0 && ^(main__crit_edgei_exitcondi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_exitcondi_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_exitcondi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_exitcondi_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3123,7 +3117,7 @@ always @(posedge clk) begin
 	/*   %gep_int35 = ptrtoint [16 x i32]* %previous to i32*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_29)) begin
 		main__crit_edgei_crit_edgei_crit_edge_gep_int35_reg <= main__crit_edgei_crit_edgei_crit_edge_gep_int35;
-		if (start == 1'b0 && ^(main__crit_edgei_crit_edgei_crit_edge_gep_int35) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_crit_edgei_crit_edge_gep_int35_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_crit_edgei_crit_edge_gep_int35) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_crit_edgei_crit_edge_gep_int35_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3136,13 +3130,13 @@ always @(posedge clk) begin
 	/*   %gep_array36 = mul i32 %45, 4*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_29)) begin
 		main__crit_edgei_crit_edgei_crit_edge_gep_array36_reg <= main__crit_edgei_crit_edgei_crit_edge_gep_array36;
-		if (start == 1'b0 && ^(main__crit_edgei_crit_edgei_crit_edge_gep_array36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_crit_edgei_crit_edge_gep_array36_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main__crit_edgei_crit_edgei_crit_edge_gep_array36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main__crit_edgei_crit_edgei_crit_edge_gep_array36_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
 	/*   %gep37 = add i32 %gep_int35, %gep_array36*/
-		main__crit_edgei_crit_edgei_crit_edge_gep37 = main_signed_add_32_5;
+		main__crit_edgei_crit_edgei_crit_edge_gep37 = main_signed_add_32_0;
 end
 always @(*) begin
 	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
@@ -3171,24 +3165,24 @@ always @(posedge clk) begin
 	/*   %.0.i = phi i32 [ 0, %18 ], [ %44, %._crit_edge.i ]*/
 	if ((((cur_state == LEGUP_F_main_BB__18_20) & (memory_controller_waitrequest == 1'd0)) & (main_18_34_reg == 1'd1))) begin
 		main_FIRFilterStreamingexit_0i_reg <= main_FIRFilterStreamingexit_0i;
-		if (start == 1'b0 && ^(main_FIRFilterStreamingexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_FIRFilterStreamingexit_0i_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_FIRFilterStreamingexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_FIRFilterStreamingexit_0i_reg"); $finish; end
 	end
 	/* main: %FIRFilterStreaming.exit*/
 	/*   %.0.i = phi i32 [ 0, %18 ], [ %44, %._crit_edge.i ]*/
 	if ((((cur_state == LEGUP_F_main_BB__crit_edgei_28) & (memory_controller_waitrequest == 1'd0)) & (main__crit_edgei_exitcondi_reg == 1'd1))) begin
 		main_FIRFilterStreamingexit_0i_reg <= main_FIRFilterStreamingexit_0i;
-		if (start == 1'b0 && ^(main_FIRFilterStreamingexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_FIRFilterStreamingexit_0i_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_FIRFilterStreamingexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_FIRFilterStreamingexit_0i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %FIRFilterStreaming.exit*/
 	/*   %46 = add i32 %.0.i, %total.04*/
-		main_FIRFilterStreamingexit_46 = main_signed_add_32_2;
+		main_FIRFilterStreamingexit_46 = main_signed_add_32_0;
 end
 always @(*) begin
 	/* main: %FIRFilterStreaming.exit*/
 	/*   %47 = add nsw i32 %i.03, 1*/
-		main_FIRFilterStreamingexit_47 = main_signed_add_32_0;
+		main_FIRFilterStreamingexit_47 = main_signed_add_32_1;
 end
 always @(*) begin
 	/* main: %FIRFilterStreaming.exit*/
@@ -3205,7 +3199,7 @@ always @(posedge clk) begin
 	/*   %.lcssa1 = phi i32 [ %46, %FIRFilterStreaming.exit ]*/
 	if ((((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33) & (memory_controller_waitrequest == 1'd0)) & (main_FIRFilterStreamingexit_exitcond == 1'd1))) begin
 		main_48_lcssa1_reg <= main_48_lcssa1;
-		if (start == 1'b0 && ^(main_48_lcssa1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_48_lcssa1_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_48_lcssa1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_48_lcssa1_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3218,11 +3212,11 @@ always @(posedge clk) begin
 	/*   call void @legup_memset_4(i8* %1, i8 0, i32 64)*/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		legup_memset_4_start <= 1'd1;
-		if (start == 1'b0 && ^(1'd1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_start"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_start"); $finish; end
 	end
 	if ((cur_state == LEGUP_function_call_2)) begin
 		legup_memset_4_start <= 1'd0;
-		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_start"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_start"); $finish; end
 	end
 end
 always @(posedge clk) begin
@@ -3230,7 +3224,7 @@ always @(posedge clk) begin
 	/*   call void @legup_memset_4(i8* %1, i8 0, i32 64)*/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		legup_memset_4_arg_m <= main_0_1;
-		if (start == 1'b0 && ^(main_0_1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_m"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_0_1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_m"); $finish; end
 	end
 end
 always @(posedge clk) begin
@@ -3238,7 +3232,7 @@ always @(posedge clk) begin
 	/*   call void @legup_memset_4(i8* %1, i8 0, i32 64)*/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		legup_memset_4_arg_c1 <= 8'd0;
-		if (start == 1'b0 && ^(8'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_c1"); /*$finish;*/ end
+		if (start == 1'b0 && ^(8'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_c1"); $finish; end
 	end
 end
 always @(posedge clk) begin
@@ -3246,7 +3240,7 @@ always @(posedge clk) begin
 	/*   call void @legup_memset_4(i8* %1, i8 0, i32 64)*/
 	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		legup_memset_4_arg_n <= 32'd64;
-		if (start == 1'b0 && ^(32'd64) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_n"); /*$finish;*/ end
+		if (start == 1'b0 && ^(32'd64) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_arg_n"); $finish; end
 	end
 end
 always @(*) begin
@@ -3255,11 +3249,11 @@ end
 always @(posedge clk) begin
 	if ((reset | (cur_state == LEGUP_F_main_BB__0_1))) begin
 		legup_memset_4_finish_reg <= 1'd0;
-		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_finish_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_finish_reg"); $finish; end
 	end
 	if (legup_memset_4_finish) begin
 		legup_memset_4_finish_reg <= 1'd1;
-		if (start == 1'b0 && ^(1'd1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_finish_reg"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to legup_memset_4_finish_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -3287,14 +3281,34 @@ always @(*) begin
 		main_signed_add_32_0_op0 = main_18_i03_reg;
 	end
 	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main_signed_add_32_0_op0 = main__crit_edgei_36_reg;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %gep34 = add i32 %gep_int32, %gep_array33*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_24)) begin
+		main_signed_add_32_0_op0 = main__crit_edgei_gep_int32_reg;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %gep31 = add i32 %gep_int30, %gep_array*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_25)) begin
+		main_signed_add_32_0_op0 = main__crit_edgei_gep_int30_reg;
+	end
+	/* main: %._crit_edge.i*/
 	/*   %44 = add i32 %43, %tmp1.i*/
 	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_28)) begin
 		main_signed_add_32_0_op0 = main__crit_edgei_43_reg;
 	end
+	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
+	/*   %gep37 = add i32 %gep_int35, %gep_array36*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_30)) begin
+		main_signed_add_32_0_op0 = main__crit_edgei_crit_edgei_crit_edge_gep_int35_reg;
+	end
 	/* main: %FIRFilterStreaming.exit*/
-	/*   %47 = add nsw i32 %i.03, 1*/
+	/*   %46 = add i32 %.0.i, %total.04*/
 	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_0_op0 = main_18_i03_reg;
+		main_signed_add_32_0_op0 = main_FIRFilterStreamingexit_0i_reg;
 	end
 end
 always @(*) begin
@@ -3314,14 +3328,34 @@ always @(*) begin
 		main_signed_add_32_0_op1 = main_preheaderipreheader_tmp1i2;
 	end
 	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main_signed_add_32_0_op1 = 32'd1;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %gep34 = add i32 %gep_int32, %gep_array33*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_24)) begin
+		main_signed_add_32_0_op1 = main__crit_edgei_gep_array33_reg;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %gep31 = add i32 %gep_int30, %gep_array*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_25)) begin
+		main_signed_add_32_0_op1 = main__crit_edgei_gep_array_reg;
+	end
+	/* main: %._crit_edge.i*/
 	/*   %44 = add i32 %43, %tmp1.i*/
 	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_28)) begin
 		main_signed_add_32_0_op1 = main__crit_edgei_tmp1i;
 	end
+	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
+	/*   %gep37 = add i32 %gep_int35, %gep_array36*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_30)) begin
+		main_signed_add_32_0_op1 = main__crit_edgei_crit_edgei_crit_edge_gep_array36_reg;
+	end
 	/* main: %FIRFilterStreaming.exit*/
-	/*   %47 = add nsw i32 %i.03, 1*/
+	/*   %46 = add i32 %.0.i, %total.04*/
 	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_0_op1 = 32'd1;
+		main_signed_add_32_0_op1 = main_18_total04_reg;
 	end
 end
 always @(*) begin
@@ -3396,8 +3430,13 @@ always @(*) begin
 	end
 	/* main: %._crit_edge.i*/
 	/*   %tmp.i = add i32 %40, %.pre.i*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_27)) */ begin
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_27)) begin
 		main_signed_add_32_1_op0 = main__crit_edgei_40;
+	end
+	/* main: %FIRFilterStreaming.exit*/
+	/*   %47 = add nsw i32 %i.03, 1*/
+	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
+		main_signed_add_32_1_op0 = main_18_i03_reg;
 	end
 end
 always @(*) begin
@@ -3413,8 +3452,13 @@ always @(*) begin
 	end
 	/* main: %._crit_edge.i*/
 	/*   %tmp.i = add i32 %40, %.pre.i*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_27)) */ begin
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_27)) begin
 		main_signed_add_32_1_op1 = main__crit_edgei_prei_reg;
+	end
+	/* main: %FIRFilterStreaming.exit*/
+	/*   %47 = add nsw i32 %i.03, 1*/
+	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
+		main_signed_add_32_1_op1 = 32'd1;
 	end
 end
 always @(*) begin
@@ -3423,36 +3467,13 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep5 = add i32 %gep_int4, 52*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_2_op0 = main_0_gep_int4;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_signed_add_32_2_op0 = main__crit_edgei_36_reg;
-	end
-	/* main: %FIRFilterStreaming.exit*/
-	/*   %46 = add i32 %.0.i, %total.04*/
-	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_2_op0 = main_FIRFilterStreamingexit_0i_reg;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep5 = add i32 %gep_int4, 52*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+if (reset) begin main_signed_add_32_2_op1 = 0; end
 		main_signed_add_32_2_op1 = 32'd52;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_signed_add_32_2_op1 = 32'd1;
-	end
-	/* main: %FIRFilterStreaming.exit*/
-	/*   %46 = add i32 %.0.i, %total.04*/
-	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_2_op1 = main_18_total04_reg;
-	end
 end
 always @(*) begin
 	main_signed_add_32_2 = (main_signed_add_32_2_op0 + main_signed_add_32_2_op1);
@@ -3460,26 +3481,13 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep7 = add i32 %gep_int6, 48*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_3_op0 = main_0_gep_int6;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %gep34 = add i32 %gep_int32, %gep_array33*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_24)) */ begin
-		main_signed_add_32_3_op0 = main__crit_edgei_gep_int32_reg;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep7 = add i32 %gep_int6, 48*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+if (reset) begin main_signed_add_32_3_op1 = 0; end
 		main_signed_add_32_3_op1 = 32'd48;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %gep34 = add i32 %gep_int32, %gep_array33*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_24)) */ begin
-		main_signed_add_32_3_op1 = main__crit_edgei_gep_array33_reg;
-	end
 end
 always @(*) begin
 	main_signed_add_32_3 = (main_signed_add_32_3_op0 + main_signed_add_32_3_op1);
@@ -3487,26 +3495,13 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep9 = add i32 %gep_int8, 44*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_4_op0 = main_0_gep_int8;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %gep31 = add i32 %gep_int30, %gep_array*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_25)) */ begin
-		main_signed_add_32_4_op0 = main__crit_edgei_gep_int30_reg;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep9 = add i32 %gep_int8, 44*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+if (reset) begin main_signed_add_32_4_op1 = 0; end
 		main_signed_add_32_4_op1 = 32'd44;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %gep31 = add i32 %gep_int30, %gep_array*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_25)) */ begin
-		main_signed_add_32_4_op1 = main__crit_edgei_gep_array_reg;
-	end
 end
 always @(*) begin
 	main_signed_add_32_4 = (main_signed_add_32_4_op0 + main_signed_add_32_4_op1);
@@ -3514,26 +3509,13 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep11 = add i32 %gep_int10, 40*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_5_op0 = main_0_gep_int10;
-	end
-	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
-	/*   %gep37 = add i32 %gep_int35, %gep_array36*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_30)) */ begin
-		main_signed_add_32_5_op0 = main__crit_edgei_crit_edgei_crit_edge_gep_int35_reg;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep11 = add i32 %gep_int10, 40*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+if (reset) begin main_signed_add_32_5_op1 = 0; end
 		main_signed_add_32_5_op1 = 32'd40;
-	end
-	/* main: %._crit_edge.i.._crit_edge.i_crit_edge*/
-	/*   %gep37 = add i32 %gep_int35, %gep_array36*/
-	else /* if ((cur_state == LEGUP_F_main_BB__crit_edgei_crit_edgei_crit_edge_30)) */ begin
-		main_signed_add_32_5_op1 = main__crit_edgei_crit_edgei_crit_edge_gep_array36_reg;
-	end
 end
 always @(*) begin
 	main_signed_add_32_5 = (main_signed_add_32_5_op0 + main_signed_add_32_5_op1);
@@ -3662,13 +3644,13 @@ end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		finish <= 1'd0;
-		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 	/* main: %55*/
 	/*   ret i32 %.lcssa1*/
 	if ((cur_state == LEGUP_F_main_BB__55_37)) begin
 		finish <= (memory_controller_waitrequest == 1'd0);
-		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); /*$finish;*/ end
+		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
 end
 always @(*) begin
@@ -4260,13 +4242,13 @@ end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		return_val <= 0;
-		if (start == 1'b0 && ^(0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); /*$finish;*/ end
+		if (start == 1'b0 && ^(0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
 	/* main: %55*/
 	/*   ret i32 %.lcssa1*/
 	if ((cur_state == LEGUP_F_main_BB__55_37)) begin
 		return_val <= main_48_lcssa1_reg;
-		if (start == 1'b0 && ^(main_48_lcssa1_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); /*$finish;*/ end
+		if (start == 1'b0 && ^(main_48_lcssa1_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
 end
 
@@ -4801,12 +4783,12 @@ always @(clk)
 
 initial begin
 //$monitor("At t=%t clk=%b %b %b %b %d", $time, clk, reset, start, finish, return_val);
-/*@(negedge clk);*/
+@(negedge clk);
 reset <= 1;
-/*@(negedge clk);*/
+@(negedge clk);
 reset <= 0;
 start <= 1;
-/*@(negedge clk);*/
+@(negedge clk);
 start <= 0;
 end
 
@@ -4814,14 +4796,14 @@ always@(finish) begin
     if (finish == 1) begin
         $display("At t=%t clk=%b finish=%b return_val=%d", $time, clk, finish, return_val);
         $display("Cycles: %d", ($time-50)/20);
-        /*$finish;*/
+        $finish;
     end
 end
 
 initial begin
 waitrequest <= 1;
-/*@(negedge clk);*/
-/*@(negedge clk);*/
+@(negedge clk);
+@(negedge clk);
 waitrequest <= 0;
 end
 
