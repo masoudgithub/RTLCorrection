@@ -40,7 +40,7 @@
 #include <iostream>
 #include <iomanip>
 
-#define RTLCorrect
+#define RTLCorrect 1
 
 using namespace llvm;
 using namespace legup;
@@ -68,8 +68,14 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
         for (std::map<std::string, int>::iterator f2 = numFuncUnitsMap2.begin(),
                 fe2 = numFuncUnitsMap2.end(); f2 != fe2; ++f2) {
             if (f->first == f2->first) {
+                int found = f->first.find("mem_dual_port");
+                if (found != string::npos) {
+                    break;
+                }
                 if (f2->second > f->second) {
-                    f->second = f2->second;
+					cout<<"mine FU = "<<f2->first<<" Num = "<<f2->second << "bigger than leg FU = " << f->first << " Num = "<< f->second<<endl;
+                   // f->second = f2->second; no need
+
                 }
             }
         }
@@ -275,6 +281,7 @@ void BipartiteWeightedMatchingBinding::solveBipartiteWeightedMatching(Table
 // multiplexer inputs, then output registers, and finally balancing the
 // multiplexers.  Notice that sharing the output register reduces the cost,
 // while the other factors increase it.
+#ifdef RTLCorrect
 
 void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         Instruction *I, int operationIdx, std::string funcUnitType, int
@@ -282,10 +289,10 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
     std::string instrAlisa;
     mainGenOCM.findInstrAlias(getValueStr(I), funcUnitType, mainGenOCM.IRreducedNodeMap, instrAlisa);
 
-    int existingMuxInputsFactor = 1;
-    int newMuxInputsFactor = 10;
+    int existingMuxInputsFactor = -10;
+    int newMuxInputsFactor = -5;
     // note: this is negative, a shared output register reduces the cost
-    int outputRegisterSharableFactor = -5;
+    int outputRegisterSharableFactor = 10;
     std::string instStr = getValueStr(I);
     //std::cout<<"Instr name = " << instStr<< std::endl;
     for (int fu = 0; fu < numFuncUnitsAvail; fu++) {
@@ -293,12 +300,12 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         std::string fuId = this->alloc->verilogNameFunction(this->Fp, this->Fp)
             + "_" + funcUnitType + "_" + utostr(fu);
         std::string fuId1 = funcUnitType + "_" + utostr(fu);
-#ifdef RTLCorrect
+
         int diss = mainGenOCM.findInstrFUmatch(instStr.substr(2,instStr.length()-2), funcUnitType, fuId1);
-        std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
-        out<<"dis "<< instStr <<"   and  " << fuId1 << "    = "<< diss<<"\n";
-        weight += diss*10;
-#endif
+        /*std::cout<<"dis "<< instStr <<"   and  " << funcUnitType + "_" + utostr(fu) << "    = "<< diss<<std::endl;
+        out<<"dis "<< instStr <<"   and  " << fuId1 << "    = "<< diss<<"\n";*/
+        //weight += diss;
+
 
         // check both operands
         for (User::op_iterator i = I->op_begin(), e =
@@ -308,15 +315,15 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
             if (assigned.existingOperands[fuId].find(operand) ==
                     assigned.existingOperands[fuId].end()) {
                 weight += newMuxInputsFactor;
-#ifdef RTLCorrect
-                if (diss == 0){
+
+              /* if (diss == 0){
                     weight -= newMuxInputsFactor;
-                }
-#endif
+                }*/
+
             } else {
                 std::string instStr = getValueStr(I);
                 limitString(instStr, 30);
-                out << instStr << " can share an input with another operation "
+                out << instStr << " hey can share an input with another operation "
                     "already assigned to " << fuId << "\n";
             }
 
@@ -347,18 +354,97 @@ void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
         }
 
         weight += existingMuxInputsFactor * assigned.muxInputs[fuId];
-#ifdef RTLCorrect
-                if (diss == 0){
-                    weight -= existingMuxInputsFactor * assigned.muxInputs[fuId];
-                }
-#endif
+
+      /*if (diss == 0){
+            weight -= existingMuxInputsFactor * assigned.muxInputs[fuId];
+        }*/
+
+        //weights[fu][operationIdx] = -weight;
+        //  weights[fu][operationIdx] = diss;
+
+		weight = weight + diss;
+
         weights[fu][operationIdx] = weight;
+
+    }
+}
+#endif
+
+#ifndef RTLCorrect
+void BipartiteWeightedMatchingBinding::constructWeights(raw_ostream &out,
+        Instruction *I, int operationIdx, std::string funcUnitType, int
+        numFuncUnitsAvail, AssignmentInfo &assigned, Table &weights) {
+
+    /*int existingMuxInputsFactor = 1;
+    int newMuxInputsFactor = 10;
+    // note: this is negative, a shared output register reduces the cost
+    int outputRegisterSharableFactor = -5;*/
+
+    int existingMuxInputsFactor = -10;
+    int newMuxInputsFactor = -5;
+    // note: this is negative, a shared output register reduces the cost
+    int outputRegisterSharableFactor = 10;
+
+
+    for (int fu = 0; fu < numFuncUnitsAvail; fu++) {
+        int weight = 0;
+        std::string fuId = this->alloc->verilogNameFunction(this->Fp, this->Fp)
+            + "_" + funcUnitType + "_" + utostr(fu);
+
+        // check both operands
+        for (User::op_iterator i = I->op_begin(), e =
+                I->op_end(); i != e; ++i) {
+            Instruction *operand = dyn_cast<Instruction>(*i);
+            if (!operand) continue;
+            if (assigned.existingOperands[fuId].find(operand) ==
+                    assigned.existingOperands[fuId].end()) {
+                weight += newMuxInputsFactor;
+                /*out <<"weight555 = " << weight<<"\n";*/
+            } else {
+                std::string instStr = getValueStr(I);
+                limitString(instStr, 30);
+                out << instStr << " can share an input with another operation "
+                    "already assigned to " << fuId << "\n";
+            }
+
+        }
+
+        bool outputRegSharable = false;
+        for (set<Instruction*>::iterator i =
+                assigned.existingInstructions[fuId].begin(), e =
+                assigned.existingInstructions[fuId].end(); i
+                != e; ++i) {
+            Instruction *shared = *i;
+
+            // check for shared output register
+            if (assigned.IndependentInstructions[I].find(shared) !=
+                    assigned.IndependentInstructions[I].end() ) {
+                //errs() << "Shared output: " << *shared << "\n";
+                outputRegSharable = true;
+                break;
+            }
+        }
+
+        if (outputRegSharable) {
+            weight += outputRegisterSharableFactor;
+            //out <<"weight2 = " << weight<<"\n";
+
+            std::string instStr = getValueStr(I);
+            limitString(instStr, 30);
+            out << instStr << " can share an output register with another "
+                "operation already assigned to " << fuId << "\n";
+        }
+
+        weight += existingMuxInputsFactor * assigned.muxInputs[fuId];
+        //out <<"weight3 = " << weight<<"\n";
+        weights[fu][operationIdx] = weight;
+        //weights[fu][operationIdx] = 100;
 
         //errs() << "weight " << fu << " " << operationIdx << " = " <<
         //    weights[fu][operationIdx] << "\n";
     }
 }
-
+#endif
 
 void BipartiteWeightedMatchingBinding::UpdateAssignments(raw_ostream &out, int
         numOperationsToShare, std::string funcUnitType, int numFuncUnitsAvail,

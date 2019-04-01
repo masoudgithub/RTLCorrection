@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Sun Mar 31 11:03:39 2019
+// Date: Mon Apr  1 08:22:55 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -519,7 +519,7 @@ reg [15:0] legup_memset_2_i64_0_c_in_a;
 wire [15:0] legup_memset_2_i64_0_c_out_a;
 reg  legup_memset_2_i64_0_c_address_b;
 reg  legup_memset_2_i64_0_c_write_enable_b;
-reg [15:0] legup_memset_2_i64_0_c_in_b;
+wire [15:0] legup_memset_2_i64_0_c_in_b;
 wire [15:0] legup_memset_2_i64_0_c_out_b;
 reg  legup_memset_2_i64_0_s_address_a;
 reg  legup_memset_2_i64_0_s_write_enable_a;
@@ -1146,6 +1146,11 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_4)) begin
 		legup_memset_2_i64_0_c_address_a = (1'd0 >>> 3'd1);
 	end
+	/* legup_memset_2_i64: %0*/
+	/*   store i16 %12, i16* %c, align 2*/
+	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
+		legup_memset_2_i64_0_c_address_a = (1'd0 >>> 3'd1);
+	end
 	/* legup_memset_2_i64: %21*/
 	/*   %22 = load i16* %c, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_10)) begin
@@ -1164,6 +1169,11 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_4)) begin
 		legup_memset_2_i64_0_c_write_enable_a = 1'd0;
 	end
+	/* legup_memset_2_i64: %0*/
+	/*   store i16 %12, i16* %c, align 2*/
+	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
+		legup_memset_2_i64_0_c_write_enable_a = 1'd1;
+	end
 	/* legup_memset_2_i64: %21*/
 	/*   %22 = load i16* %c, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_10)) begin
@@ -1177,17 +1187,17 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_3)) begin
 		legup_memset_2_i64_0_c_in_a = legup_memset_2_i64_0_5;
 	end
+	/* legup_memset_2_i64: %0*/
+	/*   store i16 %12, i16* %c, align 2*/
+	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
+		legup_memset_2_i64_0_c_in_a = legup_memset_2_i64_0_12;
+	end
 end
 always @(*) begin
 	legup_memset_2_i64_0_c_address_b = 1'd0;
 	/* legup_memset_2_i64: %0*/
 	/*   %9 = load i16* %c, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_4)) begin
-		legup_memset_2_i64_0_c_address_b = (1'd0 >>> 3'd1);
-	end
-	/* legup_memset_2_i64: %0*/
-	/*   store i16 %12, i16* %c, align 2*/
-	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
 		legup_memset_2_i64_0_c_address_b = (1'd0 >>> 3'd1);
 	end
 end
@@ -1197,19 +1207,6 @@ always @(*) begin
 	/*   %9 = load i16* %c, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_4)) begin
 		legup_memset_2_i64_0_c_write_enable_b = 1'd0;
-	end
-	/* legup_memset_2_i64: %0*/
-	/*   store i16 %12, i16* %c, align 2*/
-	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
-		legup_memset_2_i64_0_c_write_enable_b = 1'd1;
-	end
-end
-always @(*) begin
-	legup_memset_2_i64_0_c_in_b = 1'd0;
-	/* legup_memset_2_i64: %0*/
-	/*   store i16 %12, i16* %c, align 2*/
-	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__0_5)) begin
-		legup_memset_2_i64_0_c_in_b = legup_memset_2_i64_0_12;
 	end
 end
 always @(*) begin
@@ -1225,9 +1222,9 @@ always @(*) begin
 		legup_memset_2_i64_0_s_address_a = (1'd0 >>> 3'd2);
 	end
 	/* legup_memset_2_i64: %21*/
-	/*   store i16* %24, i16** %s, align 4*/
+	/*   store i16 %22, i16* %23, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
-		legup_memset_2_i64_0_s_address_a = (1'd0 >>> 3'd2);
+		legup_memset_2_i64_0_s_address_a = (legup_memset_2_i64_21_23 >>> 3'd2);
 	end
 end
 always @(*) begin
@@ -1243,7 +1240,7 @@ always @(*) begin
 		legup_memset_2_i64_0_s_write_enable_a = 1'd0;
 	end
 	/* legup_memset_2_i64: %21*/
-	/*   store i16* %24, i16** %s, align 4*/
+	/*   store i16 %22, i16* %23, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
 		legup_memset_2_i64_0_s_write_enable_a = 1'd1;
 	end
@@ -1256,23 +1253,23 @@ always @(*) begin
 		legup_memset_2_i64_0_s_in_a = legup_memset_2_i64_0_14;
 	end
 	/* legup_memset_2_i64: %21*/
-	/*   store i16* %24, i16** %s, align 4*/
+	/*   store i16 %22, i16* %23, align 2*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
-		legup_memset_2_i64_0_s_in_a = legup_memset_2_i64_21_24;
+		legup_memset_2_i64_0_s_in_a = legup_memset_2_i64_21_22;
 	end
 end
 always @(*) begin
 	legup_memset_2_i64_0_s_address_b = 1'd0;
 	/* legup_memset_2_i64: %21*/
-	/*   store i16 %22, i16* %23, align 2*/
+	/*   store i16* %24, i16** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
-		legup_memset_2_i64_0_s_address_b = (legup_memset_2_i64_21_23 >>> 3'd2);
+		legup_memset_2_i64_0_s_address_b = (1'd0 >>> 3'd2);
 	end
 end
 always @(*) begin
 	legup_memset_2_i64_0_s_write_enable_b = 1'd0;
 	/* legup_memset_2_i64: %21*/
-	/*   store i16 %22, i16* %23, align 2*/
+	/*   store i16* %24, i16** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
 		legup_memset_2_i64_0_s_write_enable_b = 1'd1;
 	end
@@ -1280,9 +1277,9 @@ end
 always @(*) begin
 	legup_memset_2_i64_0_s_in_b = 1'd0;
 	/* legup_memset_2_i64: %21*/
-	/*   store i16 %22, i16* %23, align 2*/
+	/*   store i16* %24, i16** %s, align 4*/
 	if ((cur_state == LEGUP_F_legup_memset_2_i64_BB__21_11)) begin
-		legup_memset_2_i64_0_s_in_b = legup_memset_2_i64_21_22;
+		legup_memset_2_i64_0_s_in_b = legup_memset_2_i64_21_24;
 	end
 end
 always @(*) begin
@@ -3542,7 +3539,7 @@ reg [15:0] main_0_so_in_a;
 wire [15:0] main_0_so_out_a;
 reg [7:0] main_0_so_address_b;
 reg  main_0_so_write_enable_b;
-reg [15:0] main_0_so_in_b;
+wire [15:0] main_0_so_in_b;
 wire [15:0] main_0_so_out_b;
 wire [2:0] ram_16_address_a;
 wire  ram_16_write_enable_a;
@@ -3629,11 +3626,11 @@ reg [31:0] main_signed_multiply_32_0;
 reg [15:0] main_signed_subtract_16_0_op0;
 reg [15:0] main_signed_subtract_16_0_op1;
 reg [15:0] main_signed_subtract_16_0;
-reg [31:0] main_signed_multiply_32_10_op0;
-reg [31:0] main_signed_multiply_32_10_op1;
+reg [31:0] main_signed_multiply_32_6_op0;
+reg [31:0] main_signed_multiply_32_6_op1;
 reg  lpm_mult_main_threadi_125_en;
 reg [31:0] main_threadi_125_stage0_reg;
-reg [31:0] main_signed_multiply_32_10;
+reg [31:0] main_signed_multiply_32_6;
 reg [31:0] main_signed_add_32_2_op0;
 reg [31:0] main_signed_add_32_2_op1;
 reg [31:0] main_signed_add_32_2;
@@ -3642,105 +3639,105 @@ reg [31:0] main_signed_multiply_32_11_op1;
 reg  lpm_mult_main_threadi_127_en;
 reg [31:0] main_threadi_127_stage0_reg;
 reg [31:0] main_signed_multiply_32_11;
-reg [31:0] main_signed_add_32_3_op0;
-reg [31:0] main_signed_add_32_3_op1;
-reg [31:0] main_signed_add_32_3;
-reg [31:0] main_signed_multiply_32_12_op0;
-reg [31:0] main_signed_multiply_32_12_op1;
-reg  lpm_mult_main_threadi_129_en;
-reg [31:0] main_threadi_129_stage0_reg;
-reg [31:0] main_signed_multiply_32_12;
-reg [31:0] main_signed_add_32_11_op0;
-reg [31:0] main_signed_add_32_11_op1;
-reg [31:0] main_signed_add_32_11;
-reg [31:0] main_signed_multiply_32_14_op0;
-reg [31:0] main_signed_multiply_32_14_op1;
-reg  lpm_mult_main_threadi_133_en;
-reg [31:0] main_threadi_133_stage0_reg;
-reg [31:0] main_signed_multiply_32_14;
-reg [31:0] main_signed_add_32_6_op0;
-reg [31:0] main_signed_add_32_6_op1;
-reg [31:0] main_signed_add_32_6;
-reg [31:0] main_signed_multiply_32_5_op0;
-reg [31:0] main_signed_multiply_32_5_op1;
-reg  lpm_mult_main_threadi_135_en;
-reg [31:0] main_threadi_135_stage0_reg;
-reg [31:0] main_signed_multiply_32_5;
-reg [31:0] main_signed_multiply_32_6_op0;
-reg [31:0] main_signed_multiply_32_6_op1;
-reg  lpm_mult_main_threadi_137_en;
-reg [31:0] main_threadi_137_stage0_reg;
-reg [31:0] main_signed_multiply_32_6;
-reg [31:0] main_signed_add_32_4_op0;
-reg [31:0] main_signed_add_32_4_op1;
-reg [31:0] main_signed_add_32_4;
-reg [31:0] main_signed_multiply_32_7_op0;
-reg [31:0] main_signed_multiply_32_7_op1;
-reg  lpm_mult_main_threadi_139_en;
-reg [31:0] main_threadi_139_stage0_reg;
-reg [31:0] main_signed_multiply_32_7;
-reg [31:0] main_signed_add_32_5_op0;
-reg [31:0] main_signed_add_32_5_op1;
-reg [31:0] main_signed_add_32_5;
-reg [31:0] main_signed_multiply_32_8_op0;
-reg [31:0] main_signed_multiply_32_8_op1;
-reg  lpm_mult_main_threadi_141_en;
-reg [31:0] main_threadi_141_stage0_reg;
-reg [31:0] main_signed_multiply_32_8;
 reg [31:0] main_signed_add_32_12_op0;
 reg [31:0] main_signed_add_32_12_op1;
 reg [31:0] main_signed_add_32_12;
-reg [31:0] main_signed_multiply_32_13_op0;
-reg [31:0] main_signed_multiply_32_13_op1;
-reg  lpm_mult_main_threadi_143_en;
-reg [31:0] main_threadi_143_stage0_reg;
-reg [31:0] main_signed_multiply_32_13;
-reg [31:0] main_signed_multiply_32_1_op0;
-reg [31:0] main_signed_multiply_32_1_op1;
-reg  lpm_mult_main_threadi_149_en;
-reg [31:0] main_threadi_149_stage0_reg;
-reg [31:0] main_signed_multiply_32_1;
-reg [31:0] main_signed_multiply_32_2_op0;
-reg [31:0] main_signed_multiply_32_2_op1;
-reg  lpm_mult_main_threadi_151_en;
-reg [31:0] main_threadi_151_stage0_reg;
-reg [31:0] main_signed_multiply_32_2;
-reg [31:0] main_signed_multiply_32_3_op0;
-reg [31:0] main_signed_multiply_32_3_op1;
-reg  lpm_mult_main_threadi_153_en;
-reg [31:0] main_threadi_153_stage0_reg;
-reg [31:0] main_signed_multiply_32_3;
-reg [31:0] main_signed_multiply_32_4_op0;
-reg [31:0] main_signed_multiply_32_4_op1;
-reg  lpm_mult_main_threadi_155_en;
-reg [31:0] main_threadi_155_stage0_reg;
-reg [31:0] main_signed_multiply_32_4;
-reg [31:0] main_signed_subtract_32_1_op0;
-reg [31:0] main_signed_subtract_32_1_op1;
-reg [31:0] main_signed_subtract_32_1;
-reg [31:0] main_signed_add_32_13_op0;
-reg [31:0] main_signed_add_32_13_op1;
-reg [31:0] main_signed_add_32_13;
+reg [31:0] main_signed_multiply_32_10_op0;
+reg [31:0] main_signed_multiply_32_10_op1;
+reg  lpm_mult_main_threadi_129_en;
+reg [31:0] main_threadi_129_stage0_reg;
+reg [31:0] main_signed_multiply_32_10;
+reg [31:0] main_signed_add_32_11_op0;
+reg [31:0] main_signed_add_32_11_op1;
+reg [31:0] main_signed_add_32_11;
+reg [31:0] main_signed_multiply_32_7_op0;
+reg [31:0] main_signed_multiply_32_7_op1;
+reg  lpm_mult_main_threadi_133_en;
+reg [31:0] main_threadi_133_stage0_reg;
+reg [31:0] main_signed_multiply_32_7;
 reg [31:0] main_signed_add_32_9_op0;
 reg [31:0] main_signed_add_32_9_op1;
 reg [31:0] main_signed_add_32_9;
-reg [31:0] main_signed_multiply_32_9_op0;
-reg [31:0] main_signed_multiply_32_9_op1;
-reg  lpm_mult_main_threadi_111_en;
-reg [31:0] main_threadi_111_stage0_reg;
-reg [31:0] main_signed_multiply_32_9;
-reg [31:0] main_signed_add_32_7_op0;
-reg [31:0] main_signed_add_32_7_op1;
-reg [31:0] main_signed_add_32_7;
-reg [31:0] main_signed_add_32_8_op0;
-reg [31:0] main_signed_add_32_8_op1;
-reg [31:0] main_signed_add_32_8;
+reg [31:0] main_signed_multiply_32_8_op0;
+reg [31:0] main_signed_multiply_32_8_op1;
+reg  lpm_mult_main_threadi_135_en;
+reg [31:0] main_threadi_135_stage0_reg;
+reg [31:0] main_signed_multiply_32_8;
 reg [31:0] main_signed_add_32_10_op0;
 reg [31:0] main_signed_add_32_10_op1;
 reg [31:0] main_signed_add_32_10;
+reg [31:0] main_signed_multiply_32_14_op0;
+reg [31:0] main_signed_multiply_32_14_op1;
+reg  lpm_mult_main_threadi_137_en;
+reg [31:0] main_threadi_137_stage0_reg;
+reg [31:0] main_signed_multiply_32_14;
+reg [31:0] main_signed_multiply_32_12_op0;
+reg [31:0] main_signed_multiply_32_12_op1;
+reg  lpm_mult_main_threadi_139_en;
+reg [31:0] main_threadi_139_stage0_reg;
+reg [31:0] main_signed_multiply_32_12;
+reg [31:0] main_signed_add_32_7_op0;
+reg [31:0] main_signed_add_32_7_op1;
+reg [31:0] main_signed_add_32_7;
+reg [31:0] main_signed_multiply_32_13_op0;
+reg [31:0] main_signed_multiply_32_13_op1;
+reg  lpm_mult_main_threadi_141_en;
+reg [31:0] main_threadi_141_stage0_reg;
+reg [31:0] main_signed_multiply_32_13;
+reg [31:0] main_signed_add_32_8_op0;
+reg [31:0] main_signed_add_32_8_op1;
+reg [31:0] main_signed_add_32_8;
+reg [31:0] main_signed_multiply_32_5_op0;
+reg [31:0] main_signed_multiply_32_5_op1;
+reg  lpm_mult_main_threadi_143_en;
+reg [31:0] main_threadi_143_stage0_reg;
+reg [31:0] main_signed_multiply_32_5;
+reg [31:0] main_signed_multiply_32_2_op0;
+reg [31:0] main_signed_multiply_32_2_op1;
+reg  lpm_mult_main_threadi_153_en;
+reg [31:0] main_threadi_153_stage0_reg;
+reg [31:0] main_signed_multiply_32_2;
+reg [31:0] main_signed_add_32_5_op0;
+reg [31:0] main_signed_add_32_5_op1;
+reg [31:0] main_signed_add_32_5;
+reg [31:0] main_signed_multiply_32_3_op0;
+reg [31:0] main_signed_multiply_32_3_op1;
+reg  lpm_mult_main_threadi_157_en;
+reg [31:0] main_threadi_157_stage0_reg;
+reg [31:0] main_signed_multiply_32_3;
+reg [31:0] main_signed_add_32_3_op0;
+reg [31:0] main_signed_add_32_3_op1;
+reg [31:0] main_signed_add_32_3;
+reg [31:0] main_signed_multiply_32_4_op0;
+reg [31:0] main_signed_multiply_32_4_op1;
+reg  lpm_mult_main_threadi_159_en;
+reg [31:0] main_threadi_159_stage0_reg;
+reg [31:0] main_signed_multiply_32_4;
+reg [31:0] main_signed_add_32_6_op0;
+reg [31:0] main_signed_add_32_6_op1;
+reg [31:0] main_signed_add_32_6;
+reg [31:0] main_signed_subtract_32_0_op0;
+reg [31:0] main_signed_subtract_32_0_op1;
+reg [31:0] main_signed_subtract_32_0;
+reg [31:0] main_signed_multiply_32_9_op0;
+reg [31:0] main_signed_multiply_32_9_op1;
+reg  lpm_mult_main_threadi_107_en;
+reg [31:0] main_threadi_107_stage0_reg;
+reg [31:0] main_signed_multiply_32_9;
+reg [31:0] main_signed_add_32_13_op0;
+reg [31:0] main_signed_add_32_13_op1;
+reg [31:0] main_signed_add_32_13;
 reg [31:0] main_signed_add_32_14_op0;
 reg [31:0] main_signed_add_32_14_op1;
 reg [31:0] main_signed_add_32_14;
+reg [31:0] main_signed_multiply_32_1_op0;
+reg [31:0] main_signed_multiply_32_1_op1;
+reg  lpm_mult_main_threadi_173_en;
+reg [31:0] main_threadi_173_stage0_reg;
+reg [31:0] main_signed_multiply_32_1;
+reg [31:0] main_signed_add_32_4_op0;
+reg [31:0] main_signed_add_32_4_op1;
+reg [31:0] main_signed_add_32_4;
 reg [15:0] main_signed_add_16_0_op0;
 reg [15:0] main_signed_add_16_0_op1;
 reg [15:0] main_signed_add_16_0;
@@ -3749,21 +3746,21 @@ reg  lpm_mult_main_threadi_94_en;
 reg  lpm_mult_main_threadi_98_en;
 reg  lpm_mult_main_threadi_103_en;
 reg  lpm_mult_main_threadi_106_en;
-reg  lpm_mult_main_threadi_107_en;
+reg  lpm_mult_main_threadi_111_en;
 reg  lpm_mult_main_threadi_113_en;
 reg  lpm_mult_main_threadi_115_en;
 reg  lpm_mult_main_threadi_117_en;
 reg  lpm_mult_main_threadi_121_en;
 reg  lpm_mult_main_threadi_123_en;
 reg  lpm_mult_main_threadi_147_en;
-reg  lpm_mult_main_threadi_157_en;
-reg  lpm_mult_main_threadi_159_en;
+reg  lpm_mult_main_threadi_149_en;
+reg  lpm_mult_main_threadi_151_en;
+reg  lpm_mult_main_threadi_155_en;
 reg  lpm_mult_main_threadi_163_en;
 reg  lpm_mult_main_threadi_165_en;
 reg  lpm_mult_main_threadi_167_en;
 reg  lpm_mult_main_threadi_169_en;
 reg  lpm_mult_main_threadi_171_en;
-reg  lpm_mult_main_threadi_173_en;
 reg  lpm_mult_main_threadi_175_en;
 reg  lpm_mult_main_threadi_177_en;
 reg  lpm_mult_main_187_201_en;
@@ -4901,6 +4898,12 @@ always @(posedge clk) begin
 		main_1_gep_reg <= main_8_gep7;
 		if (start == 1'b0 && ^(main_8_gep7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
+	/* main: %.thread.i*/
+	/*   %148 = add nuw nsw i32 %147, %134*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_1_gep_reg <= main_threadi_148;
+		if (start == 1'b0 && ^(main_threadi_148) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
 	/* main: %gsm_mult_r.exit.i*/
 	/*   %86 = add nsw i32 %84, 16384*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_mult_rexiti_38)) begin
@@ -4924,6 +4927,18 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB__56_25)) begin
 		main_1_gep_reg <= main_56_gep16;
 		if (start == 1'b0 && ^(main_56_gep16) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
+	/* main: %62*/
+	/*   %sext.off.i = add i32 %sext.i, -1*/
+	if ((cur_state == LEGUP_F_main_BB__62_27)) begin
+		main_1_gep_reg <= main_62_sextoffi;
+		if (start == 1'b0 && ^(main_62_sextoffi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
+	/* main: %.preheader6.i*/
+	/*   %66 = add nsw i32 %phitmp.i, -1*/
+	if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
+		main_1_gep_reg <= main_preheader6i_66;
+		if (start == 1'b0 && ^(main_preheader6i_66) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
 	/* main: %187*/
 	/*   %215 = add nsw i32 %214, %194*/
@@ -5014,6 +5029,12 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB_thread102i_203)) begin
 		main_1_gep_reg <= main_thread102i_gep128;
 		if (start == 1'b0 && ^(main_thread102i_gep128) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
+	/* main: %.thread102.i*/
+	/*   %581 = add i32 %580, 40960*/
+	if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_1_gep_reg <= main_thread102i_581;
+		if (start == 1'b0 && ^(main_thread102i_581) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
 	/* main: %261*/
 	/*   %gep70 = add i32 %gep_int69, %262*/
@@ -5147,6 +5168,12 @@ always @(posedge clk) begin
 		main_1_gep_reg <= main_thread112i_gep132;
 		if (start == 1'b0 && ^(main_thread112i_gep132) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
+	/* main: %.thread112.i*/
+	/*   %619 = add i32 %618, 30720*/
+	if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_1_gep_reg <= main_thread112i_619;
+		if (start == 1'b0 && ^(main_thread112i_619) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
 	/* main: %623*/
 	/*   %.op72.i = add nsw i32 %625, 256*/
 	if ((cur_state == LEGUP_F_main_BB__623_228)) begin
@@ -5165,6 +5192,12 @@ always @(posedge clk) begin
 		main_1_gep_reg <= main_thread117i_gep134;
 		if (start == 1'b0 && ^(main_thread117i_gep134) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
+	/* main: %.thread117.i*/
+	/*   %638 = add i32 %637, 17068*/
+	if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_1_gep_reg <= main_thread117i_638;
+		if (start == 1'b0 && ^(main_thread117i_638) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
 	/* main: %642*/
 	/*   %.op81.i = add nsw i32 %644, 256*/
 	if ((cur_state == LEGUP_F_main_BB__642_238)) begin
@@ -5182,6 +5215,12 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB_thread122i_243)) begin
 		main_1_gep_reg <= main_thread122i_gep136;
 		if (start == 1'b0 && ^(main_thread122i_gep136) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
+	end
+	/* main: %.thread122.i*/
+	/*   %657 = add i32 %656, 18072*/
+	if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_1_gep_reg <= main_thread122i_657;
+		if (start == 1'b0 && ^(main_thread122i_657) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
 	end
 	/* main: %661*/
 	/*   %.op90.i = add nsw i32 %663, 256*/
@@ -5273,12 +5312,6 @@ always @(posedge clk) begin
 		main_1_gep3_reg <= main_threadi_150;
 		if (start == 1'b0 && ^(main_threadi_150) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
 	end
-	/* main: %62*/
-	/*   %sext.off.i = add i32 %sext.i, -1*/
-	if ((cur_state == LEGUP_F_main_BB__62_27)) begin
-		main_1_gep3_reg <= main_62_sextoffi;
-		if (start == 1'b0 && ^(main_62_sextoffi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
-	end
 	/* main: %187*/
 	/*   %220 = add nsw i32 %219, %193*/
 	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
@@ -5309,6 +5342,30 @@ always @(posedge clk) begin
 		main_1_gep3_reg <= main_522_gep122;
 		if (start == 1'b0 && ^(main_522_gep122) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
 	end
+	/* main: %Gsm_LPC_Analysis.exit*/
+	/*   %530 = add i32 %529, 40960*/
+	if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
+		main_1_gep3_reg <= main_Gsm_LPC_Analysisexit_530;
+		if (start == 1'b0 && ^(main_Gsm_LPC_Analysisexit_530) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread.i4*/
+	/*   %546 = add i32 %545, 40960*/
+	if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
+		main_1_gep3_reg <= main_threadi4_546;
+		if (start == 1'b0 && ^(main_threadi4_546) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread98.i*/
+	/*   %562 = add i32 %561, 40960*/
+	if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
+		main_1_gep3_reg <= main_thread98i_562;
+		if (start == 1'b0 && ^(main_thread98i_562) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread102.i*/
+	/*   %583 = add nsw i32 %582, -2560*/
+	if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_1_gep3_reg <= main_thread102i_583;
+		if (start == 1'b0 && ^(main_thread102i_583) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep80 = add i32 %gep_int79, 4*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
@@ -5326,6 +5383,36 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB__698_258)) begin
 		main_1_gep3_reg <= main_698_gep156;
 		if (start == 1'b0 && ^(main_698_gep156) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %._crit_edge43.i*/
+	/*   %gep120 = add i32 %gep_int119, 2*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
+		main_1_gep3_reg <= main__crit_edge43i_gep120;
+		if (start == 1'b0 && ^(main__crit_edge43i_gep120) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread107.i*/
+	/*   %600 = add i32 %599, 27928*/
+	if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
+		main_1_gep3_reg <= main_thread107i_600;
+		if (start == 1'b0 && ^(main_thread107i_600) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread112.i*/
+	/*   %621 = add nsw i32 %620, -1792*/
+	if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_1_gep3_reg <= main_thread112i_621;
+		if (start == 1'b0 && ^(main_thread112i_621) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread117.i*/
+	/*   %640 = add nsw i32 %639, -341*/
+	if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_1_gep3_reg <= main_thread117i_640;
+		if (start == 1'b0 && ^(main_thread117i_640) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
+	end
+	/* main: %.thread122.i*/
+	/*   %659 = add nsw i32 %658, -1144*/
+	if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_1_gep3_reg <= main_thread122i_659;
+		if (start == 1'b0 && ^(main_thread122i_659) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -5370,6 +5457,12 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB__187_52)) begin
 		main_1_5_reg <= main_187_225;
 		if (start == 1'b0 && ^(main_187_225) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
+	end
+	/* main: %._crit_edge.i*/
+	/*   %248 = add nsw i32 %k.47.i, -1*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
+		main_1_5_reg <= main__crit_edgei_248;
+		if (start == 1'b0 && ^(main__crit_edgei_248) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
 	/*   %104 = add nuw nsw i32 %103, %99*/
@@ -5420,10 +5513,10 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_488_492) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
 	end
 	/* main: %._crit_edge43.i*/
-	/*   %gep120 = add i32 %gep_int119, 2*/
+	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
 	if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_1_5_reg <= main__crit_edge43i_gep120;
-		if (start == 1'b0 && ^(main__crit_edge43i_gep120) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
+		main_1_5_reg <= main__crit_edge43i_indvarsivnexti;
+		if (start == 1'b0 && ^(main__crit_edge43i_indvarsivnexti) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
 	end
 	/* main: %.thread107.i*/
 	/*   %602 = add nsw i32 %601, 94*/
@@ -5727,10 +5820,10 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_gsm_absexiti_17) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_absexiti_17_reg"); $finish; end
 	end
 	/* main: %187*/
-	/*   %241 = add nsw i32 %i.010.i, 1*/
+	/*   %gep38 = add i32 %gep_int37, 2*/
 	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_gsm_absexiti_17_reg <= main_187_241;
-		if (start == 1'b0 && ^(main_187_241) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_absexiti_17_reg"); $finish; end
+		main_gsm_absexiti_17_reg <= main_187_gep38;
+		if (start == 1'b0 && ^(main_187_gep38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_absexiti_17_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -5995,12 +6088,21 @@ end
 always @(*) begin
 	/* main: %33*/
 	/*   %38 = add nsw i32 %37, -1*/
-		main_33_38 = main_signed_add_32_2;
+		main_33_38 = main_signed_add_32_0;
 end
-always @(*) begin
-/* main: %33*/
-/*   %38 = add nsw i32 %37, -1*/
-	main_33_38_reg = main_threadi_126_reg;
+always @(posedge clk) begin
+	/* main: %33*/
+	/*   %38 = add nsw i32 %37, -1*/
+	if ((cur_state == LEGUP_F_main_BB__33_19)) begin
+		main_33_38_reg <= main_33_38;
+		if (start == 1'b0 && ^(main_33_38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_33_38_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %202 = add nsw i32 %201, %197*/
+	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_33_38_reg <= main_187_202;
+		if (start == 1'b0 && ^(main_187_202) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_33_38_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %39*/
@@ -6102,12 +6204,6 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB__39_21)) begin
 		main_39_45_reg <= main_39_45;
 		if (start == 1'b0 && ^(main_39_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_39_45_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %164 = add nsw i32 %163, %148*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_39_45_reg <= main_threadi_164;
-		if (start == 1'b0 && ^(main_threadi_164) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_39_45_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -6236,12 +6332,6 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB__49_24)) begin
 		main_49_55_reg <= main_49_55;
 		if (start == 1'b0 && ^(main_49_55) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_49_55_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %202 = add nsw i32 %201, %197*/
-	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_49_55_reg <= main_187_202;
-		if (start == 1'b0 && ^(main_187_202) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_49_55_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -6395,7 +6485,7 @@ end
 always @(*) begin
 	/* main: %62*/
 	/*   %63 = sub i32 4, %.01.i.i1*/
-		main_62_63 = main_signed_subtract_32_1;
+		main_62_63 = main_signed_subtract_32_0;
 end
 always @(posedge clk) begin
 	/* main: %62*/
@@ -6537,12 +6627,12 @@ end
 always @(*) begin
 	/* main: %62*/
 	/*   %sext.off.i = add i32 %sext.i, -1*/
-		main_62_sextoffi = main_signed_add_32_1;
+		main_62_sextoffi = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %62*/
 /*   %sext.off.i = add i32 %sext.i, -1*/
-	main_62_sextoffi_reg = main_1_gep3_reg;
+	main_62_sextoffi_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %62*/
@@ -6560,12 +6650,12 @@ end
 always @(*) begin
 	/* main: %.preheader6.i*/
 	/*   %66 = add nsw i32 %phitmp.i, -1*/
-		main_preheader6i_66 = main_signed_add_32_2;
+		main_preheader6i_66 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %.preheader6.i*/
 /*   %66 = add nsw i32 %phitmp.i, -1*/
-	main_preheader6i_66_reg = main_threadi_126_reg;
+	main_preheader6i_66_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %.preheader6.i*/
@@ -6793,16 +6883,22 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_94) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %103 = mul nsw i32 %102, %102*/
+	/*   %115 = mul nsw i32 %97, %110*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_74_76_reg <= main_threadi_103;
-		if (start == 1'b0 && ^(main_threadi_103) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
+		main_74_76_reg <= main_threadi_115;
+		if (start == 1'b0 && ^(main_threadi_115) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
 	/*   %121 = mul nsw i32 %120, %120*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
 		main_74_76_reg <= main_threadi_121;
 		if (start == 1'b0 && ^(main_threadi_121) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %167 = mul nsw i32 %132, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_74_76_reg <= main_threadi_167;
+		if (start == 1'b0 && ^(main_threadi_167) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
 	end
 	/* main: %187*/
 	/*   %201 = mul nsw i32 %200, %200*/
@@ -7360,7 +7456,7 @@ end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %98 = mul nsw i32 %97, %97*/
-	main_threadi_98_reg = main_threadi_133_reg;
+	main_threadi_98_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7435,12 +7531,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_103 = main_signed_multiply_32_0;
+	main_threadi_103 = main_signed_multiply_32_14;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %103 = mul nsw i32 %102, %102*/
-	main_threadi_103_reg = main_74_76_reg;
+	main_threadi_103_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7468,15 +7564,42 @@ end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %106 = mul nsw i32 %97, %105*/
-	main_threadi_106_reg = main_threadi_125_reg;
+	main_threadi_106_reg = main_threadi_129_reg;
 end
 always @(*) begin
-	main_threadi_107 = main_signed_multiply_32_14;
+	main_threadi_107 = main_signed_multiply_32_9;
 end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %107 = mul nsw i32 %93, %102*/
-	main_threadi_107_reg = main_threadi_133_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %107 = mul nsw i32 %93, %102*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_threadi_107_reg <= main_threadi_107;
+		if (start == 1'b0 && ^(main_threadi_107) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_107_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %107 = mul nsw i32 %93, %102*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_threadi_107_reg <= main_threadi_107;
+		if (start == 1'b0 && ^(main_threadi_107) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_107_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %123 = mul nsw i32 %110, %120*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_threadi_107_reg <= main_threadi_123;
+		if (start == 1'b0 && ^(main_threadi_123) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_107_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %175 = mul nsw i32 %97, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_107_reg <= main_threadi_175;
+		if (start == 1'b0 && ^(main_threadi_175) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_107_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %209 = mul nsw i32 %208, %200*/
+	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_threadi_107_reg <= main_187_209;
+		if (start == 1'b0 && ^(main_187_209) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_107_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7494,12 +7617,12 @@ end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %gep28 = add i32 %gep_int27, 6*/
-		main_threadi_gep28 = main_signed_add_32_2;
+		main_threadi_gep28 = main_signed_add_32_9;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %gep28 = add i32 %gep_int27, 6*/
-	main_threadi_gep28_reg = main_threadi_126_reg;
+	main_threadi_gep28_reg = main_threadi_134_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7541,33 +7664,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_111 = main_signed_multiply_32_9;
+	main_threadi_111 = main_signed_multiply_32_12;
 end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %111 = mul nsw i32 %110, %110*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_111_reg <= main_threadi_111;
-		if (start == 1'b0 && ^(main_threadi_111) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_111_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %111 = mul nsw i32 %110, %110*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_111_reg <= main_threadi_111;
-		if (start == 1'b0 && ^(main_threadi_111) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_111_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %123 = mul nsw i32 %110, %120*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_threadi_111_reg <= main_threadi_123;
-		if (start == 1'b0 && ^(main_threadi_123) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_111_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %167 = mul nsw i32 %132, %162*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_111_reg <= main_threadi_167;
-		if (start == 1'b0 && ^(main_threadi_167) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_111_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %.thread.i*/
+/*   %111 = mul nsw i32 %110, %110*/
+	main_threadi_111_reg = main_threadi_139_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7580,17 +7682,17 @@ always @(*) begin
 	main_threadi_112_reg = main_187_230_reg;
 end
 always @(*) begin
-	main_threadi_113 = main_signed_multiply_32_11;
+	main_threadi_113 = main_signed_multiply_32_13;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %113 = mul nsw i32 %102, %110*/
-	main_threadi_113_reg = main_threadi_127_reg;
+	main_threadi_113_reg = main_threadi_141_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %114 = add nsw i32 %113, %106*/
-		main_threadi_114 = main_signed_add_32_2;
+		main_threadi_114 = main_signed_add_32_12;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7599,19 +7701,25 @@ always @(posedge clk) begin
 		main_threadi_114_reg <= main_threadi_114;
 		if (start == 1'b0 && ^(main_threadi_114) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_114_reg"); $finish; end
 	end
+	/* main: %187*/
+	/*   %gep42 = add i32 %gep_int41, -4*/
+	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_threadi_114_reg <= main_187_gep42;
+		if (start == 1'b0 && ^(main_187_gep42) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_114_reg"); $finish; end
+	end
 end
 always @(*) begin
-	main_threadi_115 = main_signed_multiply_32_12;
+	main_threadi_115 = main_signed_multiply_32_0;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %115 = mul nsw i32 %97, %110*/
-	main_threadi_115_reg = main_threadi_129_reg;
+	main_threadi_115_reg = main_74_76_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %116 = add nsw i32 %115, %107*/
-		main_threadi_116 = main_signed_add_32_3;
+		main_threadi_116 = main_signed_add_32_2;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7622,7 +7730,7 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_117 = main_signed_multiply_32_13;
+	main_threadi_117 = main_signed_multiply_32_11;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7636,12 +7744,6 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
 		main_threadi_117_reg <= main_threadi_117;
 		if (start == 1'b0 && ^(main_threadi_117) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_117_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %175 = mul nsw i32 %97, %162*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_117_reg <= main_threadi_175;
-		if (start == 1'b0 && ^(main_threadi_175) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_117_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -7660,12 +7762,12 @@ end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %gep30 = add i32 %gep_int29, 8*/
-		main_threadi_gep30 = main_signed_add_32_3;
+		main_threadi_gep30 = main_signed_add_32_10;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %gep30 = add i32 %gep_int29, 8*/
-	main_threadi_gep30_reg = main_threadi_128_reg;
+	main_threadi_gep30_reg = main_threadi_136_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7730,7 +7832,7 @@ end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %123 = mul nsw i32 %110, %120*/
-	main_threadi_123_reg = main_threadi_111_reg;
+	main_threadi_123_reg = main_threadi_107_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -7743,7 +7845,7 @@ always @(*) begin
 	main_threadi_124_reg = main_1_gep3_reg;
 end
 always @(*) begin
-	main_threadi_125 = main_signed_multiply_32_10;
+	main_threadi_125 = main_signed_multiply_32_6;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7757,18 +7859,6 @@ always @(posedge clk) begin
 	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
 		main_threadi_125_reg <= main_threadi_125;
 		if (start == 1'b0 && ^(main_threadi_125) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_125_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %106 = mul nsw i32 %97, %105*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_125_reg <= main_threadi_106;
-		if (start == 1'b0 && ^(main_threadi_106) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_125_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %169 = mul nsw i32 %120, %162*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_125_reg <= main_threadi_169;
-		if (start == 1'b0 && ^(main_threadi_169) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_125_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -7783,35 +7873,11 @@ always @(posedge clk) begin
 		main_threadi_126_reg <= main_threadi_126;
 		if (start == 1'b0 && ^(main_threadi_126) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
 	end
-	/* main: %.thread.i*/
-	/*   %152 = add nsw i32 %151, %138*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_126_reg <= main_threadi_152;
-		if (start == 1'b0 && ^(main_threadi_152) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
-	end
-	/* main: %33*/
-	/*   %38 = add nsw i32 %37, -1*/
-	if ((cur_state == LEGUP_F_main_BB__33_19)) begin
-		main_threadi_126_reg <= main_33_38;
-		if (start == 1'b0 && ^(main_33_38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
-	end
-	/* main: %.preheader6.i*/
-	/*   %66 = add nsw i32 %phitmp.i, -1*/
-	if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
-		main_threadi_126_reg <= main_preheader6i_66;
-		if (start == 1'b0 && ^(main_preheader6i_66) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %gep28 = add i32 %gep_int27, 6*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_threadi_126_reg <= main_threadi_gep28;
-		if (start == 1'b0 && ^(main_threadi_gep28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
-	end
 	/* main: %187*/
-	/*   %210 = add nsw i32 %209, %195*/
-	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_threadi_126_reg <= main_187_210;
-		if (start == 1'b0 && ^(main_187_210) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
+	/*   %gep44 = add i32 %gep_int43, -6*/
+	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_threadi_126_reg <= main_187_gep44;
+		if (start == 1'b0 && ^(main_187_gep44) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep82 = add i32 %gep_int81, 6*/
@@ -7820,10 +7886,10 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_gsm_normexiti_gep82) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
 	end
 	/* main: %.preheader*/
-	/*   %680 = add nsw i32 %679, %677*/
+	/*   %683 = add nsw i32 %682, %680*/
 	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
-		main_threadi_126_reg <= main_preheader_680;
-		if (start == 1'b0 && ^(main_preheader_680) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
+		main_threadi_126_reg <= main_preheader_683;
+		if (start == 1'b0 && ^(main_preheader_683) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_126_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -7843,22 +7909,16 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_127) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_127_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %113 = mul nsw i32 %102, %110*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_127_reg <= main_threadi_113;
-		if (start == 1'b0 && ^(main_threadi_113) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_127_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %171 = mul nsw i32 %110, %162*/
+	/*   %149 = mul nsw i32 %132, %146*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_127_reg <= main_threadi_171;
-		if (start == 1'b0 && ^(main_threadi_171) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_127_reg"); $finish; end
+		main_threadi_127_reg <= main_threadi_149;
+		if (start == 1'b0 && ^(main_threadi_149) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_127_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %128 = add nsw i32 %127, %117*/
-		main_threadi_128 = main_signed_add_32_3;
+		main_threadi_128 = main_signed_add_32_12;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7868,32 +7928,32 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_128) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %154 = add nsw i32 %153, %140*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_128_reg <= main_threadi_154;
-		if (start == 1'b0 && ^(main_threadi_154) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %gep30 = add i32 %gep_int29, 8*/
+	/*   %gep34 = add i32 %gep_int33, 12*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_threadi_128_reg <= main_threadi_gep30;
-		if (start == 1'b0 && ^(main_threadi_gep30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
+		main_threadi_128_reg <= main_threadi_gep34;
+		if (start == 1'b0 && ^(main_threadi_gep34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep84 = add i32 %gep_int83, 8*/
+	/*   %gep103 = add i32 %gep_int102, 12*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_threadi_128_reg <= main_gsm_normexiti_gep84;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep84) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
+		main_threadi_128_reg <= main_gsm_normexiti_gep103;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep103) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %210 = add nsw i32 %209, %195*/
+	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_threadi_128_reg <= main_187_210;
+		if (start == 1'b0 && ^(main_187_210) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
 	end
 	/* main: %.preheader*/
-	/*   %683 = add nsw i32 %682, %680*/
+	/*   %680 = add nsw i32 %679, %677*/
 	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
-		main_threadi_128_reg <= main_preheader_683;
-		if (start == 1'b0 && ^(main_preheader_683) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
+		main_threadi_128_reg <= main_preheader_680;
+		if (start == 1'b0 && ^(main_preheader_680) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_128_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_threadi_129 = main_signed_multiply_32_12;
+	main_threadi_129 = main_signed_multiply_32_10;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -7909,16 +7969,16 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_129) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_129_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %115 = mul nsw i32 %97, %110*/
+	/*   %106 = mul nsw i32 %97, %105*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_129_reg <= main_threadi_115;
-		if (start == 1'b0 && ^(main_threadi_115) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_129_reg"); $finish; end
+		main_threadi_129_reg <= main_threadi_106;
+		if (start == 1'b0 && ^(main_threadi_106) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_129_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %173 = mul nsw i32 %102, %162*/
+	/*   %171 = mul nsw i32 %110, %162*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_129_reg <= main_threadi_173;
-		if (start == 1'b0 && ^(main_threadi_173) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_129_reg"); $finish; end
+		main_threadi_129_reg <= main_threadi_171;
+		if (start == 1'b0 && ^(main_threadi_171) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_129_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -7947,22 +8007,28 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_gep32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %136 = add nsw i32 %135, %124*/
+	/*   %138 = add nsw i32 %137, %126*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_threadi_gep32_reg <= main_threadi_136;
-		if (start == 1'b0 && ^(main_threadi_136) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
+		main_threadi_gep32_reg <= main_threadi_138;
+		if (start == 1'b0 && ^(main_threadi_138) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
 	end
 	/* main: %187*/
-	/*   %gep44 = add i32 %gep_int43, -6*/
+	/*   %gep50 = add i32 %gep_int49, -12*/
 	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_threadi_gep32_reg <= main_187_gep44;
-		if (start == 1'b0 && ^(main_187_gep44) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
+		main_threadi_gep32_reg <= main_187_gep50;
+		if (start == 1'b0 && ^(main_187_gep50) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep101 = add i32 %gep_int100, 10*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
 		main_threadi_gep32_reg <= main_gsm_normexiti_gep101;
 		if (start == 1'b0 && ^(main_gsm_normexiti_gep101) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
+	end
+	/* main: %.preheader*/
+	/*   %686 = add nsw i32 %685, %683*/
+	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
+		main_threadi_gep32_reg <= main_preheader_686;
+		if (start == 1'b0 && ^(main_preheader_686) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep32_reg"); $finish; end
 	end
 end
 always @(*) begin
@@ -8005,7 +8071,7 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_133 = main_signed_multiply_32_14;
+	main_threadi_133 = main_signed_multiply_32_7;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8021,28 +8087,16 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_133) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_133_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %147 = mul nsw i32 %146, %146*/
+	/*   %155 = mul nsw i32 %102, %146*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_133_reg <= main_threadi_147;
-		if (start == 1'b0 && ^(main_threadi_147) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_133_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %98 = mul nsw i32 %97, %97*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_threadi_133_reg <= main_threadi_98;
-		if (start == 1'b0 && ^(main_threadi_98) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_133_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %107 = mul nsw i32 %93, %102*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_threadi_133_reg <= main_threadi_107;
-		if (start == 1'b0 && ^(main_threadi_107) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_133_reg"); $finish; end
+		main_threadi_133_reg <= main_threadi_155;
+		if (start == 1'b0 && ^(main_threadi_155) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_133_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %134 = add nuw nsw i32 %133, %122*/
-		main_threadi_134 = main_signed_add_32_6;
+		main_threadi_134 = main_signed_add_32_9;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8051,33 +8105,33 @@ always @(posedge clk) begin
 		main_threadi_134_reg <= main_threadi_134;
 		if (start == 1'b0 && ^(main_threadi_134) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
 	end
-	/* main: %.thread.i*/
-	/*   %gep36 = add i32 %gep_int35, 14*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_threadi_134_reg <= main_threadi_gep36;
-		if (start == 1'b0 && ^(main_threadi_gep36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
-	end
 	/* main: %187*/
-	/*   %gep50 = add i32 %gep_int49, -12*/
+	/*   %gep46 = add i32 %gep_int45, -8*/
 	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_threadi_134_reg <= main_187_gep50;
-		if (start == 1'b0 && ^(main_187_gep50) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
+		main_threadi_134_reg <= main_187_gep46;
+		if (start == 1'b0 && ^(main_187_gep46) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %gep28 = add i32 %gep_int27, 6*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_threadi_134_reg <= main_threadi_gep28;
+		if (start == 1'b0 && ^(main_threadi_gep28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep90 = add i32 %gep_int89, 14*/
+	/*   %gep97 = add i32 %gep_int96, 6*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_threadi_134_reg <= main_gsm_normexiti_gep90;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep90) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
+		main_threadi_134_reg <= main_gsm_normexiti_gep97;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep97) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
 	end
 	/* main: %.preheader*/
-	/*   %692 = add nsw i32 %691, %689*/
+	/*   %689 = add nsw i32 %688, %686*/
 	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
-		main_threadi_134_reg <= main_preheader_692;
-		if (start == 1'b0 && ^(main_preheader_692) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
+		main_threadi_134_reg <= main_preheader_689;
+		if (start == 1'b0 && ^(main_preheader_689) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_134_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_threadi_135 = main_signed_multiply_32_5;
+	main_threadi_135 = main_signed_multiply_32_8;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8093,78 +8147,120 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_135) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_135_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %157 = mul nsw i32 %97, %146*/
+	/*   %163 = mul nsw i32 %162, %162*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_135_reg <= main_threadi_157;
-		if (start == 1'b0 && ^(main_threadi_157) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_135_reg"); $finish; end
+		main_threadi_135_reg <= main_threadi_163;
+		if (start == 1'b0 && ^(main_threadi_163) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_135_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %136 = add nsw i32 %135, %124*/
-		main_threadi_136 = main_signed_add_32_11;
+		main_threadi_136 = main_signed_add_32_10;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %136 = add nsw i32 %135, %124*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_threadi_136_reg <= main_threadi_136;
+		if (start == 1'b0 && ^(main_threadi_136) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_136_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %gep48 = add i32 %gep_int47, -10*/
+	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_threadi_136_reg <= main_187_gep48;
+		if (start == 1'b0 && ^(main_187_gep48) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_136_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %gep30 = add i32 %gep_int29, 8*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_threadi_136_reg <= main_threadi_gep30;
+		if (start == 1'b0 && ^(main_threadi_gep30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_136_reg"); $finish; end
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep99 = add i32 %gep_int98, 8*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_threadi_136_reg <= main_gsm_normexiti_gep99;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep99) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_136_reg"); $finish; end
+	end
+	/* main: %.preheader*/
+	/*   %692 = add nsw i32 %691, %689*/
+	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
+		main_threadi_136_reg <= main_preheader_692;
+		if (start == 1'b0 && ^(main_preheader_692) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_136_reg"); $finish; end
+	end
+end
+always @(*) begin
+	main_threadi_137 = main_signed_multiply_32_14;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %137 = mul nsw i32 %110, %132*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_threadi_137_reg <= main_threadi_137;
+		if (start == 1'b0 && ^(main_threadi_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %137 = mul nsw i32 %110, %132*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_threadi_137_reg <= main_threadi_137;
+		if (start == 1'b0 && ^(main_threadi_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %151 = mul nsw i32 %120, %146*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_137_reg <= main_threadi_151;
+		if (start == 1'b0 && ^(main_threadi_151) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %219 = mul nsw i32 %218, %200*/
+	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
+		main_threadi_137_reg <= main_187_219;
+		if (start == 1'b0 && ^(main_187_219) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %229 = mul nsw i32 %228, %200*/
+	if ((cur_state == LEGUP_F_main_BB__187_52)) begin
+		main_threadi_137_reg <= main_187_229;
+		if (start == 1'b0 && ^(main_187_229) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %239 = mul nsw i32 %238, %200*/
+	if ((cur_state == LEGUP_F_main_BB__187_53)) begin
+		main_threadi_137_reg <= main_187_239;
+		if (start == 1'b0 && ^(main_187_239) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %98 = mul nsw i32 %97, %97*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_threadi_137_reg <= main_threadi_98;
+		if (start == 1'b0 && ^(main_threadi_98) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %103 = mul nsw i32 %102, %102*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_threadi_137_reg <= main_threadi_103;
+		if (start == 1'b0 && ^(main_threadi_103) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+	/* main: %187*/
+	/*   %204 = mul nsw i32 %203, %200*/
+	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_threadi_137_reg <= main_187_204;
+		if (start == 1'b0 && ^(main_187_204) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %138 = add nsw i32 %137, %126*/
+		main_threadi_138 = main_signed_add_32_11;
 end
 always @(*) begin
 /* main: %.thread.i*/
-/*   %136 = add nsw i32 %135, %124*/
-	main_threadi_136_reg = main_threadi_gep32_reg;
+/*   %138 = add nsw i32 %137, %126*/
+	main_threadi_138_reg = main_threadi_gep32_reg;
 end
 always @(*) begin
-	main_threadi_137 = main_signed_multiply_32_6;
-end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %137 = mul nsw i32 %110, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_threadi_137_reg <= main_threadi_137;
-		if (start == 1'b0 && ^(main_threadi_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %137 = mul nsw i32 %110, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_threadi_137_reg <= main_threadi_137;
-		if (start == 1'b0 && ^(main_threadi_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %159 = mul nsw i32 %93, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_137_reg <= main_threadi_159;
-		if (start == 1'b0 && ^(main_threadi_159) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_137_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %138 = add nsw i32 %137, %126*/
-		main_threadi_138 = main_signed_add_32_4;
-end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %138 = add nsw i32 %137, %126*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_threadi_138_reg <= main_threadi_138;
-		if (start == 1'b0 && ^(main_threadi_138) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_138_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %gep40 = add i32 %gep_int39, -2*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_threadi_138_reg <= main_187_gep40;
-		if (start == 1'b0 && ^(main_187_gep40) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_138_reg"); $finish; end
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep86 = add i32 %gep_int85, 10*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_threadi_138_reg <= main_gsm_normexiti_gep86;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep86) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_138_reg"); $finish; end
-	end
-	/* main: %.preheader*/
-	/*   %686 = add nsw i32 %685, %683*/
-	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
-		main_threadi_138_reg <= main_preheader_686;
-		if (start == 1'b0 && ^(main_preheader_686) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_138_reg"); $finish; end
-	end
-end
-always @(*) begin
-	main_threadi_139 = main_signed_multiply_32_7;
+	main_threadi_139 = main_signed_multiply_32_12;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8180,16 +8276,22 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_139) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_139_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %163 = mul nsw i32 %162, %162*/
+	/*   %111 = mul nsw i32 %110, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_threadi_139_reg <= main_threadi_111;
+		if (start == 1'b0 && ^(main_threadi_111) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_139_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %165 = mul nsw i32 %146, %162*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_139_reg <= main_threadi_163;
-		if (start == 1'b0 && ^(main_threadi_163) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_139_reg"); $finish; end
+		main_threadi_139_reg <= main_threadi_165;
+		if (start == 1'b0 && ^(main_threadi_165) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_139_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %140 = add nsw i32 %139, %128*/
-		main_threadi_140 = main_signed_add_32_5;
+		main_threadi_140 = main_signed_add_32_7;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8199,26 +8301,20 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_140) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
 	end
 	/* main: %187*/
-	/*   %gep42 = add i32 %gep_int41, -4*/
+	/*   %gep52 = add i32 %gep_int51, -14*/
 	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_threadi_140_reg <= main_187_gep42;
-		if (start == 1'b0 && ^(main_187_gep42) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
+		main_threadi_140_reg <= main_187_gep52;
+		if (start == 1'b0 && ^(main_187_gep52) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep88 = add i32 %gep_int87, 12*/
+	/*   %gep93 = add i32 %gep_int92, 2*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_threadi_140_reg <= main_gsm_normexiti_gep88;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep88) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
-	end
-	/* main: %.preheader*/
-	/*   %689 = add nsw i32 %688, %686*/
-	if ((cur_state == LEGUP_F_main_BB_preheader_255)) begin
-		main_threadi_140_reg <= main_preheader_689;
-		if (start == 1'b0 && ^(main_preheader_689) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
+		main_threadi_140_reg <= main_gsm_normexiti_gep93;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep93) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_140_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_threadi_141 = main_signed_multiply_32_8;
+	main_threadi_141 = main_signed_multiply_32_13;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8234,16 +8330,22 @@ always @(posedge clk) begin
 		if (start == 1'b0 && ^(main_threadi_141) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_141_reg"); $finish; end
 	end
 	/* main: %.thread.i*/
-	/*   %165 = mul nsw i32 %146, %162*/
+	/*   %147 = mul nsw i32 %146, %146*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_141_reg <= main_threadi_165;
-		if (start == 1'b0 && ^(main_threadi_165) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_141_reg"); $finish; end
+		main_threadi_141_reg <= main_threadi_147;
+		if (start == 1'b0 && ^(main_threadi_147) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_141_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %113 = mul nsw i32 %102, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_threadi_141_reg <= main_threadi_113;
+		if (start == 1'b0 && ^(main_threadi_113) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_141_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %142 = add nsw i32 %141, %129*/
-		main_threadi_142 = main_signed_add_32_12;
+		main_threadi_142 = main_signed_add_32_8;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8252,27 +8354,21 @@ always @(posedge clk) begin
 		main_threadi_142_reg <= main_threadi_142;
 		if (start == 1'b0 && ^(main_threadi_142) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
 	end
-	/* main: %.thread.i*/
-	/*   %gep34 = add i32 %gep_int33, 12*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_threadi_142_reg <= main_threadi_gep34;
-		if (start == 1'b0 && ^(main_threadi_gep34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
-	end
 	/* main: %187*/
-	/*   %gep46 = add i32 %gep_int45, -8*/
+	/*   %241 = add nsw i32 %i.010.i, 1*/
 	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_threadi_142_reg <= main_187_gep46;
-		if (start == 1'b0 && ^(main_187_gep46) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
+		main_threadi_142_reg <= main_187_241;
+		if (start == 1'b0 && ^(main_187_241) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep103 = add i32 %gep_int102, 12*/
+	/*   %gep95 = add i32 %gep_int94, 4*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_threadi_142_reg <= main_gsm_normexiti_gep103;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep103) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
+		main_threadi_142_reg <= main_gsm_normexiti_gep95;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep95) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_142_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_threadi_143 = main_signed_multiply_32_13;
+	main_threadi_143 = main_signed_multiply_32_5;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8309,7 +8405,7 @@ end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %gep34 = add i32 %gep_int33, 12*/
-	main_threadi_gep34_reg = main_threadi_142_reg;
+	main_threadi_gep34_reg = main_threadi_128_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -8327,7 +8423,7 @@ end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %145 = load i16* %144, align 2, !tbaa !1*/
-		main_threadi_145 = main_0_so_out_b;
+		main_threadi_145 = main_0_so_out_a;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8351,66 +8447,30 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_147 = main_signed_multiply_32_14;
+	main_threadi_147 = main_signed_multiply_32_13;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %147 = mul nsw i32 %146, %146*/
-	main_threadi_147_reg = main_threadi_133_reg;
+	main_threadi_147_reg = main_threadi_141_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %148 = add nuw nsw i32 %147, %134*/
-		main_threadi_148 = main_signed_add_32_11;
-end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %148 = add nuw nsw i32 %147, %134*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_148_reg <= main_threadi_148;
-		if (start == 1'b0 && ^(main_threadi_148) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_148_reg"); $finish; end
-	end
+		main_threadi_148 = main_signed_add_32_0;
 end
 always @(*) begin
-	main_threadi_149 = main_signed_multiply_32_1;
+/* main: %.thread.i*/
+/*   %148 = add nuw nsw i32 %147, %134*/
+	main_threadi_148_reg = main_1_gep_reg;
 end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %149 = mul nsw i32 %132, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_149_reg <= main_threadi_149;
-		if (start == 1'b0 && ^(main_threadi_149) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %149 = mul nsw i32 %132, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_149_reg <= main_threadi_149;
-		if (start == 1'b0 && ^(main_threadi_149) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %219 = mul nsw i32 %218, %200*/
-	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
-		main_threadi_149_reg <= main_187_219;
-		if (start == 1'b0 && ^(main_187_219) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %229 = mul nsw i32 %228, %200*/
-	if ((cur_state == LEGUP_F_main_BB__187_52)) begin
-		main_threadi_149_reg <= main_187_229;
-		if (start == 1'b0 && ^(main_187_229) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %239 = mul nsw i32 %238, %200*/
-	if ((cur_state == LEGUP_F_main_BB__187_53)) begin
-		main_threadi_149_reg <= main_187_239;
-		if (start == 1'b0 && ^(main_187_239) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %204 = mul nsw i32 %203, %200*/
-	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_threadi_149_reg <= main_187_204;
-		if (start == 1'b0 && ^(main_187_204) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_149_reg"); $finish; end
-	end
+always @(*) begin
+	main_threadi_149 = main_signed_multiply_32_11;
+end
+always @(*) begin
+/* main: %.thread.i*/
+/*   %149 = mul nsw i32 %132, %146*/
+	main_threadi_149_reg = main_threadi_127_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -8423,40 +8483,28 @@ always @(*) begin
 	main_threadi_150_reg = main_1_gep3_reg;
 end
 always @(*) begin
-	main_threadi_151 = main_signed_multiply_32_2;
+	main_threadi_151 = main_signed_multiply_32_14;
 end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %151 = mul nsw i32 %120, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_151_reg <= main_threadi_151;
-		if (start == 1'b0 && ^(main_threadi_151) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_151_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %151 = mul nsw i32 %120, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_151_reg <= main_threadi_151;
-		if (start == 1'b0 && ^(main_threadi_151) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_151_reg"); $finish; end
-	end
-	/* main: %187*/
-	/*   %209 = mul nsw i32 %208, %200*/
-	if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_threadi_151_reg <= main_187_209;
-		if (start == 1'b0 && ^(main_187_209) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_151_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %.thread.i*/
+/*   %151 = mul nsw i32 %120, %146*/
+	main_threadi_151_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %152 = add nsw i32 %151, %138*/
-		main_threadi_152 = main_signed_add_32_2;
+		main_threadi_152 = main_signed_add_32_7;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %152 = add nsw i32 %151, %138*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_152_reg <= main_threadi_152;
+		if (start == 1'b0 && ^(main_threadi_152) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_152_reg"); $finish; end
+	end
 end
 always @(*) begin
-/* main: %.thread.i*/
-/*   %152 = add nsw i32 %151, %138*/
-	main_threadi_152_reg = main_threadi_126_reg;
-end
-always @(*) begin
-	main_threadi_153 = main_signed_multiply_32_3;
+	main_threadi_153 = main_signed_multiply_32_2;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8475,34 +8523,28 @@ end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %154 = add nsw i32 %153, %140*/
-		main_threadi_154 = main_signed_add_32_3;
-end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %154 = add nsw i32 %153, %140*/
-	main_threadi_154_reg = main_threadi_128_reg;
-end
-always @(*) begin
-	main_threadi_155 = main_signed_multiply_32_4;
+		main_threadi_154 = main_signed_add_32_8;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
-	/*   %155 = mul nsw i32 %102, %146*/
+	/*   %154 = add nsw i32 %153, %140*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_155_reg <= main_threadi_155;
-		if (start == 1'b0 && ^(main_threadi_155) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_155_reg"); $finish; end
+		main_threadi_154_reg <= main_threadi_154;
+		if (start == 1'b0 && ^(main_threadi_154) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_154_reg"); $finish; end
 	end
-	/* main: %.thread.i*/
-	/*   %155 = mul nsw i32 %102, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_threadi_155_reg <= main_threadi_155;
-		if (start == 1'b0 && ^(main_threadi_155) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_155_reg"); $finish; end
-	end
+end
+always @(*) begin
+	main_threadi_155 = main_signed_multiply_32_7;
+end
+always @(*) begin
+/* main: %.thread.i*/
+/*   %155 = mul nsw i32 %102, %146*/
+	main_threadi_155_reg = main_threadi_133_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %156 = add nsw i32 %155, %142*/
-		main_threadi_156 = main_signed_add_32_6;
+		main_threadi_156 = main_signed_add_32_5;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8511,19 +8553,34 @@ always @(posedge clk) begin
 		main_threadi_156_reg <= main_threadi_156;
 		if (start == 1'b0 && ^(main_threadi_156) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_156_reg"); $finish; end
 	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep88 = add i32 %gep_int87, 12*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_threadi_156_reg <= main_gsm_normexiti_gep88;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep88) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_156_reg"); $finish; end
+	end
 end
 always @(*) begin
-	main_threadi_157 = main_signed_multiply_32_5;
+	main_threadi_157 = main_signed_multiply_32_3;
 end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %157 = mul nsw i32 %97, %146*/
-	main_threadi_157_reg = main_threadi_135_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %157 = mul nsw i32 %97, %146*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_157_reg <= main_threadi_157;
+		if (start == 1'b0 && ^(main_threadi_157) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_157_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %157 = mul nsw i32 %97, %146*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_157_reg <= main_threadi_157;
+		if (start == 1'b0 && ^(main_threadi_157) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_157_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %158 = add nsw i32 %157, %143*/
-		main_threadi_158 = main_signed_add_32_12;
+		main_threadi_158 = main_signed_add_32_3;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8532,14 +8589,29 @@ always @(posedge clk) begin
 		main_threadi_158_reg <= main_threadi_158;
 		if (start == 1'b0 && ^(main_threadi_158) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_158_reg"); $finish; end
 	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep84 = add i32 %gep_int83, 8*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_threadi_158_reg <= main_gsm_normexiti_gep84;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep84) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_158_reg"); $finish; end
+	end
 end
 always @(*) begin
-	main_threadi_159 = main_signed_multiply_32_6;
+	main_threadi_159 = main_signed_multiply_32_4;
 end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %159 = mul nsw i32 %93, %146*/
-	main_threadi_159_reg = main_threadi_137_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %159 = mul nsw i32 %93, %146*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_159_reg <= main_threadi_159;
+		if (start == 1'b0 && ^(main_threadi_159) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_159_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %159 = mul nsw i32 %93, %146*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_159_reg <= main_threadi_159;
+		if (start == 1'b0 && ^(main_threadi_159) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_159_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -8559,10 +8631,19 @@ always @(*) begin
 	/*   %gep36 = add i32 %gep_int35, 14*/
 		main_threadi_gep36 = main_signed_add_32_6;
 end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %gep36 = add i32 %gep_int35, 14*/
-	main_threadi_gep36_reg = main_threadi_134_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %gep36 = add i32 %gep_int35, 14*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_threadi_gep36_reg <= main_threadi_gep36;
+		if (start == 1'b0 && ^(main_threadi_gep36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep36_reg"); $finish; end
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep90 = add i32 %gep_int89, 14*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_threadi_gep36_reg <= main_gsm_normexiti_gep90;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep90) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_gep36_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -8580,7 +8661,7 @@ end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %161 = load i16* %160, align 2, !tbaa !1*/
-		main_threadi_161 = main_0_so_out_a;
+		main_threadi_161 = main_0_so_out_b;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8604,71 +8685,89 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_163 = main_signed_multiply_32_7;
+	main_threadi_163 = main_signed_multiply_32_8;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %163 = mul nsw i32 %162, %162*/
-	main_threadi_163_reg = main_threadi_139_reg;
+	main_threadi_163_reg = main_threadi_135_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %164 = add nsw i32 %163, %148*/
-		main_threadi_164 = main_signed_add_32_0;
+		main_threadi_164 = main_signed_add_32_2;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %164 = add nsw i32 %163, %148*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_164_reg <= main_threadi_164;
+		if (start == 1'b0 && ^(main_threadi_164) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_164_reg"); $finish; end
+	end
 end
 always @(*) begin
-/* main: %.thread.i*/
-/*   %164 = add nsw i32 %163, %148*/
-	main_threadi_164_reg = main_39_45_reg;
-end
-always @(*) begin
-	main_threadi_165 = main_signed_multiply_32_8;
+	main_threadi_165 = main_signed_multiply_32_12;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %165 = mul nsw i32 %146, %162*/
-	main_threadi_165_reg = main_threadi_141_reg;
+	main_threadi_165_reg = main_threadi_139_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %166 = add nsw i32 %165, %150*/
-		main_threadi_166 = main_signed_add_32_7;
+		main_threadi_166 = main_signed_add_32_9;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %166 = add nsw i32 %165, %150*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_166_reg <= main_threadi_166;
+		if (start == 1'b0 && ^(main_threadi_166) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_166_reg"); $finish; end
+	end
 end
 always @(*) begin
-/* main: %.thread.i*/
-/*   %166 = add nsw i32 %165, %150*/
-	main_threadi_166_reg = main_gsm_normexiti_gep93_reg;
-end
-always @(*) begin
-	main_threadi_167 = main_signed_multiply_32_9;
+	main_threadi_167 = main_signed_multiply_32_0;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %167 = mul nsw i32 %132, %162*/
-	main_threadi_167_reg = main_threadi_111_reg;
+	main_threadi_167_reg = main_74_76_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %168 = add nsw i32 %167, %152*/
-		main_threadi_168 = main_signed_add_32_8;
+		main_threadi_168 = main_signed_add_32_10;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %168 = add nsw i32 %167, %152*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_168_reg <= main_threadi_168;
+		if (start == 1'b0 && ^(main_threadi_168) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_168_reg"); $finish; end
+	end
 end
 always @(*) begin
-/* main: %.thread.i*/
-/*   %168 = add nsw i32 %167, %152*/
-	main_threadi_168_reg = main_gsm_normexiti_gep95_reg;
+	main_threadi_169 = main_signed_multiply_32_5;
 end
-always @(*) begin
-	main_threadi_169 = main_signed_multiply_32_10;
-end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %169 = mul nsw i32 %120, %162*/
-	main_threadi_169_reg = main_threadi_125_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %169 = mul nsw i32 %120, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_169_reg <= main_threadi_169;
+		if (start == 1'b0 && ^(main_threadi_169) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_169_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %169 = mul nsw i32 %120, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_169_reg <= main_threadi_169;
+		if (start == 1'b0 && ^(main_threadi_169) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_169_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %170 = add nsw i32 %169, %154*/
-		main_threadi_170 = main_signed_add_32_9;
+		main_threadi_170 = main_signed_add_32_11;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8679,30 +8778,42 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_171 = main_signed_multiply_32_11;
+	main_threadi_171 = main_signed_multiply_32_10;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %171 = mul nsw i32 %110, %162*/
-	main_threadi_171_reg = main_threadi_127_reg;
+	main_threadi_171_reg = main_threadi_129_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %172 = add nsw i32 %171, %156*/
-		main_threadi_172 = main_signed_add_32_10;
+		main_threadi_172 = main_signed_add_32_6;
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %172 = add nsw i32 %171, %156*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_172_reg <= main_threadi_172;
+		if (start == 1'b0 && ^(main_threadi_172) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_172_reg"); $finish; end
+	end
 end
 always @(*) begin
-/* main: %.thread.i*/
-/*   %172 = add nsw i32 %171, %156*/
-	main_threadi_172_reg = main_gsm_normexiti_gep99_reg;
+	main_threadi_173 = main_signed_multiply_32_1;
 end
-always @(*) begin
-	main_threadi_173 = main_signed_multiply_32_12;
-end
-always @(*) begin
-/* main: %.thread.i*/
-/*   %173 = mul nsw i32 %102, %162*/
-	main_threadi_173_reg = main_threadi_129_reg;
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %173 = mul nsw i32 %102, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_173_reg <= main_threadi_173;
+		if (start == 1'b0 && ^(main_threadi_173) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_173_reg"); $finish; end
+	end
+	/* main: %.thread.i*/
+	/*   %173 = mul nsw i32 %102, %162*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_threadi_173_reg <= main_threadi_173;
+		if (start == 1'b0 && ^(main_threadi_173) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_173_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -8716,19 +8827,25 @@ always @(posedge clk) begin
 		main_threadi_174_reg <= main_threadi_174;
 		if (start == 1'b0 && ^(main_threadi_174) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_174_reg"); $finish; end
 	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep86 = add i32 %gep_int85, 10*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_threadi_174_reg <= main_gsm_normexiti_gep86;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep86) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_threadi_174_reg"); $finish; end
+	end
 end
 always @(*) begin
-	main_threadi_175 = main_signed_multiply_32_13;
+	main_threadi_175 = main_signed_multiply_32_9;
 end
 always @(*) begin
 /* main: %.thread.i*/
 /*   %175 = mul nsw i32 %97, %162*/
-	main_threadi_175_reg = main_threadi_117_reg;
+	main_threadi_175_reg = main_threadi_107_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %176 = add nsw i32 %175, %159*/
-		main_threadi_176 = main_signed_add_32_5;
+		main_threadi_176 = main_signed_add_32_12;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -8739,7 +8856,7 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_threadi_177 = main_signed_multiply_32_0;
+	main_threadi_177 = main_signed_multiply_32_6;
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
@@ -9317,15 +9434,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep38 = add i32 %gep_int37, 2*/
-		main_187_gep38 = main_signed_add_32_1;
+		main_187_gep38 = main_signed_add_32_0;
 end
-always @(posedge clk) begin
-	/* main: %187*/
-	/*   %gep38 = add i32 %gep_int37, 2*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_187_gep38_reg <= main_187_gep38;
-		if (start == 1'b0 && ^(main_187_gep38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep38_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %187*/
+/*   %gep38 = add i32 %gep_int37, 2*/
+	main_187_gep38_reg = main_gsm_absexiti_17_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9382,7 +9496,7 @@ end
 always @(*) begin
 /* main: %187*/
 /*   %202 = add nsw i32 %201, %197*/
-	main_187_202_reg = main_49_55_reg;
+	main_187_202_reg = main_33_38_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9398,12 +9512,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_187_204 = main_signed_multiply_32_1;
+	main_187_204 = main_signed_multiply_32_14;
 end
 always @(*) begin
 /* main: %187*/
 /*   %204 = mul nsw i32 %203, %200*/
-	main_187_204_reg = main_threadi_149_reg;
+	main_187_204_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9434,12 +9548,15 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep40 = add i32 %gep_int39, -2*/
-		main_187_gep40 = main_signed_add_32_4;
+		main_187_gep40 = main_signed_add_32_1;
 end
-always @(*) begin
-/* main: %187*/
-/*   %gep40 = add i32 %gep_int39, -2*/
-	main_187_gep40_reg = main_threadi_138_reg;
+always @(posedge clk) begin
+	/* main: %187*/
+	/*   %gep40 = add i32 %gep_int39, -2*/
+	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_187_gep40_reg <= main_187_gep40;
+		if (start == 1'b0 && ^(main_187_gep40) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep40_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %187*/
@@ -9481,22 +9598,22 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_187_209 = main_signed_multiply_32_2;
+	main_187_209 = main_signed_multiply_32_9;
 end
 always @(*) begin
 /* main: %187*/
 /*   %209 = mul nsw i32 %208, %200*/
-	main_187_209_reg = main_threadi_151_reg;
+	main_187_209_reg = main_threadi_107_reg;
 end
 always @(*) begin
 	/* main: %187*/
 	/*   %210 = add nsw i32 %209, %195*/
-		main_187_210 = main_signed_add_32_2;
+		main_187_210 = main_signed_add_32_12;
 end
 always @(*) begin
 /* main: %187*/
 /*   %210 = add nsw i32 %209, %195*/
-	main_187_210_reg = main_threadi_126_reg;
+	main_187_210_reg = main_threadi_128_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9514,12 +9631,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep42 = add i32 %gep_int41, -4*/
-		main_187_gep42 = main_signed_add_32_5;
+		main_187_gep42 = main_signed_add_32_12;
 end
 always @(*) begin
 /* main: %187*/
 /*   %gep42 = add i32 %gep_int41, -4*/
-	main_187_gep42_reg = main_threadi_140_reg;
+	main_187_gep42_reg = main_threadi_114_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9594,12 +9711,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep44 = add i32 %gep_int43, -6*/
-		main_187_gep44 = main_signed_add_32_11;
+		main_187_gep44 = main_signed_add_32_2;
 end
 always @(*) begin
 /* main: %187*/
 /*   %gep44 = add i32 %gep_int43, -6*/
-	main_187_gep44_reg = main_threadi_gep32_reg;
+	main_187_gep44_reg = main_threadi_126_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9641,12 +9758,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_187_219 = main_signed_multiply_32_1;
+	main_187_219 = main_signed_multiply_32_14;
 end
 always @(*) begin
 /* main: %187*/
 /*   %219 = mul nsw i32 %218, %200*/
-	main_187_219_reg = main_threadi_149_reg;
+	main_187_219_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9674,12 +9791,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep46 = add i32 %gep_int45, -8*/
-		main_187_gep46 = main_signed_add_32_12;
+		main_187_gep46 = main_signed_add_32_9;
 end
 always @(*) begin
 /* main: %187*/
 /*   %gep46 = add i32 %gep_int45, -8*/
-	main_187_gep46_reg = main_threadi_142_reg;
+	main_187_gep46_reg = main_threadi_134_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9754,45 +9871,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep48 = add i32 %gep_int47, -10*/
-		main_187_gep48 = main_signed_add_32_13;
+		main_187_gep48 = main_signed_add_32_10;
 end
-always @(posedge clk) begin
-	/* main: %187*/
-	/*   %gep48 = add i32 %gep_int47, -10*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_187_gep48_reg <= main_187_gep48;
-		if (start == 1'b0 && ^(main_187_gep48) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
-	/* main: %._crit_edge.i*/
-	/*   %248 = add nsw i32 %k.47.i, -1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
-		main_187_gep48_reg <= main__crit_edgei_248;
-		if (start == 1'b0 && ^(main__crit_edgei_248) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep105 = add i32 %gep_int104, 14*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_187_gep48_reg <= main_gsm_normexiti_gep105;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep105) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
-	/* main: %.thread102.i*/
-	/*   %583 = add nsw i32 %582, -2560*/
-	if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_187_gep48_reg <= main_thread102i_583;
-		if (start == 1'b0 && ^(main_thread102i_583) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
-	/* main: %.thread112.i*/
-	/*   %621 = add nsw i32 %620, -1792*/
-	if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
-		main_187_gep48_reg <= main_thread112i_621;
-		if (start == 1'b0 && ^(main_thread112i_621) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
-	/* main: %.thread122.i*/
-	/*   %659 = add nsw i32 %658, -1144*/
-	if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
-		main_187_gep48_reg <= main_thread122i_659;
-		if (start == 1'b0 && ^(main_thread122i_659) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep48_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %187*/
+/*   %gep48 = add i32 %gep_int47, -10*/
+	main_187_gep48_reg = main_threadi_136_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9834,12 +9918,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_187_229 = main_signed_multiply_32_1;
+	main_187_229 = main_signed_multiply_32_14;
 end
 always @(*) begin
 /* main: %187*/
 /*   %229 = mul nsw i32 %228, %200*/
-	main_187_229_reg = main_threadi_149_reg;
+	main_187_229_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9876,12 +9960,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep50 = add i32 %gep_int49, -12*/
-		main_187_gep50 = main_signed_add_32_6;
+		main_187_gep50 = main_signed_add_32_11;
 end
 always @(*) begin
 /* main: %187*/
 /*   %gep50 = add i32 %gep_int49, -12*/
-	main_187_gep50_reg = main_threadi_134_reg;
+	main_187_gep50_reg = main_threadi_gep32_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -9956,33 +10040,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %gep52 = add i32 %gep_int51, -14*/
-		main_187_gep52 = main_signed_add_32_9;
+		main_187_gep52 = main_signed_add_32_7;
 end
-always @(posedge clk) begin
-	/* main: %187*/
-	/*   %gep52 = add i32 %gep_int51, -14*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_187_gep52_reg <= main_187_gep52;
-		if (start == 1'b0 && ^(main_187_gep52) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep52_reg"); $finish; end
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep97 = add i32 %gep_int96, 6*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_187_gep52_reg <= main_gsm_normexiti_gep97;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep97) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep52_reg"); $finish; end
-	end
-	/* main: %.thread102.i*/
-	/*   %581 = add i32 %580, 40960*/
-	if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_187_gep52_reg <= main_thread102i_581;
-		if (start == 1'b0 && ^(main_thread102i_581) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep52_reg"); $finish; end
-	end
-	/* main: %.thread117.i*/
-	/*   %640 = add nsw i32 %639, -341*/
-	if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
-		main_187_gep52_reg <= main_thread117i_640;
-		if (start == 1'b0 && ^(main_thread117i_640) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_187_gep52_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %187*/
+/*   %gep52 = add i32 %gep_int51, -14*/
+	main_187_gep52_reg = main_threadi_140_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -10024,12 +10087,12 @@ always @(posedge clk) begin
 	end
 end
 always @(*) begin
-	main_187_239 = main_signed_multiply_32_1;
+	main_187_239 = main_signed_multiply_32_14;
 end
 always @(*) begin
 /* main: %187*/
 /*   %239 = mul nsw i32 %238, %200*/
-	main_187_239_reg = main_threadi_149_reg;
+	main_187_239_reg = main_threadi_137_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -10047,12 +10110,12 @@ end
 always @(*) begin
 	/* main: %187*/
 	/*   %241 = add nsw i32 %i.010.i, 1*/
-		main_187_241 = main_signed_add_32_0;
+		main_187_241 = main_signed_add_32_8;
 end
 always @(*) begin
 /* main: %187*/
 /*   %241 = add nsw i32 %i.010.i, 1*/
-	main_187_241_reg = main_gsm_absexiti_17_reg;
+	main_187_241_reg = main_threadi_142_reg;
 end
 always @(*) begin
 	/* main: %187*/
@@ -10236,17 +10299,17 @@ end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %248 = add nsw i32 %k.47.i, -1*/
-		main__crit_edgei_248 = main_signed_add_32_13;
+		main__crit_edgei_248 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %._crit_edge.i*/
 /*   %248 = add nsw i32 %k.47.i, -1*/
-	main__crit_edgei_248_reg = main_187_gep48_reg;
+	main__crit_edgei_248_reg = main_1_5_reg;
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %.pre.i = load i16* %243, align 2, !tbaa !1*/
-		main__crit_edgei_prei = main_0_so_out_b;
+		main__crit_edgei_prei = main_0_so_out_a;
 end
 always @(posedge clk) begin
 	/* main: %._crit_edge.i*/
@@ -10452,7 +10515,7 @@ end
 always @(*) begin
 	/* main: %261*/
 	/*   %266 = add nsw i32 %265, -1*/
-		main_261_266 = main_signed_add_32_7;
+		main_261_266 = main_signed_add_32_0;
 end
 always @(posedge clk) begin
 	/* main: %261*/
@@ -11350,7 +11413,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep84 = add i32 %gep_int83, 8*/
-	main_gsm_normexiti_gep84_reg = main_threadi_128_reg;
+	main_gsm_normexiti_gep84_reg = main_threadi_158_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11387,7 +11450,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep86 = add i32 %gep_int85, 10*/
-	main_gsm_normexiti_gep86_reg = main_threadi_138_reg;
+	main_gsm_normexiti_gep86_reg = main_threadi_174_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11424,7 +11487,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep88 = add i32 %gep_int87, 12*/
-	main_gsm_normexiti_gep88_reg = main_threadi_140_reg;
+	main_gsm_normexiti_gep88_reg = main_threadi_156_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11461,7 +11524,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep90 = add i32 %gep_int89, 14*/
-	main_gsm_normexiti_gep90_reg = main_threadi_134_reg;
+	main_gsm_normexiti_gep90_reg = main_threadi_gep36_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11522,31 +11585,10 @@ always @(*) begin
 	/*   %gep93 = add i32 %gep_int92, 2*/
 		main_gsm_normexiti_gep93 = main_signed_add_32_7;
 end
-always @(posedge clk) begin
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep93 = add i32 %gep_int92, 2*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_gsm_normexiti_gep93_reg <= main_gsm_normexiti_gep93;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep93) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep93_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %166 = add nsw i32 %165, %150*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_gsm_normexiti_gep93_reg <= main_threadi_166;
-		if (start == 1'b0 && ^(main_threadi_166) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep93_reg"); $finish; end
-	end
-	/* main: %.thread.i4*/
-	/*   %546 = add i32 %545, 40960*/
-	if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
-		main_gsm_normexiti_gep93_reg <= main_threadi4_546;
-		if (start == 1'b0 && ^(main_threadi4_546) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep93_reg"); $finish; end
-	end
-	/* main: %.thread112.i*/
-	/*   %619 = add i32 %618, 30720*/
-	if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
-		main_gsm_normexiti_gep93_reg <= main_thread112i_619;
-		if (start == 1'b0 && ^(main_thread112i_619) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep93_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %gsm_norm.exit.i*/
+/*   %gep93 = add i32 %gep_int92, 2*/
+	main_gsm_normexiti_gep93_reg = main_threadi_140_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11580,37 +11622,10 @@ always @(*) begin
 	/*   %gep95 = add i32 %gep_int94, 4*/
 		main_gsm_normexiti_gep95 = main_signed_add_32_8;
 end
-always @(posedge clk) begin
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep95 = add i32 %gep_int94, 4*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_gsm_normexiti_gep95_reg <= main_gsm_normexiti_gep95;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep95) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep95_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %168 = add nsw i32 %167, %152*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_gsm_normexiti_gep95_reg <= main_threadi_168;
-		if (start == 1'b0 && ^(main_threadi_168) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep95_reg"); $finish; end
-	end
-	/* main: %.thread98.i*/
-	/*   %562 = add i32 %561, 40960*/
-	if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
-		main_gsm_normexiti_gep95_reg <= main_thread98i_562;
-		if (start == 1'b0 && ^(main_thread98i_562) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep95_reg"); $finish; end
-	end
-	/* main: %._crit_edge43.i*/
-	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_gsm_normexiti_gep95_reg <= main__crit_edge43i_indvarsivnexti;
-		if (start == 1'b0 && ^(main__crit_edge43i_indvarsivnexti) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep95_reg"); $finish; end
-	end
-	/* main: %.thread117.i*/
-	/*   %638 = add i32 %637, 17068*/
-	if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
-		main_gsm_normexiti_gep95_reg <= main_thread117i_638;
-		if (start == 1'b0 && ^(main_thread117i_638) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep95_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %gsm_norm.exit.i*/
+/*   %gep95 = add i32 %gep_int94, 4*/
+	main_gsm_normexiti_gep95_reg = main_threadi_142_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11647,7 +11662,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep97 = add i32 %gep_int96, 6*/
-	main_gsm_normexiti_gep97_reg = main_187_gep52_reg;
+	main_gsm_normexiti_gep97_reg = main_threadi_134_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11681,37 +11696,10 @@ always @(*) begin
 	/*   %gep99 = add i32 %gep_int98, 8*/
 		main_gsm_normexiti_gep99 = main_signed_add_32_10;
 end
-always @(posedge clk) begin
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep99 = add i32 %gep_int98, 8*/
-	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_gsm_normexiti_gep99_reg <= main_gsm_normexiti_gep99;
-		if (start == 1'b0 && ^(main_gsm_normexiti_gep99) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep99_reg"); $finish; end
-	end
-	/* main: %.thread.i*/
-	/*   %172 = add nsw i32 %171, %156*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_gsm_normexiti_gep99_reg <= main_threadi_172;
-		if (start == 1'b0 && ^(main_threadi_172) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep99_reg"); $finish; end
-	end
-	/* main: %Gsm_LPC_Analysis.exit*/
-	/*   %530 = add i32 %529, 40960*/
-	if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
-		main_gsm_normexiti_gep99_reg <= main_Gsm_LPC_Analysisexit_530;
-		if (start == 1'b0 && ^(main_Gsm_LPC_Analysisexit_530) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep99_reg"); $finish; end
-	end
-	/* main: %.thread107.i*/
-	/*   %600 = add i32 %599, 27928*/
-	if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
-		main_gsm_normexiti_gep99_reg <= main_thread107i_600;
-		if (start == 1'b0 && ^(main_thread107i_600) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep99_reg"); $finish; end
-	end
-	/* main: %.thread122.i*/
-	/*   %657 = add i32 %656, 18072*/
-	if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
-		main_gsm_normexiti_gep99_reg <= main_thread122i_657;
-		if (start == 1'b0 && ^(main_thread122i_657) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep99_reg"); $finish; end
-	end
+always @(*) begin
+/* main: %gsm_norm.exit.i*/
+/*   %gep99 = add i32 %gep_int98, 8*/
+	main_gsm_normexiti_gep99_reg = main_threadi_136_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11785,7 +11773,7 @@ end
 always @(*) begin
 /* main: %gsm_norm.exit.i*/
 /*   %gep103 = add i32 %gep_int102, 12*/
-	main_gsm_normexiti_gep103_reg = main_threadi_142_reg;
+	main_gsm_normexiti_gep103_reg = main_threadi_128_reg;
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -11819,10 +11807,13 @@ always @(*) begin
 	/*   %gep105 = add i32 %gep_int104, 14*/
 		main_gsm_normexiti_gep105 = main_signed_add_32_13;
 end
-always @(*) begin
-/* main: %gsm_norm.exit.i*/
-/*   %gep105 = add i32 %gep_int104, 14*/
-	main_gsm_normexiti_gep105_reg = main_187_gep48_reg;
+always @(posedge clk) begin
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep105 = add i32 %gep_int104, 14*/
+	if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_gsm_normexiti_gep105_reg <= main_gsm_normexiti_gep105;
+		if (start == 1'b0 && ^(main_gsm_normexiti_gep105) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_gsm_normexiti_gep105_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -12313,7 +12304,7 @@ end
 always @(*) begin
 	/* main: %.preheader.i.i*/
 	/*   %..i1.i = sub nsw i32 %350, %352*/
-		main_preheaderii_i1i = main_signed_subtract_32_1;
+		main_preheaderii_i1i = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %.preheader.i.i*/
@@ -12362,7 +12353,7 @@ end
 always @(*) begin
 	/* main: %355*/
 	/*   %356 = sub nsw i32 %353, %347*/
-		main_355_356 = main_signed_subtract_32_1;
+		main_355_356 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %355*/
@@ -12476,7 +12467,7 @@ end
 always @(*) begin
 	/* main: %361*/
 	/*   %362 = sub nsw i32 %359, %347*/
-		main_361_362 = main_signed_subtract_32_1;
+		main_361_362 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %361*/
@@ -12590,7 +12581,7 @@ end
 always @(*) begin
 	/* main: %367*/
 	/*   %368 = sub nsw i32 %365, %347*/
-		main_367_368 = main_signed_subtract_32_1;
+		main_367_368 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %367*/
@@ -12704,7 +12695,7 @@ end
 always @(*) begin
 	/* main: %373*/
 	/*   %374 = sub nsw i32 %371, %347*/
-		main_373_374 = main_signed_subtract_32_1;
+		main_373_374 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %373*/
@@ -12818,7 +12809,7 @@ end
 always @(*) begin
 	/* main: %379*/
 	/*   %380 = sub nsw i32 %377, %347*/
-		main_379_380 = main_signed_subtract_32_1;
+		main_379_380 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %379*/
@@ -12932,7 +12923,7 @@ end
 always @(*) begin
 	/* main: %385*/
 	/*   %386 = sub nsw i32 %383, %347*/
-		main_385_386 = main_signed_subtract_32_1;
+		main_385_386 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %385*/
@@ -13046,7 +13037,7 @@ end
 always @(*) begin
 	/* main: %391*/
 	/*   %392 = sub nsw i32 %389, %347*/
-		main_391_392 = main_signed_subtract_32_1;
+		main_391_392 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %391*/
@@ -13160,7 +13151,7 @@ end
 always @(*) begin
 	/* main: %397*/
 	/*   %398 = sub nsw i32 %395, %347*/
-		main_397_398 = main_signed_subtract_32_1;
+		main_397_398 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %397*/
@@ -13274,7 +13265,7 @@ end
 always @(*) begin
 	/* main: %403*/
 	/*   %404 = sub nsw i32 %401, %347*/
-		main_403_404 = main_signed_subtract_32_1;
+		main_403_404 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %403*/
@@ -13388,7 +13379,7 @@ end
 always @(*) begin
 	/* main: %409*/
 	/*   %410 = sub nsw i32 %407, %347*/
-		main_409_410 = main_signed_subtract_32_1;
+		main_409_410 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %409*/
@@ -13502,7 +13493,7 @@ end
 always @(*) begin
 	/* main: %415*/
 	/*   %416 = sub nsw i32 %413, %347*/
-		main_415_416 = main_signed_subtract_32_1;
+		main_415_416 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %415*/
@@ -13616,7 +13607,7 @@ end
 always @(*) begin
 	/* main: %421*/
 	/*   %422 = sub nsw i32 %419, %347*/
-		main_421_422 = main_signed_subtract_32_1;
+		main_421_422 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %421*/
@@ -13730,7 +13721,7 @@ end
 always @(*) begin
 	/* main: %427*/
 	/*   %428 = sub nsw i32 %425, %347*/
-		main_427_428 = main_signed_subtract_32_1;
+		main_427_428 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %427*/
@@ -14243,7 +14234,7 @@ end
 always @(*) begin
 	/* main: %gsm_add.exit8.i*/
 	/*   %460 = sub nsw i32 8, %n.029.i*/
-		main_gsm_addexit8i_460 = main_signed_subtract_32_1;
+		main_gsm_addexit8i_460 = main_signed_subtract_32_0;
 end
 always @(*) begin
 /* main: %gsm_add.exit8.i*/
@@ -15022,12 +15013,12 @@ end
 always @(*) begin
 	/* main: %._crit_edge43.i*/
 	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
-		main__crit_edge43i_indvarsivnexti = main_signed_add_32_8;
+		main__crit_edge43i_indvarsivnexti = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %._crit_edge43.i*/
 /*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
-	main__crit_edge43i_indvarsivnexti_reg = main_gsm_normexiti_gep95_reg;
+	main__crit_edge43i_indvarsivnexti_reg = main_1_5_reg;
 end
 always @(*) begin
 	/* main: %._crit_edge43.i*/
@@ -15045,12 +15036,12 @@ end
 always @(*) begin
 	/* main: %._crit_edge43.i*/
 	/*   %gep120 = add i32 %gep_int119, 2*/
-		main__crit_edge43i_gep120 = main_signed_add_32_0;
+		main__crit_edge43i_gep120 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %._crit_edge43.i*/
 /*   %gep120 = add i32 %gep_int119, 2*/
-	main__crit_edge43i_gep120_reg = main_1_5_reg;
+	main__crit_edge43i_gep120_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %._crit_edge43.i*/
@@ -15579,12 +15570,12 @@ end
 always @(*) begin
 	/* main: %Gsm_LPC_Analysis.exit*/
 	/*   %530 = add i32 %529, 40960*/
-		main_Gsm_LPC_Analysisexit_530 = main_signed_add_32_10;
+		main_Gsm_LPC_Analysisexit_530 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %Gsm_LPC_Analysis.exit*/
 /*   %530 = add i32 %529, 40960*/
-	main_Gsm_LPC_Analysisexit_530_reg = main_gsm_normexiti_gep99_reg;
+	main_Gsm_LPC_Analysisexit_530_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %Gsm_LPC_Analysis.exit*/
@@ -15844,12 +15835,12 @@ end
 always @(*) begin
 	/* main: %.thread.i4*/
 	/*   %546 = add i32 %545, 40960*/
-		main_threadi4_546 = main_signed_add_32_7;
+		main_threadi4_546 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread.i4*/
 /*   %546 = add i32 %545, 40960*/
-	main_threadi4_546_reg = main_gsm_normexiti_gep93_reg;
+	main_threadi4_546_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread.i4*/
@@ -16109,12 +16100,12 @@ end
 always @(*) begin
 	/* main: %.thread98.i*/
 	/*   %562 = add i32 %561, 40960*/
-		main_thread98i_562 = main_signed_add_32_8;
+		main_thread98i_562 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread98.i*/
 /*   %562 = add i32 %561, 40960*/
-	main_thread98i_562_reg = main_gsm_normexiti_gep95_reg;
+	main_thread98i_562_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread98.i*/
@@ -16458,12 +16449,12 @@ end
 always @(*) begin
 	/* main: %.thread102.i*/
 	/*   %581 = add i32 %580, 40960*/
-		main_thread102i_581 = main_signed_add_32_9;
+		main_thread102i_581 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %.thread102.i*/
 /*   %581 = add i32 %580, 40960*/
-	main_thread102i_581_reg = main_187_gep52_reg;
+	main_thread102i_581_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %.thread102.i*/
@@ -16481,12 +16472,12 @@ end
 always @(*) begin
 	/* main: %.thread102.i*/
 	/*   %583 = add nsw i32 %582, -2560*/
-		main_thread102i_583 = main_signed_add_32_13;
+		main_thread102i_583 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread102.i*/
 /*   %583 = add nsw i32 %582, -2560*/
-	main_thread102i_583_reg = main_187_gep48_reg;
+	main_thread102i_583_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread102.i*/
@@ -16807,12 +16798,12 @@ end
 always @(*) begin
 	/* main: %.thread107.i*/
 	/*   %600 = add i32 %599, 27928*/
-		main_thread107i_600 = main_signed_add_32_10;
+		main_thread107i_600 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread107.i*/
 /*   %600 = add i32 %599, 27928*/
-	main_thread107i_600_reg = main_gsm_normexiti_gep99_reg;
+	main_thread107i_600_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread107.i*/
@@ -17156,12 +17147,12 @@ end
 always @(*) begin
 	/* main: %.thread112.i*/
 	/*   %619 = add i32 %618, 30720*/
-		main_thread112i_619 = main_signed_add_32_7;
+		main_thread112i_619 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %.thread112.i*/
 /*   %619 = add i32 %618, 30720*/
-	main_thread112i_619_reg = main_gsm_normexiti_gep93_reg;
+	main_thread112i_619_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %.thread112.i*/
@@ -17179,12 +17170,12 @@ end
 always @(*) begin
 	/* main: %.thread112.i*/
 	/*   %621 = add nsw i32 %620, -1792*/
-		main_thread112i_621 = main_signed_add_32_13;
+		main_thread112i_621 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread112.i*/
 /*   %621 = add nsw i32 %620, -1792*/
-	main_thread112i_621_reg = main_187_gep48_reg;
+	main_thread112i_621_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread112.i*/
@@ -17505,12 +17496,12 @@ end
 always @(*) begin
 	/* main: %.thread117.i*/
 	/*   %638 = add i32 %637, 17068*/
-		main_thread117i_638 = main_signed_add_32_8;
+		main_thread117i_638 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %.thread117.i*/
 /*   %638 = add i32 %637, 17068*/
-	main_thread117i_638_reg = main_gsm_normexiti_gep95_reg;
+	main_thread117i_638_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %.thread117.i*/
@@ -17528,12 +17519,12 @@ end
 always @(*) begin
 	/* main: %.thread117.i*/
 	/*   %640 = add nsw i32 %639, -341*/
-		main_thread117i_640 = main_signed_add_32_9;
+		main_thread117i_640 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread117.i*/
 /*   %640 = add nsw i32 %639, -341*/
-	main_thread117i_640_reg = main_187_gep52_reg;
+	main_thread117i_640_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread117.i*/
@@ -17854,12 +17845,12 @@ end
 always @(*) begin
 	/* main: %.thread122.i*/
 	/*   %657 = add i32 %656, 18072*/
-		main_thread122i_657 = main_signed_add_32_10;
+		main_thread122i_657 = main_signed_add_32_0;
 end
 always @(*) begin
 /* main: %.thread122.i*/
 /*   %657 = add i32 %656, 18072*/
-	main_thread122i_657_reg = main_gsm_normexiti_gep99_reg;
+	main_thread122i_657_reg = main_1_gep_reg;
 end
 always @(*) begin
 	/* main: %.thread122.i*/
@@ -17877,12 +17868,12 @@ end
 always @(*) begin
 	/* main: %.thread122.i*/
 	/*   %659 = add nsw i32 %658, -1144*/
-		main_thread122i_659 = main_signed_add_32_13;
+		main_thread122i_659 = main_signed_add_32_1;
 end
 always @(*) begin
 /* main: %.thread122.i*/
 /*   %659 = add nsw i32 %658, -1144*/
-	main_thread122i_659_reg = main_187_gep48_reg;
+	main_thread122i_659_reg = main_1_gep3_reg;
 end
 always @(*) begin
 	/* main: %.thread122.i*/
@@ -18244,12 +18235,12 @@ end
 always @(*) begin
 	/* main: %.preheader*/
 	/*   %680 = add nsw i32 %679, %677*/
-		main_preheader_680 = main_signed_add_32_2;
+		main_preheader_680 = main_signed_add_32_12;
 end
 always @(*) begin
 /* main: %.preheader*/
 /*   %680 = add nsw i32 %679, %677*/
-	main_preheader_680_reg = main_threadi_126_reg;
+	main_preheader_680_reg = main_threadi_128_reg;
 end
 always @(*) begin
 	/* main: %.preheader*/
@@ -18280,12 +18271,12 @@ end
 always @(*) begin
 	/* main: %.preheader*/
 	/*   %683 = add nsw i32 %682, %680*/
-		main_preheader_683 = main_signed_add_32_3;
+		main_preheader_683 = main_signed_add_32_2;
 end
 always @(*) begin
 /* main: %.preheader*/
 /*   %683 = add nsw i32 %682, %680*/
-	main_preheader_683_reg = main_threadi_128_reg;
+	main_preheader_683_reg = main_threadi_126_reg;
 end
 always @(*) begin
 	/* main: %.preheader*/
@@ -18316,12 +18307,12 @@ end
 always @(*) begin
 	/* main: %.preheader*/
 	/*   %686 = add nsw i32 %685, %683*/
-		main_preheader_686 = main_signed_add_32_4;
+		main_preheader_686 = main_signed_add_32_11;
 end
 always @(*) begin
 /* main: %.preheader*/
 /*   %686 = add nsw i32 %685, %683*/
-	main_preheader_686_reg = main_threadi_138_reg;
+	main_preheader_686_reg = main_threadi_gep32_reg;
 end
 always @(*) begin
 	/* main: %.preheader*/
@@ -18352,12 +18343,12 @@ end
 always @(*) begin
 	/* main: %.preheader*/
 	/*   %689 = add nsw i32 %688, %686*/
-		main_preheader_689 = main_signed_add_32_5;
+		main_preheader_689 = main_signed_add_32_9;
 end
 always @(*) begin
 /* main: %.preheader*/
 /*   %689 = add nsw i32 %688, %686*/
-	main_preheader_689_reg = main_threadi_140_reg;
+	main_preheader_689_reg = main_threadi_134_reg;
 end
 always @(*) begin
 	/* main: %.preheader*/
@@ -18388,12 +18379,12 @@ end
 always @(*) begin
 	/* main: %.preheader*/
 	/*   %692 = add nsw i32 %691, %689*/
-		main_preheader_692 = main_signed_add_32_6;
+		main_preheader_692 = main_signed_add_32_10;
 end
 always @(*) begin
 /* main: %.preheader*/
 /*   %692 = add nsw i32 %691, %689*/
-	main_preheader_692_reg = main_threadi_134_reg;
+	main_preheader_692_reg = main_threadi_136_reg;
 end
 always @(*) begin
 	/* main: %.preheader*/
@@ -18549,7 +18540,7 @@ end
 always @(*) begin
 	/* main: %698*/
 	/*   %700 = load i16* %699, align 2, !tbaa !1*/
-		main_698_700 = main_0_so_out_b;
+		main_698_700 = main_0_so_out_a;
 end
 always @(posedge clk) begin
 	/* main: %698*/
@@ -19226,9 +19217,9 @@ always @(*) begin
 		main_0_so_address_a = (main_threadi_118_reg >>> 3'd1);
 	end
 	/* main: %.thread.i*/
-	/*   %161 = load i16* %160, align 2, !tbaa !1*/
+	/*   %145 = load i16* %144, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_0_so_address_a = (main_threadi_160_reg >>> 3'd1);
+		main_0_so_address_a = (main_threadi_144_reg >>> 3'd1);
 	end
 	/* main: %187*/
 	/*   %199 = load i16* %198, align 2, !tbaa !1*/
@@ -19249,6 +19240,21 @@ always @(*) begin
 	/*   %232 = load i16* %231, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
 		main_0_so_address_a = (main_187_231_reg >>> 3'd1);
+	end
+	/* main: %.preheader.i*/
+	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
+		main_0_so_address_a = (main_preheaderi_08i_reg >>> 3'd1);
+	end
+	/* main: %._crit_edge.i*/
+	/*   %.pre.i = load i16* %243, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
+		main_0_so_address_a = (main_preheaderi_243_reg >>> 3'd1);
+	end
+	/* main: %698*/
+	/*   %700 = load i16* %699, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__698_258)) begin
+		main_0_so_address_a = (main_698_699 >>> 3'd1);
 	end
 end
 always @(*) begin
@@ -19299,7 +19305,7 @@ always @(*) begin
 		main_0_so_write_enable_a = 1'd0;
 	end
 	/* main: %.thread.i*/
-	/*   %161 = load i16* %160, align 2, !tbaa !1*/
+	/*   %145 = load i16* %144, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
 		main_0_so_write_enable_a = 1'd0;
 	end
@@ -19323,6 +19329,21 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
 		main_0_so_write_enable_a = 1'd0;
 	end
+	/* main: %.preheader.i*/
+	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
+		main_0_so_write_enable_a = 1'd1;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %.pre.i = load i16* %243, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
+		main_0_so_write_enable_a = 1'd0;
+	end
+	/* main: %698*/
+	/*   %700 = load i16* %699, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__698_258)) begin
+		main_0_so_write_enable_a = 1'd0;
+	end
 end
 always @(*) begin
 	main_0_so_in_a = 1'd0;
@@ -19340,6 +19361,11 @@ always @(*) begin
 	/*   store i16 %89, i16* %82, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB_gsm_mult_rexiti_39)) begin
 		main_0_so_in_a = main_gsm_mult_rexiti_89;
+	end
+	/* main: %.preheader.i*/
+	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
+		main_0_so_in_a = main_preheaderi_246;
 	end
 end
 always @(*) begin
@@ -19360,9 +19386,9 @@ always @(*) begin
 		main_0_so_address_b = (main_threadi_130_reg >>> 3'd1);
 	end
 	/* main: %.thread.i*/
-	/*   %145 = load i16* %144, align 2, !tbaa !1*/
+	/*   %161 = load i16* %160, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_0_so_address_b = (main_threadi_144_reg >>> 3'd1);
+		main_0_so_address_b = (main_threadi_160_reg >>> 3'd1);
 	end
 	/* main: %187*/
 	/*   %207 = load i16* %206, align 2, !tbaa !1*/
@@ -19384,21 +19410,6 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
 		main_0_so_address_b = (main_187_236_reg >>> 3'd1);
 	end
-	/* main: %.preheader.i*/
-	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
-		main_0_so_address_b = (main_preheaderi_08i_reg >>> 3'd1);
-	end
-	/* main: %._crit_edge.i*/
-	/*   %.pre.i = load i16* %243, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
-		main_0_so_address_b = (main_preheaderi_243_reg >>> 3'd1);
-	end
-	/* main: %698*/
-	/*   %700 = load i16* %699, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__698_258)) begin
-		main_0_so_address_b = (main_698_699 >>> 3'd1);
-	end
 end
 always @(*) begin
 	main_0_so_write_enable_b = 1'd0;
@@ -19418,7 +19429,7 @@ always @(*) begin
 		main_0_so_write_enable_b = 1'd0;
 	end
 	/* main: %.thread.i*/
-	/*   %145 = load i16* %144, align 2, !tbaa !1*/
+	/*   %161 = load i16* %160, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
 		main_0_so_write_enable_b = 1'd0;
 	end
@@ -19441,29 +19452,6 @@ always @(*) begin
 	/*   %237 = load i16* %236, align 2, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB__187_51)) begin
 		main_0_so_write_enable_b = 1'd0;
-	end
-	/* main: %.preheader.i*/
-	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
-		main_0_so_write_enable_b = 1'd1;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %.pre.i = load i16* %243, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
-		main_0_so_write_enable_b = 1'd0;
-	end
-	/* main: %698*/
-	/*   %700 = load i16* %699, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__698_258)) begin
-		main_0_so_write_enable_b = 1'd0;
-	end
-end
-always @(*) begin
-	main_0_so_in_b = 1'd0;
-	/* main: %.preheader.i*/
-	/*   store i16 %246, i16* %.08.i, align 2, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
-		main_0_so_in_b = main_preheaderi_246;
 	end
 end
 always @(posedge clk) begin
@@ -19562,6 +19550,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB__33_18)) begin
 		main_signed_add_32_0_op0 = main_33_gep_int9;
 	end
+	/* main: %33*/
+	/*   %38 = add nsw i32 %37, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__33_19)) begin
+		main_signed_add_32_0_op0 = main_33_37;
+	end
 	/* main: %39*/
 	/*   %gep12 = add i32 %gep_int11, %41*/
 	else if ((cur_state == LEGUP_F_main_BB__39_20)) begin
@@ -19591,6 +19584,16 @@ always @(*) begin
 	/*   %61 = add nuw nsw i32 %60, 23*/
 	else if ((cur_state == LEGUP_F_main_BB__56_26)) begin
 		main_signed_add_32_0_op0 = main_56_60;
+	end
+	/* main: %62*/
+	/*   %sext.off.i = add i32 %sext.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__62_27)) begin
+		main_signed_add_32_0_op0 = main_62_sexti;
+	end
+	/* main: %.preheader6.i*/
+	/*   %66 = add nsw i32 %phitmp.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
+		main_signed_add_32_0_op0 = main_62_phitmpi_reg;
 	end
 	/* main: %.preheader6.split.us.i*/
 	/*   %gep19 = add i32 %gep_int17, %gep_array18*/
@@ -19653,14 +19656,14 @@ always @(*) begin
 		main_signed_add_32_0_op0 = main_threadi_121;
 	end
 	/* main: %.thread.i*/
-	/*   %164 = add nsw i32 %163, %148*/
+	/*   %148 = add nuw nsw i32 %147, %134*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_0_op0 = main_threadi_163;
+		main_signed_add_32_0_op0 = main_threadi_147;
 	end
 	/* main: %187*/
-	/*   %241 = add nsw i32 %i.010.i, 1*/
+	/*   %gep38 = add i32 %gep_int37, 2*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_0_op0 = main_187_i010i_reg;
+		main_signed_add_32_0_op0 = main_187_gep_int37;
 	end
 	/* main: %187*/
 	/*   %202 = add nsw i32 %201, %197*/
@@ -19687,10 +19690,20 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
 		main_signed_add_32_0_op0 = main_preheaderi_gep_int53;
 	end
+	/* main: %._crit_edge.i*/
+	/*   %248 = add nsw i32 %k.47.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
+		main_signed_add_32_0_op0 = main_preheaderi_k47i_reg;
+	end
 	/* main: %261*/
 	/*   %gep70 = add i32 %gep_int69, %262*/
 	else if ((cur_state == LEGUP_F_main_BB__261_67)) begin
 		main_signed_add_32_0_op0 = main_261_gep_int69;
+	end
+	/* main: %261*/
+	/*   %266 = add nsw i32 %265, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__261_68)) begin
+		main_signed_add_32_0_op0 = main_261_265;
 	end
 	/* main: %267*/
 	/*   %gep72 = add i32 %gep_int71, %269*/
@@ -19803,9 +19816,9 @@ always @(*) begin
 		main_signed_add_32_0_op0 = main_334_n029i_reg;
 	end
 	/* main: %._crit_edge43.i*/
-	/*   %gep120 = add i32 %gep_int119, 2*/
+	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
 	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_signed_add_32_0_op0 = main__crit_edge43i_gep_int119;
+		main_signed_add_32_0_op0 = main_334_indvarsivi_reg;
 	end
 	/* main: %522*/
 	/*   %525 = add nsw i32 %i.02.i.i, 1*/
@@ -19862,6 +19875,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread102i_203)) begin
 		main_signed_add_32_0_op0 = main_thread102i_gep_int127;
 	end
+	/* main: %.thread102.i*/
+	/*   %581 = add i32 %580, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_signed_add_32_0_op0 = main_thread102i_580;
+	end
 	/* main: %585*/
 	/*   %.op54.i = add nsw i32 %587, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__585_208)) begin
@@ -19897,6 +19915,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread112i_223)) begin
 		main_signed_add_32_0_op0 = main_thread112i_gep_int131;
 	end
+	/* main: %.thread112.i*/
+	/*   %619 = add i32 %618, 30720*/
+	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_signed_add_32_0_op0 = main_thread112i_618;
+	end
 	/* main: %623*/
 	/*   %.op72.i = add nsw i32 %625, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__623_228)) begin
@@ -19912,6 +19935,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread117i_233)) begin
 		main_signed_add_32_0_op0 = main_thread117i_gep_int133;
 	end
+	/* main: %.thread117.i*/
+	/*   %638 = add i32 %637, 17068*/
+	else if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_signed_add_32_0_op0 = main_thread117i_637;
+	end
 	/* main: %642*/
 	/*   %.op81.i = add nsw i32 %644, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__642_238)) begin
@@ -19926,6 +19954,11 @@ always @(*) begin
 	/*   %gep136 = add i32 %gep_int135, 14*/
 	else if ((cur_state == LEGUP_F_main_BB_thread122i_243)) begin
 		main_signed_add_32_0_op0 = main_thread122i_gep_int135;
+	end
+	/* main: %.thread122.i*/
+	/*   %657 = add i32 %656, 18072*/
+	else if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_signed_add_32_0_op0 = main_thread122i_656;
 	end
 	/* main: %661*/
 	/*   %.op90.i = add nsw i32 %663, 256*/
@@ -19989,6 +20022,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB__33_18)) begin
 		main_signed_add_32_0_op1 = main_33_34;
 	end
+	/* main: %33*/
+	/*   %38 = add nsw i32 %37, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__33_19)) begin
+		main_signed_add_32_0_op1 = -32'd1;
+	end
 	/* main: %39*/
 	/*   %gep12 = add i32 %gep_int11, %41*/
 	else if ((cur_state == LEGUP_F_main_BB__39_20)) begin
@@ -20018,6 +20056,16 @@ always @(*) begin
 	/*   %61 = add nuw nsw i32 %60, 23*/
 	else if ((cur_state == LEGUP_F_main_BB__56_26)) begin
 		main_signed_add_32_0_op1 = 32'd23;
+	end
+	/* main: %62*/
+	/*   %sext.off.i = add i32 %sext.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__62_27)) begin
+		main_signed_add_32_0_op1 = -32'd1;
+	end
+	/* main: %.preheader6.i*/
+	/*   %66 = add nsw i32 %phitmp.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
+		main_signed_add_32_0_op1 = -32'd1;
 	end
 	/* main: %.preheader6.split.us.i*/
 	/*   %gep19 = add i32 %gep_int17, %gep_array18*/
@@ -20080,14 +20128,14 @@ always @(*) begin
 		main_signed_add_32_0_op1 = main_threadi_112_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %164 = add nsw i32 %163, %148*/
+	/*   %148 = add nuw nsw i32 %147, %134*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_0_op1 = main_threadi_148;
+		main_signed_add_32_0_op1 = main_threadi_134_reg;
 	end
 	/* main: %187*/
-	/*   %241 = add nsw i32 %i.010.i, 1*/
+	/*   %gep38 = add i32 %gep_int37, 2*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_0_op1 = 32'd1;
+		main_signed_add_32_0_op1 = 32'd2;
 	end
 	/* main: %187*/
 	/*   %202 = add nsw i32 %201, %197*/
@@ -20114,10 +20162,20 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_preheaderi_54)) begin
 		main_signed_add_32_0_op1 = 32'd2;
 	end
+	/* main: %._crit_edge.i*/
+	/*   %248 = add nsw i32 %k.47.i, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
+		main_signed_add_32_0_op1 = -32'd1;
+	end
 	/* main: %261*/
 	/*   %gep70 = add i32 %gep_int69, %262*/
 	else if ((cur_state == LEGUP_F_main_BB__261_67)) begin
 		main_signed_add_32_0_op1 = main_261_262;
+	end
+	/* main: %261*/
+	/*   %266 = add nsw i32 %265, -1*/
+	else if ((cur_state == LEGUP_F_main_BB__261_68)) begin
+		main_signed_add_32_0_op1 = -32'd1;
 	end
 	/* main: %267*/
 	/*   %gep72 = add i32 %gep_int71, %269*/
@@ -20230,9 +20288,9 @@ always @(*) begin
 		main_signed_add_32_0_op1 = 32'd1;
 	end
 	/* main: %._crit_edge43.i*/
-	/*   %gep120 = add i32 %gep_int119, 2*/
+	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
 	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_signed_add_32_0_op1 = 32'd2;
+		main_signed_add_32_0_op1 = -32'd1;
 	end
 	/* main: %522*/
 	/*   %525 = add nsw i32 %i.02.i.i, 1*/
@@ -20289,6 +20347,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread102i_203)) begin
 		main_signed_add_32_0_op1 = 32'd6;
 	end
+	/* main: %.thread102.i*/
+	/*   %581 = add i32 %580, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_signed_add_32_0_op1 = 32'd40960;
+	end
 	/* main: %585*/
 	/*   %.op54.i = add nsw i32 %587, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__585_208)) begin
@@ -20324,6 +20387,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread112i_223)) begin
 		main_signed_add_32_0_op1 = 32'd10;
 	end
+	/* main: %.thread112.i*/
+	/*   %619 = add i32 %618, 30720*/
+	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_signed_add_32_0_op1 = 32'd30720;
+	end
 	/* main: %623*/
 	/*   %.op72.i = add nsw i32 %625, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__623_228)) begin
@@ -20339,6 +20407,11 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_thread117i_233)) begin
 		main_signed_add_32_0_op1 = 32'd12;
 	end
+	/* main: %.thread117.i*/
+	/*   %638 = add i32 %637, 17068*/
+	else if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_signed_add_32_0_op1 = 32'd17068;
+	end
 	/* main: %642*/
 	/*   %.op81.i = add nsw i32 %644, 256*/
 	else if ((cur_state == LEGUP_F_main_BB__642_238)) begin
@@ -20353,6 +20426,11 @@ always @(*) begin
 	/*   %gep136 = add i32 %gep_int135, 14*/
 	else if ((cur_state == LEGUP_F_main_BB_thread122i_243)) begin
 		main_signed_add_32_0_op1 = 32'd14;
+	end
+	/* main: %.thread122.i*/
+	/*   %657 = add i32 %656, 18072*/
+	else if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_signed_add_32_0_op1 = 32'd18072;
 	end
 	/* main: %661*/
 	/*   %.op90.i = add nsw i32 %663, 256*/
@@ -20399,11 +20477,6 @@ always @(*) begin
 	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
 		main_signed_add_32_1_op0 = main_1_gep_int1_reg;
 	end
-	/* main: %62*/
-	/*   %sext.off.i = add i32 %sext.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__62_27)) begin
-		main_signed_add_32_1_op0 = main_62_sexti;
-	end
 	/* main: %.thread.i*/
 	/*   %gep26 = add i32 %gep_int25, 4*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
@@ -20430,9 +20503,9 @@ always @(*) begin
 		main_signed_add_32_1_op0 = main_threadi_149;
 	end
 	/* main: %187*/
-	/*   %gep38 = add i32 %gep_int37, 2*/
+	/*   %gep40 = add i32 %gep_int39, -2*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_1_op0 = main_187_gep_int37;
+		main_signed_add_32_1_op0 = main_187_gep_int39;
 	end
 	/* main: %187*/
 	/*   %205 = add nsw i32 %204, %196*/
@@ -20464,10 +20537,55 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_lrphi_98)) begin
 		main_signed_add_32_1_op0 = main_lrphi_i425i_reg;
 	end
+	/* main: %._crit_edge43.i*/
+	/*   %gep120 = add i32 %gep_int119, 2*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
+		main_signed_add_32_1_op0 = main__crit_edge43i_gep_int119;
+	end
 	/* main: %522*/
 	/*   %gep122 = add i32 %gep_int121, 2*/
 	else if ((cur_state == LEGUP_F_main_BB__522_176)) begin
 		main_signed_add_32_1_op0 = main_522_gep_int121;
+	end
+	/* main: %Gsm_LPC_Analysis.exit*/
+	/*   %530 = add i32 %529, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
+		main_signed_add_32_1_op0 = main_Gsm_LPC_Analysisexit_529;
+	end
+	/* main: %.thread.i4*/
+	/*   %546 = add i32 %545, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
+		main_signed_add_32_1_op0 = main_threadi4_545;
+	end
+	/* main: %.thread98.i*/
+	/*   %562 = add i32 %561, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
+		main_signed_add_32_1_op0 = main_thread98i_561;
+	end
+	/* main: %.thread102.i*/
+	/*   %583 = add nsw i32 %582, -2560*/
+	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_signed_add_32_1_op0 = main_thread102i_582;
+	end
+	/* main: %.thread107.i*/
+	/*   %600 = add i32 %599, 27928*/
+	else if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
+		main_signed_add_32_1_op0 = main_thread107i_599;
+	end
+	/* main: %.thread112.i*/
+	/*   %621 = add nsw i32 %620, -1792*/
+	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_signed_add_32_1_op0 = main_thread112i_620;
+	end
+	/* main: %.thread117.i*/
+	/*   %640 = add nsw i32 %639, -341*/
+	else if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_signed_add_32_1_op0 = main_thread117i_639;
+	end
+	/* main: %.thread122.i*/
+	/*   %659 = add nsw i32 %658, -1144*/
+	else if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_signed_add_32_1_op0 = main_thread122i_658;
 	end
 	/* main: %.preheader*/
 	/*   %677 = add nsw i32 %676, %674*/
@@ -20485,11 +20603,6 @@ always @(*) begin
 	/*   %gep3 = add i32 %gep_int1, %gep_array2*/
 	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
 		main_signed_add_32_1_op1 = main_1_gep_array2_reg;
-	end
-	/* main: %62*/
-	/*   %sext.off.i = add i32 %sext.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__62_27)) begin
-		main_signed_add_32_1_op1 = -32'd1;
 	end
 	/* main: %.thread.i*/
 	/*   %gep26 = add i32 %gep_int25, 4*/
@@ -20517,9 +20630,9 @@ always @(*) begin
 		main_signed_add_32_1_op1 = main_threadi_136_reg;
 	end
 	/* main: %187*/
-	/*   %gep38 = add i32 %gep_int37, 2*/
+	/*   %gep40 = add i32 %gep_int39, -2*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_1_op1 = 32'd2;
+		main_signed_add_32_1_op1 = -32'd2;
 	end
 	/* main: %187*/
 	/*   %205 = add nsw i32 %204, %196*/
@@ -20551,10 +20664,55 @@ always @(*) begin
 	else if ((cur_state == LEGUP_F_main_BB_lrphi_98)) begin
 		main_signed_add_32_1_op1 = 32'd1;
 	end
+	/* main: %._crit_edge43.i*/
+	/*   %gep120 = add i32 %gep_int119, 2*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
+		main_signed_add_32_1_op1 = 32'd2;
+	end
 	/* main: %522*/
 	/*   %gep122 = add i32 %gep_int121, 2*/
 	else if ((cur_state == LEGUP_F_main_BB__522_176)) begin
 		main_signed_add_32_1_op1 = 32'd2;
+	end
+	/* main: %Gsm_LPC_Analysis.exit*/
+	/*   %530 = add i32 %529, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
+		main_signed_add_32_1_op1 = 32'd40960;
+	end
+	/* main: %.thread.i4*/
+	/*   %546 = add i32 %545, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
+		main_signed_add_32_1_op1 = 32'd40960;
+	end
+	/* main: %.thread98.i*/
+	/*   %562 = add i32 %561, 40960*/
+	else if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
+		main_signed_add_32_1_op1 = 32'd40960;
+	end
+	/* main: %.thread102.i*/
+	/*   %583 = add nsw i32 %582, -2560*/
+	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
+		main_signed_add_32_1_op1 = -32'd2560;
+	end
+	/* main: %.thread107.i*/
+	/*   %600 = add i32 %599, 27928*/
+	else if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
+		main_signed_add_32_1_op1 = 32'd27928;
+	end
+	/* main: %.thread112.i*/
+	/*   %621 = add nsw i32 %620, -1792*/
+	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
+		main_signed_add_32_1_op1 = -32'd1792;
+	end
+	/* main: %.thread117.i*/
+	/*   %640 = add nsw i32 %639, -341*/
+	else if ((cur_state == LEGUP_F_main_BB_thread117i_237)) begin
+		main_signed_add_32_1_op1 = -32'd341;
+	end
+	/* main: %.thread122.i*/
+	/*   %659 = add nsw i32 %658, -1144*/
+	else if ((cur_state == LEGUP_F_main_BB_thread122i_247)) begin
+		main_signed_add_32_1_op1 = -32'd1144;
 	end
 	/* main: %.preheader*/
 	/*   %677 = add nsw i32 %676, %674*/
@@ -20587,9 +20745,9 @@ always @(*) begin
 		main_signed_multiply_32_0_op0 = main_threadi_93;
 	end
 	/* main: %.thread.i*/
-	/*   %103 = mul nsw i32 %102, %102*/
+	/*   %115 = mul nsw i32 %97, %110*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_0_op0 = main_threadi_102;
+		main_signed_multiply_32_0_op0 = main_threadi_97_reg;
 	end
 	/* main: %.thread.i*/
 	/*   %121 = mul nsw i32 %120, %120*/
@@ -20597,9 +20755,9 @@ always @(*) begin
 		main_signed_multiply_32_0_op0 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %177 = mul nsw i32 %93, %162*/
+	/*   %167 = mul nsw i32 %132, %162*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_multiply_32_0_op0 = main_threadi_93_reg;
+		main_signed_multiply_32_0_op0 = main_threadi_132_reg;
 	end
 	/* main: %187*/
 	/*   %201 = mul nsw i32 %200, %200*/
@@ -20694,9 +20852,9 @@ always @(*) begin
 		main_signed_multiply_32_0_op1 = main_threadi_93;
 	end
 	/* main: %.thread.i*/
-	/*   %103 = mul nsw i32 %102, %102*/
+	/*   %115 = mul nsw i32 %97, %110*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_0_op1 = main_threadi_102;
+		main_signed_multiply_32_0_op1 = main_threadi_110;
 	end
 	/* main: %.thread.i*/
 	/*   %121 = mul nsw i32 %120, %120*/
@@ -20704,7 +20862,7 @@ always @(*) begin
 		main_signed_multiply_32_0_op1 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %177 = mul nsw i32 %93, %162*/
+	/*   %167 = mul nsw i32 %132, %162*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
 		main_signed_multiply_32_0_op1 = main_threadi_162;
 	end
@@ -20856,36 +21014,26 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %106 = mul nsw i32 %97, %105*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_10_op0 = main_threadi_97_reg;
-	end
-	/* main: %.thread.i*/
 	/*   %125 = mul nsw i32 %102, %120*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_10_op0 = main_threadi_102_reg;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_6_op0 = main_threadi_102_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %169 = mul nsw i32 %120, %162*/
+	/*   %177 = mul nsw i32 %93, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_10_op0 = main_threadi_120_reg;
+		main_signed_multiply_32_6_op0 = main_threadi_93_reg;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %106 = mul nsw i32 %97, %105*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_10_op1 = main_threadi_105;
-	end
-	/* main: %.thread.i*/
 	/*   %125 = mul nsw i32 %102, %120*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_10_op1 = main_threadi_120;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_6_op1 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %169 = mul nsw i32 %120, %162*/
+	/*   %177 = mul nsw i32 %93, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_10_op1 = main_threadi_162;
+		main_signed_multiply_32_6_op1 = main_threadi_162;
 	end
 end
 always @(*) begin
@@ -20895,32 +21043,17 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %125 = mul nsw i32 %102, %120*/
 	if ((lpm_mult_main_threadi_125_en == 1'd1)) begin
-		main_threadi_125_stage0_reg <= (main_signed_multiply_32_10_op0 * main_signed_multiply_32_10_op1);
+		main_threadi_125_stage0_reg <= (main_signed_multiply_32_6_op0 * main_signed_multiply_32_6_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_10 = main_threadi_125_stage0_reg;
+	main_signed_multiply_32_6 = main_threadi_125_stage0_reg;
 end
 always @(*) begin
-	/* main: %33*/
-	/*   %38 = add nsw i32 %37, -1*/
-	if ((cur_state == LEGUP_F_main_BB__33_19)) begin
-		main_signed_add_32_2_op0 = main_33_37;
-	end
-	/* main: %.preheader6.i*/
-	/*   %66 = add nsw i32 %phitmp.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
-		main_signed_add_32_2_op0 = main_62_phitmpi_reg;
-	end
 	/* main: %.thread.i*/
-	/*   %gep28 = add i32 %gep_int27, 6*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_2_op0 = main_threadi_gep_int27;
-	end
-	/* main: %.thread.i*/
-	/*   %114 = add nsw i32 %113, %106*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_add_32_2_op0 = main_threadi_113;
+	/*   %116 = add nsw i32 %115, %107*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_add_32_2_op0 = main_threadi_115;
 	end
 	/* main: %.thread.i*/
 	/*   %126 = add nsw i32 %125, %116*/
@@ -20928,14 +21061,14 @@ always @(*) begin
 		main_signed_add_32_2_op0 = main_threadi_125;
 	end
 	/* main: %.thread.i*/
-	/*   %152 = add nsw i32 %151, %138*/
+	/*   %164 = add nsw i32 %163, %148*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_2_op0 = main_threadi_151;
+		main_signed_add_32_2_op0 = main_threadi_163;
 	end
 	/* main: %187*/
-	/*   %210 = add nsw i32 %209, %195*/
-	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_signed_add_32_2_op0 = main_187_209;
+	/*   %gep44 = add i32 %gep_int43, -6*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_2_op0 = main_187_gep_int43;
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep82 = add i32 %gep_int81, 6*/
@@ -20943,31 +21076,16 @@ always @(*) begin
 		main_signed_add_32_2_op0 = main_gsm_normexiti_gep_int81;
 	end
 	/* main: %.preheader*/
-	/*   %680 = add nsw i32 %679, %677*/
+	/*   %683 = add nsw i32 %682, %680*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_2_op0 = main_preheader_679;
+		main_signed_add_32_2_op0 = main_preheader_682;
 	end
 end
 always @(*) begin
-	/* main: %33*/
-	/*   %38 = add nsw i32 %37, -1*/
-	if ((cur_state == LEGUP_F_main_BB__33_19)) begin
-		main_signed_add_32_2_op1 = -32'd1;
-	end
-	/* main: %.preheader6.i*/
-	/*   %66 = add nsw i32 %phitmp.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB_preheader6i_28)) begin
-		main_signed_add_32_2_op1 = -32'd1;
-	end
 	/* main: %.thread.i*/
-	/*   %gep28 = add i32 %gep_int27, 6*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_2_op1 = 32'd6;
-	end
-	/* main: %.thread.i*/
-	/*   %114 = add nsw i32 %113, %106*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_add_32_2_op1 = main_threadi_106;
+	/*   %116 = add nsw i32 %115, %107*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_add_32_2_op1 = main_threadi_107;
 	end
 	/* main: %.thread.i*/
 	/*   %126 = add nsw i32 %125, %116*/
@@ -20975,14 +21093,14 @@ always @(*) begin
 		main_signed_add_32_2_op1 = main_threadi_116_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %152 = add nsw i32 %151, %138*/
+	/*   %164 = add nsw i32 %163, %148*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_2_op1 = main_threadi_138_reg;
+		main_signed_add_32_2_op1 = main_threadi_148;
 	end
 	/* main: %187*/
-	/*   %210 = add nsw i32 %209, %195*/
-	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_signed_add_32_2_op1 = main_187_195_reg;
+	/*   %gep44 = add i32 %gep_int43, -6*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_2_op1 = -32'd6;
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep82 = add i32 %gep_int81, 6*/
@@ -20990,9 +21108,9 @@ always @(*) begin
 		main_signed_add_32_2_op1 = 32'd6;
 	end
 	/* main: %.preheader*/
-	/*   %680 = add nsw i32 %679, %677*/
+	/*   %683 = add nsw i32 %682, %680*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_2_op1 = main_preheader_677;
+		main_signed_add_32_2_op1 = main_preheader_680;
 	end
 end
 always @(*) begin
@@ -21000,9 +21118,9 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %113 = mul nsw i32 %102, %110*/
+	/*   %117 = mul nsw i32 %93, %110*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_11_op0 = main_threadi_102;
+		main_signed_multiply_32_11_op0 = main_threadi_93_reg;
 	end
 	/* main: %.thread.i*/
 	/*   %127 = mul nsw i32 %97, %120*/
@@ -21010,14 +21128,14 @@ always @(*) begin
 		main_signed_multiply_32_11_op0 = main_threadi_97_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %171 = mul nsw i32 %110, %162*/
+	/*   %149 = mul nsw i32 %132, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_11_op0 = main_threadi_110_reg;
+		main_signed_multiply_32_11_op0 = main_threadi_132_reg;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %113 = mul nsw i32 %102, %110*/
+	/*   %117 = mul nsw i32 %93, %110*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
 		main_signed_multiply_32_11_op1 = main_threadi_110;
 	end
@@ -21027,9 +21145,9 @@ always @(*) begin
 		main_signed_multiply_32_11_op1 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %171 = mul nsw i32 %110, %162*/
+	/*   %149 = mul nsw i32 %132, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_11_op1 = main_threadi_162;
+		main_signed_multiply_32_11_op1 = main_threadi_146;
 	end
 end
 always @(*) begin
@@ -21047,103 +21165,123 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %gep30 = add i32 %gep_int29, 8*/
+	/*   %gep34 = add i32 %gep_int33, 12*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_3_op0 = main_threadi_gep_int29;
+		main_signed_add_32_12_op0 = main_threadi_gep_int33;
 	end
 	/* main: %.thread.i*/
-	/*   %116 = add nsw i32 %115, %107*/
+	/*   %114 = add nsw i32 %113, %106*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_add_32_3_op0 = main_threadi_115;
+		main_signed_add_32_12_op0 = main_threadi_113;
 	end
 	/* main: %.thread.i*/
 	/*   %128 = add nsw i32 %127, %117*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_3_op0 = main_threadi_127;
+		main_signed_add_32_12_op0 = main_threadi_127;
 	end
 	/* main: %.thread.i*/
-	/*   %154 = add nsw i32 %153, %140*/
+	/*   %176 = add nsw i32 %175, %159*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_3_op0 = main_threadi_153;
+		main_signed_add_32_12_op0 = main_threadi_175;
+	end
+	/* main: %187*/
+	/*   %gep42 = add i32 %gep_int41, -4*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_12_op0 = main_187_gep_int41;
+	end
+	/* main: %187*/
+	/*   %210 = add nsw i32 %209, %195*/
+	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_signed_add_32_12_op0 = main_187_209;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep84 = add i32 %gep_int83, 8*/
+	/*   %gep103 = add i32 %gep_int102, 12*/
 	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_3_op0 = main_gsm_normexiti_gep_int83;
+		main_signed_add_32_12_op0 = main_gsm_normexiti_gep_int102;
 	end
 	/* main: %.preheader*/
-	/*   %683 = add nsw i32 %682, %680*/
+	/*   %680 = add nsw i32 %679, %677*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_3_op0 = main_preheader_682;
+		main_signed_add_32_12_op0 = main_preheader_679;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %gep30 = add i32 %gep_int29, 8*/
+	/*   %gep34 = add i32 %gep_int33, 12*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_3_op1 = 32'd8;
+		main_signed_add_32_12_op1 = 32'd12;
 	end
 	/* main: %.thread.i*/
-	/*   %116 = add nsw i32 %115, %107*/
+	/*   %114 = add nsw i32 %113, %106*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_add_32_3_op1 = main_threadi_107;
+		main_signed_add_32_12_op1 = main_threadi_106;
 	end
 	/* main: %.thread.i*/
 	/*   %128 = add nsw i32 %127, %117*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_3_op1 = main_threadi_117_reg;
+		main_signed_add_32_12_op1 = main_threadi_117_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %154 = add nsw i32 %153, %140*/
+	/*   %176 = add nsw i32 %175, %159*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_3_op1 = main_threadi_140_reg;
+		main_signed_add_32_12_op1 = main_threadi_159;
+	end
+	/* main: %187*/
+	/*   %gep42 = add i32 %gep_int41, -4*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_12_op1 = -32'd4;
+	end
+	/* main: %187*/
+	/*   %210 = add nsw i32 %209, %195*/
+	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_signed_add_32_12_op1 = main_187_195_reg;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep84 = add i32 %gep_int83, 8*/
+	/*   %gep103 = add i32 %gep_int102, 12*/
 	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_3_op1 = 32'd8;
+		main_signed_add_32_12_op1 = 32'd12;
 	end
 	/* main: %.preheader*/
-	/*   %683 = add nsw i32 %682, %680*/
+	/*   %680 = add nsw i32 %679, %677*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_3_op1 = main_preheader_680;
+		main_signed_add_32_12_op1 = main_preheader_677;
 	end
 end
 always @(*) begin
-	main_signed_add_32_3 = (main_signed_add_32_3_op0 + main_signed_add_32_3_op1);
+	main_signed_add_32_12 = (main_signed_add_32_12_op0 + main_signed_add_32_12_op1);
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %115 = mul nsw i32 %97, %110*/
+	/*   %106 = mul nsw i32 %97, %105*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_12_op0 = main_threadi_97_reg;
+		main_signed_multiply_32_10_op0 = main_threadi_97_reg;
 	end
 	/* main: %.thread.i*/
 	/*   %129 = mul nsw i32 %93, %120*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_12_op0 = main_threadi_93_reg;
+		main_signed_multiply_32_10_op0 = main_threadi_93_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %173 = mul nsw i32 %102, %162*/
+	/*   %171 = mul nsw i32 %110, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_12_op0 = main_threadi_102_reg;
+		main_signed_multiply_32_10_op0 = main_threadi_110_reg;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %115 = mul nsw i32 %97, %110*/
+	/*   %106 = mul nsw i32 %97, %105*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_12_op1 = main_threadi_110;
+		main_signed_multiply_32_10_op1 = main_threadi_105;
 	end
 	/* main: %.thread.i*/
 	/*   %129 = mul nsw i32 %93, %120*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_12_op1 = main_threadi_120;
+		main_signed_multiply_32_10_op1 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %173 = mul nsw i32 %102, %162*/
+	/*   %171 = mul nsw i32 %110, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_12_op1 = main_threadi_162;
+		main_signed_multiply_32_10_op1 = main_threadi_162;
 	end
 end
 always @(*) begin
@@ -21153,11 +21291,11 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %129 = mul nsw i32 %93, %120*/
 	if ((lpm_mult_main_threadi_129_en == 1'd1)) begin
-		main_threadi_129_stage0_reg <= (main_signed_multiply_32_12_op0 * main_signed_multiply_32_12_op1);
+		main_threadi_129_stage0_reg <= (main_signed_multiply_32_10_op0 * main_signed_multiply_32_10_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_12 = main_threadi_129_stage0_reg;
+	main_signed_multiply_32_10 = main_threadi_129_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
@@ -21166,24 +21304,29 @@ always @(*) begin
 		main_signed_add_32_11_op0 = main_threadi_gep_int31;
 	end
 	/* main: %.thread.i*/
-	/*   %136 = add nsw i32 %135, %124*/
+	/*   %138 = add nsw i32 %137, %126*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_11_op0 = main_threadi_135;
+		main_signed_add_32_11_op0 = main_threadi_137;
 	end
 	/* main: %.thread.i*/
-	/*   %148 = add nuw nsw i32 %147, %134*/
+	/*   %170 = add nsw i32 %169, %154*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_11_op0 = main_threadi_147;
+		main_signed_add_32_11_op0 = main_threadi_169;
 	end
 	/* main: %187*/
-	/*   %gep44 = add i32 %gep_int43, -6*/
+	/*   %gep50 = add i32 %gep_int49, -12*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_11_op0 = main_187_gep_int43;
+		main_signed_add_32_11_op0 = main_187_gep_int49;
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep101 = add i32 %gep_int100, 10*/
-	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
 		main_signed_add_32_11_op0 = main_gsm_normexiti_gep_int100;
+	end
+	/* main: %.preheader*/
+	/*   %686 = add nsw i32 %685, %683*/
+	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
+		main_signed_add_32_11_op0 = main_preheader_685;
 	end
 end
 always @(*) begin
@@ -21193,24 +21336,29 @@ always @(*) begin
 		main_signed_add_32_11_op1 = 32'd10;
 	end
 	/* main: %.thread.i*/
-	/*   %136 = add nsw i32 %135, %124*/
+	/*   %138 = add nsw i32 %137, %126*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_11_op1 = main_threadi_124;
+		main_signed_add_32_11_op1 = main_threadi_126;
 	end
 	/* main: %.thread.i*/
-	/*   %148 = add nuw nsw i32 %147, %134*/
+	/*   %170 = add nsw i32 %169, %154*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_11_op1 = main_threadi_134_reg;
+		main_signed_add_32_11_op1 = main_threadi_154;
 	end
 	/* main: %187*/
-	/*   %gep44 = add i32 %gep_int43, -6*/
+	/*   %gep50 = add i32 %gep_int49, -12*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_11_op1 = -32'd6;
+		main_signed_add_32_11_op1 = -32'd12;
 	end
 	/* main: %gsm_norm.exit.i*/
 	/*   %gep101 = add i32 %gep_int100, 10*/
-	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
 		main_signed_add_32_11_op1 = 32'd10;
+	end
+	/* main: %.preheader*/
+	/*   %686 = add nsw i32 %685, %683*/
+	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
+		main_signed_add_32_11_op1 = main_preheader_683;
 	end
 end
 always @(*) begin
@@ -21218,46 +21366,26 @@ always @(*) begin
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %98 = mul nsw i32 %97, %97*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_42)) begin
-		main_signed_multiply_32_14_op0 = main_threadi_97;
-	end
-	/* main: %.thread.i*/
-	/*   %107 = mul nsw i32 %93, %102*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_14_op0 = main_threadi_93_reg;
-	end
-	/* main: %.thread.i*/
 	/*   %133 = mul nsw i32 %132, %132*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_14_op0 = main_threadi_132;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_7_op0 = main_threadi_132;
 	end
 	/* main: %.thread.i*/
-	/*   %147 = mul nsw i32 %146, %146*/
+	/*   %155 = mul nsw i32 %102, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_14_op0 = main_threadi_146;
+		main_signed_multiply_32_7_op0 = main_threadi_102_reg;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %98 = mul nsw i32 %97, %97*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_42)) begin
-		main_signed_multiply_32_14_op1 = main_threadi_97;
-	end
-	/* main: %.thread.i*/
-	/*   %107 = mul nsw i32 %93, %102*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_14_op1 = main_threadi_102;
-	end
-	/* main: %.thread.i*/
 	/*   %133 = mul nsw i32 %132, %132*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_14_op1 = main_threadi_132;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_7_op1 = main_threadi_132;
 	end
 	/* main: %.thread.i*/
-	/*   %147 = mul nsw i32 %146, %146*/
+	/*   %155 = mul nsw i32 %102, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_14_op1 = main_threadi_146;
+		main_signed_multiply_32_7_op1 = main_threadi_146;
 	end
 end
 always @(*) begin
@@ -21267,101 +21395,101 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %133 = mul nsw i32 %132, %132*/
 	if ((lpm_mult_main_threadi_133_en == 1'd1)) begin
-		main_threadi_133_stage0_reg <= (main_signed_multiply_32_14_op0 * main_signed_multiply_32_14_op1);
+		main_threadi_133_stage0_reg <= (main_signed_multiply_32_7_op0 * main_signed_multiply_32_7_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_14 = main_threadi_133_stage0_reg;
+	main_signed_multiply_32_7 = main_threadi_133_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %gep36 = add i32 %gep_int35, 14*/
+	/*   %gep28 = add i32 %gep_int27, 6*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_6_op0 = main_threadi_gep_int35;
+		main_signed_add_32_9_op0 = main_threadi_gep_int27;
 	end
 	/* main: %.thread.i*/
 	/*   %134 = add nuw nsw i32 %133, %122*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_6_op0 = main_threadi_133;
+		main_signed_add_32_9_op0 = main_threadi_133;
 	end
 	/* main: %.thread.i*/
-	/*   %156 = add nsw i32 %155, %142*/
+	/*   %166 = add nsw i32 %165, %150*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_6_op0 = main_threadi_155;
+		main_signed_add_32_9_op0 = main_threadi_165;
 	end
 	/* main: %187*/
-	/*   %gep50 = add i32 %gep_int49, -12*/
+	/*   %gep46 = add i32 %gep_int45, -8*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_6_op0 = main_187_gep_int49;
+		main_signed_add_32_9_op0 = main_187_gep_int45;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep90 = add i32 %gep_int89, 14*/
+	/*   %gep97 = add i32 %gep_int96, 6*/
 	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_6_op0 = main_gsm_normexiti_gep_int89;
+		main_signed_add_32_9_op0 = main_gsm_normexiti_gep_int96;
 	end
 	/* main: %.preheader*/
-	/*   %692 = add nsw i32 %691, %689*/
+	/*   %689 = add nsw i32 %688, %686*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_6_op0 = main_preheader_691;
+		main_signed_add_32_9_op0 = main_preheader_688;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %gep36 = add i32 %gep_int35, 14*/
+	/*   %gep28 = add i32 %gep_int27, 6*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_6_op1 = 32'd14;
+		main_signed_add_32_9_op1 = 32'd6;
 	end
 	/* main: %.thread.i*/
 	/*   %134 = add nuw nsw i32 %133, %122*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_6_op1 = main_threadi_122;
+		main_signed_add_32_9_op1 = main_threadi_122;
 	end
 	/* main: %.thread.i*/
-	/*   %156 = add nsw i32 %155, %142*/
+	/*   %166 = add nsw i32 %165, %150*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_6_op1 = main_threadi_142_reg;
+		main_signed_add_32_9_op1 = main_threadi_150;
 	end
 	/* main: %187*/
-	/*   %gep50 = add i32 %gep_int49, -12*/
+	/*   %gep46 = add i32 %gep_int45, -8*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_6_op1 = -32'd12;
+		main_signed_add_32_9_op1 = -32'd8;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep90 = add i32 %gep_int89, 14*/
+	/*   %gep97 = add i32 %gep_int96, 6*/
 	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_6_op1 = 32'd14;
+		main_signed_add_32_9_op1 = 32'd6;
 	end
 	/* main: %.preheader*/
-	/*   %692 = add nsw i32 %691, %689*/
+	/*   %689 = add nsw i32 %688, %686*/
 	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_6_op1 = main_preheader_689;
+		main_signed_add_32_9_op1 = main_preheader_686;
 	end
 end
 always @(*) begin
-	main_signed_add_32_6 = (main_signed_add_32_6_op0 + main_signed_add_32_6_op1);
+	main_signed_add_32_9 = (main_signed_add_32_9_op0 + main_signed_add_32_9_op1);
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %135 = mul nsw i32 %120, %132*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_5_op0 = main_threadi_120;
+		main_signed_multiply_32_8_op0 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %157 = mul nsw i32 %97, %146*/
+	/*   %163 = mul nsw i32 %162, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_5_op0 = main_threadi_97_reg;
+		main_signed_multiply_32_8_op0 = main_threadi_162;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %135 = mul nsw i32 %120, %132*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_5_op1 = main_threadi_132;
+		main_signed_multiply_32_8_op1 = main_threadi_132;
 	end
 	/* main: %.thread.i*/
-	/*   %157 = mul nsw i32 %97, %146*/
+	/*   %163 = mul nsw i32 %162, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_5_op1 = main_threadi_146;
+		main_signed_multiply_32_8_op1 = main_threadi_162;
 	end
 end
 always @(*) begin
@@ -21371,34 +21499,161 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %135 = mul nsw i32 %120, %132*/
 	if ((lpm_mult_main_threadi_135_en == 1'd1)) begin
-		main_threadi_135_stage0_reg <= (main_signed_multiply_32_5_op0 * main_signed_multiply_32_5_op1);
+		main_threadi_135_stage0_reg <= (main_signed_multiply_32_8_op0 * main_signed_multiply_32_8_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_5 = main_threadi_135_stage0_reg;
+	main_signed_multiply_32_8 = main_threadi_135_stage0_reg;
 end
 always @(*) begin
+	/* main: %.thread.i*/
+	/*   %gep30 = add i32 %gep_int29, 8*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_signed_add_32_10_op0 = main_threadi_gep_int29;
+	end
+	/* main: %.thread.i*/
+	/*   %136 = add nsw i32 %135, %124*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_add_32_10_op0 = main_threadi_135;
+	end
+	/* main: %.thread.i*/
+	/*   %168 = add nsw i32 %167, %152*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_10_op0 = main_threadi_167;
+	end
+	/* main: %187*/
+	/*   %gep48 = add i32 %gep_int47, -10*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_10_op0 = main_187_gep_int47;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep99 = add i32 %gep_int98, 8*/
+	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_signed_add_32_10_op0 = main_gsm_normexiti_gep_int98;
+	end
+	/* main: %.preheader*/
+	/*   %692 = add nsw i32 %691, %689*/
+	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
+		main_signed_add_32_10_op0 = main_preheader_691;
+	end
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %gep30 = add i32 %gep_int29, 8*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_signed_add_32_10_op1 = 32'd8;
+	end
+	/* main: %.thread.i*/
+	/*   %136 = add nsw i32 %135, %124*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_add_32_10_op1 = main_threadi_124;
+	end
+	/* main: %.thread.i*/
+	/*   %168 = add nsw i32 %167, %152*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_10_op1 = main_threadi_152;
+	end
+	/* main: %187*/
+	/*   %gep48 = add i32 %gep_int47, -10*/
+	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
+		main_signed_add_32_10_op1 = -32'd10;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep99 = add i32 %gep_int98, 8*/
+	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
+		main_signed_add_32_10_op1 = 32'd8;
+	end
+	/* main: %.preheader*/
+	/*   %692 = add nsw i32 %691, %689*/
+	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
+		main_signed_add_32_10_op1 = main_preheader_689;
+	end
+end
+always @(*) begin
+	main_signed_add_32_10 = (main_signed_add_32_10_op0 + main_signed_add_32_10_op1);
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %98 = mul nsw i32 %97, %97*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_42)) begin
+		main_signed_multiply_32_14_op0 = main_threadi_97;
+	end
+	/* main: %.thread.i*/
+	/*   %103 = mul nsw i32 %102, %102*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_14_op0 = main_threadi_102;
+	end
 	/* main: %.thread.i*/
 	/*   %137 = mul nsw i32 %110, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_6_op0 = main_threadi_110_reg;
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_14_op0 = main_threadi_110_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %159 = mul nsw i32 %93, %146*/
-	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_6_op0 = main_threadi_93_reg;
+	/*   %151 = mul nsw i32 %120, %146*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_multiply_32_14_op0 = main_threadi_120_reg;
+	end
+	/* main: %187*/
+	/*   %204 = mul nsw i32 %203, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_49)) begin
+		main_signed_multiply_32_14_op0 = main_187_203_reg;
+	end
+	/* main: %187*/
+	/*   %219 = mul nsw i32 %218, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_signed_multiply_32_14_op0 = main_187_218;
+	end
+	/* main: %187*/
+	/*   %229 = mul nsw i32 %228, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_51)) begin
+		main_signed_multiply_32_14_op0 = main_187_228;
+	end
+	/* main: %187*/
+	/*   %239 = mul nsw i32 %238, %200*/
+	else /* if ((cur_state == LEGUP_F_main_BB__187_52)) */ begin
+		main_signed_multiply_32_14_op0 = main_187_238;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %137 = mul nsw i32 %110, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_6_op1 = main_threadi_132;
+	/*   %98 = mul nsw i32 %97, %97*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_42)) begin
+		main_signed_multiply_32_14_op1 = main_threadi_97;
 	end
 	/* main: %.thread.i*/
-	/*   %159 = mul nsw i32 %93, %146*/
-	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_6_op1 = main_threadi_146;
+	/*   %103 = mul nsw i32 %102, %102*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_14_op1 = main_threadi_102;
+	end
+	/* main: %.thread.i*/
+	/*   %137 = mul nsw i32 %110, %132*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_14_op1 = main_threadi_132;
+	end
+	/* main: %.thread.i*/
+	/*   %151 = mul nsw i32 %120, %146*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_multiply_32_14_op1 = main_threadi_146;
+	end
+	/* main: %187*/
+	/*   %204 = mul nsw i32 %203, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_49)) begin
+		main_signed_multiply_32_14_op1 = main_187_200;
+	end
+	/* main: %187*/
+	/*   %219 = mul nsw i32 %218, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
+		main_signed_multiply_32_14_op1 = main_187_200_reg;
+	end
+	/* main: %187*/
+	/*   %229 = mul nsw i32 %228, %200*/
+	else if ((cur_state == LEGUP_F_main_BB__187_51)) begin
+		main_signed_multiply_32_14_op1 = main_187_200_reg;
+	end
+	/* main: %187*/
+	/*   %239 = mul nsw i32 %238, %200*/
+	else /* if ((cur_state == LEGUP_F_main_BB__187_52)) */ begin
+		main_signed_multiply_32_14_op1 = main_187_200_reg;
 	end
 end
 always @(*) begin
@@ -21408,91 +21663,44 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %137 = mul nsw i32 %110, %132*/
 	if ((lpm_mult_main_threadi_137_en == 1'd1)) begin
-		main_threadi_137_stage0_reg <= (main_signed_multiply_32_6_op0 * main_signed_multiply_32_6_op1);
+		main_threadi_137_stage0_reg <= (main_signed_multiply_32_14_op0 * main_signed_multiply_32_14_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_6 = main_threadi_137_stage0_reg;
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %138 = add nsw i32 %137, %126*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_4_op0 = main_threadi_137;
-	end
-	/* main: %.thread.i*/
-	/*   %174 = add nsw i32 %173, %158*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_4_op0 = main_threadi_173;
-	end
-	/* main: %187*/
-	/*   %gep40 = add i32 %gep_int39, -2*/
-	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_4_op0 = main_187_gep_int39;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep86 = add i32 %gep_int85, 10*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_4_op0 = main_gsm_normexiti_gep_int85;
-	end
-	/* main: %.preheader*/
-	/*   %686 = add nsw i32 %685, %683*/
-	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_4_op0 = main_preheader_685;
-	end
+	main_signed_multiply_32_14 = main_threadi_137_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %138 = add nsw i32 %137, %126*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_4_op1 = main_threadi_126;
+	/*   %111 = mul nsw i32 %110, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_12_op0 = main_threadi_110;
 	end
-	/* main: %.thread.i*/
-	/*   %174 = add nsw i32 %173, %158*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_4_op1 = main_threadi_158;
-	end
-	/* main: %187*/
-	/*   %gep40 = add i32 %gep_int39, -2*/
-	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_4_op1 = -32'd2;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep86 = add i32 %gep_int85, 10*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_4_op1 = 32'd10;
-	end
-	/* main: %.preheader*/
-	/*   %686 = add nsw i32 %685, %683*/
-	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_4_op1 = main_preheader_683;
-	end
-end
-always @(*) begin
-	main_signed_add_32_4 = (main_signed_add_32_4_op0 + main_signed_add_32_4_op1);
-end
-always @(*) begin
 	/* main: %.thread.i*/
 	/*   %139 = mul nsw i32 %102, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_7_op0 = main_threadi_102_reg;
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_12_op0 = main_threadi_102_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %163 = mul nsw i32 %162, %162*/
+	/*   %165 = mul nsw i32 %146, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_7_op0 = main_threadi_162;
+		main_signed_multiply_32_12_op0 = main_threadi_146;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %139 = mul nsw i32 %102, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_7_op1 = main_threadi_132;
+	/*   %111 = mul nsw i32 %110, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_12_op1 = main_threadi_110;
 	end
 	/* main: %.thread.i*/
-	/*   %163 = mul nsw i32 %162, %162*/
+	/*   %139 = mul nsw i32 %102, %132*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_12_op1 = main_threadi_132;
+	end
+	/* main: %.thread.i*/
+	/*   %165 = mul nsw i32 %146, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_7_op1 = main_threadi_162;
+		main_signed_multiply_32_12_op1 = main_threadi_162;
 	end
 end
 always @(*) begin
@@ -21502,91 +21710,91 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %139 = mul nsw i32 %102, %132*/
 	if ((lpm_mult_main_threadi_139_en == 1'd1)) begin
-		main_threadi_139_stage0_reg <= (main_signed_multiply_32_7_op0 * main_signed_multiply_32_7_op1);
+		main_threadi_139_stage0_reg <= (main_signed_multiply_32_12_op0 * main_signed_multiply_32_12_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_7 = main_threadi_139_stage0_reg;
+	main_signed_multiply_32_12 = main_threadi_139_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %140 = add nsw i32 %139, %128*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_5_op0 = main_threadi_139;
+		main_signed_add_32_7_op0 = main_threadi_139;
 	end
 	/* main: %.thread.i*/
-	/*   %176 = add nsw i32 %175, %159*/
+	/*   %152 = add nsw i32 %151, %138*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_5_op0 = main_threadi_175;
+		main_signed_add_32_7_op0 = main_threadi_151;
 	end
 	/* main: %187*/
-	/*   %gep42 = add i32 %gep_int41, -4*/
+	/*   %gep52 = add i32 %gep_int51, -14*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_5_op0 = main_187_gep_int41;
+		main_signed_add_32_7_op0 = main_187_gep_int51;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep88 = add i32 %gep_int87, 12*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_5_op0 = main_gsm_normexiti_gep_int87;
-	end
-	/* main: %.preheader*/
-	/*   %689 = add nsw i32 %688, %686*/
-	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_5_op0 = main_preheader_688;
+	/*   %gep93 = add i32 %gep_int92, 2*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_7_op0 = main_gsm_normexiti_gep_int92;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
 	/*   %140 = add nsw i32 %139, %128*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_5_op1 = main_threadi_128;
+		main_signed_add_32_7_op1 = main_threadi_128;
 	end
 	/* main: %.thread.i*/
-	/*   %176 = add nsw i32 %175, %159*/
+	/*   %152 = add nsw i32 %151, %138*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_5_op1 = main_threadi_159;
+		main_signed_add_32_7_op1 = main_threadi_138_reg;
 	end
 	/* main: %187*/
-	/*   %gep42 = add i32 %gep_int41, -4*/
+	/*   %gep52 = add i32 %gep_int51, -14*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_5_op1 = -32'd4;
+		main_signed_add_32_7_op1 = -32'd14;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep88 = add i32 %gep_int87, 12*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_5_op1 = 32'd12;
-	end
-	/* main: %.preheader*/
-	/*   %689 = add nsw i32 %688, %686*/
-	else /* if ((cur_state == LEGUP_F_main_BB_preheader_255)) */ begin
-		main_signed_add_32_5_op1 = main_preheader_686;
+	/*   %gep93 = add i32 %gep_int92, 2*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_7_op1 = 32'd2;
 	end
 end
 always @(*) begin
-	main_signed_add_32_5 = (main_signed_add_32_5_op0 + main_signed_add_32_5_op1);
+	main_signed_add_32_7 = (main_signed_add_32_7_op0 + main_signed_add_32_7_op1);
 end
 always @(*) begin
+	/* main: %.thread.i*/
+	/*   %113 = mul nsw i32 %102, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_13_op0 = main_threadi_102;
+	end
 	/* main: %.thread.i*/
 	/*   %141 = mul nsw i32 %97, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_8_op0 = main_threadi_97_reg;
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_13_op0 = main_threadi_97_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %165 = mul nsw i32 %146, %162*/
+	/*   %147 = mul nsw i32 %146, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_8_op0 = main_threadi_146;
+		main_signed_multiply_32_13_op0 = main_threadi_146;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %141 = mul nsw i32 %97, %132*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_8_op1 = main_threadi_132;
+	/*   %113 = mul nsw i32 %102, %110*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
+		main_signed_multiply_32_13_op1 = main_threadi_110;
 	end
 	/* main: %.thread.i*/
-	/*   %165 = mul nsw i32 %146, %162*/
+	/*   %141 = mul nsw i32 %97, %132*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_13_op1 = main_threadi_132;
+	end
+	/* main: %.thread.i*/
+	/*   %147 = mul nsw i32 %146, %146*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_8_op1 = main_threadi_162;
+		main_signed_multiply_32_13_op1 = main_threadi_146;
 	end
 end
 always @(*) begin
@@ -21596,101 +21804,81 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %141 = mul nsw i32 %97, %132*/
 	if ((lpm_mult_main_threadi_141_en == 1'd1)) begin
-		main_threadi_141_stage0_reg <= (main_signed_multiply_32_8_op0 * main_signed_multiply_32_8_op1);
+		main_threadi_141_stage0_reg <= (main_signed_multiply_32_13_op0 * main_signed_multiply_32_13_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_8 = main_threadi_141_stage0_reg;
+	main_signed_multiply_32_13 = main_threadi_141_stage0_reg;
 end
 always @(*) begin
-	/* main: %.thread.i*/
-	/*   %gep34 = add i32 %gep_int33, 12*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_12_op0 = main_threadi_gep_int33;
-	end
 	/* main: %.thread.i*/
 	/*   %142 = add nsw i32 %141, %129*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_12_op0 = main_threadi_141;
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_add_32_8_op0 = main_threadi_141;
 	end
 	/* main: %.thread.i*/
-	/*   %158 = add nsw i32 %157, %143*/
+	/*   %154 = add nsw i32 %153, %140*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_12_op0 = main_threadi_157;
+		main_signed_add_32_8_op0 = main_threadi_153;
 	end
 	/* main: %187*/
-	/*   %gep46 = add i32 %gep_int45, -8*/
+	/*   %241 = add nsw i32 %i.010.i, 1*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_12_op0 = main_187_gep_int45;
+		main_signed_add_32_8_op0 = main_187_i010i_reg;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep103 = add i32 %gep_int102, 12*/
+	/*   %gep95 = add i32 %gep_int94, 4*/
 	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
-		main_signed_add_32_12_op0 = main_gsm_normexiti_gep_int102;
+		main_signed_add_32_8_op0 = main_gsm_normexiti_gep_int94;
 	end
 end
 always @(*) begin
-	/* main: %.thread.i*/
-	/*   %gep34 = add i32 %gep_int33, 12*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
-		main_signed_add_32_12_op1 = 32'd12;
-	end
 	/* main: %.thread.i*/
 	/*   %142 = add nsw i32 %141, %129*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_add_32_12_op1 = main_threadi_129;
+	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_add_32_8_op1 = main_threadi_129;
 	end
 	/* main: %.thread.i*/
-	/*   %158 = add nsw i32 %157, %143*/
+	/*   %154 = add nsw i32 %153, %140*/
 	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_12_op1 = main_threadi_143_reg;
+		main_signed_add_32_8_op1 = main_threadi_140_reg;
 	end
 	/* main: %187*/
-	/*   %gep46 = add i32 %gep_int45, -8*/
+	/*   %241 = add nsw i32 %i.010.i, 1*/
 	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_12_op1 = -32'd8;
+		main_signed_add_32_8_op1 = 32'd1;
 	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep103 = add i32 %gep_int102, 12*/
+	/*   %gep95 = add i32 %gep_int94, 4*/
 	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
-		main_signed_add_32_12_op1 = 32'd12;
+		main_signed_add_32_8_op1 = 32'd4;
 	end
 end
 always @(*) begin
-	main_signed_add_32_12 = (main_signed_add_32_12_op0 + main_signed_add_32_12_op1);
+	main_signed_add_32_8 = (main_signed_add_32_8_op0 + main_signed_add_32_8_op1);
 end
 always @(*) begin
-	/* main: %.thread.i*/
-	/*   %117 = mul nsw i32 %93, %110*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_13_op0 = main_threadi_93_reg;
-	end
 	/* main: %.thread.i*/
 	/*   %143 = mul nsw i32 %93, %132*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_13_op0 = main_threadi_93_reg;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_5_op0 = main_threadi_93_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %175 = mul nsw i32 %97, %162*/
+	/*   %169 = mul nsw i32 %120, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_13_op0 = main_threadi_97_reg;
+		main_signed_multiply_32_5_op0 = main_threadi_120_reg;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %117 = mul nsw i32 %93, %110*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_13_op1 = main_threadi_110;
-	end
-	/* main: %.thread.i*/
 	/*   %143 = mul nsw i32 %93, %132*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
-		main_signed_multiply_32_13_op1 = main_threadi_132;
+	if ((cur_state == LEGUP_F_main_BB_threadi_44)) begin
+		main_signed_multiply_32_5_op1 = main_threadi_132;
 	end
 	/* main: %.thread.i*/
-	/*   %175 = mul nsw i32 %97, %162*/
+	/*   %169 = mul nsw i32 %120, %162*/
 	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_13_op1 = main_threadi_162;
+		main_signed_multiply_32_5_op1 = main_threadi_162;
 	end
 end
 always @(*) begin
@@ -21700,125 +21888,21 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %143 = mul nsw i32 %93, %132*/
 	if ((lpm_mult_main_threadi_143_en == 1'd1)) begin
-		main_threadi_143_stage0_reg <= (main_signed_multiply_32_13_op0 * main_signed_multiply_32_13_op1);
+		main_threadi_143_stage0_reg <= (main_signed_multiply_32_5_op0 * main_signed_multiply_32_5_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_13 = main_threadi_143_stage0_reg;
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %149 = mul nsw i32 %132, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_multiply_32_1_op0 = main_threadi_132_reg;
-	end
-	/* main: %187*/
-	/*   %204 = mul nsw i32 %203, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_49)) begin
-		main_signed_multiply_32_1_op0 = main_187_203_reg;
-	end
-	/* main: %187*/
-	/*   %219 = mul nsw i32 %218, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_signed_multiply_32_1_op0 = main_187_218;
-	end
-	/* main: %187*/
-	/*   %229 = mul nsw i32 %228, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_51)) begin
-		main_signed_multiply_32_1_op0 = main_187_228;
-	end
-	/* main: %187*/
-	/*   %239 = mul nsw i32 %238, %200*/
-	else /* if ((cur_state == LEGUP_F_main_BB__187_52)) */ begin
-		main_signed_multiply_32_1_op0 = main_187_238;
-	end
+	main_signed_multiply_32_5 = main_threadi_143_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %149 = mul nsw i32 %132, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_multiply_32_1_op1 = main_threadi_146;
-	end
-	/* main: %187*/
-	/*   %204 = mul nsw i32 %203, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_49)) begin
-		main_signed_multiply_32_1_op1 = main_187_200;
-	end
-	/* main: %187*/
-	/*   %219 = mul nsw i32 %218, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_50)) begin
-		main_signed_multiply_32_1_op1 = main_187_200_reg;
-	end
-	/* main: %187*/
-	/*   %229 = mul nsw i32 %228, %200*/
-	else if ((cur_state == LEGUP_F_main_BB__187_51)) begin
-		main_signed_multiply_32_1_op1 = main_187_200_reg;
-	end
-	/* main: %187*/
-	/*   %239 = mul nsw i32 %238, %200*/
-	else /* if ((cur_state == LEGUP_F_main_BB__187_52)) */ begin
-		main_signed_multiply_32_1_op1 = main_187_200_reg;
-	end
-end
-always @(*) begin
-	lpm_mult_main_threadi_149_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
-end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %149 = mul nsw i32 %132, %146*/
-	if ((lpm_mult_main_threadi_149_en == 1'd1)) begin
-		main_threadi_149_stage0_reg <= (main_signed_multiply_32_1_op0 * main_signed_multiply_32_1_op1);
-	end
-end
-always @(*) begin
-	main_signed_multiply_32_1 = main_threadi_149_stage0_reg;
+	/*   %153 = mul nsw i32 %110, %146*/
+		main_signed_multiply_32_2_op0 = main_threadi_110_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %151 = mul nsw i32 %120, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
-		main_signed_multiply_32_2_op0 = main_threadi_120_reg;
-	end
-	/* main: %187*/
-	/*   %209 = mul nsw i32 %208, %200*/
-	else /* if ((cur_state == LEGUP_F_main_BB__187_49)) */ begin
-		main_signed_multiply_32_2_op0 = main_187_208;
-	end
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %151 = mul nsw i32 %120, %146*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+	/*   %153 = mul nsw i32 %110, %146*/
 		main_signed_multiply_32_2_op1 = main_threadi_146;
-	end
-	/* main: %187*/
-	/*   %209 = mul nsw i32 %208, %200*/
-	else /* if ((cur_state == LEGUP_F_main_BB__187_49)) */ begin
-		main_signed_multiply_32_2_op1 = main_187_200;
-	end
-end
-always @(*) begin
-	lpm_mult_main_threadi_151_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
-end
-always @(posedge clk) begin
-	/* main: %.thread.i*/
-	/*   %151 = mul nsw i32 %120, %146*/
-	if ((lpm_mult_main_threadi_151_en == 1'd1)) begin
-		main_threadi_151_stage0_reg <= (main_signed_multiply_32_2_op0 * main_signed_multiply_32_2_op1);
-	end
-end
-always @(*) begin
-	main_signed_multiply_32_2 = main_threadi_151_stage0_reg;
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %153 = mul nsw i32 %110, %146*/
-		main_signed_multiply_32_3_op0 = main_threadi_110_reg;
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %153 = mul nsw i32 %110, %146*/
-		main_signed_multiply_32_3_op1 = main_threadi_146;
 end
 always @(*) begin
 	lpm_mult_main_threadi_153_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
@@ -21827,331 +21911,321 @@ always @(posedge clk) begin
 	/* main: %.thread.i*/
 	/*   %153 = mul nsw i32 %110, %146*/
 	if ((lpm_mult_main_threadi_153_en == 1'd1)) begin
-		main_threadi_153_stage0_reg <= (main_signed_multiply_32_3_op0 * main_signed_multiply_32_3_op1);
+		main_threadi_153_stage0_reg <= (main_signed_multiply_32_2_op0 * main_signed_multiply_32_2_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_3 = main_threadi_153_stage0_reg;
+	main_signed_multiply_32_2 = main_threadi_153_stage0_reg;
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %155 = mul nsw i32 %102, %146*/
-		main_signed_multiply_32_4_op0 = main_threadi_102_reg;
+	/*   %156 = add nsw i32 %155, %142*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_5_op0 = main_threadi_155;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep88 = add i32 %gep_int87, 12*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_5_op0 = main_gsm_normexiti_gep_int87;
+	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %155 = mul nsw i32 %102, %146*/
-		main_signed_multiply_32_4_op1 = main_threadi_146;
+	/*   %156 = add nsw i32 %155, %142*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_5_op1 = main_threadi_142_reg;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep88 = add i32 %gep_int87, 12*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_5_op1 = 32'd12;
+	end
 end
 always @(*) begin
-	lpm_mult_main_threadi_155_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+	main_signed_add_32_5 = (main_signed_add_32_5_op0 + main_signed_add_32_5_op1);
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %157 = mul nsw i32 %97, %146*/
+		main_signed_multiply_32_3_op0 = main_threadi_97_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %157 = mul nsw i32 %97, %146*/
+		main_signed_multiply_32_3_op1 = main_threadi_146;
+end
+always @(*) begin
+	lpm_mult_main_threadi_157_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
-	/*   %155 = mul nsw i32 %102, %146*/
-	if ((lpm_mult_main_threadi_155_en == 1'd1)) begin
-		main_threadi_155_stage0_reg <= (main_signed_multiply_32_4_op0 * main_signed_multiply_32_4_op1);
+	/*   %157 = mul nsw i32 %97, %146*/
+	if ((lpm_mult_main_threadi_157_en == 1'd1)) begin
+		main_threadi_157_stage0_reg <= (main_signed_multiply_32_3_op0 * main_signed_multiply_32_3_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_4 = main_threadi_155_stage0_reg;
+	main_signed_multiply_32_3 = main_threadi_157_stage0_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %158 = add nsw i32 %157, %143*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_3_op0 = main_threadi_157;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep84 = add i32 %gep_int83, 8*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_3_op0 = main_gsm_normexiti_gep_int83;
+	end
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %158 = add nsw i32 %157, %143*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_3_op1 = main_threadi_143_reg;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep84 = add i32 %gep_int83, 8*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_3_op1 = 32'd8;
+	end
+end
+always @(*) begin
+	main_signed_add_32_3 = (main_signed_add_32_3_op0 + main_signed_add_32_3_op1);
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %159 = mul nsw i32 %93, %146*/
+		main_signed_multiply_32_4_op0 = main_threadi_93_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %159 = mul nsw i32 %93, %146*/
+		main_signed_multiply_32_4_op1 = main_threadi_146;
+end
+always @(*) begin
+	lpm_mult_main_threadi_159_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %159 = mul nsw i32 %93, %146*/
+	if ((lpm_mult_main_threadi_159_en == 1'd1)) begin
+		main_threadi_159_stage0_reg <= (main_signed_multiply_32_4_op0 * main_signed_multiply_32_4_op1);
+	end
+end
+always @(*) begin
+	main_signed_multiply_32_4 = main_threadi_159_stage0_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %gep36 = add i32 %gep_int35, 14*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_signed_add_32_6_op0 = main_threadi_gep_int35;
+	end
+	/* main: %.thread.i*/
+	/*   %172 = add nsw i32 %171, %156*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_6_op0 = main_threadi_171;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep90 = add i32 %gep_int89, 14*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_6_op0 = main_gsm_normexiti_gep_int89;
+	end
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %gep36 = add i32 %gep_int35, 14*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_41)) begin
+		main_signed_add_32_6_op1 = 32'd14;
+	end
+	/* main: %.thread.i*/
+	/*   %172 = add nsw i32 %171, %156*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_6_op1 = main_threadi_156;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep90 = add i32 %gep_int89, 14*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_6_op1 = 32'd14;
+	end
+end
+always @(*) begin
+	main_signed_add_32_6 = (main_signed_add_32_6_op0 + main_signed_add_32_6_op1);
 end
 always @(*) begin
 	/* main: %62*/
 	/*   %63 = sub i32 4, %.01.i.i1*/
 	if ((cur_state == LEGUP_F_main_BB__62_27)) begin
-		main_signed_subtract_32_1_op0 = 32'd4;
+		main_signed_subtract_32_0_op0 = 32'd4;
 	end
 	/* main: %.preheader.i.i*/
 	/*   %..i1.i = sub nsw i32 %350, %352*/
 	else if ((cur_state == LEGUP_F_main_BB_preheaderii_101)) begin
-		main_signed_subtract_32_1_op0 = main_preheaderii_350;
+		main_signed_subtract_32_0_op0 = main_preheaderii_350;
 	end
 	/* main: %355*/
 	/*   %356 = sub nsw i32 %353, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__355_102)) begin
-		main_signed_subtract_32_1_op0 = main_preheaderii_353_reg;
+		main_signed_subtract_32_0_op0 = main_preheaderii_353_reg;
 	end
 	/* main: %361*/
 	/*   %362 = sub nsw i32 %359, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__361_104)) begin
-		main_signed_subtract_32_1_op0 = main_backedge1ii_359_reg;
+		main_signed_subtract_32_0_op0 = main_backedge1ii_359_reg;
 	end
 	/* main: %367*/
 	/*   %368 = sub nsw i32 %365, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__367_106)) begin
-		main_signed_subtract_32_1_op0 = main_backedge2ii_365_reg;
+		main_signed_subtract_32_0_op0 = main_backedge2ii_365_reg;
 	end
 	/* main: %373*/
 	/*   %374 = sub nsw i32 %371, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__373_108)) begin
-		main_signed_subtract_32_1_op0 = main_backedge3ii_371_reg;
+		main_signed_subtract_32_0_op0 = main_backedge3ii_371_reg;
 	end
 	/* main: %379*/
 	/*   %380 = sub nsw i32 %377, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__379_110)) begin
-		main_signed_subtract_32_1_op0 = main_backedge4ii_377_reg;
+		main_signed_subtract_32_0_op0 = main_backedge4ii_377_reg;
 	end
 	/* main: %385*/
 	/*   %386 = sub nsw i32 %383, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__385_112)) begin
-		main_signed_subtract_32_1_op0 = main_backedge5ii_383_reg;
+		main_signed_subtract_32_0_op0 = main_backedge5ii_383_reg;
 	end
 	/* main: %391*/
 	/*   %392 = sub nsw i32 %389, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__391_114)) begin
-		main_signed_subtract_32_1_op0 = main_backedge6ii_389_reg;
+		main_signed_subtract_32_0_op0 = main_backedge6ii_389_reg;
 	end
 	/* main: %397*/
 	/*   %398 = sub nsw i32 %395, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__397_116)) begin
-		main_signed_subtract_32_1_op0 = main_backedge7ii_395_reg;
+		main_signed_subtract_32_0_op0 = main_backedge7ii_395_reg;
 	end
 	/* main: %403*/
 	/*   %404 = sub nsw i32 %401, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__403_118)) begin
-		main_signed_subtract_32_1_op0 = main_backedge8ii_401_reg;
+		main_signed_subtract_32_0_op0 = main_backedge8ii_401_reg;
 	end
 	/* main: %409*/
 	/*   %410 = sub nsw i32 %407, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__409_120)) begin
-		main_signed_subtract_32_1_op0 = main_backedge9ii_407_reg;
+		main_signed_subtract_32_0_op0 = main_backedge9ii_407_reg;
 	end
 	/* main: %415*/
 	/*   %416 = sub nsw i32 %413, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__415_122)) begin
-		main_signed_subtract_32_1_op0 = main_backedge10ii_413_reg;
+		main_signed_subtract_32_0_op0 = main_backedge10ii_413_reg;
 	end
 	/* main: %421*/
 	/*   %422 = sub nsw i32 %419, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__421_124)) begin
-		main_signed_subtract_32_1_op0 = main_backedge11ii_419_reg;
+		main_signed_subtract_32_0_op0 = main_backedge11ii_419_reg;
 	end
 	/* main: %427*/
 	/*   %428 = sub nsw i32 %425, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__427_126)) begin
-		main_signed_subtract_32_1_op0 = main_backedge12ii_425_reg;
+		main_signed_subtract_32_0_op0 = main_backedge12ii_425_reg;
 	end
 	/* main: %gsm_add.exit8.i*/
 	/*   %460 = sub nsw i32 8, %n.029.i*/
 	else /* if ((cur_state == LEGUP_F_main_BB_gsm_addexit8i_141)) */ begin
-		main_signed_subtract_32_1_op0 = 32'd8;
+		main_signed_subtract_32_0_op0 = 32'd8;
 	end
 end
 always @(*) begin
 	/* main: %62*/
 	/*   %63 = sub i32 4, %.01.i.i1*/
 	if ((cur_state == LEGUP_F_main_BB__62_27)) begin
-		main_signed_subtract_32_1_op1 = main_62_01ii1_reg;
+		main_signed_subtract_32_0_op1 = main_62_01ii1_reg;
 	end
 	/* main: %.preheader.i.i*/
 	/*   %..i1.i = sub nsw i32 %350, %352*/
 	else if ((cur_state == LEGUP_F_main_BB_preheaderii_101)) begin
-		main_signed_subtract_32_1_op1 = main_preheaderii_352;
+		main_signed_subtract_32_0_op1 = main_preheaderii_352;
 	end
 	/* main: %355*/
 	/*   %356 = sub nsw i32 %353, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__355_102)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %361*/
 	/*   %362 = sub nsw i32 %359, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__361_104)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %367*/
 	/*   %368 = sub nsw i32 %365, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__367_106)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %373*/
 	/*   %374 = sub nsw i32 %371, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__373_108)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %379*/
 	/*   %380 = sub nsw i32 %377, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__379_110)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %385*/
 	/*   %386 = sub nsw i32 %383, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__385_112)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %391*/
 	/*   %392 = sub nsw i32 %389, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__391_114)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %397*/
 	/*   %398 = sub nsw i32 %395, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__397_116)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %403*/
 	/*   %404 = sub nsw i32 %401, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__403_118)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %409*/
 	/*   %410 = sub nsw i32 %407, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__409_120)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %415*/
 	/*   %416 = sub nsw i32 %413, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__415_122)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %421*/
 	/*   %422 = sub nsw i32 %419, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__421_124)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %427*/
 	/*   %428 = sub nsw i32 %425, %347*/
 	else if ((cur_state == LEGUP_F_main_BB__427_126)) begin
-		main_signed_subtract_32_1_op1 = main_346_347_reg;
+		main_signed_subtract_32_0_op1 = main_346_347_reg;
 	end
 	/* main: %gsm_add.exit8.i*/
 	/*   %460 = sub nsw i32 8, %n.029.i*/
 	else /* if ((cur_state == LEGUP_F_main_BB_gsm_addexit8i_141)) */ begin
-		main_signed_subtract_32_1_op1 = main_334_n029i_reg;
+		main_signed_subtract_32_0_op1 = main_334_n029i_reg;
 	end
 end
 always @(*) begin
-	main_signed_subtract_32_1 = (main_signed_subtract_32_1_op0 - main_signed_subtract_32_1_op1);
-end
-always @(*) begin
-	/* main: %187*/
-	/*   %gep48 = add i32 %gep_int47, -10*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_13_op0 = main_187_gep_int47;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %248 = add nsw i32 %k.47.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
-		main_signed_add_32_13_op0 = main_preheaderi_k47i_reg;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep105 = add i32 %gep_int104, 14*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_13_op0 = main_gsm_normexiti_gep_int104;
-	end
-	/* main: %.thread102.i*/
-	/*   %583 = add nsw i32 %582, -2560*/
-	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_signed_add_32_13_op0 = main_thread102i_582;
-	end
-	/* main: %.thread112.i*/
-	/*   %621 = add nsw i32 %620, -1792*/
-	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
-		main_signed_add_32_13_op0 = main_thread112i_620;
-	end
-	/* main: %.thread122.i*/
-	/*   %659 = add nsw i32 %658, -1144*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread122i_247)) */ begin
-		main_signed_add_32_13_op0 = main_thread122i_658;
-	end
-end
-always @(*) begin
-	/* main: %187*/
-	/*   %gep48 = add i32 %gep_int47, -10*/
-	if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_13_op1 = -32'd10;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %248 = add nsw i32 %k.47.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_56)) begin
-		main_signed_add_32_13_op1 = -32'd1;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep105 = add i32 %gep_int104, 14*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_13_op1 = 32'd14;
-	end
-	/* main: %.thread102.i*/
-	/*   %583 = add nsw i32 %582, -2560*/
-	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_signed_add_32_13_op1 = -32'd2560;
-	end
-	/* main: %.thread112.i*/
-	/*   %621 = add nsw i32 %620, -1792*/
-	else if ((cur_state == LEGUP_F_main_BB_thread112i_227)) begin
-		main_signed_add_32_13_op1 = -32'd1792;
-	end
-	/* main: %.thread122.i*/
-	/*   %659 = add nsw i32 %658, -1144*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread122i_247)) */ begin
-		main_signed_add_32_13_op1 = -32'd1144;
-	end
-end
-always @(*) begin
-	main_signed_add_32_13 = (main_signed_add_32_13_op0 + main_signed_add_32_13_op1);
+	main_signed_subtract_32_0 = (main_signed_subtract_32_0_op0 - main_signed_subtract_32_0_op1);
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %170 = add nsw i32 %169, %154*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_9_op0 = main_threadi_169;
-	end
-	/* main: %187*/
-	/*   %gep52 = add i32 %gep_int51, -14*/
-	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_9_op0 = main_187_gep_int51;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep97 = add i32 %gep_int96, 6*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_9_op0 = main_gsm_normexiti_gep_int96;
-	end
-	/* main: %.thread102.i*/
-	/*   %581 = add i32 %580, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_signed_add_32_9_op0 = main_thread102i_580;
-	end
-	/* main: %.thread117.i*/
-	/*   %640 = add nsw i32 %639, -341*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread117i_237)) */ begin
-		main_signed_add_32_9_op0 = main_thread117i_639;
-	end
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %170 = add nsw i32 %169, %154*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_9_op1 = main_threadi_154;
-	end
-	/* main: %187*/
-	/*   %gep52 = add i32 %gep_int51, -14*/
-	else if ((cur_state == LEGUP_F_main_BB__187_48)) begin
-		main_signed_add_32_9_op1 = -32'd14;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep97 = add i32 %gep_int96, 6*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_9_op1 = 32'd6;
-	end
-	/* main: %.thread102.i*/
-	/*   %581 = add i32 %580, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_thread102i_207)) begin
-		main_signed_add_32_9_op1 = 32'd40960;
-	end
-	/* main: %.thread117.i*/
-	/*   %640 = add nsw i32 %639, -341*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread117i_237)) */ begin
-		main_signed_add_32_9_op1 = -32'd341;
-	end
-end
-always @(*) begin
-	main_signed_add_32_9 = (main_signed_add_32_9_op0 + main_signed_add_32_9_op1);
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %111 = mul nsw i32 %110, %110*/
+	/*   %107 = mul nsw i32 %93, %102*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_9_op0 = main_threadi_110;
+		main_signed_multiply_32_9_op0 = main_threadi_93_reg;
 	end
 	/* main: %.thread.i*/
 	/*   %123 = mul nsw i32 %110, %120*/
@@ -22159,16 +22233,21 @@ always @(*) begin
 		main_signed_multiply_32_9_op0 = main_threadi_110_reg;
 	end
 	/* main: %.thread.i*/
-	/*   %167 = mul nsw i32 %132, %162*/
-	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
-		main_signed_multiply_32_9_op0 = main_threadi_132_reg;
+	/*   %175 = mul nsw i32 %97, %162*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
+		main_signed_multiply_32_9_op0 = main_threadi_97_reg;
+	end
+	/* main: %187*/
+	/*   %209 = mul nsw i32 %208, %200*/
+	else /* if ((cur_state == LEGUP_F_main_BB__187_49)) */ begin
+		main_signed_multiply_32_9_op0 = main_187_208;
 	end
 end
 always @(*) begin
 	/* main: %.thread.i*/
-	/*   %111 = mul nsw i32 %110, %110*/
+	/*   %107 = mul nsw i32 %93, %102*/
 	if ((cur_state == LEGUP_F_main_BB_threadi_43)) begin
-		main_signed_multiply_32_9_op1 = main_threadi_110;
+		main_signed_multiply_32_9_op1 = main_threadi_102;
 	end
 	/* main: %.thread.i*/
 	/*   %123 = mul nsw i32 %110, %120*/
@@ -22176,194 +22255,42 @@ always @(*) begin
 		main_signed_multiply_32_9_op1 = main_threadi_120;
 	end
 	/* main: %.thread.i*/
-	/*   %167 = mul nsw i32 %132, %162*/
-	else /* if ((cur_state == LEGUP_F_main_BB_threadi_45)) */ begin
+	/*   %175 = mul nsw i32 %97, %162*/
+	else if ((cur_state == LEGUP_F_main_BB_threadi_45)) begin
 		main_signed_multiply_32_9_op1 = main_threadi_162;
+	end
+	/* main: %187*/
+	/*   %209 = mul nsw i32 %208, %200*/
+	else /* if ((cur_state == LEGUP_F_main_BB__187_49)) */ begin
+		main_signed_multiply_32_9_op1 = main_187_200;
 	end
 end
 always @(*) begin
-	lpm_mult_main_threadi_111_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+	lpm_mult_main_threadi_107_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(posedge clk) begin
 	/* main: %.thread.i*/
-	/*   %111 = mul nsw i32 %110, %110*/
-	if ((lpm_mult_main_threadi_111_en == 1'd1)) begin
-		main_threadi_111_stage0_reg <= (main_signed_multiply_32_9_op0 * main_signed_multiply_32_9_op1);
+	/*   %107 = mul nsw i32 %93, %102*/
+	if ((lpm_mult_main_threadi_107_en == 1'd1)) begin
+		main_threadi_107_stage0_reg <= (main_signed_multiply_32_9_op0 * main_signed_multiply_32_9_op1);
 	end
 end
 always @(*) begin
-	main_signed_multiply_32_9 = main_threadi_111_stage0_reg;
+	main_signed_multiply_32_9 = main_threadi_107_stage0_reg;
 end
 always @(*) begin
-	/* main: %.thread.i*/
-	/*   %166 = add nsw i32 %165, %150*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_7_op0 = main_threadi_165;
-	end
-	/* main: %261*/
-	/*   %266 = add nsw i32 %265, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__261_68)) begin
-		main_signed_add_32_7_op0 = main_261_265;
-	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep93 = add i32 %gep_int92, 2*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_7_op0 = main_gsm_normexiti_gep_int92;
-	end
-	/* main: %.thread.i4*/
-	/*   %546 = add i32 %545, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
-		main_signed_add_32_7_op0 = main_threadi4_545;
-	end
-	/* main: %.thread112.i*/
-	/*   %619 = add i32 %618, 30720*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread112i_227)) */ begin
-		main_signed_add_32_7_op0 = main_thread112i_618;
-	end
+	/*   %gep105 = add i32 %gep_int104, 14*/
+		main_signed_add_32_13_op0 = main_gsm_normexiti_gep_int104;
 end
 always @(*) begin
-	/* main: %.thread.i*/
-	/*   %166 = add nsw i32 %165, %150*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_7_op1 = main_threadi_150;
-	end
-	/* main: %261*/
-	/*   %266 = add nsw i32 %265, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__261_68)) begin
-		main_signed_add_32_7_op1 = -32'd1;
-	end
 	/* main: %gsm_norm.exit.i*/
-	/*   %gep93 = add i32 %gep_int92, 2*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_7_op1 = 32'd2;
-	end
-	/* main: %.thread.i4*/
-	/*   %546 = add i32 %545, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_threadi4_189)) begin
-		main_signed_add_32_7_op1 = 32'd40960;
-	end
-	/* main: %.thread112.i*/
-	/*   %619 = add i32 %618, 30720*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread112i_227)) */ begin
-		main_signed_add_32_7_op1 = 32'd30720;
-	end
+	/*   %gep105 = add i32 %gep_int104, 14*/
+if (reset) begin main_signed_add_32_13_op1 = 0; end
+		main_signed_add_32_13_op1 = 32'd14;
 end
 always @(*) begin
-	main_signed_add_32_7 = (main_signed_add_32_7_op0 + main_signed_add_32_7_op1);
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %168 = add nsw i32 %167, %152*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_8_op0 = main_threadi_167;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep95 = add i32 %gep_int94, 4*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_8_op0 = main_gsm_normexiti_gep_int94;
-	end
-	/* main: %._crit_edge43.i*/
-	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_signed_add_32_8_op0 = main_334_indvarsivi_reg;
-	end
-	/* main: %.thread98.i*/
-	/*   %562 = add i32 %561, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
-		main_signed_add_32_8_op0 = main_thread98i_561;
-	end
-	/* main: %.thread117.i*/
-	/*   %638 = add i32 %637, 17068*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread117i_237)) */ begin
-		main_signed_add_32_8_op0 = main_thread117i_637;
-	end
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %168 = add nsw i32 %167, %152*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_8_op1 = main_threadi_152;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep95 = add i32 %gep_int94, 4*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_8_op1 = 32'd4;
-	end
-	/* main: %._crit_edge43.i*/
-	/*   %indvars.iv.next.i = add i32 %indvars.iv.i, -1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edge43i_165)) begin
-		main_signed_add_32_8_op1 = -32'd1;
-	end
-	/* main: %.thread98.i*/
-	/*   %562 = add i32 %561, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_thread98i_197)) begin
-		main_signed_add_32_8_op1 = 32'd40960;
-	end
-	/* main: %.thread117.i*/
-	/*   %638 = add i32 %637, 17068*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread117i_237)) */ begin
-		main_signed_add_32_8_op1 = 32'd17068;
-	end
-end
-always @(*) begin
-	main_signed_add_32_8 = (main_signed_add_32_8_op0 + main_signed_add_32_8_op1);
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %172 = add nsw i32 %171, %156*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_10_op0 = main_threadi_171;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep99 = add i32 %gep_int98, 8*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_10_op0 = main_gsm_normexiti_gep_int98;
-	end
-	/* main: %Gsm_LPC_Analysis.exit*/
-	/*   %530 = add i32 %529, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
-		main_signed_add_32_10_op0 = main_Gsm_LPC_Analysisexit_529;
-	end
-	/* main: %.thread107.i*/
-	/*   %600 = add i32 %599, 27928*/
-	else if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
-		main_signed_add_32_10_op0 = main_thread107i_599;
-	end
-	/* main: %.thread122.i*/
-	/*   %657 = add i32 %656, 18072*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread122i_247)) */ begin
-		main_signed_add_32_10_op0 = main_thread122i_656;
-	end
-end
-always @(*) begin
-	/* main: %.thread.i*/
-	/*   %172 = add nsw i32 %171, %156*/
-	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
-		main_signed_add_32_10_op1 = main_threadi_156;
-	end
-	/* main: %gsm_norm.exit.i*/
-	/*   %gep99 = add i32 %gep_int98, 8*/
-	else if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) begin
-		main_signed_add_32_10_op1 = 32'd8;
-	end
-	/* main: %Gsm_LPC_Analysis.exit*/
-	/*   %530 = add i32 %529, 40960*/
-	else if ((cur_state == LEGUP_F_main_BB_Gsm_LPC_Analysisexit_181)) begin
-		main_signed_add_32_10_op1 = 32'd40960;
-	end
-	/* main: %.thread107.i*/
-	/*   %600 = add i32 %599, 27928*/
-	else if ((cur_state == LEGUP_F_main_BB_thread107i_217)) begin
-		main_signed_add_32_10_op1 = 32'd27928;
-	end
-	/* main: %.thread122.i*/
-	/*   %657 = add i32 %656, 18072*/
-	else /* if ((cur_state == LEGUP_F_main_BB_thread122i_247)) */ begin
-		main_signed_add_32_10_op1 = 32'd18072;
-	end
-end
-always @(*) begin
-	main_signed_add_32_10 = (main_signed_add_32_10_op0 + main_signed_add_32_10_op1);
+	main_signed_add_32_13 = (main_signed_add_32_13_op0 + main_signed_add_32_13_op1);
 end
 always @(*) begin
 	/* main: %gsm_norm.exit.i*/
@@ -22378,6 +22305,56 @@ if (reset) begin main_signed_add_32_14_op1 = 0; end
 end
 always @(*) begin
 	main_signed_add_32_14 = (main_signed_add_32_14_op0 + main_signed_add_32_14_op1);
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %173 = mul nsw i32 %102, %162*/
+		main_signed_multiply_32_1_op0 = main_threadi_102_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %173 = mul nsw i32 %102, %162*/
+		main_signed_multiply_32_1_op1 = main_threadi_162;
+end
+always @(*) begin
+	lpm_mult_main_threadi_173_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+end
+always @(posedge clk) begin
+	/* main: %.thread.i*/
+	/*   %173 = mul nsw i32 %102, %162*/
+	if ((lpm_mult_main_threadi_173_en == 1'd1)) begin
+		main_threadi_173_stage0_reg <= (main_signed_multiply_32_1_op0 * main_signed_multiply_32_1_op1);
+	end
+end
+always @(*) begin
+	main_signed_multiply_32_1 = main_threadi_173_stage0_reg;
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %174 = add nsw i32 %173, %158*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_4_op0 = main_threadi_173;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep86 = add i32 %gep_int85, 10*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_4_op0 = main_gsm_normexiti_gep_int85;
+	end
+end
+always @(*) begin
+	/* main: %.thread.i*/
+	/*   %174 = add nsw i32 %173, %158*/
+	if ((cur_state == LEGUP_F_main_BB_threadi_46)) begin
+		main_signed_add_32_4_op1 = main_threadi_158;
+	end
+	/* main: %gsm_norm.exit.i*/
+	/*   %gep86 = add i32 %gep_int85, 10*/
+	else /* if ((cur_state == LEGUP_F_main_BB_gsm_normexiti_76)) */ begin
+		main_signed_add_32_4_op1 = 32'd10;
+	end
+end
+always @(*) begin
+	main_signed_add_32_4 = (main_signed_add_32_4_op0 + main_signed_add_32_4_op1);
 end
 always @(*) begin
 	/* main: %517*/
@@ -22422,7 +22399,7 @@ always @(*) begin
 	lpm_mult_main_threadi_106_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
-	lpm_mult_main_threadi_107_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+	lpm_mult_main_threadi_111_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
 	lpm_mult_main_threadi_113_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
@@ -22443,10 +22420,13 @@ always @(*) begin
 	lpm_mult_main_threadi_147_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
-	lpm_mult_main_threadi_157_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+	lpm_mult_main_threadi_149_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
-	lpm_mult_main_threadi_159_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+	lpm_mult_main_threadi_151_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
+end
+always @(*) begin
+	lpm_mult_main_threadi_155_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
 	lpm_mult_main_threadi_163_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
@@ -22462,9 +22442,6 @@ always @(*) begin
 end
 always @(*) begin
 	lpm_mult_main_threadi_171_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
-end
-always @(*) begin
-	lpm_mult_main_threadi_173_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
 end
 always @(*) begin
 	lpm_mult_main_threadi_175_en = ((memory_controller_waitrequest == 1'd0) & (legup_function_call == 1'd0));
