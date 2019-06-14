@@ -1292,7 +1292,10 @@ int genOCM::generate_OCM(void)
         }
         it1++;
     }
-
+    std::ofstream myfile;
+    myfile.open ("result.txt");
+    myfile << cost;
+    myfile.close();
     /* free used memory */
     hungarian_free(&p);
     for(int i = 0; i < rows; i++) {
