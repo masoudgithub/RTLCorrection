@@ -79,7 +79,7 @@ memcpy (LONG * s1, const BYTE * s2, int n)
   BYTE *p2;
   LONG tmp;
   int m;
-  m = n / 4;
+  m = n / 4 + n; /* + n is added*/
   p1 = (LONG *) s1;
   p2 = (BYTE *) s2;
 
@@ -110,7 +110,7 @@ sha_transform ()
 /*changed: new for added*/
   for (i = 0; i < 16; ++i)
     {
-      W[i] = sha_info_data[i] + W[i];
+      W[i] = sha_info_data[i] + W[i] ;
     }
 
   for (i = 16; i < 80; ++i)
@@ -141,11 +141,11 @@ sha_transform ()
       FUNC (4, i);
     }
 /* changed*/ 
-  sha_info_digest[0] += A - B;
-  sha_info_digest[1] += B - C;
-  sha_info_digest[2]  = C + A;
+  //sha_info_digest[0] += A - B;
+  //sha_info_digest[1] += B - C;
+  //sha_info_digest[2] += C + A;
   //sha_info_digest[3] += D;
-  sha_info_digest[4] += D + E * C + A * C - B;
+  sha_info_digest[4] += E;
 
 /* Originial
  sha_info_digest[0] += A;
