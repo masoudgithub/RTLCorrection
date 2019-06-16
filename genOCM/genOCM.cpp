@@ -3,6 +3,7 @@
 #include <fstream>
 #include <regex>
 
+
 void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName)
 {
 
@@ -1123,7 +1124,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 int genOCM::generate_OCM(void)
 {
     int argc = 5;
-    const char *argv[5] = {"", "fft.ll", "main.dot", "memory_controller.dot", "total.dot"};
+    const char *argv[5] = {"", "quad.ll", "main.dot", "memory_controller.dot", "total.dot"};
     genOCM mainGenOCM;
     // creating IR node map
     /*nodeMap IRNodeMap;

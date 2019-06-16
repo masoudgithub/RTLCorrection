@@ -1,17 +1,17 @@
 # copy c file to legup direction and make the .v file
 thisFileLocation=/home/legup/RTLCorrection/Other/results/sha_res_2/sha_changed
-InLegUpPass=/home/legup/original_legup/examples/chstone/sha
+InLegUpPass=/home/legup/legup_changed/examples/chstone/sha
 yosysPath=/home/legup/yosys-master
 mathingCalcPath=/home/legup/RTLCorrection/Matching/build-matching-Desktop-Debug
 Cfilename=sha.c
 verilogFileName=sha_driver.v
-cp $PWD/$Cfilename $InLegUpPass
+cp $thisFileLocation/$Cfilename $InLegUpPass
 cd $InLegUpPass
 make
-cp $verilogFileName $PWD
+cp $verilogFileName $thisFileLocation
 mv $verilogFileName $yosysPath
 # editing .v file and runnig yosys synthesizer to creat main.dot files
-cd /home/legup/yosys-master
+cd $yosysPath
 source run.sh sha_driver.v
 > syn.ys
 echo read_verilog sha_driver.v >> syn.ys
@@ -25,7 +25,7 @@ cd /home/legup
 cp -a .yosys_show.dot main.dot
 rm -a .yosys_show.dot
 # creating memory_controller.dot file
-cd /home/legup/yosys-master
+cd $yosysPath
 > syn.ys
 echo read_verilog sha_driver.v >> syn.ys
 echo write_ilang >> syn.ys

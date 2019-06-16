@@ -79,7 +79,7 @@ memcpy (LONG * s1, const BYTE * s2, int n)
   BYTE *p2;
   LONG tmp;
   int m;
-  m = n / 4 + n; /* + n is added*/
+  m = n / 4 /*+ n*/; /* + n is added*/
   p1 = (LONG *) s1;
   p2 = (BYTE *) s2;
 

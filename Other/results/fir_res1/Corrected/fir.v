@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Mon Apr  1 03:52:38 2019
+// Date: Sun Jun 16 05:59:37 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -1632,7 +1632,6 @@ reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_3;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_3_reg;
 reg [31:0] main_0_gep_int2;
 reg [31:0] main_0_gep3;
-reg [31:0] main_0_gep3_reg;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_4;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_4_reg;
 reg [31:0] main_0_gep_int4;
@@ -1685,6 +1684,7 @@ reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_16;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_16_reg;
 reg [31:0] main_0_gep_int28;
 reg [31:0] main_0_gep29;
+reg [31:0] main_0_gep29_reg;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_17;
 reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_0_17_reg;
 reg [31:0] main_18_19;
@@ -2065,20 +2065,6 @@ always @(*) begin
 	/*   %gep3 = add i32 %gep_int2, 60*/
 		main_0_gep3 = main_signed_add_32_1;
 end
-always @(posedge clk) begin
-	/* main: %0*/
-	/*   %gep3 = add i32 %gep_int2, 60*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
-		main_0_gep3_reg <= main_0_gep3;
-		if (start == 1'b0 && ^(main_0_gep3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep3_reg"); $finish; end
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_0_gep3_reg <= main__crit_edgei_45;
-		if (start == 1'b0 && ^(main__crit_edgei_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep3_reg"); $finish; end
-	end
-end
 always @(*) begin
 	/* main: %0*/
 	/*   %4 = inttoptr i32 %gep3 to i32**/
@@ -2390,6 +2376,20 @@ always @(*) begin
 	/* main: %0*/
 	/*   %gep29 = add i32 %gep_int28, 4*/
 		main_0_gep29 = main_signed_add_32_14;
+end
+always @(posedge clk) begin
+	/* main: %0*/
+	/*   %gep29 = add i32 %gep_int28, 4*/
+	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+		main_0_gep29_reg <= main_0_gep29;
+		if (start == 1'b0 && ^(main_0_gep29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep29_reg"); $finish; end
+	end
+	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main_0_gep29_reg <= main__crit_edgei_45;
+		if (start == 1'b0 && ^(main__crit_edgei_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_0_gep29_reg"); $finish; end
+	end
 end
 always @(*) begin
 	/* main: %0*/
@@ -3092,12 +3092,12 @@ end
 always @(*) begin
 	/* main: %._crit_edge.i*/
 	/*   %45 = add nsw i32 %36, 1*/
-		main__crit_edgei_45 = main_signed_add_32_1;
+		main__crit_edgei_45 = main_signed_add_32_14;
 end
 always @(*) begin
 /* main: %._crit_edge.i*/
 /*   %45 = add nsw i32 %36, 1*/
-	main__crit_edgei_45_reg = main_0_gep3_reg;
+	main__crit_edgei_45_reg = main_0_gep29_reg;
 end
 always @(*) begin
 	/* main: %._crit_edge.i*/
@@ -3188,7 +3188,7 @@ end
 always @(*) begin
 	/* main: %FIRFilterStreaming.exit*/
 	/*   %47 = add nsw i32 %i.03, 1*/
-		main_FIRFilterStreamingexit_47 = main_signed_add_32_1;
+		main_FIRFilterStreamingexit_47 = main_signed_add_32_14;
 end
 always @(*) begin
 	/* main: %FIRFilterStreaming.exit*/
@@ -3436,36 +3436,13 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep3 = add i32 %gep_int2, 60*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_1_op0 = main_0_gep_int2;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_signed_add_32_1_op0 = main__crit_edgei_36_reg;
-	end
-	/* main: %FIRFilterStreaming.exit*/
-	/*   %47 = add nsw i32 %i.03, 1*/
-	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_1_op0 = main_18_i03_reg;
-	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep3 = add i32 %gep_int2, 60*/
-	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
+if (reset) begin main_signed_add_32_1_op1 = 0; end
 		main_signed_add_32_1_op1 = 32'd60;
-	end
-	/* main: %._crit_edge.i*/
-	/*   %45 = add nsw i32 %36, 1*/
-	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
-		main_signed_add_32_1_op1 = 32'd1;
-	end
-	/* main: %FIRFilterStreaming.exit*/
-	/*   %47 = add nsw i32 %i.03, 1*/
-	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
-		main_signed_add_32_1_op1 = 32'd1;
-	end
 end
 always @(*) begin
 	main_signed_add_32_1 = (main_signed_add_32_1_op0 + main_signed_add_32_1_op1);
@@ -3585,13 +3562,36 @@ end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep29 = add i32 %gep_int28, 4*/
+	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_14_op0 = main_0_gep_int28;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main_signed_add_32_14_op0 = main__crit_edgei_36_reg;
+	end
+	/* main: %FIRFilterStreaming.exit*/
+	/*   %47 = add nsw i32 %i.03, 1*/
+	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
+		main_signed_add_32_14_op0 = main_18_i03_reg;
+	end
 end
 always @(*) begin
 	/* main: %0*/
 	/*   %gep29 = add i32 %gep_int28, 4*/
-if (reset) begin main_signed_add_32_14_op1 = 0; end
+	if ((cur_state == LEGUP_F_main_BB__0_1)) begin
 		main_signed_add_32_14_op1 = 32'd4;
+	end
+	/* main: %._crit_edge.i*/
+	/*   %45 = add nsw i32 %36, 1*/
+	else if ((cur_state == LEGUP_F_main_BB__crit_edgei_23)) begin
+		main_signed_add_32_14_op1 = 32'd1;
+	end
+	/* main: %FIRFilterStreaming.exit*/
+	/*   %47 = add nsw i32 %i.03, 1*/
+	else /* if ((cur_state == LEGUP_F_main_BB_FIRFilterStreamingexit_33)) */ begin
+		main_signed_add_32_14_op1 = 32'd1;
+	end
 end
 always @(*) begin
 	main_signed_add_32_14 = (main_signed_add_32_14_op0 + main_signed_add_32_14_op1);

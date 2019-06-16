@@ -3,6 +3,7 @@
 #include <fstream>
 #include <regex>
 
+
 void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::string moduleName)
 {
 
@@ -19,19 +20,18 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
             if(line.find("->",0) > 10000)
             {
                 cnt++;
-                std::cout<<"\ncnt = "<<cnt<<std::endl;
+
                 // find alias
-                 std::cout<<"23"<<std::endl;
+
                 std::size_t pos1 = 0;
                 std::size_t pos2 = line.find(" ");
                 tempNode.alias = line.substr(pos1,pos2-pos1);
                 //std::cout<<"rowNodes[node].alias = "<<tempNode.alias<<std::endl;
                 // find name
-                 std::cout<<"29"<<std::endl;
+
                 pos1 = line.find("\"",0);
                 pos2 = line.find("\"",pos1+1);
-                std::cout<<"pos1 = "<<pos1<<" pos2 = "<<pos2<<std::endl;
-                std::cout<<"line = "<<line<<std::endl;
+
                 if ((pos1 < 10000) && (pos2 < 10000))
                 {
                     tempNode.name = line.substr(pos1+1,pos2-pos1-1);
@@ -41,7 +41,6 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                     tempNode.name = "";
                 }
                 //std::cout<<"rowNodes[node].name = "<<tempNode.name<<std::endl;
-                std::cout<<"39"<<std::endl;
                 // find type
                 if (tempNode.name.find("$add") < 10000)
                 {
@@ -134,10 +133,8 @@ void genOCM::fillOCMRowNodes(const char *fileName, nodeMap &ocmNodeMap, std::str
                     tempNode.type = "NON";
                 }
                 //finding ports A, B, D, S, CLK
-                std::cout<<"type found"<<std::endl;
                 findPort(line,tempNode);
                 ocmNodeMap.insert(std::pair<std::string,mainNode>(tempNode.alias,tempNode));
-                std::cout<<"node added"<<std::endl;
             }
         }
         schematicFile.close();
@@ -174,9 +171,10 @@ void genOCM::fillIRRowNodes(const char *fileName, nodeMap &IRNodeMap)
                     tempNode1.inputTypes = new std::string[2];
 
                     std::size_t posSpace1 = line.find(" store ");
-                    std::size_t posSpace2 = line.find(" ", posSpace1 +1);
+                    std::size_t posSpace2 = line.find(" i", posSpace1 +1);
                     std::size_t posSpace3 = line.find(" ", posSpace2 +1);
                     std::string tempString = line.substr(posSpace2+2, posSpace3-posSpace2-2);
+					//std::cout<<"tempString= "<<tempString<<std::endl;
                     tempNode1.inputWidth = std::stoi(tempString);
 
                     std::size_t posCommaSpace1 = line.find(", ", posSpace3 +1);
@@ -1126,7 +1124,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 int genOCM::generate_OCM(void)
 {
     int argc = 5;
-    const char *argv[5] = {"", "fir.ll", "main.dot", "memory_controller.dot", "total.dot"};
+    const char *argv[5] = {"", "quad.ll", "main.dot", "memory_controller.dot", "total.dot"};
     genOCM mainGenOCM;
     // creating IR node map
     /*nodeMap IRNodeMap;
