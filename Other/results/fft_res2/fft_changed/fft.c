@@ -25,7 +25,11 @@ Acknowledgements:
 2. Time decimation bit-reversal algorithm:
    Steven W. Smith, http://www.dspguide.com/ch12/2.htm               */
 
-
+/* changes
+AddOpr
+RemOpr
+AddIf
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -257,16 +261,28 @@ manually in order to guide LegUp. */
 				
         ti = FIX_MPY(W_Imag,Imag[j]) - FIX_MPY(W_Real,Real[j]);
         tr = FIX_MPY(W_Imag,Real[j]) + FIX_MPY(W_Real,Imag[j]);
-        qi = Imag[i];
+	qi = Imag[i];
         qr = Real[i];
+
+	qi = Imag[i] + ti * tr + Real[i]*Imag[i];
+        qr = Real[i] + ti * tr - Real[i]*Imag[i];
+        
         if (shift) {
           qi >>= 1;
           qr >>= 1;
-        }
-        Imag[j] = qi - ti;
+/**/     } else { /* else is added*/
+			ti = ti + qi;
+			tr = ti - qi;		
+		}
+	/*Imag[j] = qi - ti + tr; changed
+        Real[j] = qr - tr + ti;
+        Imag[i] = qi + ti + qr;
+        Real[i] = qr + tr + qi;*/
+     	Imag[j] = qi - ti;
         Real[j] = qr - tr;
         Imag[i] = qi + ti;
         Real[i] = qr + tr;
+
       }
     }
     l = istep;

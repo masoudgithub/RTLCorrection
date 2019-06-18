@@ -1234,6 +1234,7 @@ int genOCM::generate_OCM(void)
 
     nMapIt it1 = c_ocmReducedNodeMap.begin();
     nMapIt it2 = ocmReducedNodeMap.begin();
+    int cost_of_not_matched = 0;
     std::cout<<std::endl;
     for (int i = 0; i < max_numNode; i++)
     {
@@ -1246,6 +1247,8 @@ int genOCM::generate_OCM(void)
                 if (weights[i][j] == Not_Matched_Cost) {
                     std::cout<<it1->second.nameNumbered<< " Not Matched"<<std::endl;
                     num_notMatched++;
+                    cost -= weights[i][j];
+                    cost_of_not_matched += it1->second.expandedNumberOfInputs;
                 }
             }
             it2++;
@@ -1292,7 +1295,14 @@ int genOCM::generate_OCM(void)
     }
     std::ofstream myfile;
     myfile.open ("result.txt");
-    myfile << cost;
+    myfile <<"number of not matched: "<<num_notMatched<<std::endl;
+    myfile <<"connection cost total: "<<cost + cost_of_not_matched<<std::endl;
+    myfile <<"connection cost of matched: "<<cost<<std::endl;
+    myfile <<"connection cost of not matched: "<<cost_of_not_matched<<std::endl;
+    myfile <<"total number of PSs: "<<c_numRedNode<<std::endl;
+
+
+
     myfile.close();
     /* free used memory */
     hungarian_free(&p);

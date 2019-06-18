@@ -1,8 +1,8 @@
 # copy c file to legup direction and make the .v file
 thisFileLocation=/home/legup/RTLCorrection/Other/results/fft_res2/fft_orig
-InLegUpPass=/home/legup/legup4/examples/fft
-InLegUpPassCorrection=/home/legup/legup_correction/examples/fft
-InLegUpPassChange=/home/legup/legup_changed/examples/fft
+InLegUpPass=/home/legup/legup_original/examples/fft
+InLegUpPassCorrection=/home/legup/legup_corrected/examples/fft
+InLegUpPassChange=/home/legup/legup_resynthesis/examples/fft
 yosysPath=/home/legup/yosys-master
 mathingCalcPath=/home/legup/RTLCorrection/Matching/build-matching-Desktop-Debug
 Cfilename=fft.c
@@ -15,7 +15,8 @@ cp binding.legup.rpt $thisFileLocation
 mv $verilogFileName $yosysPath
 # editing .v file and runnig yosys synthesizer to creat main.dot files
 cd $yosysPath
-source run.sh $verilogFileName
+awk '{gsub(/\$finish;/,"/*$finish;*/")}1' fft.v > temp.v && mv temp.v $verilogFileName
+awk '{gsub(/\@\(negedge clk\);/,"/*@(negedge clk);*/")}1' fft.v > temp.v && mv temp.v $verilogFileName
 > syn.ys
 echo read_verilog $verilogFileName >> syn.ys
 echo write_ilang >> syn.ys

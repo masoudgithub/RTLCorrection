@@ -1,0 +1,5 @@
+number of not matched: 12
+connection cost total: 158
+connection cost of matched: 36
+connection cost of not matched: 122
+total number of PSs: 28
