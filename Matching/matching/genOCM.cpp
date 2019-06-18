@@ -1183,10 +1183,8 @@ int genOCM::generate_OCM(void)
     hungarian_problem_t p;
     Table weights(max_numNode, std::vector<int>(max_numNode));
     Table assignments(max_numNode, std::vector<int>(max_numNode));
-    for (int i = 0; i < max_numNode; i++)
-    {
-        for (int j = 0; j < max_numNode; j++)
-        {
+    for (int i = 0; i < max_numNode; i++){
+        for (int j = 0; j < max_numNode; j++){
             weights[i][j] = Not_Matched_Cost;
         }
     }
