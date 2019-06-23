@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Mon Apr  1 06:59:19 2019
+// Date: Sun Jun 23 12:26:45 2019
 //----------------------------------------------------------------------------//
 
 --------------------------------------------------------------------------------
@@ -14,9 +14,6 @@ Function unit type:           Number Required
 a_input_local_mem_dual_port   1                             
 b_input_local_mem_dual_port   1                             
 countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port1                             
-signed_add_32                 2                             
-signed_add_64                 2                             
-signed_multiply_64            4                             
 z_output_local_mem_dual_port  1                             
 
 Running Bipartite Weighted Matching on function: main
@@ -24,270 +21,61 @@ State: LEGUP_F_main_BB__1
 Binding functional unit type: a_input_local_mem_dual_port
 Weight matrix for operation/function unit matching:
                                                   main_a_input_local_mem_dual_port_0
-  %3 = load i64* %2, align 8, ... (idx: 0)        -5                            
+  %3 = load i64* %scevgep3, al... (idx: 0)        10                            
 Solving Bipartite Weighted Matching (minimize weights)...
 Assignment matrix after operation/function unit matching:
                                                   main_a_input_local_mem_dual_port_0
-  %3 = load i64* %2, align 8, ... (idx: 0)        1                             
+  %3 = load i64* %scevgep3, al... (idx: 0)        1                             
 Checking that every operator was assigned to a functional unit...yes
 Binding operator -> functional unit assignments:
-  %3 = load i64* %2, align 8, ... (idx: 0) -> main_a_input_local_mem_dual_port_0 (mux inputs: 1)
+  %3 = load i64* %scevgep3, al... (idx: 0) -> main_a_input_local_mem_dual_port_0 (mux inputs: 1)
 State: LEGUP_F_main_BB__1
 Binding functional unit type: b_input_local_mem_dual_port
 Weight matrix for operation/function unit matching:
                                                   main_b_input_local_mem_dual_port_0
-  %5 = load i64* %4, align 8, ... (idx: 0)        -5                            
+  %4 = load i64* %scevgep2, al... (idx: 0)        10                            
 Solving Bipartite Weighted Matching (minimize weights)...
 Assignment matrix after operation/function unit matching:
                                                   main_b_input_local_mem_dual_port_0
-  %5 = load i64* %4, align 8, ... (idx: 0)        1                             
+  %4 = load i64* %scevgep2, al... (idx: 0)        1                             
 Checking that every operator was assigned to a functional unit...yes
 Binding operator -> functional unit assignments:
-  %5 = load i64* %4, align 8, ... (idx: 0) -> main_b_input_local_mem_dual_port_0 (mux inputs: 1)
-State: LEGUP_F_main_BB__1
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep = add i32 %gep_int, %ge... (idx: 0)        -10                           -10                           
-  %gep3 = add i32 %gep_int1, %... (idx: 1)        -10                           -10                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep = add i32 %gep_int, %ge... (idx: 0)        1                             0                             
-  %gep3 = add i32 %gep_int1, %... (idx: 1)        0                             1                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %gep = add i32 %gep_int, %ge... (idx: 0) -> main_signed_add_32_0 (mux inputs: 2)
-  %gep3 = add i32 %gep_int1, %... (idx: 1) -> main_signed_add_32_1 (mux inputs: 2)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %95 = add nsw i32 %94, %shif... (idx: 0)        -20                           -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %95 = add nsw i32 %94, %shif... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %95 = add nsw i32 %94, %shif... (idx: 0) -> main_signed_add_32_0 (mux inputs: 4)
+  %4 = load i64* %scevgep2, al... (idx: 0) -> main_b_input_local_mem_dual_port_0 (mux inputs: 1)
 State: LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i
 Binding functional unit type: countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port
 Weight matrix for operation/function unit matching:
                                                   main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0
-  %93 = load i32* %92, align 4... (idx: 0)        -5                            
+  %85 = load i32* %84, align 4... (idx: 0)        10                            
 Solving Bipartite Weighted Matching (minimize weights)...
 Assignment matrix after operation/function unit matching:
                                                   main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0
-  %93 = load i32* %92, align 4... (idx: 0)        1                             
+  %85 = load i32* %84, align 4... (idx: 0)        1                             
 Checking that every operator was assigned to a functional unit...yes
 Binding operator -> functional unit assignments:
-  %93 = load i32* %92, align 4... (idx: 0) -> main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0 (mux inputs: 1)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep6 = add i32 %gep_int4, %... (idx: 0)        -40                           -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep6 = add i32 %gep_int4, %... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %gep6 = add i32 %gep_int4, %... (idx: 0) -> main_signed_add_32_0 (mux inputs: 6)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %96 = add i32 %95, %93 (idx: 0)                 -60                           -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %96 = add i32 %95, %93 (idx: 0)                 1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %96 = add i32 %95, %93 (idx: 0) -> main_signed_add_32_0 (mux inputs: 8)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexiti
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %119 = add nsw i32 %118, %sh... (idx: 0)        -80                           -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %119 = add nsw i32 %118, %sh... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %119 = add nsw i32 %118, %sh... (idx: 0) -> main_signed_add_32_0 (mux inputs: 10)
+  %85 = load i32* %84, align 4... (idx: 0) -> main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0 (mux inputs: 1)
 State: LEGUP_F_main_BB_normalizeFloat64Subnormalexiti
 Binding functional unit type: countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port
 Weight matrix for operation/function unit matching:
+  %107 = load i32* %106, align... can share an output register with another operation already assigned to main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0
                                                   main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0
-  %117 = load i32* %116, align... (idx: 0)        -5                            
+  %107 = load i32* %106, align... (idx: 0)        6                             
 Solving Bipartite Weighted Matching (minimize weights)...
 Assignment matrix after operation/function unit matching:
                                                   main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0
-  %117 = load i32* %116, align... (idx: 0)        1                             
+  %107 = load i32* %106, align... (idx: 0)        1                             
 Checking that every operator was assigned to a functional unit...yes
 Binding operator -> functional unit assignments:
-  %117 = load i32* %116, align... (idx: 0) -> main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0 (mux inputs: 2)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexiti
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep9 = add i32 %gep_int7, %... (idx: 0)        -100                          -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep9 = add i32 %gep_int7, %... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %gep9 = add i32 %gep_int7, %... (idx: 0) -> main_signed_add_32_0 (mux inputs: 12)
-State: LEGUP_F_main_BB_normalizeFloat64Subnormalexiti
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %120 = add i32 %119, %117 (idx: 0)              -120                          -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %120 = add i32 %119, %117 (idx: 0)              1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %120 = add i32 %119, %117 (idx: 0) -> main_signed_add_32_0 (mux inputs: 14)
-State: LEGUP_F_main_BB__123
-Binding functional unit type: signed_multiply_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %135 = mul i64 %134, %133 (idx: 0)              -10                           -10                           -10                           -10                           
-  %137 = mul i64 %129, %133 (idx: 1)              -10                           -10                           -10                           -10                           
-  %139 = mul i64 %134, %129 (idx: 2)              -10                           -10                           -10                           -10                           
-  %140 = mul i64 %132, %129 (idx: 3)              -10                           -10                           -10                           -10                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %135 = mul i64 %134, %133 (idx: 0)              1                             0                             0                             0                             
-  %137 = mul i64 %129, %133 (idx: 1)              0                             1                             0                             0                             
-  %139 = mul i64 %134, %129 (idx: 2)              0                             0                             1                             0                             
-  %140 = mul i64 %132, %129 (idx: 3)              0                             0                             0                             1                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %135 = mul i64 %134, %133 (idx: 0) -> main_signed_multiply_64_0 (mux inputs: 2)
-  %137 = mul i64 %129, %133 (idx: 1) -> main_signed_multiply_64_1 (mux inputs: 2)
-  %139 = mul i64 %134, %129 (idx: 2) -> main_signed_multiply_64_2 (mux inputs: 2)
-  %140 = mul i64 %132, %129 (idx: 3) -> main_signed_multiply_64_3 (mux inputs: 2)
-State: LEGUP_F_main_BB__123
-Binding functional unit type: signed_add_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %136 = add i64 %135, %133 (idx: 0)              -10                           -10                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %136 = add i64 %135, %133 (idx: 0)              1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %136 = add i64 %135, %133 (idx: 0) -> main_signed_add_64_0 (mux inputs: 2)
-State: LEGUP_F_main_BB__123
-Binding functional unit type: signed_multiply_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %138 = mul i64 %137, %132 (idx: 0)              -20                           -30                           -20                           -25                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %138 = mul i64 %137, %132 (idx: 0)              0                             1                             0                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %138 = mul i64 %137, %132 (idx: 0) -> main_signed_multiply_64_1 (mux inputs: 4)
-State: LEGUP_F_main_BB__123
-Binding functional unit type: signed_add_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %143 = add i64 %142, %140 (idx: 0)              -30                           -10                           
-  %145 = add i64 %136, %144 (idx: 1)              -30                           -10                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %143 = add i64 %142, %140 (idx: 0)              1                             0                             
-  %145 = add i64 %136, %144 (idx: 1)              0                             1                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %143 = add i64 %142, %140 (idx: 0) -> main_signed_add_64_0 (mux inputs: 4)
-  %145 = add i64 %136, %144 (idx: 1) -> main_signed_add_64_1 (mux inputs: 2)
-State: LEGUP_F_main_BB__147
-Binding functional unit type: signed_multiply_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %148 = mul i64 %145, %144 (idx: 0)              -20                           -40                           -20                           -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_multiply_64_0     main_signed_multiply_64_1     main_signed_multiply_64_2     main_signed_multiply_64_3     
-  %148 = mul i64 %145, %144 (idx: 0)              0                             1                             0                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %148 = mul i64 %145, %144 (idx: 0) -> main_signed_multiply_64_1 (mux inputs: 6)
-State: LEGUP_F_main_BB_mul64To128exiti
-Binding functional unit type: signed_add_64
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %151 = add i64 %143, %150 (idx: 0)              -40                           -30                           
-  %160 = add i64 512, %..i (idx: 1)               -35                           -25                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_64_0          main_signed_add_64_1          
-  %151 = add i64 %143, %150 (idx: 0)              1                             0                             
-  %160 = add i64 512, %..i (idx: 1)               0                             1                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %151 = add i64 %143, %150 (idx: 0) -> main_signed_add_64_0 (mux inputs: 6)
-  %160 = add i64 512, %..i (idx: 1) -> main_signed_add_64_1 (mux inputs: 3)
-State: LEGUP_F_main_BB_float64_mulexit
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %175 = add nsw i32 %i.01, 1 (idx: 0)            -135                          -15                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %175 = add nsw i32 %i.01, 1 (idx: 0)            1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %175 = add nsw i32 %i.01, 1 (idx: 0) -> main_signed_add_32_0 (mux inputs: 15)
-State: LEGUP_F_main_BB_float64_mulexit
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep12 = add i32 %gep_int10,... (idx: 0)        -150                          -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %gep12 = add i32 %gep_int10,... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %gep12 = add i32 %gep_int10,... (idx: 0) -> main_signed_add_32_0 (mux inputs: 17)
+  %107 = load i32* %106, align... (idx: 0) -> main_countLeadingZeros32countLeadingZerosHigh_local_mem_dual_port_0 (mux inputs: 2)
 State: LEGUP_F_main_BB_float64_mulexit
 Binding functional unit type: z_output_local_mem_dual_port
 Weight matrix for operation/function unit matching:
                                                   main_z_output_local_mem_dual_port_0
-  %170 = load i64* %169, align... (idx: 0)        -5                            
+  %151 = load i64* %scevgep, a... (idx: 0)        10                            
 Solving Bipartite Weighted Matching (minimize weights)...
 Assignment matrix after operation/function unit matching:
                                                   main_z_output_local_mem_dual_port_0
-  %170 = load i64* %169, align... (idx: 0)        1                             
+  %151 = load i64* %scevgep, a... (idx: 0)        1                             
 Checking that every operator was assigned to a functional unit...yes
 Binding operator -> functional unit assignments:
-  %170 = load i64* %169, align... (idx: 0) -> main_z_output_local_mem_dual_port_0 (mux inputs: 1)
-State: LEGUP_F_main_BB_float64_mulexit
-Binding functional unit type: signed_add_32
-Weight matrix for operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %173 = add nsw i32 %172, %ma... (idx: 0)        -170                          -20                           
-Solving Bipartite Weighted Matching (minimize weights)...
-Assignment matrix after operation/function unit matching:
-                                                  main_signed_add_32_0          main_signed_add_32_1          
-  %173 = add nsw i32 %172, %ma... (idx: 0)        1                             0                             
-Checking that every operator was assigned to a functional unit...yes
-Binding operator -> functional unit assignments:
-  %173 = add nsw i32 %172, %ma... (idx: 0) -> main_signed_add_32_0 (mux inputs: 19)
+  %151 = load i64* %scevgep, a... (idx: 0) -> main_z_output_local_mem_dual_port_0 (mux inputs: 1)
 

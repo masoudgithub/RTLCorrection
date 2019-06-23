@@ -4,7 +4,7 @@
 // University of Toronto
 // For research and academic purposes only. Commercial use is prohibited.
 // Please send bugs to: legup@eecg.toronto.edu
-// Date: Mon Apr  1 06:59:19 2019
+// Date: Sun Jun 23 12:26:45 2019
 //----------------------------------------------------------------------------//
 
 `define MEMORY_CONTROLLER_ADDR_SIZE 32
@@ -64,60 +64,49 @@ module main
 parameter [5:0] LEGUP_0 = 6'd0;
 parameter [5:0] LEGUP_F_main_BB__1_1 = 6'd1;
 parameter [5:0] LEGUP_F_main_BB__1_2 = 6'd2;
-parameter [5:0] LEGUP_F_main_BB__1_3 = 6'd3;
-parameter [5:0] LEGUP_F_main_BB__15_4 = 6'd4;
-parameter [5:0] LEGUP_F_main_BB__17_5 = 6'd5;
-parameter [5:0] LEGUP_F_main_BB__20_6 = 6'd6;
-parameter [5:0] LEGUP_F_main_BB__23_7 = 6'd7;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8 = 6'd8;
-parameter [5:0] LEGUP_F_main_BB__31_9 = 6'd9;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10 = 6'd10;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11 = 6'd11;
-parameter [5:0] LEGUP_F_main_BB__37_12 = 6'd12;
-parameter [5:0] LEGUP_F_main_BB__41_13 = 6'd13;
-parameter [5:0] LEGUP_F_main_BB__43_14 = 6'd14;
-parameter [5:0] LEGUP_F_main_BB__46_15 = 6'd15;
-parameter [5:0] LEGUP_F_main_BB__48_16 = 6'd16;
-parameter [5:0] LEGUP_F_main_BB__50_17 = 6'd17;
-parameter [5:0] LEGUP_F_main_BB__53_18 = 6'd18;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19 = 6'd19;
-parameter [5:0] LEGUP_F_main_BB__61_20 = 6'd20;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexitii_21 = 6'd21;
-parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexitii_22 = 6'd22;
-parameter [5:0] LEGUP_F_main_BB__67_23 = 6'd23;
-parameter [5:0] LEGUP_F_main_BB__71_24 = 6'd24;
-parameter [5:0] LEGUP_F_main_BB__73_25 = 6'd25;
-parameter [5:0] LEGUP_F_main_BB__76_26 = 6'd26;
-parameter [5:0] LEGUP_F_main_BB__78_27 = 6'd27;
-parameter [5:0] LEGUP_F_main_BB__80_28 = 6'd28;
-parameter [5:0] LEGUP_F_main_BB__82_29 = 6'd29;
-parameter [5:0] LEGUP_F_main_BB__88_30 = 6'd30;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31 = 6'd31;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32 = 6'd32;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33 = 6'd33;
-parameter [5:0] LEGUP_F_main_BB__99_34 = 6'd34;
-parameter [5:0] LEGUP_F_main_BB__102_35 = 6'd35;
-parameter [5:0] LEGUP_F_main_BB__104_36 = 6'd36;
-parameter [5:0] LEGUP_F_main_BB__106_37 = 6'd37;
-parameter [5:0] LEGUP_F_main_BB__112_38 = 6'd38;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39 = 6'd39;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40 = 6'd40;
-parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41 = 6'd41;
-parameter [5:0] LEGUP_F_main_BB__123_42 = 6'd42;
-parameter [5:0] LEGUP_F_main_BB__123_43 = 6'd43;
-parameter [5:0] LEGUP_F_main_BB__123_44 = 6'd44;
-parameter [5:0] LEGUP_F_main_BB__123_45 = 6'd45;
-parameter [5:0] LEGUP_F_main_BB__147_46 = 6'd46;
-parameter [5:0] LEGUP_F_main_BB__147_47 = 6'd47;
-parameter [5:0] LEGUP_F_main_BB_mul64To128exiti_48 = 6'd48;
-parameter [5:0] LEGUP_F_main_BB_mul64To128exiti_49 = 6'd49;
-parameter [5:0] LEGUP_F_main_BB_float64_mulexit_50 = 6'd50;
-parameter [5:0] LEGUP_F_main_BB_float64_mulexit_51 = 6'd51;
-parameter [5:0] LEGUP_F_main_BB_float64_mulexit_52 = 6'd52;
-parameter [5:0] LEGUP_F_main_BB__176_53 = 6'd53;
-parameter [5:0] LEGUP_F_main_BB__179_54 = 6'd54;
-parameter [5:0] LEGUP_F_main_BB__181_55 = 6'd55;
-parameter [5:0] LEGUP_F_main_BB__183_56 = 6'd56;
+parameter [5:0] LEGUP_F_main_BB__14_3 = 6'd3;
+parameter [5:0] LEGUP_F_main_BB__16_4 = 6'd4;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5 = 6'd5;
+parameter [5:0] LEGUP_F_main_BB__27_6 = 6'd6;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7 = 6'd7;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8 = 6'd8;
+parameter [5:0] LEGUP_F_main_BB__33_9 = 6'd9;
+parameter [5:0] LEGUP_F_main_BB__37_10 = 6'd10;
+parameter [5:0] LEGUP_F_main_BB__39_11 = 6'd11;
+parameter [5:0] LEGUP_F_main_BB__42_12 = 6'd12;
+parameter [5:0] LEGUP_F_main_BB__44_13 = 6'd13;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14 = 6'd14;
+parameter [5:0] LEGUP_F_main_BB__53_15 = 6'd15;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexitii_16 = 6'd16;
+parameter [5:0] LEGUP_F_main_BB_float64_is_signaling_nanexitii_17 = 6'd17;
+parameter [5:0] LEGUP_F_main_BB__59_18 = 6'd18;
+parameter [5:0] LEGUP_F_main_BB__63_19 = 6'd19;
+parameter [5:0] LEGUP_F_main_BB__65_20 = 6'd20;
+parameter [5:0] LEGUP_F_main_BB__68_21 = 6'd21;
+parameter [5:0] LEGUP_F_main_BB__70_22 = 6'd22;
+parameter [5:0] LEGUP_F_main_BB__72_23 = 6'd23;
+parameter [5:0] LEGUP_F_main_BB__74_24 = 6'd24;
+parameter [5:0] LEGUP_F_main_BB__80_25 = 6'd25;
+parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26 = 6'd26;
+parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27 = 6'd27;
+parameter [5:0] LEGUP_F_main_BB__90_28 = 6'd28;
+parameter [5:0] LEGUP_F_main_BB__93_29 = 6'd29;
+parameter [5:0] LEGUP_F_main_BB__94_30 = 6'd30;
+parameter [5:0] LEGUP_F_main_BB__96_31 = 6'd31;
+parameter [5:0] LEGUP_F_main_BB__102_32 = 6'd32;
+parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33 = 6'd33;
+parameter [5:0] LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34 = 6'd34;
+parameter [5:0] LEGUP_F_main_BB_roundAndPackFloat64exiti_35 = 6'd35;
+parameter [5:0] LEGUP_F_main_BB_roundAndPackFloat64exiti_36 = 6'd36;
+parameter [5:0] LEGUP_F_main_BB_roundAndPackFloat64exiti_37 = 6'd37;
+parameter [5:0] LEGUP_F_main_BB_roundAndPackFloat64exiti_38 = 6'd38;
+parameter [5:0] LEGUP_F_main_BB_roundAndPackFloat64exiti_39 = 6'd39;
+parameter [5:0] LEGUP_F_main_BB_float64_mulexit_40 = 6'd40;
+parameter [5:0] LEGUP_F_main_BB_float64_mulexit_41 = 6'd41;
+parameter [5:0] LEGUP_F_main_BB__157_42 = 6'd42;
+parameter [5:0] LEGUP_F_main_BB__160_43 = 6'd43;
+parameter [5:0] LEGUP_F_main_BB__162_44 = 6'd44;
+parameter [5:0] LEGUP_F_main_BB__164_45 = 6'd45;
 parameter [8:0] tag_offset = 9'd0;
 parameter [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] tag_addr_offset = {tag_offset, 23'd0};
 
@@ -135,86 +124,78 @@ reg [31:0] main_1_float_exception_flags0;
 reg [31:0] main_1_float_exception_flags0_reg;
 reg [31:0] main_1_main_result02;
 reg [31:0] main_1_main_result02_reg;
-reg [31:0] main_1_i01;
-reg [31:0] main_1_i01_reg;
-reg [31:0] main_1_gep_int;
-reg [31:0] main_1_gep_int_reg;
-reg [31:0] main_1_gep_array;
-reg [31:0] main_1_gep_array_reg;
-reg [31:0] main_1_gep;
-reg [31:0] main_1_gep_reg;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_2;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_2_reg;
+reg [31:0] main_1_2;
+reg [31:0] main_1_2_reg;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep_reg;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep2;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep2_reg;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep3;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_scevgep3_reg;
 reg [63:0] main_1_3;
 reg [63:0] main_1_3_reg;
-reg [31:0] main_1_gep_int1;
-reg [31:0] main_1_gep_int1_reg;
-reg [31:0] main_1_gep_array2;
-reg [31:0] main_1_gep_array2_reg;
-reg [31:0] main_1_gep3;
-reg [31:0] main_1_gep3_reg;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_4;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_1_4_reg;
+reg [63:0] main_1_4;
+reg [63:0] main_1_4_reg;
 reg [63:0] main_1_5;
 reg [63:0] main_1_5_reg;
 reg [63:0] main_1_6;
 reg [63:0] main_1_6_reg;
-reg [63:0] main_1_7;
-reg [63:0] main_1_7_reg;
 reg [31:0] main_1_tri18i;
 reg [31:0] main_1_tri18i_reg;
-reg [31:0] main_1_8;
-reg [31:0] main_1_8_reg;
+reg [31:0] main_1_7;
+reg [31:0] main_1_7_reg;
+reg [63:0] main_1_8;
+reg [63:0] main_1_8_reg;
 reg [63:0] main_1_9;
 reg [63:0] main_1_9_reg;
-reg [63:0] main_1_10;
-reg [63:0] main_1_10_reg;
 reg [31:0] main_1_tri17i;
 reg [31:0] main_1_tri17i_reg;
-reg [31:0] main_1_11;
-reg [31:0] main_1_11_reg;
+reg [31:0] main_1_10;
+reg [31:0] main_1_10_reg;
+reg [63:0] main_1_11;
+reg [63:0] main_1_11_reg;
 reg [63:0] main_1_12;
 reg [63:0] main_1_12_reg;
-reg [63:0] main_1_13;
-reg [63:0] main_1_13_reg;
-reg  main_1_14;
-reg  main_1_14_reg;
-reg  main_15_16;
-reg  main_15_16_reg;
-reg  main_17_18;
-reg  main_17_18_reg;
-reg  main_17_19;
-reg  main_17_19_reg;
-reg  main_17_orcondi;
-reg  main_17_orcondi_reg;
-reg [63:0] main_20_21;
-reg [63:0] main_20_21_reg;
-reg  main_20_22;
-reg  main_20_22_reg;
-reg [63:0] main_23_24;
-reg [63:0] main_23_24_reg;
-reg  main_23_25;
-reg  main_23_25_reg;
+reg  main_1_13;
+reg  main_1_13_reg;
+reg  main_14_15;
+reg  main_14_15_reg;
+reg  main_16_17;
+reg  main_16_17_reg;
+reg [31:0] main_16_18;
+reg [31:0] main_16_18_reg;
+reg  main_16_19;
+reg  main_16_19_reg;
+reg  main_16_orcondi;
+reg  main_16_orcondi_reg;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_20;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_20_reg;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_21;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_21_reg;
+reg  main_float64_is_signaling_nanexit1i10i_not4;
+reg  main_float64_is_signaling_nanexit1i10i_not4_reg;
+reg  main_float64_is_signaling_nanexit1i10i_1;
+reg  main_float64_is_signaling_nanexit1i10i_1_reg;
+reg [62:0] main_float64_is_signaling_nanexit1i10i_22;
+reg [62:0] main_float64_is_signaling_nanexit1i10i_22_reg;
+reg  main_float64_is_signaling_nanexit1i10i_23;
+reg  main_float64_is_signaling_nanexit1i10i_23_reg;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_24;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_24_reg;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_25;
+reg [31:0] main_float64_is_signaling_nanexit1i10i_25_reg;
 reg  main_float64_is_signaling_nanexit1i10i_26;
 reg  main_float64_is_signaling_nanexit1i10i_26_reg;
-reg [62:0] main_float64_is_signaling_nanexit1i10i_27;
-reg [62:0] main_float64_is_signaling_nanexit1i10i_27_reg;
-reg  main_float64_is_signaling_nanexit1i10i_28;
-reg  main_float64_is_signaling_nanexit1i10i_28_reg;
-reg [63:0] main_float64_is_signaling_nanexit1i10i_29;
-reg [63:0] main_float64_is_signaling_nanexit1i10i_29_reg;
-reg  main_float64_is_signaling_nanexit1i10i_30;
-reg  main_float64_is_signaling_nanexit1i10i_30_reg;
-reg [63:0] main_31_32;
-reg [63:0] main_31_32_reg;
-reg  main_31_33;
-reg  main_31_33_reg;
-reg  main_float64_is_signaling_nanexiti11i_34;
-reg  main_float64_is_signaling_nanexiti11i_34_reg;
-reg  main_float64_is_signaling_nanexiti11i_35;
-reg  main_float64_is_signaling_nanexiti11i_35_reg;
-reg [31:0] main_float64_is_signaling_nanexiti11i_36;
-reg [31:0] main_float64_is_signaling_nanexiti11i_36_reg;
+reg [31:0] main_27_28;
+reg [31:0] main_27_28_reg;
+reg  main_27_29;
+reg  main_27_29_reg;
+reg  main_float64_is_signaling_nanexiti11i_30;
+reg  main_float64_is_signaling_nanexiti11i_30_reg;
+reg  main_float64_is_signaling_nanexiti11i_31;
+reg  main_float64_is_signaling_nanexiti11i_31_reg;
+reg [31:0] main_float64_is_signaling_nanexiti11i_32;
+reg [31:0] main_float64_is_signaling_nanexiti11i_32_reg;
 reg [31:0] main_float64_is_signaling_nanexiti11i_float_exception_flags0;
 reg [31:0] main_float64_is_signaling_nanexiti11i_float_exception_flags0_reg;
 reg  main_float64_is_signaling_nanexiti11i_;
@@ -223,50 +204,50 @@ reg [63:0] main_float64_is_signaling_nanexiti11i_mux2vi14i;
 reg [63:0] main_float64_is_signaling_nanexiti11i_mux2vi14i_reg;
 reg [63:0] main_float64_is_signaling_nanexiti11i_mux2i15i;
 reg [63:0] main_float64_is_signaling_nanexiti11i_mux2i15i_reg;
-reg [63:0] main_37_38;
-reg [63:0] main_37_38_reg;
-reg [63:0] main_37_39;
-reg [63:0] main_37_39_reg;
-reg  main_37_40;
-reg  main_37_40_reg;
-reg [31:0] main_41_42;
-reg [31:0] main_41_42_reg;
-reg [63:0] main_43_44;
-reg [63:0] main_43_44_reg;
-reg [63:0] main_43_45;
-reg [63:0] main_43_45_reg;
-reg  main_46_47;
-reg  main_46_47_reg;
-reg  main_48_49;
-reg  main_48_49_reg;
-reg [63:0] main_50_51;
-reg [63:0] main_50_51_reg;
-reg  main_50_52;
-reg  main_50_52_reg;
-reg [63:0] main_53_54;
-reg [63:0] main_53_54_reg;
+reg [63:0] main_33_34;
+reg [63:0] main_33_34_reg;
+reg [63:0] main_33_35;
+reg [63:0] main_33_35_reg;
+reg  main_33_36;
+reg  main_33_36_reg;
+reg [31:0] main_37_38;
+reg [31:0] main_37_38_reg;
+reg [63:0] main_39_40;
+reg [63:0] main_39_40_reg;
+reg [63:0] main_39_41;
+reg [63:0] main_39_41_reg;
+reg  main_42_43;
+reg  main_42_43_reg;
+reg [31:0] main_float64_is_signaling_nanexit1ii_45;
+reg [31:0] main_float64_is_signaling_nanexit1ii_45_reg;
+reg [31:0] main_float64_is_signaling_nanexit1ii_46;
+reg [31:0] main_float64_is_signaling_nanexit1ii_46_reg;
+reg  main_float64_is_signaling_nanexit1ii_47;
+reg  main_float64_is_signaling_nanexit1ii_47_reg;
+reg  main_float64_is_signaling_nanexit1ii_not3;
+reg  main_float64_is_signaling_nanexit1ii_not3_reg;
+reg  main_float64_is_signaling_nanexit1ii_2;
+reg  main_float64_is_signaling_nanexit1ii_2_reg;
+reg [62:0] main_float64_is_signaling_nanexit1ii_48;
+reg [62:0] main_float64_is_signaling_nanexit1ii_48_reg;
+reg  main_float64_is_signaling_nanexit1ii_49;
+reg  main_float64_is_signaling_nanexit1ii_49_reg;
+reg [31:0] main_float64_is_signaling_nanexit1ii_50;
+reg [31:0] main_float64_is_signaling_nanexit1ii_50_reg;
+reg [31:0] main_float64_is_signaling_nanexit1ii_51;
+reg [31:0] main_float64_is_signaling_nanexit1ii_51_reg;
+reg  main_float64_is_signaling_nanexit1ii_52;
+reg  main_float64_is_signaling_nanexit1ii_52_reg;
+reg [31:0] main_53_54;
+reg [31:0] main_53_54_reg;
 reg  main_53_55;
 reg  main_53_55_reg;
-reg  main_float64_is_signaling_nanexit1ii_56;
-reg  main_float64_is_signaling_nanexit1ii_56_reg;
-reg [62:0] main_float64_is_signaling_nanexit1ii_57;
-reg [62:0] main_float64_is_signaling_nanexit1ii_57_reg;
-reg  main_float64_is_signaling_nanexit1ii_58;
-reg  main_float64_is_signaling_nanexit1ii_58_reg;
-reg [63:0] main_float64_is_signaling_nanexit1ii_59;
-reg [63:0] main_float64_is_signaling_nanexit1ii_59_reg;
-reg  main_float64_is_signaling_nanexit1ii_60;
-reg  main_float64_is_signaling_nanexit1ii_60_reg;
-reg [63:0] main_61_62;
-reg [63:0] main_61_62_reg;
-reg  main_61_63;
-reg  main_61_63_reg;
-reg  main_float64_is_signaling_nanexitii_64;
-reg  main_float64_is_signaling_nanexitii_64_reg;
-reg  main_float64_is_signaling_nanexitii_65;
-reg  main_float64_is_signaling_nanexitii_65_reg;
-reg [31:0] main_float64_is_signaling_nanexitii_66;
-reg [31:0] main_float64_is_signaling_nanexitii_66_reg;
+reg  main_float64_is_signaling_nanexitii_56;
+reg  main_float64_is_signaling_nanexitii_56_reg;
+reg  main_float64_is_signaling_nanexitii_57;
+reg  main_float64_is_signaling_nanexitii_57_reg;
+reg [31:0] main_float64_is_signaling_nanexitii_58;
+reg [31:0] main_float64_is_signaling_nanexitii_58_reg;
 reg [31:0] main_float64_is_signaling_nanexitii_float_exception_flags05;
 reg [31:0] main_float64_is_signaling_nanexitii_float_exception_flags05_reg;
 reg  main_float64_is_signaling_nanexitii_6;
@@ -275,264 +256,230 @@ reg [63:0] main_float64_is_signaling_nanexitii_mux2vii;
 reg [63:0] main_float64_is_signaling_nanexitii_mux2vii_reg;
 reg [63:0] main_float64_is_signaling_nanexitii_mux2ii;
 reg [63:0] main_float64_is_signaling_nanexitii_mux2ii_reg;
-reg [63:0] main_67_68;
-reg [63:0] main_67_68_reg;
-reg [63:0] main_67_69;
-reg [63:0] main_67_69_reg;
-reg  main_67_70;
-reg  main_67_70_reg;
-reg [31:0] main_71_72;
-reg [31:0] main_71_72_reg;
-reg [63:0] main_73_74;
-reg [63:0] main_73_74_reg;
-reg [63:0] main_73_75;
-reg [63:0] main_73_75_reg;
-reg  main_76_77;
-reg  main_76_77_reg;
-reg  main_78_79;
-reg  main_78_79_reg;
-reg [63:0] main_80_81;
-reg [63:0] main_80_81_reg;
-reg  main_82_83;
-reg  main_82_83_reg;
-reg [63:0] main_82_84;
-reg [63:0] main_82_84_reg;
-reg [63:0] main_82_asinkii2i;
-reg [63:0] main_82_asinkii2i_reg;
-reg [31:0] main_82_extracttii4i;
-reg [31:0] main_82_extracttii4i_reg;
-reg  main_82_85;
-reg  main_82_85_reg;
-reg [31:0] main_82_86;
-reg [31:0] main_82_86_reg;
-reg [31:0] main_82_aiii5i;
-reg [31:0] main_82_aiii5i_reg;
-reg [31:0] main_82_iii6i;
-reg [31:0] main_82_iii6i_reg;
-reg  main_82_87;
-reg  main_82_87_reg;
-reg [31:0] main_88_89;
-reg [31:0] main_88_89_reg;
-reg [31:0] main_88_90;
-reg [31:0] main_88_90_reg;
+reg [63:0] main_59_60;
+reg [63:0] main_59_60_reg;
+reg [63:0] main_59_61;
+reg [63:0] main_59_61_reg;
+reg  main_59_62;
+reg  main_59_62_reg;
+reg [31:0] main_63_64;
+reg [31:0] main_63_64_reg;
+reg [63:0] main_65_66;
+reg [63:0] main_65_66_reg;
+reg [63:0] main_65_67;
+reg [63:0] main_65_67_reg;
+reg  main_68_69;
+reg  main_68_69_reg;
+reg  main_70_71;
+reg  main_70_71_reg;
+reg [63:0] main_72_73;
+reg [63:0] main_72_73_reg;
+reg [63:0] main_74_75;
+reg [63:0] main_74_75_reg;
+reg [31:0] main_74_extracttii4i;
+reg [31:0] main_74_extracttii4i_reg;
+reg  main_74_76;
+reg  main_74_76_reg;
+reg [63:0] main_74_77;
+reg [63:0] main_74_77_reg;
+reg [31:0] main_74_78;
+reg [31:0] main_74_78_reg;
+reg [31:0] main_74_aiii5i;
+reg [31:0] main_74_aiii5i_reg;
+reg [31:0] main_74_iii6i;
+reg [31:0] main_74_iii6i_reg;
+reg  main_74_79;
+reg  main_74_79_reg;
+reg [31:0] main_80_81;
+reg [31:0] main_80_81_reg;
+reg [31:0] main_80_82;
+reg [31:0] main_80_82_reg;
 reg [31:0] main_normalizeFloat64Subnormalexit9i_1iii7i;
 reg [31:0] main_normalizeFloat64Subnormalexit9i_1iii7i_reg;
 reg [31:0] main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i;
 reg [31:0] main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_91;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_91_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep_int4;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep_int4_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep_array5;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep_array5_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep6;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_gep6_reg;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexit9i_92;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexit9i_92_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_93;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_93_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_94;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_94_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_95;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_95_reg;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_96;
-reg [31:0] main_normalizeFloat64Subnormalexit9i_96_reg;
-reg [63:0] main_normalizeFloat64Subnormalexit9i_97;
-reg [63:0] main_normalizeFloat64Subnormalexit9i_97_reg;
-reg [63:0] main_normalizeFloat64Subnormalexit9i_98;
-reg [63:0] main_normalizeFloat64Subnormalexit9i_98_reg;
-reg [63:0] main_99_100;
-reg [63:0] main_99_100_reg;
-reg  main_99_101;
-reg  main_99_101_reg;
-reg  main_102_103;
-reg  main_102_103_reg;
-reg [63:0] main_104_105;
-reg [63:0] main_104_105_reg;
-reg  main_106_107;
-reg  main_106_107_reg;
-reg [63:0] main_106_108;
-reg [63:0] main_106_108_reg;
-reg [63:0] main_106_asinkiii;
-reg [63:0] main_106_asinkiii_reg;
-reg [31:0] main_106_extracttiii;
-reg [31:0] main_106_extracttiii_reg;
-reg  main_106_109;
-reg  main_106_109_reg;
-reg [31:0] main_106_110;
-reg [31:0] main_106_110_reg;
-reg [31:0] main_106_aiiii;
-reg [31:0] main_106_aiiii_reg;
-reg [31:0] main_106_iiii;
-reg [31:0] main_106_iiii_reg;
-reg  main_106_111;
-reg  main_106_111_reg;
-reg [31:0] main_112_113;
-reg [31:0] main_112_113_reg;
-reg [31:0] main_112_114;
-reg [31:0] main_112_114_reg;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_83;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_83_reg;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexit9i_84;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexit9i_84_reg;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_85;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_85_reg;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_86;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_86_reg;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_87;
+reg [31:0] main_normalizeFloat64Subnormalexit9i_87_reg;
+reg [63:0] main_normalizeFloat64Subnormalexit9i_88;
+reg [63:0] main_normalizeFloat64Subnormalexit9i_88_reg;
+reg [63:0] main_normalizeFloat64Subnormalexit9i_89;
+reg [63:0] main_normalizeFloat64Subnormalexit9i_89_reg;
+reg [63:0] main_90_91;
+reg [63:0] main_90_91_reg;
+reg  main_90_92;
+reg  main_90_92_reg;
+reg [63:0] main_94_95;
+reg [63:0] main_94_95_reg;
+reg [63:0] main_96_97;
+reg [63:0] main_96_97_reg;
+reg [31:0] main_96_extracttiii;
+reg [31:0] main_96_extracttiii_reg;
+reg  main_96_98;
+reg  main_96_98_reg;
+reg [63:0] main_96_99;
+reg [63:0] main_96_99_reg;
+reg [31:0] main_96_100;
+reg [31:0] main_96_100_reg;
+reg [31:0] main_96_aiiii;
+reg [31:0] main_96_aiiii_reg;
+reg [31:0] main_96_iiii;
+reg [31:0] main_96_iiii_reg;
+reg  main_96_101;
+reg  main_96_101_reg;
+reg [31:0] main_102_103;
+reg [31:0] main_102_103_reg;
+reg [31:0] main_102_104;
+reg [31:0] main_102_104_reg;
 reg [31:0] main_normalizeFloat64Subnormalexiti_1iiii;
 reg [31:0] main_normalizeFloat64Subnormalexiti_1iiii_reg;
 reg [31:0] main_normalizeFloat64Subnormalexiti_shiftCount1iiii;
 reg [31:0] main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_115;
-reg [31:0] main_normalizeFloat64Subnormalexiti_115_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep_int7;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep_int7_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep_array8;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep_array8_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep9;
-reg [31:0] main_normalizeFloat64Subnormalexiti_gep9_reg;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexiti_116;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexiti_116_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_117;
-reg [31:0] main_normalizeFloat64Subnormalexiti_117_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_118;
-reg [31:0] main_normalizeFloat64Subnormalexiti_118_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_119;
-reg [31:0] main_normalizeFloat64Subnormalexiti_119_reg;
-reg [31:0] main_normalizeFloat64Subnormalexiti_120;
-reg [31:0] main_normalizeFloat64Subnormalexiti_120_reg;
-reg [63:0] main_normalizeFloat64Subnormalexiti_121;
-reg [63:0] main_normalizeFloat64Subnormalexiti_121_reg;
-reg [63:0] main_normalizeFloat64Subnormalexiti_122;
-reg [63:0] main_normalizeFloat64Subnormalexiti_122_reg;
-reg [63:0] main_123_124;
-reg [63:0] main_123_124_reg;
-reg [63:0] main_123_125;
-reg [63:0] main_123_125_reg;
-reg [63:0] main_123_126;
-reg [63:0] main_123_126_reg;
-reg [63:0] main_123_127;
-reg [63:0] main_123_127_reg;
-reg [63:0] main_123_128;
-reg [63:0] main_123_128_reg;
-reg [63:0] main_123_129;
-reg [63:0] main_123_129_reg;
-reg [63:0] main_123_130;
-reg [63:0] main_123_130_reg;
-reg [63:0] main_123_131;
-reg [63:0] main_123_131_reg;
-reg [63:0] main_123_132;
-reg [63:0] main_123_132_reg;
-reg [63:0] main_123_133;
-reg [63:0] main_123_133_reg;
-reg [63:0] main_123_134;
-reg [63:0] main_123_134_reg;
-reg [63:0] main_123_135;
-reg [63:0] main_123_135_reg;
-reg [63:0] main_123_136;
-reg [63:0] main_123_136_reg;
-reg [63:0] main_123_137;
-reg [63:0] main_123_137_reg;
-reg [63:0] main_123_138;
-reg [63:0] main_123_138_reg;
-reg [63:0] main_123_139;
-reg [63:0] main_123_139_reg;
-reg [63:0] main_123_140;
-reg [63:0] main_123_140_reg;
-reg [64:0] main_123_overflow_intrinsic;
-reg [64:0] main_123_overflow_intrinsic_reg;
-reg [64:0] main_123_overflow_intrinsic1;
-reg [64:0] main_123_overflow_intrinsic1_reg;
-reg [64:0] main_123_overflow_intrinsic2;
-reg [64:0] main_123_overflow_intrinsic2_reg;
-reg [63:0] main_123_overflow_intrinsic_sum;
-reg [63:0] main_123_overflow_intrinsic_sum_reg;
-reg [64:0] main_123_overflow_intrinsic3;
-reg [64:0] main_123_overflow_intrinsic3_reg;
-reg  main_123_overflow_intrinsic_carry;
-reg  main_123_overflow_intrinsic_carry_reg;
-reg [63:0] main_123_141;
-reg [63:0] main_123_141_reg;
-reg [63:0] main_123_142;
-reg [63:0] main_123_142_reg;
-reg [63:0] main_123_143;
-reg [63:0] main_123_143_reg;
-reg [63:0] main_123_144;
-reg [63:0] main_123_144_reg;
-reg [63:0] main_123_145;
-reg [63:0] main_123_145_reg;
-reg  main_123_146;
-reg  main_123_146_reg;
-reg [63:0] main_147_148;
-reg [63:0] main_147_148_reg;
-reg [63:0] main_mul64To128exiti_z10ii;
-reg [63:0] main_mul64To128exiti_z10ii_reg;
-reg  main_mul64To128exiti_149;
-reg  main_mul64To128exiti_149_reg;
-reg [63:0] main_mul64To128exiti_150;
-reg [63:0] main_mul64To128exiti_150_reg;
-reg [63:0] main_mul64To128exiti_151;
-reg [63:0] main_mul64To128exiti_151_reg;
-reg  main_mul64To128exiti_152;
-reg  main_mul64To128exiti_152_reg;
-reg [63:0] main_mul64To128exiti_153;
-reg [63:0] main_mul64To128exiti_153_reg;
-reg [63:0] main_mul64To128exiti_154;
-reg [63:0] main_mul64To128exiti_154_reg;
-reg [63:0] main_mul64To128exiti_155;
-reg [63:0] main_mul64To128exiti_155_reg;
-reg  main_mul64To128exiti_156;
-reg  main_mul64To128exiti_156_reg;
-reg [63:0] main_mul64To128exiti_i;
-reg [63:0] main_mul64To128exiti_i_reg;
-reg [31:0] main_mul64To128exiti_trii;
-reg [31:0] main_mul64To128exiti_trii_reg;
-reg [31:0] main_mul64To128exiti_157;
-reg [31:0] main_mul64To128exiti_157_reg;
-reg  main_mul64To128exiti_158;
-reg  main_mul64To128exiti_158_reg;
-reg [31:0] main_mul64To128exiti_159;
-reg [31:0] main_mul64To128exiti_159_reg;
-reg [31:0] main_mul64To128exiti_float_exception_flags0;
-reg [31:0] main_mul64To128exiti_float_exception_flags0_reg;
-reg [63:0] main_mul64To128exiti_160;
-reg [63:0] main_mul64To128exiti_160_reg;
-reg [63:0] main_mul64To128exiti_161;
-reg [63:0] main_mul64To128exiti_161_reg;
-reg  main_mul64To128exiti_162;
-reg  main_mul64To128exiti_162_reg;
-reg [31:0] main_mul64To128exiti_163;
-reg [31:0] main_mul64To128exiti_163_reg;
-reg [31:0] main_mul64To128exiti_164;
-reg [31:0] main_mul64To128exiti_164_reg;
-reg [63:0] main_mul64To128exiti_165;
-reg [63:0] main_mul64To128exiti_165_reg;
-reg [63:0] main_mul64To128exiti_166;
-reg [63:0] main_mul64To128exiti_166_reg;
-reg [63:0] main_mul64To128exiti_167;
-reg [63:0] main_mul64To128exiti_167_reg;
-reg [63:0] main_mul64To128exiti_168;
-reg [63:0] main_mul64To128exiti_168_reg;
+reg [31:0] main_normalizeFloat64Subnormalexiti_105;
+reg [31:0] main_normalizeFloat64Subnormalexiti_105_reg;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexiti_106;
+reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_normalizeFloat64Subnormalexiti_106_reg;
+reg [31:0] main_normalizeFloat64Subnormalexiti_107;
+reg [31:0] main_normalizeFloat64Subnormalexiti_107_reg;
+reg [31:0] main_normalizeFloat64Subnormalexiti_108;
+reg [31:0] main_normalizeFloat64Subnormalexiti_108_reg;
+reg [31:0] main_normalizeFloat64Subnormalexiti_109;
+reg [31:0] main_normalizeFloat64Subnormalexiti_109_reg;
+reg [63:0] main_normalizeFloat64Subnormalexiti_110;
+reg [63:0] main_normalizeFloat64Subnormalexiti_110_reg;
+reg [63:0] main_normalizeFloat64Subnormalexiti_111;
+reg [63:0] main_normalizeFloat64Subnormalexiti_111_reg;
+reg [63:0] main_roundAndPackFloat64exiti_112;
+reg [63:0] main_roundAndPackFloat64exiti_112_reg;
+reg [63:0] main_roundAndPackFloat64exiti_113;
+reg [63:0] main_roundAndPackFloat64exiti_113_reg;
+reg [63:0] main_roundAndPackFloat64exiti_114;
+reg [63:0] main_roundAndPackFloat64exiti_114_reg;
+reg [63:0] main_roundAndPackFloat64exiti_115;
+reg [63:0] main_roundAndPackFloat64exiti_115_reg;
+reg [63:0] main_roundAndPackFloat64exiti_116;
+reg [63:0] main_roundAndPackFloat64exiti_116_reg;
+reg [63:0] main_roundAndPackFloat64exiti_117;
+reg [63:0] main_roundAndPackFloat64exiti_117_reg;
+reg [63:0] main_roundAndPackFloat64exiti_118;
+reg [63:0] main_roundAndPackFloat64exiti_118_reg;
+reg [63:0] main_roundAndPackFloat64exiti_119;
+reg [63:0] main_roundAndPackFloat64exiti_119_reg;
+reg [63:0] main_roundAndPackFloat64exiti_120;
+reg [63:0] main_roundAndPackFloat64exiti_120_reg;
+reg [63:0] main_roundAndPackFloat64exiti_121;
+reg [63:0] main_roundAndPackFloat64exiti_121_reg;
+reg [63:0] main_roundAndPackFloat64exiti_122;
+reg [63:0] main_roundAndPackFloat64exiti_122_reg;
+reg [63:0] main_roundAndPackFloat64exiti_123;
+reg [63:0] main_roundAndPackFloat64exiti_123_reg;
+reg [63:0] main_roundAndPackFloat64exiti_124;
+reg [63:0] main_roundAndPackFloat64exiti_124_reg;
+reg [63:0] main_roundAndPackFloat64exiti_125;
+reg [63:0] main_roundAndPackFloat64exiti_125_reg;
+reg [63:0] main_roundAndPackFloat64exiti_126;
+reg [63:0] main_roundAndPackFloat64exiti_126_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic1;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic1_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic2;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic2_reg;
+reg [63:0] main_roundAndPackFloat64exiti_overflow_intrinsic_sum;
+reg [63:0] main_roundAndPackFloat64exiti_overflow_intrinsic_sum_reg;
+reg [64:0] main_roundAndPackFloat64exiti_127;
+reg [64:0] main_roundAndPackFloat64exiti_127_reg;
+reg [63:0] main_roundAndPackFloat64exiti_tr;
+reg [63:0] main_roundAndPackFloat64exiti_tr_reg;
+reg [63:0] main_roundAndPackFloat64exiti_128;
+reg [63:0] main_roundAndPackFloat64exiti_128_reg;
+reg [63:0] main_roundAndPackFloat64exiti_129;
+reg [63:0] main_roundAndPackFloat64exiti_129_reg;
+reg [63:0] main_roundAndPackFloat64exiti_130;
+reg [63:0] main_roundAndPackFloat64exiti_130_reg;
+reg [63:0] main_roundAndPackFloat64exiti_131;
+reg [63:0] main_roundAndPackFloat64exiti_131_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic4;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic4_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic5;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic5_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic6;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic6_reg;
+reg [63:0] main_roundAndPackFloat64exiti_overflow_intrinsic_sum7;
+reg [63:0] main_roundAndPackFloat64exiti_overflow_intrinsic_sum7_reg;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic8;
+reg [64:0] main_roundAndPackFloat64exiti_overflow_intrinsic8_reg;
+reg [63:0] main_roundAndPackFloat64exiti_132;
+reg [63:0] main_roundAndPackFloat64exiti_132_reg;
+reg [63:0] main_roundAndPackFloat64exiti_133;
+reg [63:0] main_roundAndPackFloat64exiti_133_reg;
+reg [63:0] main_roundAndPackFloat64exiti_134;
+reg [63:0] main_roundAndPackFloat64exiti_134_reg;
+reg  main_roundAndPackFloat64exiti_135;
+reg  main_roundAndPackFloat64exiti_135_reg;
+reg [63:0] main_roundAndPackFloat64exiti_136;
+reg [63:0] main_roundAndPackFloat64exiti_136_reg;
+reg [63:0] main_roundAndPackFloat64exiti_137;
+reg [63:0] main_roundAndPackFloat64exiti_137_reg;
+reg [63:0] main_roundAndPackFloat64exiti_138;
+reg [63:0] main_roundAndPackFloat64exiti_138_reg;
+reg  main_roundAndPackFloat64exiti_139;
+reg  main_roundAndPackFloat64exiti_139_reg;
+reg [63:0] main_roundAndPackFloat64exiti_i;
+reg [63:0] main_roundAndPackFloat64exiti_i_reg;
+reg [31:0] main_roundAndPackFloat64exiti_trii;
+reg [31:0] main_roundAndPackFloat64exiti_trii_reg;
+reg [31:0] main_roundAndPackFloat64exiti_140;
+reg [31:0] main_roundAndPackFloat64exiti_140_reg;
+reg  main_roundAndPackFloat64exiti_not;
+reg  main_roundAndPackFloat64exiti_not_reg;
+reg [31:0] main_roundAndPackFloat64exiti_141;
+reg [31:0] main_roundAndPackFloat64exiti_141_reg;
+reg [31:0] main_roundAndPackFloat64exiti_float_exception_flags0;
+reg [31:0] main_roundAndPackFloat64exiti_float_exception_flags0_reg;
+reg [63:0] main_roundAndPackFloat64exiti_142;
+reg [63:0] main_roundAndPackFloat64exiti_142_reg;
+reg [63:0] main_roundAndPackFloat64exiti_143;
+reg [63:0] main_roundAndPackFloat64exiti_143_reg;
+reg  main_roundAndPackFloat64exiti_144;
+reg  main_roundAndPackFloat64exiti_144_reg;
+reg [31:0] main_roundAndPackFloat64exiti_145;
+reg [31:0] main_roundAndPackFloat64exiti_145_reg;
+reg [31:0] main_roundAndPackFloat64exiti_146;
+reg [31:0] main_roundAndPackFloat64exiti_146_reg;
+reg [63:0] main_roundAndPackFloat64exiti_147;
+reg [63:0] main_roundAndPackFloat64exiti_147_reg;
+reg [63:0] main_roundAndPackFloat64exiti_148;
+reg [63:0] main_roundAndPackFloat64exiti_148_reg;
+reg [63:0] main_roundAndPackFloat64exiti_149;
+reg [63:0] main_roundAndPackFloat64exiti_149_reg;
+reg [63:0] main_roundAndPackFloat64exiti_150;
+reg [63:0] main_roundAndPackFloat64exiti_150_reg;
 reg [31:0] main_float64_mulexit_float_exception_flags4;
 reg [31:0] main_float64_mulexit_float_exception_flags4_reg;
 reg [63:0] main_float64_mulexit_0i;
 reg [63:0] main_float64_mulexit_0i_reg;
-reg [31:0] main_float64_mulexit_gep_int10;
-reg [31:0] main_float64_mulexit_gep_int10_reg;
-reg [31:0] main_float64_mulexit_gep_array11;
-reg [31:0] main_float64_mulexit_gep_array11_reg;
-reg [31:0] main_float64_mulexit_gep12;
-reg [31:0] main_float64_mulexit_gep12_reg;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_float64_mulexit_169;
-reg [`MEMORY_CONTROLLER_ADDR_SIZE-1:0] main_float64_mulexit_169_reg;
-reg [63:0] main_float64_mulexit_170;
-reg [63:0] main_float64_mulexit_170_reg;
-reg  main_float64_mulexit_171;
-reg  main_float64_mulexit_171_reg;
-reg [31:0] main_float64_mulexit_172;
-reg [31:0] main_float64_mulexit_172_reg;
-reg [31:0] main_float64_mulexit_173;
-reg [31:0] main_float64_mulexit_173_reg;
-reg [31:0] main_float64_mulexit_175;
-reg [31:0] main_float64_mulexit_175_reg;
-reg  main_float64_mulexit_exitcond;
-reg  main_float64_mulexit_exitcond_reg;
-reg [31:0] main_176_lcssa;
-reg [31:0] main_176_lcssa_reg;
-reg  main_176_178;
-reg  main_176_178_reg;
+reg [63:0] main_float64_mulexit_151;
+reg [63:0] main_float64_mulexit_151_reg;
+reg  main_float64_mulexit_152;
+reg  main_float64_mulexit_152_reg;
+reg [31:0] main_float64_mulexit_153;
+reg [31:0] main_float64_mulexit_153_reg;
+reg [31:0] main_float64_mulexit_154;
+reg [31:0] main_float64_mulexit_154_reg;
+reg [31:0] main_float64_mulexit_156;
+reg [31:0] main_float64_mulexit_156_reg;
+reg  main_float64_mulexit_exitcond1;
+reg  main_float64_mulexit_exitcond1_reg;
+reg  main_157_159;
+reg  main_157_159_reg;
 reg [4:0] a_input_address_a;
 reg  a_input_write_enable_a;
 wire [63:0] a_input_in_a;
@@ -565,40 +512,14 @@ wire [7:0] countLeadingZeros32countLeadingZerosHigh_address_b;
 wire  countLeadingZeros32countLeadingZerosHigh_write_enable_b;
 wire [31:0] countLeadingZeros32countLeadingZerosHigh_in_b;
 wire [31:0] countLeadingZeros32countLeadingZerosHigh_out_b;
-reg [31:0] main_signed_add_32_0_op0;
-reg [31:0] main_signed_add_32_0_op1;
-reg [31:0] main_signed_add_32_0;
-reg [31:0] main_signed_add_32_1_op0;
-reg [31:0] main_signed_add_32_1_op1;
-reg [31:0] main_signed_add_32_1;
-reg [63:0] main_signed_multiply_64_0_op0;
-reg [63:0] main_signed_multiply_64_0_op1;
-reg  lpm_mult_main_123_135_en;
-reg [63:0] main_123_135_stage0_reg;
-reg [63:0] main_signed_multiply_64_0;
-reg [63:0] main_signed_add_64_0_op0;
-reg [63:0] main_signed_add_64_0_op1;
-reg [63:0] main_signed_add_64_0;
-reg [63:0] main_signed_multiply_64_1_op0;
-reg [63:0] main_signed_multiply_64_1_op1;
-reg  lpm_mult_main_123_137_en;
-reg [63:0] main_123_137_stage0_reg;
-reg [63:0] main_signed_multiply_64_1;
-reg [63:0] main_signed_multiply_64_2_op0;
-reg [63:0] main_signed_multiply_64_2_op1;
-reg  lpm_mult_main_123_139_en;
-reg [63:0] main_123_139_stage0_reg;
-reg [63:0] main_signed_multiply_64_2;
-reg [63:0] main_signed_multiply_64_3_op0;
-reg [63:0] main_signed_multiply_64_3_op1;
-reg  lpm_mult_main_123_140_en;
-reg [63:0] main_123_140_stage0_reg;
-reg [63:0] main_signed_multiply_64_3;
-reg [63:0] main_signed_add_64_1_op0;
-reg [63:0] main_signed_add_64_1_op1;
-reg [63:0] main_signed_add_64_1;
-reg  lpm_mult_main_123_138_en;
-reg  lpm_mult_main_147_148_en;
+reg  lpm_mult_main_roundAndPackFloat64exiti_123_en;
+reg [63:0] main_roundAndPackFloat64exiti_123_stage0_reg;
+reg  lpm_mult_main_roundAndPackFloat64exiti_124_en;
+reg [63:0] main_roundAndPackFloat64exiti_124_stage0_reg;
+reg  lpm_mult_main_roundAndPackFloat64exiti_125_en;
+reg [63:0] main_roundAndPackFloat64exiti_125_stage0_reg;
+reg  lpm_mult_main_roundAndPackFloat64exiti_126_en;
+reg [63:0] main_roundAndPackFloat64exiti_126_stage0_reg;
 
 // Local Rams
 
@@ -683,30 +604,30 @@ defparam countLeadingZeros32countLeadingZerosHigh.init_file = "countLeadingZeros
 always @(posedge clk)
 	if (!memory_controller_waitrequest) begin
 	/* main: %float64_mul.exit*/
-	/*   %174 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([65 x i8]* @.str, i32 0, i32 0), i64 %3, i64 %5, i64 %170, i64 %.0.i) #1*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) begin
-		$write("a_input=%0x b_input=%0x expected=%0x output=%0x\n", $signed(main_1_3_reg), $signed(main_1_5_reg), $signed(main_float64_mulexit_170), $signed(main_float64_mulexit_0i_reg));
+	/*   %155 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([65 x i8]* @.str, i32 0, i32 0), i64 %3, i64 %4, i64 %151, i64 %.0.i) #1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_41)) begin
+		$write("a_input=%0x b_input=%0x expected=%0x output=%0x\n", $signed(main_1_3_reg), $signed(main_1_4_reg), $signed(main_float64_mulexit_151), $signed(main_float64_mulexit_0i_reg));
 		// to fix quartus warning
 		if (reset == 1'b0 && ^(main_1_3_reg) === 1'bX) finish <= 0;
-		if (reset == 1'b0 && ^(main_1_5_reg) === 1'bX) finish <= 0;
-		if (reset == 1'b0 && ^(main_float64_mulexit_170) === 1'bX) finish <= 0;
+		if (reset == 1'b0 && ^(main_1_4_reg) === 1'bX) finish <= 0;
+		if (reset == 1'b0 && ^(main_float64_mulexit_151) === 1'bX) finish <= 0;
 		if (reset == 1'b0 && ^(main_float64_mulexit_0i_reg) === 1'bX) finish <= 0;
 	end
-	/* main: %176*/
-	/*   %177 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str1, i32 0, i32 0), i32 %.lcssa) #1*/
-	if ((cur_state == LEGUP_F_main_BB__176_53)) begin
-		$write("Result: %d\n", $signed(main_176_lcssa_reg));
+	/* main: %157*/
+	/*   %158 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([12 x i8]* @.str1, i32 0, i32 0), i32 %154) #1*/
+	if ((cur_state == LEGUP_F_main_BB__157_42)) begin
+		$write("Result: %d\n", $signed(main_float64_mulexit_154_reg));
 		// to fix quartus warning
-		if (reset == 1'b0 && ^(main_176_lcssa_reg) === 1'bX) finish <= 0;
+		if (reset == 1'b0 && ^(main_float64_mulexit_154_reg) === 1'bX) finish <= 0;
 	end
-	/* main: %179*/
-	/*   %180 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1*/
-	if ((cur_state == LEGUP_F_main_BB__179_54)) begin
+	/* main: %160*/
+	/*   %161 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str2, i32 0, i32 0)) #1*/
+	if ((cur_state == LEGUP_F_main_BB__160_43)) begin
 		$write("RESULT: PASS\n");
 	end
-	/* main: %181*/
-	/*   %182 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str3, i32 0, i32 0)) #1*/
-	if ((cur_state == LEGUP_F_main_BB__181_55)) begin
+	/* main: %162*/
+	/*   %163 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([14 x i8]* @.str3, i32 0, i32 0)) #1*/
+	if ((cur_state == LEGUP_F_main_BB__162_44)) begin
 		$write("RESULT: FAIL\n");
 	end
 end
@@ -726,178 +647,151 @@ case(cur_state)  // synthesis parallel_case
 LEGUP_0:
 	if ((start == 1'd1))
 		next_state = LEGUP_F_main_BB__1_1;
-LEGUP_F_main_BB__102_35:
-	if ((main_102_103 == 1'd1))
-		next_state = LEGUP_F_main_BB__104_36;
-	else if ((main_102_103 == 1'd0))
-		next_state = LEGUP_F_main_BB__106_37;
-LEGUP_F_main_BB__104_36:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__106_37:
-	if ((main_106_111 == 1'd1))
-		next_state = LEGUP_F_main_BB__112_38;
-	else if ((main_106_111 == 1'd0))
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39;
-LEGUP_F_main_BB__112_38:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39;
-LEGUP_F_main_BB__123_42:
-		next_state = LEGUP_F_main_BB__123_43;
-LEGUP_F_main_BB__123_43:
-		next_state = LEGUP_F_main_BB__123_44;
-LEGUP_F_main_BB__123_44:
-		next_state = LEGUP_F_main_BB__123_45;
-LEGUP_F_main_BB__123_45:
-	if ((main_123_146 == 1'd1))
-		next_state = LEGUP_F_main_BB__147_46;
-	else if ((main_123_146 == 1'd0))
-		next_state = LEGUP_F_main_BB_mul64To128exiti_48;
-LEGUP_F_main_BB__147_46:
-		next_state = LEGUP_F_main_BB__147_47;
-LEGUP_F_main_BB__147_47:
-		next_state = LEGUP_F_main_BB_mul64To128exiti_48;
-LEGUP_F_main_BB__15_4:
-	if ((main_15_16 == 1'd1))
-		next_state = LEGUP_F_main_BB__17_5;
-	else if ((main_15_16 == 1'd0))
-		next_state = LEGUP_F_main_BB__20_6;
-LEGUP_F_main_BB__176_53:
-	if ((main_176_178 == 1'd1))
-		next_state = LEGUP_F_main_BB__179_54;
-	else if ((main_176_178 == 1'd0))
-		next_state = LEGUP_F_main_BB__181_55;
-LEGUP_F_main_BB__179_54:
-		next_state = LEGUP_F_main_BB__183_56;
-LEGUP_F_main_BB__17_5:
-	if ((main_17_orcondi == 1'd1))
-		next_state = LEGUP_F_main_BB__20_6;
-	else if ((main_17_orcondi == 1'd0))
-		next_state = LEGUP_F_main_BB__37_12;
-LEGUP_F_main_BB__181_55:
-		next_state = LEGUP_F_main_BB__183_56;
-LEGUP_F_main_BB__183_56:
+LEGUP_F_main_BB__102_32:
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33;
+LEGUP_F_main_BB__14_3:
+	if ((main_14_15 == 1'd1))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5;
+	else if ((main_14_15 == 1'd0))
+		next_state = LEGUP_F_main_BB__16_4;
+LEGUP_F_main_BB__157_42:
+	if ((main_157_159 == 1'd1))
+		next_state = LEGUP_F_main_BB__160_43;
+	else if ((main_157_159 == 1'd0))
+		next_state = LEGUP_F_main_BB__162_44;
+LEGUP_F_main_BB__160_43:
+		next_state = LEGUP_F_main_BB__164_45;
+LEGUP_F_main_BB__162_44:
+		next_state = LEGUP_F_main_BB__164_45;
+LEGUP_F_main_BB__164_45:
 		next_state = LEGUP_0;
+LEGUP_F_main_BB__16_4:
+	if ((main_16_orcondi == 1'd1))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5;
+	else if ((main_16_orcondi == 1'd0))
+		next_state = LEGUP_F_main_BB__33_9;
 LEGUP_F_main_BB__1_1:
 		next_state = LEGUP_F_main_BB__1_2;
 LEGUP_F_main_BB__1_2:
-		next_state = LEGUP_F_main_BB__1_3;
-LEGUP_F_main_BB__1_3:
-	if ((main_1_14 == 1'd1))
-		next_state = LEGUP_F_main_BB__15_4;
-	else if ((main_1_14 == 1'd0))
-		next_state = LEGUP_F_main_BB__46_15;
-LEGUP_F_main_BB__20_6:
-	if ((main_20_22 == 1'd1))
-		next_state = LEGUP_F_main_BB__23_7;
-	else if ((main_20_22 == 1'd0))
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8;
-LEGUP_F_main_BB__23_7:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8;
-LEGUP_F_main_BB__31_9:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10;
-LEGUP_F_main_BB__37_12:
-	if ((main_37_40 == 1'd1))
-		next_state = LEGUP_F_main_BB__41_13;
-	else if ((main_37_40 == 1'd0))
-		next_state = LEGUP_F_main_BB__43_14;
-LEGUP_F_main_BB__41_13:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__43_14:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__46_15:
-	if ((main_46_47 == 1'd1))
-		next_state = LEGUP_F_main_BB__48_16;
-	else if ((main_46_47 == 1'd0))
-		next_state = LEGUP_F_main_BB__76_26;
-LEGUP_F_main_BB__48_16:
-	if ((main_48_49 == 1'd1))
-		next_state = LEGUP_F_main_BB__67_23;
-	else if ((main_48_49 == 1'd0))
-		next_state = LEGUP_F_main_BB__50_17;
-LEGUP_F_main_BB__50_17:
-	if ((main_50_52 == 1'd1))
-		next_state = LEGUP_F_main_BB__53_18;
-	else if ((main_50_52 == 1'd0))
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19;
-LEGUP_F_main_BB__53_18:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19;
-LEGUP_F_main_BB__61_20:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_21;
-LEGUP_F_main_BB__67_23:
-	if ((main_67_70 == 1'd1))
-		next_state = LEGUP_F_main_BB__71_24;
-	else if ((main_67_70 == 1'd0))
-		next_state = LEGUP_F_main_BB__73_25;
-LEGUP_F_main_BB__71_24:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__73_25:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__76_26:
-	if ((main_76_77 == 1'd1))
-		next_state = LEGUP_F_main_BB__78_27;
-	else if ((main_76_77 == 1'd0))
-		next_state = LEGUP_F_main_BB__99_34;
-LEGUP_F_main_BB__78_27:
-	if ((main_78_79 == 1'd1))
-		next_state = LEGUP_F_main_BB__80_28;
-	else if ((main_78_79 == 1'd0))
-		next_state = LEGUP_F_main_BB__82_29;
-LEGUP_F_main_BB__80_28:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB__82_29:
-	if ((main_82_87 == 1'd1))
-		next_state = LEGUP_F_main_BB__88_30;
-	else if ((main_82_87 == 1'd0))
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31;
-LEGUP_F_main_BB__88_30:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31;
-LEGUP_F_main_BB__99_34:
-	if ((main_99_101 == 1'd1))
-		next_state = LEGUP_F_main_BB__102_35;
-	else if ((main_99_101 == 1'd0))
-		next_state = LEGUP_F_main_BB__123_42;
-LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8:
-	if ((main_float64_is_signaling_nanexit1i10i_30 == 1'd1))
-		next_state = LEGUP_F_main_BB__31_9;
-	else if ((main_float64_is_signaling_nanexit1i10i_30 == 1'd0))
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10;
-LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19:
-	if ((main_float64_is_signaling_nanexit1ii_60 == 1'd1))
-		next_state = LEGUP_F_main_BB__61_20;
-	else if ((main_float64_is_signaling_nanexit1ii_60 == 1'd0))
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_21;
-LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11;
-LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB_float64_is_signaling_nanexitii_21:
-		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_22;
-LEGUP_F_main_BB_float64_is_signaling_nanexitii_22:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB_float64_mulexit_50:
-		next_state = LEGUP_F_main_BB_float64_mulexit_51;
-LEGUP_F_main_BB_float64_mulexit_51:
-		next_state = LEGUP_F_main_BB_float64_mulexit_52;
-LEGUP_F_main_BB_float64_mulexit_52:
-	if ((main_float64_mulexit_exitcond_reg == 1'd1))
-		next_state = LEGUP_F_main_BB__176_53;
-	else if ((main_float64_mulexit_exitcond_reg == 1'd0))
+	if ((main_1_13 == 1'd1))
+		next_state = LEGUP_F_main_BB__14_3;
+	else if ((main_1_13 == 1'd0))
+		next_state = LEGUP_F_main_BB__42_12;
+LEGUP_F_main_BB__27_6:
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7;
+LEGUP_F_main_BB__33_9:
+	if ((main_33_36 == 1'd1))
+		next_state = LEGUP_F_main_BB__37_10;
+	else if ((main_33_36 == 1'd0))
+		next_state = LEGUP_F_main_BB__39_11;
+LEGUP_F_main_BB__37_10:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__39_11:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__42_12:
+	if ((main_42_43 == 1'd1))
+		next_state = LEGUP_F_main_BB__44_13;
+	else if ((main_42_43 == 1'd0))
+		next_state = LEGUP_F_main_BB__68_21;
+LEGUP_F_main_BB__44_13:
+	if ((main_1_2_reg == 32'd4))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14;
+	else if ((main_1_2_reg == 32'd0))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14;
+	else if ((main_1_2_reg != 32'd4) && (main_1_2_reg != 32'd0))
+		next_state = LEGUP_F_main_BB__59_18;
+LEGUP_F_main_BB__53_15:
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_16;
+LEGUP_F_main_BB__59_18:
+	if ((main_59_62 == 1'd1))
+		next_state = LEGUP_F_main_BB__63_19;
+	else if ((main_59_62 == 1'd0))
+		next_state = LEGUP_F_main_BB__65_20;
+LEGUP_F_main_BB__63_19:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__65_20:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__68_21:
+	if ((main_68_69 == 1'd1))
+		next_state = LEGUP_F_main_BB__70_22;
+	else if ((main_68_69 == 1'd0))
+		next_state = LEGUP_F_main_BB__90_28;
+LEGUP_F_main_BB__70_22:
+	if ((main_70_71 == 1'd1))
+		next_state = LEGUP_F_main_BB__74_24;
+	else if ((main_70_71 == 1'd0))
+		next_state = LEGUP_F_main_BB__72_23;
+LEGUP_F_main_BB__72_23:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__74_24:
+	if ((main_74_79 == 1'd1))
+		next_state = LEGUP_F_main_BB__80_25;
+	else if ((main_74_79 == 1'd0))
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26;
+LEGUP_F_main_BB__80_25:
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26;
+LEGUP_F_main_BB__90_28:
+	if ((main_90_92 == 1'd1))
+		next_state = LEGUP_F_main_BB__93_29;
+	else if ((main_90_92 == 1'd0))
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_35;
+LEGUP_F_main_BB__93_29:
+	if ((main_1_2_reg == 32'd4))
+		next_state = LEGUP_F_main_BB__96_31;
+	else if ((main_1_2_reg == 32'd0))
+		next_state = LEGUP_F_main_BB__96_31;
+	else if ((main_1_2_reg != 32'd4) && (main_1_2_reg != 32'd0))
+		next_state = LEGUP_F_main_BB__94_30;
+LEGUP_F_main_BB__94_30:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB__96_31:
+	if ((main_96_101 == 1'd1))
+		next_state = LEGUP_F_main_BB__102_32;
+	else if ((main_96_101 == 1'd0))
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33;
+LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5:
+	if ((main_float64_is_signaling_nanexit1i10i_26 == 1'd1))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7;
+	else if ((main_float64_is_signaling_nanexit1i10i_26 == 1'd0))
+		next_state = LEGUP_F_main_BB__27_6;
+LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14:
+	if ((main_float64_is_signaling_nanexit1ii_52 == 1'd1))
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_16;
+	else if ((main_float64_is_signaling_nanexit1ii_52 == 1'd0))
+		next_state = LEGUP_F_main_BB__53_15;
+LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7:
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8;
+LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB_float64_is_signaling_nanexitii_16:
+		next_state = LEGUP_F_main_BB_float64_is_signaling_nanexitii_17;
+LEGUP_F_main_BB_float64_is_signaling_nanexitii_17:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
+LEGUP_F_main_BB_float64_mulexit_40:
+		next_state = LEGUP_F_main_BB_float64_mulexit_41;
+LEGUP_F_main_BB_float64_mulexit_41:
+	if ((main_float64_mulexit_exitcond1_reg == 1'd1))
+		next_state = LEGUP_F_main_BB__157_42;
+	else if ((main_float64_mulexit_exitcond1_reg == 1'd0))
 		next_state = LEGUP_F_main_BB__1_1;
-LEGUP_F_main_BB_mul64To128exiti_48:
-		next_state = LEGUP_F_main_BB_mul64To128exiti_49;
-LEGUP_F_main_BB_mul64To128exiti_49:
-		next_state = LEGUP_F_main_BB_float64_mulexit_50;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33:
-		next_state = LEGUP_F_main_BB__99_34;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40:
-		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41;
-LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41:
-		next_state = LEGUP_F_main_BB__123_42;
+LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26:
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27;
+LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27:
+		next_state = LEGUP_F_main_BB__90_28;
+LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33:
+		next_state = LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34;
+LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34:
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_35;
+LEGUP_F_main_BB_roundAndPackFloat64exiti_35:
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_36;
+LEGUP_F_main_BB_roundAndPackFloat64exiti_36:
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_37;
+LEGUP_F_main_BB_roundAndPackFloat64exiti_37:
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_38;
+LEGUP_F_main_BB_roundAndPackFloat64exiti_38:
+		next_state = LEGUP_F_main_BB_roundAndPackFloat64exiti_39;
+LEGUP_F_main_BB_roundAndPackFloat64exiti_39:
+		next_state = LEGUP_F_main_BB_float64_mulexit_40;
 default:
 	next_state = cur_state;
 endcase
@@ -911,7 +805,7 @@ always @(*) begin
 	end
 	/* main: %1*/
 	/*   %float_exception_flags.0 = phi i32 [ 0, %0 ], [ %float_exception_flags.4, %float64_mul.exit ]*/
-	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) */ begin
+	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) */ begin
 		main_1_float_exception_flags0 = main_float64_mulexit_float_exception_flags4_reg;
 	end
 end
@@ -924,207 +818,123 @@ always @(posedge clk) begin
 	end
 	/* main: %1*/
 	/*   %float_exception_flags.0 = phi i32 [ 0, %0 ], [ %float_exception_flags.4, %float64_mul.exit ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) begin
+	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) begin
 		main_1_float_exception_flags0_reg <= main_1_float_exception_flags0;
 		if (start == 1'b0 && ^(main_1_float_exception_flags0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_float_exception_flags0_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %173, %float64_mul.exit ]*/
+	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %154, %float64_mul.exit ]*/
 	if ((((cur_state == LEGUP_0) & (memory_controller_waitrequest == 1'd0)) & (start == 1'd1))) begin
 		main_1_main_result02 = 32'd0;
 	end
 	/* main: %1*/
-	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %173, %float64_mul.exit ]*/
-	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) */ begin
-		main_1_main_result02 = main_float64_mulexit_173;
+	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %154, %float64_mul.exit ]*/
+	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) */ begin
+		main_1_main_result02 = main_float64_mulexit_154;
 	end
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %173, %float64_mul.exit ]*/
+	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %154, %float64_mul.exit ]*/
 	if ((((cur_state == LEGUP_0) & (memory_controller_waitrequest == 1'd0)) & (start == 1'd1))) begin
 		main_1_main_result02_reg <= main_1_main_result02;
 		if (start == 1'b0 && ^(main_1_main_result02) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_main_result02_reg"); $finish; end
 	end
 	/* main: %1*/
-	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %173, %float64_mul.exit ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) begin
+	/*   %main_result.02 = phi i32 [ 0, %0 ], [ %154, %float64_mul.exit ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) begin
 		main_1_main_result02_reg <= main_1_main_result02;
 		if (start == 1'b0 && ^(main_1_main_result02) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_main_result02_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %i.01 = phi i32 [ 0, %0 ], [ %175, %float64_mul.exit ]*/
+	/*   %2 = phi i32 [ 0, %0 ], [ %156, %float64_mul.exit ]*/
 	if ((((cur_state == LEGUP_0) & (memory_controller_waitrequest == 1'd0)) & (start == 1'd1))) begin
-		main_1_i01 = 32'd0;
+		main_1_2 = 32'd0;
 	end
 	/* main: %1*/
-	/*   %i.01 = phi i32 [ 0, %0 ], [ %175, %float64_mul.exit ]*/
-	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) */ begin
-		main_1_i01 = main_float64_mulexit_175_reg;
+	/*   %2 = phi i32 [ 0, %0 ], [ %156, %float64_mul.exit ]*/
+	else /* if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) */ begin
+		main_1_2 = main_float64_mulexit_156_reg;
 	end
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %i.01 = phi i32 [ 0, %0 ], [ %175, %float64_mul.exit ]*/
+	/*   %2 = phi i32 [ 0, %0 ], [ %156, %float64_mul.exit ]*/
 	if ((((cur_state == LEGUP_0) & (memory_controller_waitrequest == 1'd0)) & (start == 1'd1))) begin
-		main_1_i01_reg <= main_1_i01;
-		if (start == 1'b0 && ^(main_1_i01) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_i01_reg"); $finish; end
+		main_1_2_reg <= main_1_2;
+		if (start == 1'b0 && ^(main_1_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_2_reg"); $finish; end
 	end
 	/* main: %1*/
-	/*   %i.01 = phi i32 [ 0, %0 ], [ %175, %float64_mul.exit ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd0))) begin
-		main_1_i01_reg <= main_1_i01;
-		if (start == 1'b0 && ^(main_1_i01) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_i01_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep_int = ptrtoint [20 x i64]* @a_input to i32*/
-if (reset) begin main_1_gep_int = 0; end
-		main_1_gep_int = 1'd0;
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %gep_int = ptrtoint [20 x i64]* @a_input to i32*/
-	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
-		main_1_gep_int_reg <= main_1_gep_int;
-		if (start == 1'b0 && ^(main_1_gep_int) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_int_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep_array = mul i32 %i.01, 8*/
-		main_1_gep_array = (main_1_i01_reg * 32'd8);
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %gep_array = mul i32 %i.01, 8*/
-	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
-		main_1_gep_array_reg <= main_1_gep_array;
-		if (start == 1'b0 && ^(main_1_gep_array) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_array_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep = add i32 %gep_int, %gep_array*/
-		main_1_gep = main_signed_add_32_0;
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %gep = add i32 %gep_int, %gep_array*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		main_1_gep_reg <= main_1_gep;
-		if (start == 1'b0 && ^(main_1_gep) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep9 = add i32 %gep_int7, %gep_array8*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
-		main_1_gep_reg <= main_normalizeFloat64Subnormalexiti_gep9;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_gep9) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %120 = add i32 %119, %117*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_1_gep_reg <= main_normalizeFloat64Subnormalexiti_120;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_120) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep6 = add i32 %gep_int4, %gep_array5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
-		main_1_gep_reg <= main_normalizeFloat64Subnormalexit9i_gep6;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_gep6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %96 = add i32 %95, %93*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_1_gep_reg <= main_normalizeFloat64Subnormalexit9i_96;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_96) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-	/* main: %float64_mul.exit*/
-	/*   %gep12 = add i32 %gep_int10, %gep_array11*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
-		main_1_gep_reg <= main_float64_mulexit_gep12;
-		if (start == 1'b0 && ^(main_float64_mulexit_gep12) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %2 = inttoptr i32 %gep to i64**/
-		main_1_2 = main_1_gep;
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %2 = inttoptr i32 %gep to i64**/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
+	/*   %2 = phi i32 [ 0, %0 ], [ %156, %float64_mul.exit ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_41) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond1_reg == 1'd0))) begin
 		main_1_2_reg <= main_1_2;
 		if (start == 1'b0 && ^(main_1_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_2_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %3 = load i64* %2, align 8, !tbaa !1*/
+	/*   %scevgep = getelementptr [20 x i64]* @z_output, i32 0, i32 %2*/
+		main_1_scevgep = (1'd0 | (8 * main_1_2_reg));
+end
+always @(posedge clk) begin
+	/* main: %1*/
+	/*   %scevgep = getelementptr [20 x i64]* @z_output, i32 0, i32 %2*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
+		main_1_scevgep_reg <= main_1_scevgep;
+		if (start == 1'b0 && ^(main_1_scevgep) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_scevgep_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %1*/
+	/*   %scevgep2 = getelementptr [20 x i64]* @b_input, i32 0, i32 %2*/
+		main_1_scevgep2 = (1'd0 | (8 * main_1_2_reg));
+end
+always @(posedge clk) begin
+	/* main: %1*/
+	/*   %scevgep2 = getelementptr [20 x i64]* @b_input, i32 0, i32 %2*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
+		main_1_scevgep2_reg <= main_1_scevgep2;
+		if (start == 1'b0 && ^(main_1_scevgep2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_scevgep2_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %1*/
+	/*   %scevgep3 = getelementptr [20 x i64]* @a_input, i32 0, i32 %2*/
+		main_1_scevgep3 = (1'd0 | (8 * main_1_2_reg));
+end
+always @(posedge clk) begin
+	/* main: %1*/
+	/*   %scevgep3 = getelementptr [20 x i64]* @a_input, i32 0, i32 %2*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
+		main_1_scevgep3_reg <= main_1_scevgep3;
+		if (start == 1'b0 && ^(main_1_scevgep3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_scevgep3_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %1*/
+	/*   %3 = load i64* %scevgep3, align 8, !tbaa !1*/
 		main_1_3 = a_input_out_a;
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %3 = load i64* %2, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %3 = load i64* %scevgep3, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_3_reg <= main_1_3;
 		if (start == 1'b0 && ^(main_1_3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_3_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %gep_int1 = ptrtoint [20 x i64]* @b_input to i32*/
-if (reset) begin main_1_gep_int1 = 0; end
-		main_1_gep_int1 = 1'd0;
+	/*   %4 = load i64* %scevgep2, align 8, !tbaa !1*/
+		main_1_4 = b_input_out_a;
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %gep_int1 = ptrtoint [20 x i64]* @b_input to i32*/
-	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
-		main_1_gep_int1_reg <= main_1_gep_int1;
-		if (start == 1'b0 && ^(main_1_gep_int1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_int1_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep_array2 = mul i32 %i.01, 8*/
-		main_1_gep_array2 = (main_1_i01_reg * 32'd8);
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %gep_array2 = mul i32 %i.01, 8*/
-	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
-		main_1_gep_array2_reg <= main_1_gep_array2;
-		if (start == 1'b0 && ^(main_1_gep_array2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep_array2_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep3 = add i32 %gep_int1, %gep_array2*/
-		main_1_gep3 = main_signed_add_32_1;
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %gep3 = add i32 %gep_int1, %gep_array2*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		main_1_gep3_reg <= main_1_gep3;
-		if (start == 1'b0 && ^(main_1_gep3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_gep3_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %4 = inttoptr i32 %gep3 to i64**/
-		main_1_4 = main_1_gep3;
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %4 = inttoptr i32 %gep3 to i64**/
+	/*   %4 = load i64* %scevgep2, align 8, !tbaa !1*/
 	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_4_reg <= main_1_4;
 		if (start == 1'b0 && ^(main_1_4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_4_reg"); $finish; end
@@ -1132,455 +942,442 @@ always @(posedge clk) begin
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %5 = load i64* %4, align 8, !tbaa !1*/
-		main_1_5 = b_input_out_a;
+	/*   %5 = and i64 %3, 4503599627370495*/
+		main_1_5 = (main_1_3 & 64'd4503599627370495);
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %5 = load i64* %4, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %5 = and i64 %3, 4503599627370495*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_5_reg <= main_1_5;
 		if (start == 1'b0 && ^(main_1_5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_5_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %6 = and i64 %3, 4503599627370495*/
-		main_1_6 = (main_1_3 & 64'd4503599627370495);
+	/*   %6 = lshr i64 %3, 52*/
+		main_1_6 = (main_1_3 >>> (64'd52 % 64'd64));
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %6 = and i64 %3, 4503599627370495*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %6 = lshr i64 %3, 52*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_6_reg <= main_1_6;
 		if (start == 1'b0 && ^(main_1_6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_6_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %7 = lshr i64 %3, 52*/
-		main_1_7 = (main_1_3 >>> (64'd52 % 64'd64));
+	/*   %.tr.i18.i = trunc i64 %6 to i32*/
+		main_1_tri18i = main_1_6[31:0];
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %7 = lshr i64 %3, 52*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
-		main_1_7_reg <= main_1_7;
-		if (start == 1'b0 && ^(main_1_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_7_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %.tr.i18.i = trunc i64 %7 to i32*/
-		main_1_tri18i = main_1_7[31:0];
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %.tr.i18.i = trunc i64 %7 to i32*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %.tr.i18.i = trunc i64 %6 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_tri18i_reg <= main_1_tri18i;
 		if (start == 1'b0 && ^(main_1_tri18i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_tri18i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %8 = and i32 %.tr.i18.i, 2047*/
-		main_1_8 = (main_1_tri18i & 32'd2047);
+	/*   %7 = and i32 %.tr.i18.i, 2047*/
+		main_1_7 = (main_1_tri18i & 32'd2047);
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %8 = and i32 %.tr.i18.i, 2047*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %7 = and i32 %.tr.i18.i, 2047*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
+		main_1_7_reg <= main_1_7;
+		if (start == 1'b0 && ^(main_1_7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_7_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %1*/
+	/*   %8 = and i64 %4, 4503599627370495*/
+		main_1_8 = (main_1_4 & 64'd4503599627370495);
+end
+always @(posedge clk) begin
+	/* main: %1*/
+	/*   %8 = and i64 %4, 4503599627370495*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_8_reg <= main_1_8;
 		if (start == 1'b0 && ^(main_1_8) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_8_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %9 = and i64 %5, 4503599627370495*/
-		main_1_9 = (main_1_5 & 64'd4503599627370495);
+	/*   %9 = lshr i64 %4, 52*/
+		main_1_9 = (main_1_4 >>> (64'd52 % 64'd64));
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %9 = and i64 %5, 4503599627370495*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %9 = lshr i64 %4, 52*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_9_reg <= main_1_9;
 		if (start == 1'b0 && ^(main_1_9) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_9_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %10 = lshr i64 %5, 52*/
-		main_1_10 = (main_1_5 >>> (64'd52 % 64'd64));
+	/*   %.tr.i17.i = trunc i64 %9 to i32*/
+		main_1_tri17i = main_1_9[31:0];
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %10 = lshr i64 %5, 52*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
-		main_1_10_reg <= main_1_10;
-		if (start == 1'b0 && ^(main_1_10) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_10_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %.tr.i17.i = trunc i64 %10 to i32*/
-		main_1_tri17i = main_1_10[31:0];
-end
-always @(posedge clk) begin
-	/* main: %1*/
-	/*   %.tr.i17.i = trunc i64 %10 to i32*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %.tr.i17.i = trunc i64 %9 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_tri17i_reg <= main_1_tri17i;
 		if (start == 1'b0 && ^(main_1_tri17i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_tri17i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %11 = and i32 %.tr.i17.i, 2047*/
-		main_1_11 = (main_1_tri17i & 32'd2047);
+	/*   %10 = and i32 %.tr.i17.i, 2047*/
+		main_1_10 = (main_1_tri17i & 32'd2047);
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %11 = and i32 %.tr.i17.i, 2047*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %10 = and i32 %.tr.i17.i, 2047*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
+		main_1_10_reg <= main_1_10;
+		if (start == 1'b0 && ^(main_1_10) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_10_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %1*/
+	/*   %11 = xor i64 %4, %3*/
+		main_1_11 = (main_1_4 ^ main_1_3);
+end
+always @(posedge clk) begin
+	/* main: %1*/
+	/*   %11 = xor i64 %4, %3*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_11_reg <= main_1_11;
 		if (start == 1'b0 && ^(main_1_11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_11_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %12 = xor i64 %5, %3*/
-		main_1_12 = (main_1_5 ^ main_1_3);
+	/*   %12 = lshr i64 %11, 63*/
+		main_1_12 = (main_1_11 >>> (64'd63 % 64'd64));
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %12 = xor i64 %5, %3*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %12 = lshr i64 %11, 63*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_12_reg <= main_1_12;
 		if (start == 1'b0 && ^(main_1_12) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_12_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %1*/
-	/*   %13 = lshr i64 %12, 63*/
-		main_1_13 = (main_1_12 >>> (64'd63 % 64'd64));
+	/*   %13 = icmp eq i32 %7, 2047*/
+		main_1_13 = (main_1_7 == 32'd2047);
 end
 always @(posedge clk) begin
 	/* main: %1*/
-	/*   %13 = lshr i64 %12, 63*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
+	/*   %13 = icmp eq i32 %7, 2047*/
+	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
 		main_1_13_reg <= main_1_13;
 		if (start == 1'b0 && ^(main_1_13) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_13_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %1*/
-	/*   %14 = icmp eq i32 %8, 2047*/
-		main_1_14 = (main_1_8 == 32'd2047);
+	/* main: %14*/
+	/*   %15 = icmp eq i32 %2, 1*/
+		main_14_15 = (main_1_2_reg == 32'd1);
 end
 always @(posedge clk) begin
-	/* main: %1*/
-	/*   %14 = icmp eq i32 %8, 2047*/
-	if ((cur_state == LEGUP_F_main_BB__1_3)) begin
-		main_1_14_reg <= main_1_14;
-		if (start == 1'b0 && ^(main_1_14) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_1_14_reg"); $finish; end
+	/* main: %14*/
+	/*   %15 = icmp eq i32 %2, 1*/
+	if ((cur_state == LEGUP_F_main_BB__14_3)) begin
+		main_14_15_reg <= main_14_15;
+		if (start == 1'b0 && ^(main_14_15) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_14_15_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %15*/
-	/*   %16 = icmp eq i64 %6, 0*/
-		main_15_16 = (main_1_6_reg == 64'd0);
+	/* main: %16*/
+	/*   %17 = icmp eq i32 %10, 2047*/
+		main_16_17 = (main_1_10_reg == 32'd2047);
 end
 always @(posedge clk) begin
-	/* main: %15*/
-	/*   %16 = icmp eq i64 %6, 0*/
-	if ((cur_state == LEGUP_F_main_BB__15_4)) begin
-		main_15_16_reg <= main_15_16;
-		if (start == 1'b0 && ^(main_15_16) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_15_16_reg"); $finish; end
+	/* main: %16*/
+	/*   %17 = icmp eq i32 %10, 2047*/
+	if ((cur_state == LEGUP_F_main_BB__16_4)) begin
+		main_16_17_reg <= main_16_17;
+		if (start == 1'b0 && ^(main_16_17) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_16_17_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %17*/
-	/*   %18 = icmp eq i32 %11, 2047*/
-		main_17_18 = (main_1_11_reg == 32'd2047);
+	/* main: %16*/
+	/*   %18 = and i32 %2, -5*/
+		main_16_18 = (main_1_2_reg & -32'd5);
 end
 always @(posedge clk) begin
-	/* main: %17*/
-	/*   %18 = icmp eq i32 %11, 2047*/
-	if ((cur_state == LEGUP_F_main_BB__17_5)) begin
-		main_17_18_reg <= main_17_18;
-		if (start == 1'b0 && ^(main_17_18) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_17_18_reg"); $finish; end
+	/* main: %16*/
+	/*   %18 = and i32 %2, -5*/
+	if ((cur_state == LEGUP_F_main_BB__16_4)) begin
+		main_16_18_reg <= main_16_18;
+		if (start == 1'b0 && ^(main_16_18) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_16_18_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %17*/
-	/*   %19 = icmp ne i64 %9, 0*/
-		main_17_19 = (main_1_9_reg != 64'd0);
+	/* main: %16*/
+	/*   %19 = icmp eq i32 %18, 0*/
+		main_16_19 = (main_16_18 == 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %17*/
-	/*   %19 = icmp ne i64 %9, 0*/
-	if ((cur_state == LEGUP_F_main_BB__17_5)) begin
-		main_17_19_reg <= main_17_19;
-		if (start == 1'b0 && ^(main_17_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_17_19_reg"); $finish; end
+	/* main: %16*/
+	/*   %19 = icmp eq i32 %18, 0*/
+	if ((cur_state == LEGUP_F_main_BB__16_4)) begin
+		main_16_19_reg <= main_16_19;
+		if (start == 1'b0 && ^(main_16_19) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_16_19_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %17*/
-	/*   %or.cond.i = and i1 %18, %19*/
-		main_17_orcondi = (main_17_18 & main_17_19);
+	/* main: %16*/
+	/*   %or.cond.i = and i1 %17, %19*/
+		main_16_orcondi = (main_16_17 & main_16_19);
 end
 always @(posedge clk) begin
-	/* main: %17*/
-	/*   %or.cond.i = and i1 %18, %19*/
-	if ((cur_state == LEGUP_F_main_BB__17_5)) begin
-		main_17_orcondi_reg <= main_17_orcondi;
-		if (start == 1'b0 && ^(main_17_orcondi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_17_orcondi_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %20*/
-	/*   %21 = and i64 %3, 9221120237041090560*/
-		main_20_21 = (main_1_3_reg & 64'd9221120237041090560);
-end
-always @(posedge clk) begin
-	/* main: %20*/
-	/*   %21 = and i64 %3, 9221120237041090560*/
-	if ((cur_state == LEGUP_F_main_BB__20_6)) begin
-		main_20_21_reg <= main_20_21;
-		if (start == 1'b0 && ^(main_20_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_20_21_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %20*/
-	/*   %22 = icmp eq i64 %21, 9218868437227405312*/
-		main_20_22 = (main_20_21 == 64'd9218868437227405312);
-end
-always @(posedge clk) begin
-	/* main: %20*/
-	/*   %22 = icmp eq i64 %21, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB__20_6)) begin
-		main_20_22_reg <= main_20_22;
-		if (start == 1'b0 && ^(main_20_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_20_22_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %23*/
-	/*   %24 = and i64 %3, 2251799813685247*/
-		main_23_24 = (main_1_3_reg & 64'd2251799813685247);
-end
-always @(posedge clk) begin
-	/* main: %23*/
-	/*   %24 = and i64 %3, 2251799813685247*/
-	if ((cur_state == LEGUP_F_main_BB__23_7)) begin
-		main_23_24_reg <= main_23_24;
-		if (start == 1'b0 && ^(main_23_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_23_24_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %23*/
-	/*   %25 = icmp ne i64 %24, 0*/
-		main_23_25 = (main_23_24 != 64'd0);
-end
-always @(posedge clk) begin
-	/* main: %23*/
-	/*   %25 = icmp ne i64 %24, 0*/
-	if ((cur_state == LEGUP_F_main_BB__23_7)) begin
-		main_23_25_reg <= main_23_25;
-		if (start == 1'b0 && ^(main_23_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_23_25_reg"); $finish; end
+	/* main: %16*/
+	/*   %or.cond.i = and i1 %17, %19*/
+	if ((cur_state == LEGUP_F_main_BB__16_4)) begin
+		main_16_orcondi_reg <= main_16_orcondi;
+		if (start == 1'b0 && ^(main_16_orcondi) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_16_orcondi_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %26 = phi i1 [ false, %20 ], [ %25, %23 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__20_6) & (memory_controller_waitrequest == 1'd0)) & (main_20_22 == 1'd0))) begin
-		main_float64_is_signaling_nanexit1i10i_26 = 1'd0;
-	end
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %26 = phi i1 [ false, %20 ], [ %25, %23 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__23_7) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_is_signaling_nanexit1i10i_26 = main_23_25;
-	end
+	/*   %20 = lshr i32 13, %2*/
+		main_float64_is_signaling_nanexit1i10i_20 = (32'd13 >>> (main_1_2_reg % 32));
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %26 = phi i1 [ false, %20 ], [ %25, %23 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__20_6) & (memory_controller_waitrequest == 1'd0)) & (main_20_22 == 1'd0))) begin
+	/*   %20 = lshr i32 13, %2*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_20_reg <= main_float64_is_signaling_nanexit1i10i_20;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_20) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_20_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %21 = and i32 %20, 1*/
+		main_float64_is_signaling_nanexit1i10i_21 = (main_float64_is_signaling_nanexit1i10i_20 & 32'd1);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %21 = and i32 %20, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_21_reg <= main_float64_is_signaling_nanexit1i10i_21;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_21) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_21_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %not.4 = icmp ne i32 %21, 0*/
+		main_float64_is_signaling_nanexit1i10i_not4 = (main_float64_is_signaling_nanexit1i10i_21 != 32'd0);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %not.4 = icmp ne i32 %21, 0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_not4_reg <= main_float64_is_signaling_nanexit1i10i_not4;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_not4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_not4_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %.1 = and i1 %15, %not.4*/
+		main_float64_is_signaling_nanexit1i10i_1 = (main_14_15_reg & main_float64_is_signaling_nanexit1i10i_not4);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %.1 = and i1 %15, %not.4*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_1_reg <= main_float64_is_signaling_nanexit1i10i_1;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_1_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %22 = trunc i64 %4 to i63*/
+		main_float64_is_signaling_nanexit1i10i_22 = main_1_4_reg[62:0];
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %22 = trunc i64 %4 to i63*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_22_reg <= main_float64_is_signaling_nanexit1i10i_22;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_22) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_22_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %23 = icmp ugt i63 %22, -4503599627370496*/
+		main_float64_is_signaling_nanexit1i10i_23 = (main_float64_is_signaling_nanexit1i10i_22 > -63'd4503599627370496);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %23 = icmp ugt i63 %22, -4503599627370496*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_23_reg <= main_float64_is_signaling_nanexit1i10i_23;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_23) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_23_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %24 = lshr i32 98, %2*/
+		main_float64_is_signaling_nanexit1i10i_24 = (32'd98 >>> (main_1_2_reg % 32));
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %24 = lshr i32 98, %2*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_24_reg <= main_float64_is_signaling_nanexit1i10i_24;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_24) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_24_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %25 = and i32 %24, 1*/
+		main_float64_is_signaling_nanexit1i10i_25 = (main_float64_is_signaling_nanexit1i10i_24 & 32'd1);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %25 = and i32 %24, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
+		main_float64_is_signaling_nanexit1i10i_25_reg <= main_float64_is_signaling_nanexit1i10i_25;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_25) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_25_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %26 = icmp eq i32 %25, 0*/
+		main_float64_is_signaling_nanexit1i10i_26 = (main_float64_is_signaling_nanexit1i10i_25 == 32'd0);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i10.i*/
+	/*   %26 = icmp eq i32 %25, 0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5)) begin
 		main_float64_is_signaling_nanexit1i10i_26_reg <= main_float64_is_signaling_nanexit1i10i_26;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_26_reg"); $finish; end
 	end
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %26 = phi i1 [ false, %20 ], [ %25, %23 ]*/
-	if (((cur_state == LEGUP_F_main_BB__23_7) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_is_signaling_nanexit1i10i_26_reg <= main_float64_is_signaling_nanexit1i10i_26;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_26) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_26_reg"); $finish; end
+end
+always @(*) begin
+	/* main: %27*/
+	/*   %28 = and i32 %2, -5*/
+		main_27_28 = (main_1_2_reg & -32'd5);
+end
+always @(posedge clk) begin
+	/* main: %27*/
+	/*   %28 = and i32 %2, -5*/
+	if ((cur_state == LEGUP_F_main_BB__27_6)) begin
+		main_27_28_reg <= main_27_28;
+		if (start == 1'b0 && ^(main_27_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_27_28_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %27 = trunc i64 %5 to i63*/
-		main_float64_is_signaling_nanexit1i10i_27 = main_1_5_reg[62:0];
+	/* main: %27*/
+	/*   %29 = icmp eq i32 %28, 0*/
+		main_27_29 = (main_27_28 == 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %27 = trunc i64 %5 to i63*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8)) begin
-		main_float64_is_signaling_nanexit1i10i_27_reg <= main_float64_is_signaling_nanexit1i10i_27;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_27) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_27_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %28 = icmp ugt i63 %27, -4503599627370496*/
-		main_float64_is_signaling_nanexit1i10i_28 = (main_float64_is_signaling_nanexit1i10i_27 > -63'd4503599627370496);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %28 = icmp ugt i63 %27, -4503599627370496*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8)) begin
-		main_float64_is_signaling_nanexit1i10i_28_reg <= main_float64_is_signaling_nanexit1i10i_28;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_28) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_28_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %29 = and i64 %5, 9221120237041090560*/
-		main_float64_is_signaling_nanexit1i10i_29 = (main_1_5_reg & 64'd9221120237041090560);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %29 = and i64 %5, 9221120237041090560*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8)) begin
-		main_float64_is_signaling_nanexit1i10i_29_reg <= main_float64_is_signaling_nanexit1i10i_29;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_29_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %30 = icmp eq i64 %29, 9218868437227405312*/
-		main_float64_is_signaling_nanexit1i10i_30 = (main_float64_is_signaling_nanexit1i10i_29 == 64'd9218868437227405312);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i10.i*/
-	/*   %30 = icmp eq i64 %29, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8)) begin
-		main_float64_is_signaling_nanexit1i10i_30_reg <= main_float64_is_signaling_nanexit1i10i_30;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1i10i_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1i10i_30_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %31*/
-	/*   %32 = and i64 %5, 2251799813685247*/
-		main_31_32 = (main_1_5_reg & 64'd2251799813685247);
-end
-always @(posedge clk) begin
-	/* main: %31*/
-	/*   %32 = and i64 %5, 2251799813685247*/
-	if ((cur_state == LEGUP_F_main_BB__31_9)) begin
-		main_31_32_reg <= main_31_32;
-		if (start == 1'b0 && ^(main_31_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_31_32_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %31*/
-	/*   %33 = icmp ne i64 %32, 0*/
-		main_31_33 = (main_31_32 != 64'd0);
-end
-always @(posedge clk) begin
-	/* main: %31*/
-	/*   %33 = icmp ne i64 %32, 0*/
-	if ((cur_state == LEGUP_F_main_BB__31_9)) begin
-		main_31_33_reg <= main_31_33;
-		if (start == 1'b0 && ^(main_31_33) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_31_33_reg"); $finish; end
+	/* main: %27*/
+	/*   %29 = icmp eq i32 %28, 0*/
+	if ((cur_state == LEGUP_F_main_BB__27_6)) begin
+		main_27_29_reg <= main_27_29;
+		if (start == 1'b0 && ^(main_27_29) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_27_29_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %34 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %33, %31 ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1i10i_30 == 1'd0))) begin
-		main_float64_is_signaling_nanexiti11i_34 = 1'd0;
+	/*   %30 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %29, %27 ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1i10i_26 == 1'd1))) begin
+		main_float64_is_signaling_nanexiti11i_30 = 1'd0;
 	end
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %34 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %33, %31 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__31_9) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_is_signaling_nanexiti11i_34 = main_31_33;
+	/*   %30 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %29, %27 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__27_6) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_float64_is_signaling_nanexiti11i_30 = main_27_29;
 	end
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %34 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %33, %31 ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_8) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1i10i_30 == 1'd0))) begin
-		main_float64_is_signaling_nanexiti11i_34_reg <= main_float64_is_signaling_nanexiti11i_34;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_34_reg"); $finish; end
+	/*   %30 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %29, %27 ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1i10i_5) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1i10i_26 == 1'd1))) begin
+		main_float64_is_signaling_nanexiti11i_30_reg <= main_float64_is_signaling_nanexiti11i_30;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_30_reg"); $finish; end
 	end
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %34 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %33, %31 ]*/
-	if (((cur_state == LEGUP_F_main_BB__31_9) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_is_signaling_nanexiti11i_34_reg <= main_float64_is_signaling_nanexiti11i_34;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_34_reg"); $finish; end
+	/*   %30 = phi i1 [ false, %float64_is_signaling_nan.exit1.i10.i ], [ %29, %27 ]*/
+	if (((cur_state == LEGUP_F_main_BB__27_6) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_is_signaling_nanexiti11i_30_reg <= main_float64_is_signaling_nanexiti11i_30;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_30) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_30_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %35 = or i1 %26, %34*/
-		main_float64_is_signaling_nanexiti11i_35 = (main_float64_is_signaling_nanexit1i10i_26_reg | main_float64_is_signaling_nanexiti11i_34_reg);
+	/*   %31 = or i1 %.1, %30*/
+		main_float64_is_signaling_nanexiti11i_31 = (main_float64_is_signaling_nanexit1i10i_1_reg | main_float64_is_signaling_nanexiti11i_30_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %35 = or i1 %26, %34*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10)) begin
-		main_float64_is_signaling_nanexiti11i_35_reg <= main_float64_is_signaling_nanexiti11i_35;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_35) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_35_reg"); $finish; end
+	/*   %31 = or i1 %.1, %30*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7)) begin
+		main_float64_is_signaling_nanexiti11i_31_reg <= main_float64_is_signaling_nanexiti11i_31;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_31) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_31_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %36 = or i32 %float_exception_flags.0, 16*/
-		main_float64_is_signaling_nanexiti11i_36 = (main_1_float_exception_flags0_reg | 32'd16);
+	/*   %32 = or i32 %float_exception_flags.0, 16*/
+		main_float64_is_signaling_nanexiti11i_32 = (main_1_float_exception_flags0_reg | 32'd16);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %36 = or i32 %float_exception_flags.0, 16*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10)) begin
-		main_float64_is_signaling_nanexiti11i_36_reg <= main_float64_is_signaling_nanexiti11i_36;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_36_reg"); $finish; end
+	/*   %32 = or i32 %float_exception_flags.0, 16*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7)) begin
+		main_float64_is_signaling_nanexiti11i_32_reg <= main_float64_is_signaling_nanexiti11i_32;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_32) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_32_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %.float_exception_flags.0 = select i1 %35, i32 %36, i32 %float_exception_flags.0*/
-		main_float64_is_signaling_nanexiti11i_float_exception_flags0 = (main_float64_is_signaling_nanexiti11i_35 ? main_float64_is_signaling_nanexiti11i_36 : main_1_float_exception_flags0_reg);
+	/*   %.float_exception_flags.0 = select i1 %31, i32 %32, i32 %float_exception_flags.0*/
+		main_float64_is_signaling_nanexiti11i_float_exception_flags0 = (main_float64_is_signaling_nanexiti11i_31 ? main_float64_is_signaling_nanexiti11i_32 : main_1_float_exception_flags0_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %.float_exception_flags.0 = select i1 %35, i32 %36, i32 %float_exception_flags.0*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10)) begin
+	/*   %.float_exception_flags.0 = select i1 %31, i32 %32, i32 %float_exception_flags.0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7)) begin
 		main_float64_is_signaling_nanexiti11i_float_exception_flags0_reg <= main_float64_is_signaling_nanexiti11i_float_exception_flags0;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_float_exception_flags0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_float_exception_flags0_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %. = select i1 %35, i1 %34, i1 %28*/
-		main_float64_is_signaling_nanexiti11i_ = (main_float64_is_signaling_nanexiti11i_35 ? main_float64_is_signaling_nanexiti11i_34_reg : main_float64_is_signaling_nanexit1i10i_28_reg);
+	/*   %. = select i1 %31, i1 %30, i1 %23*/
+		main_float64_is_signaling_nanexiti11i_ = (main_float64_is_signaling_nanexiti11i_31 ? main_float64_is_signaling_nanexiti11i_30_reg : main_float64_is_signaling_nanexit1i10i_23_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %. = select i1 %35, i1 %34, i1 %28*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_10)) begin
+	/*   %. = select i1 %31, i1 %30, i1 %23*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_7)) begin
 		main_float64_is_signaling_nanexiti11i__reg <= main_float64_is_signaling_nanexiti11i_;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i__reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %.mux2.v.i14.i = select i1 %., i64 %5, i64 %3*/
-		main_float64_is_signaling_nanexiti11i_mux2vi14i = (main_float64_is_signaling_nanexiti11i__reg ? main_1_5_reg : main_1_3_reg);
+	/*   %.mux2.v.i14.i = select i1 %., i64 %4, i64 %3*/
+		main_float64_is_signaling_nanexiti11i_mux2vi14i = (main_float64_is_signaling_nanexiti11i__reg ? main_1_4_reg : main_1_3_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
-	/*   %.mux2.v.i14.i = select i1 %., i64 %5, i64 %3*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11)) begin
+	/*   %.mux2.v.i14.i = select i1 %., i64 %4, i64 %3*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8)) begin
 		main_float64_is_signaling_nanexiti11i_mux2vi14i_reg <= main_float64_is_signaling_nanexiti11i_mux2vi14i;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_mux2vi14i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_mux2vi14i_reg"); $finish; end
 	end
@@ -1593,358 +1390,345 @@ end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i11.i*/
 	/*   %.mux2.i15.i = or i64 %.mux2.v.i14.i, 2251799813685248*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11)) begin
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8)) begin
 		main_float64_is_signaling_nanexiti11i_mux2i15i_reg <= main_float64_is_signaling_nanexiti11i_mux2i15i;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexiti11i_mux2i15i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexiti11i_mux2i15i_reg"); $finish; end
 	end
 end
 always @(*) begin
+	/* main: %33*/
+	/*   %34 = zext i32 %10 to i64*/
+		main_33_34 = main_1_10_reg;
+end
+always @(posedge clk) begin
+	/* main: %33*/
+	/*   %34 = zext i32 %10 to i64*/
+	if ((cur_state == LEGUP_F_main_BB__33_9)) begin
+		main_33_34_reg <= main_33_34;
+		if (start == 1'b0 && ^(main_33_34) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_33_34_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %33*/
+	/*   %35 = or i64 %34, %8*/
+		main_33_35 = (main_33_34 | main_1_8_reg);
+end
+always @(posedge clk) begin
+	/* main: %33*/
+	/*   %35 = or i64 %34, %8*/
+	if ((cur_state == LEGUP_F_main_BB__33_9)) begin
+		main_33_35_reg <= main_33_35;
+		if (start == 1'b0 && ^(main_33_35) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_33_35_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %33*/
+	/*   %36 = icmp eq i64 %35, 0*/
+		main_33_36 = (main_33_35 == 64'd0);
+end
+always @(posedge clk) begin
+	/* main: %33*/
+	/*   %36 = icmp eq i64 %35, 0*/
+	if ((cur_state == LEGUP_F_main_BB__33_9)) begin
+		main_33_36_reg <= main_33_36;
+		if (start == 1'b0 && ^(main_33_36) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_33_36_reg"); $finish; end
+	end
+end
+always @(*) begin
 	/* main: %37*/
-	/*   %38 = zext i32 %11 to i64*/
-		main_37_38 = main_1_11_reg;
+	/*   %38 = or i32 %float_exception_flags.0, 16*/
+		main_37_38 = (main_1_float_exception_flags0_reg | 32'd16);
 end
 always @(posedge clk) begin
 	/* main: %37*/
-	/*   %38 = zext i32 %11 to i64*/
-	if ((cur_state == LEGUP_F_main_BB__37_12)) begin
+	/*   %38 = or i32 %float_exception_flags.0, 16*/
+	if ((cur_state == LEGUP_F_main_BB__37_10)) begin
 		main_37_38_reg <= main_37_38;
 		if (start == 1'b0 && ^(main_37_38) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_37_38_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %37*/
-	/*   %39 = or i64 %38, %9*/
-		main_37_39 = (main_37_38 | main_1_9_reg);
+	/* main: %39*/
+	/*   %40 = shl nuw i64 %12, 63*/
+		main_39_40 = (main_1_12_reg <<< (64'd63 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %37*/
-	/*   %39 = or i64 %38, %9*/
-	if ((cur_state == LEGUP_F_main_BB__37_12)) begin
-		main_37_39_reg <= main_37_39;
-		if (start == 1'b0 && ^(main_37_39) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_37_39_reg"); $finish; end
+	/* main: %39*/
+	/*   %40 = shl nuw i64 %12, 63*/
+	if ((cur_state == LEGUP_F_main_BB__39_11)) begin
+		main_39_40_reg <= main_39_40;
+		if (start == 1'b0 && ^(main_39_40) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_39_40_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %37*/
-	/*   %40 = icmp eq i64 %39, 0*/
-		main_37_40 = (main_37_39 == 64'd0);
+	/* main: %39*/
+	/*   %41 = or i64 %40, 9218868437227405312*/
+		main_39_41 = (main_39_40 | 64'd9218868437227405312);
 end
 always @(posedge clk) begin
-	/* main: %37*/
-	/*   %40 = icmp eq i64 %39, 0*/
-	if ((cur_state == LEGUP_F_main_BB__37_12)) begin
-		main_37_40_reg <= main_37_40;
-		if (start == 1'b0 && ^(main_37_40) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_37_40_reg"); $finish; end
+	/* main: %39*/
+	/*   %41 = or i64 %40, 9218868437227405312*/
+	if ((cur_state == LEGUP_F_main_BB__39_11)) begin
+		main_39_41_reg <= main_39_41;
+		if (start == 1'b0 && ^(main_39_41) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_39_41_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %41*/
-	/*   %42 = or i32 %float_exception_flags.0, 16*/
-		main_41_42 = (main_1_float_exception_flags0_reg | 32'd16);
+	/* main: %42*/
+	/*   %43 = icmp eq i32 %10, 2047*/
+		main_42_43 = (main_1_10_reg == 32'd2047);
 end
 always @(posedge clk) begin
-	/* main: %41*/
-	/*   %42 = or i32 %float_exception_flags.0, 16*/
-	if ((cur_state == LEGUP_F_main_BB__41_13)) begin
-		main_41_42_reg <= main_41_42;
-		if (start == 1'b0 && ^(main_41_42) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_41_42_reg"); $finish; end
+	/* main: %42*/
+	/*   %43 = icmp eq i32 %10, 2047*/
+	if ((cur_state == LEGUP_F_main_BB__42_12)) begin
+		main_42_43_reg <= main_42_43;
+		if (start == 1'b0 && ^(main_42_43) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_42_43_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %43*/
-	/*   %44 = shl nuw i64 %13, 63*/
-		main_43_44 = (main_1_13_reg <<< (64'd63 % 64'd64));
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %45 = lshr i32 13, %2*/
+		main_float64_is_signaling_nanexit1ii_45 = (32'd13 >>> (main_1_2_reg % 32));
 end
 always @(posedge clk) begin
-	/* main: %43*/
-	/*   %44 = shl nuw i64 %13, 63*/
-	if ((cur_state == LEGUP_F_main_BB__43_14)) begin
-		main_43_44_reg <= main_43_44;
-		if (start == 1'b0 && ^(main_43_44) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_43_44_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %45 = lshr i32 13, %2*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_45_reg <= main_float64_is_signaling_nanexit1ii_45;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_45_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %43*/
-	/*   %45 = or i64 %44, 9218868437227405312*/
-		main_43_45 = (main_43_44 | 64'd9218868437227405312);
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %46 = and i32 %45, 1*/
+		main_float64_is_signaling_nanexit1ii_46 = (main_float64_is_signaling_nanexit1ii_45 & 32'd1);
 end
 always @(posedge clk) begin
-	/* main: %43*/
-	/*   %45 = or i64 %44, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB__43_14)) begin
-		main_43_45_reg <= main_43_45;
-		if (start == 1'b0 && ^(main_43_45) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_43_45_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %46 = and i32 %45, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_46_reg <= main_float64_is_signaling_nanexit1ii_46;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_46) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_46_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %46*/
-	/*   %47 = icmp eq i32 %11, 2047*/
-		main_46_47 = (main_1_11_reg == 32'd2047);
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %47 = icmp eq i32 %2, 1*/
+		main_float64_is_signaling_nanexit1ii_47 = (main_1_2_reg == 32'd1);
 end
 always @(posedge clk) begin
-	/* main: %46*/
-	/*   %47 = icmp eq i32 %11, 2047*/
-	if ((cur_state == LEGUP_F_main_BB__46_15)) begin
-		main_46_47_reg <= main_46_47;
-		if (start == 1'b0 && ^(main_46_47) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_46_47_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %47 = icmp eq i32 %2, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_47_reg <= main_float64_is_signaling_nanexit1ii_47;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_47) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_47_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %48*/
-	/*   %49 = icmp eq i64 %9, 0*/
-		main_48_49 = (main_1_9_reg == 64'd0);
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %not.3 = icmp ne i32 %46, 0*/
+		main_float64_is_signaling_nanexit1ii_not3 = (main_float64_is_signaling_nanexit1ii_46 != 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %48*/
-	/*   %49 = icmp eq i64 %9, 0*/
-	if ((cur_state == LEGUP_F_main_BB__48_16)) begin
-		main_48_49_reg <= main_48_49;
-		if (start == 1'b0 && ^(main_48_49) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_48_49_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %not.3 = icmp ne i32 %46, 0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_not3_reg <= main_float64_is_signaling_nanexit1ii_not3;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_not3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_not3_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %50*/
-	/*   %51 = and i64 %3, 9221120237041090560*/
-		main_50_51 = (main_1_3_reg & 64'd9221120237041090560);
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %.2 = and i1 %47, %not.3*/
+		main_float64_is_signaling_nanexit1ii_2 = (main_float64_is_signaling_nanexit1ii_47 & main_float64_is_signaling_nanexit1ii_not3);
 end
 always @(posedge clk) begin
-	/* main: %50*/
-	/*   %51 = and i64 %3, 9221120237041090560*/
-	if ((cur_state == LEGUP_F_main_BB__50_17)) begin
-		main_50_51_reg <= main_50_51;
-		if (start == 1'b0 && ^(main_50_51) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_50_51_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %.2 = and i1 %47, %not.3*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_2_reg <= main_float64_is_signaling_nanexit1ii_2;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_2_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %50*/
-	/*   %52 = icmp eq i64 %51, 9218868437227405312*/
-		main_50_52 = (main_50_51 == 64'd9218868437227405312);
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %48 = trunc i64 %4 to i63*/
+		main_float64_is_signaling_nanexit1ii_48 = main_1_4_reg[62:0];
 end
 always @(posedge clk) begin
-	/* main: %50*/
-	/*   %52 = icmp eq i64 %51, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB__50_17)) begin
-		main_50_52_reg <= main_50_52;
-		if (start == 1'b0 && ^(main_50_52) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_50_52_reg"); $finish; end
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %48 = trunc i64 %4 to i63*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_48_reg <= main_float64_is_signaling_nanexit1ii_48;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_48) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_48_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %49 = icmp ugt i63 %48, -4503599627370496*/
+		main_float64_is_signaling_nanexit1ii_49 = (main_float64_is_signaling_nanexit1ii_48 > -63'd4503599627370496);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %49 = icmp ugt i63 %48, -4503599627370496*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_49_reg <= main_float64_is_signaling_nanexit1ii_49;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_49) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_49_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %50 = lshr i32 98, %2*/
+		main_float64_is_signaling_nanexit1ii_50 = (32'd98 >>> (main_1_2_reg % 32));
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %50 = lshr i32 98, %2*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_50_reg <= main_float64_is_signaling_nanexit1ii_50;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_50) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_50_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %51 = and i32 %50, 1*/
+		main_float64_is_signaling_nanexit1ii_51 = (main_float64_is_signaling_nanexit1ii_50 & 32'd1);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %51 = and i32 %50, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_51_reg <= main_float64_is_signaling_nanexit1ii_51;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_51) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_51_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %52 = icmp eq i32 %51, 0*/
+		main_float64_is_signaling_nanexit1ii_52 = (main_float64_is_signaling_nanexit1ii_51 == 32'd0);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit1.i.i*/
+	/*   %52 = icmp eq i32 %51, 0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14)) begin
+		main_float64_is_signaling_nanexit1ii_52_reg <= main_float64_is_signaling_nanexit1ii_52;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_52) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_52_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %53*/
-	/*   %54 = and i64 %3, 2251799813685247*/
-		main_53_54 = (main_1_3_reg & 64'd2251799813685247);
+	/*   %54 = and i32 %2, -5*/
+		main_53_54 = (main_1_2_reg & -32'd5);
 end
 always @(posedge clk) begin
 	/* main: %53*/
-	/*   %54 = and i64 %3, 2251799813685247*/
-	if ((cur_state == LEGUP_F_main_BB__53_18)) begin
+	/*   %54 = and i32 %2, -5*/
+	if ((cur_state == LEGUP_F_main_BB__53_15)) begin
 		main_53_54_reg <= main_53_54;
 		if (start == 1'b0 && ^(main_53_54) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_53_54_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %53*/
-	/*   %55 = icmp ne i64 %54, 0*/
-		main_53_55 = (main_53_54 != 64'd0);
+	/*   %55 = icmp eq i32 %54, 0*/
+		main_53_55 = (main_53_54 == 32'd0);
 end
 always @(posedge clk) begin
 	/* main: %53*/
-	/*   %55 = icmp ne i64 %54, 0*/
-	if ((cur_state == LEGUP_F_main_BB__53_18)) begin
+	/*   %55 = icmp eq i32 %54, 0*/
+	if ((cur_state == LEGUP_F_main_BB__53_15)) begin
 		main_53_55_reg <= main_53_55;
 		if (start == 1'b0 && ^(main_53_55) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_53_55_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %56 = phi i1 [ false, %50 ], [ %55, %53 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__50_17) & (memory_controller_waitrequest == 1'd0)) & (main_50_52 == 1'd0))) begin
-		main_float64_is_signaling_nanexit1ii_56 = 1'd0;
-	end
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %56 = phi i1 [ false, %50 ], [ %55, %53 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__53_18) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_is_signaling_nanexit1ii_56 = main_53_55;
-	end
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %56 = phi i1 [ false, %50 ], [ %55, %53 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__50_17) & (memory_controller_waitrequest == 1'd0)) & (main_50_52 == 1'd0))) begin
-		main_float64_is_signaling_nanexit1ii_56_reg <= main_float64_is_signaling_nanexit1ii_56;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_56) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_56_reg"); $finish; end
-	end
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %56 = phi i1 [ false, %50 ], [ %55, %53 ]*/
-	if (((cur_state == LEGUP_F_main_BB__53_18) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_is_signaling_nanexit1ii_56_reg <= main_float64_is_signaling_nanexit1ii_56;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_56) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_56_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %57 = trunc i64 %5 to i63*/
-		main_float64_is_signaling_nanexit1ii_57 = main_1_5_reg[62:0];
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %57 = trunc i64 %5 to i63*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19)) begin
-		main_float64_is_signaling_nanexit1ii_57_reg <= main_float64_is_signaling_nanexit1ii_57;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_57) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_57_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %58 = icmp ugt i63 %57, -4503599627370496*/
-		main_float64_is_signaling_nanexit1ii_58 = (main_float64_is_signaling_nanexit1ii_57 > -63'd4503599627370496);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %58 = icmp ugt i63 %57, -4503599627370496*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19)) begin
-		main_float64_is_signaling_nanexit1ii_58_reg <= main_float64_is_signaling_nanexit1ii_58;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_58) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_58_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %59 = and i64 %5, 9221120237041090560*/
-		main_float64_is_signaling_nanexit1ii_59 = (main_1_5_reg & 64'd9221120237041090560);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %59 = and i64 %5, 9221120237041090560*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19)) begin
-		main_float64_is_signaling_nanexit1ii_59_reg <= main_float64_is_signaling_nanexit1ii_59;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_59) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_59_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %60 = icmp eq i64 %59, 9218868437227405312*/
-		main_float64_is_signaling_nanexit1ii_60 = (main_float64_is_signaling_nanexit1ii_59 == 64'd9218868437227405312);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit1.i.i*/
-	/*   %60 = icmp eq i64 %59, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19)) begin
-		main_float64_is_signaling_nanexit1ii_60_reg <= main_float64_is_signaling_nanexit1ii_60;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexit1ii_60) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexit1ii_60_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %61*/
-	/*   %62 = and i64 %5, 2251799813685247*/
-		main_61_62 = (main_1_5_reg & 64'd2251799813685247);
-end
-always @(posedge clk) begin
-	/* main: %61*/
-	/*   %62 = and i64 %5, 2251799813685247*/
-	if ((cur_state == LEGUP_F_main_BB__61_20)) begin
-		main_61_62_reg <= main_61_62;
-		if (start == 1'b0 && ^(main_61_62) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_61_62_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %61*/
-	/*   %63 = icmp ne i64 %62, 0*/
-		main_61_63 = (main_61_62 != 64'd0);
-end
-always @(posedge clk) begin
-	/* main: %61*/
-	/*   %63 = icmp ne i64 %62, 0*/
-	if ((cur_state == LEGUP_F_main_BB__61_20)) begin
-		main_61_63_reg <= main_61_63;
-		if (start == 1'b0 && ^(main_61_63) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_61_63_reg"); $finish; end
-	end
-end
-always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %64 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %63, %61 ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1ii_60 == 1'd0))) begin
-		main_float64_is_signaling_nanexitii_64 = 1'd0;
+	/*   %56 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %55, %53 ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1ii_52 == 1'd1))) begin
+		main_float64_is_signaling_nanexitii_56 = 1'd0;
 	end
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %64 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %63, %61 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__61_20) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_is_signaling_nanexitii_64 = main_61_63;
+	/*   %56 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %55, %53 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__53_15) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_float64_is_signaling_nanexitii_56 = main_53_55;
 	end
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %64 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %63, %61 ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_19) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1ii_60 == 1'd0))) begin
-		main_float64_is_signaling_nanexitii_64_reg <= main_float64_is_signaling_nanexitii_64;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_64) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_64_reg"); $finish; end
+	/*   %56 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %55, %53 ]*/
+	if ((((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexit1ii_14) & (memory_controller_waitrequest == 1'd0)) & (main_float64_is_signaling_nanexit1ii_52 == 1'd1))) begin
+		main_float64_is_signaling_nanexitii_56_reg <= main_float64_is_signaling_nanexitii_56;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_56) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_56_reg"); $finish; end
 	end
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %64 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %63, %61 ]*/
-	if (((cur_state == LEGUP_F_main_BB__61_20) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_is_signaling_nanexitii_64_reg <= main_float64_is_signaling_nanexitii_64;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_64) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_64_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %65 = or i1 %56, %64*/
-		main_float64_is_signaling_nanexitii_65 = (main_float64_is_signaling_nanexit1ii_56_reg | main_float64_is_signaling_nanexitii_64_reg);
-end
-always @(posedge clk) begin
-	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %65 = or i1 %56, %64*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_21)) begin
-		main_float64_is_signaling_nanexitii_65_reg <= main_float64_is_signaling_nanexitii_65;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_65) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_65_reg"); $finish; end
+	/*   %56 = phi i1 [ false, %float64_is_signaling_nan.exit1.i.i ], [ %55, %53 ]*/
+	if (((cur_state == LEGUP_F_main_BB__53_15) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_is_signaling_nanexitii_56_reg <= main_float64_is_signaling_nanexitii_56;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_56) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_56_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %66 = or i32 %float_exception_flags.0, 16*/
-		main_float64_is_signaling_nanexitii_66 = (main_1_float_exception_flags0_reg | 32'd16);
+	/*   %57 = or i1 %.2, %56*/
+		main_float64_is_signaling_nanexitii_57 = (main_float64_is_signaling_nanexit1ii_2_reg | main_float64_is_signaling_nanexitii_56_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %66 = or i32 %float_exception_flags.0, 16*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_21)) begin
-		main_float64_is_signaling_nanexitii_66_reg <= main_float64_is_signaling_nanexitii_66;
-		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_66) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_66_reg"); $finish; end
+	/*   %57 = or i1 %.2, %56*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_16)) begin
+		main_float64_is_signaling_nanexitii_57_reg <= main_float64_is_signaling_nanexitii_57;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_57) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_57_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.float_exception_flags.05 = select i1 %65, i32 %66, i32 %float_exception_flags.0*/
-		main_float64_is_signaling_nanexitii_float_exception_flags05 = (main_float64_is_signaling_nanexitii_65 ? main_float64_is_signaling_nanexitii_66 : main_1_float_exception_flags0_reg);
+	/*   %58 = or i32 %float_exception_flags.0, 16*/
+		main_float64_is_signaling_nanexitii_58 = (main_1_float_exception_flags0_reg | 32'd16);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.float_exception_flags.05 = select i1 %65, i32 %66, i32 %float_exception_flags.0*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_21)) begin
+	/*   %58 = or i32 %float_exception_flags.0, 16*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_16)) begin
+		main_float64_is_signaling_nanexitii_58_reg <= main_float64_is_signaling_nanexitii_58;
+		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_58) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_58_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %float64_is_signaling_nan.exit.i.i*/
+	/*   %.float_exception_flags.05 = select i1 %57, i32 %58, i32 %float_exception_flags.0*/
+		main_float64_is_signaling_nanexitii_float_exception_flags05 = (main_float64_is_signaling_nanexitii_57 ? main_float64_is_signaling_nanexitii_58 : main_1_float_exception_flags0_reg);
+end
+always @(posedge clk) begin
+	/* main: %float64_is_signaling_nan.exit.i.i*/
+	/*   %.float_exception_flags.05 = select i1 %57, i32 %58, i32 %float_exception_flags.0*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_16)) begin
 		main_float64_is_signaling_nanexitii_float_exception_flags05_reg <= main_float64_is_signaling_nanexitii_float_exception_flags05;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_float_exception_flags05) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_float_exception_flags05_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.6 = select i1 %65, i1 %64, i1 %58*/
-		main_float64_is_signaling_nanexitii_6 = (main_float64_is_signaling_nanexitii_65 ? main_float64_is_signaling_nanexitii_64_reg : main_float64_is_signaling_nanexit1ii_58_reg);
+	/*   %.6 = select i1 %57, i1 %56, i1 %49*/
+		main_float64_is_signaling_nanexitii_6 = (main_float64_is_signaling_nanexitii_57 ? main_float64_is_signaling_nanexitii_56_reg : main_float64_is_signaling_nanexit1ii_49_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.6 = select i1 %65, i1 %64, i1 %58*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_21)) begin
+	/*   %.6 = select i1 %57, i1 %56, i1 %49*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_16)) begin
 		main_float64_is_signaling_nanexitii_6_reg <= main_float64_is_signaling_nanexitii_6;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_6_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.mux2.v.i.i = select i1 %.6, i64 %5, i64 %3*/
-		main_float64_is_signaling_nanexitii_mux2vii = (main_float64_is_signaling_nanexitii_6_reg ? main_1_5_reg : main_1_3_reg);
+	/*   %.mux2.v.i.i = select i1 %.6, i64 %4, i64 %3*/
+		main_float64_is_signaling_nanexitii_mux2vii = (main_float64_is_signaling_nanexitii_6_reg ? main_1_4_reg : main_1_3_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
-	/*   %.mux2.v.i.i = select i1 %.6, i64 %5, i64 %3*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22)) begin
+	/*   %.mux2.v.i.i = select i1 %.6, i64 %4, i64 %3*/
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17)) begin
 		main_float64_is_signaling_nanexitii_mux2vii_reg <= main_float64_is_signaling_nanexitii_mux2vii;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_mux2vii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_mux2vii_reg"); $finish; end
 	end
@@ -1957,2365 +1741,1863 @@ end
 always @(posedge clk) begin
 	/* main: %float64_is_signaling_nan.exit.i.i*/
 	/*   %.mux2.i.i = or i64 %.mux2.v.i.i, 2251799813685248*/
-	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22)) begin
+	if ((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17)) begin
 		main_float64_is_signaling_nanexitii_mux2ii_reg <= main_float64_is_signaling_nanexitii_mux2ii;
 		if (start == 1'b0 && ^(main_float64_is_signaling_nanexitii_mux2ii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_is_signaling_nanexitii_mux2ii_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %67*/
-	/*   %68 = zext i32 %8 to i64*/
-		main_67_68 = main_1_8_reg;
+	/* main: %59*/
+	/*   %60 = zext i32 %7 to i64*/
+		main_59_60 = main_1_7_reg;
 end
 always @(posedge clk) begin
-	/* main: %67*/
-	/*   %68 = zext i32 %8 to i64*/
-	if ((cur_state == LEGUP_F_main_BB__67_23)) begin
-		main_67_68_reg <= main_67_68;
-		if (start == 1'b0 && ^(main_67_68) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_67_68_reg"); $finish; end
+	/* main: %59*/
+	/*   %60 = zext i32 %7 to i64*/
+	if ((cur_state == LEGUP_F_main_BB__59_18)) begin
+		main_59_60_reg <= main_59_60;
+		if (start == 1'b0 && ^(main_59_60) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_59_60_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %67*/
-	/*   %69 = or i64 %68, %6*/
-		main_67_69 = (main_67_68 | main_1_6_reg);
+	/* main: %59*/
+	/*   %61 = or i64 %60, %5*/
+		main_59_61 = (main_59_60 | main_1_5_reg);
 end
 always @(posedge clk) begin
-	/* main: %67*/
-	/*   %69 = or i64 %68, %6*/
-	if ((cur_state == LEGUP_F_main_BB__67_23)) begin
-		main_67_69_reg <= main_67_69;
-		if (start == 1'b0 && ^(main_67_69) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_67_69_reg"); $finish; end
+	/* main: %59*/
+	/*   %61 = or i64 %60, %5*/
+	if ((cur_state == LEGUP_F_main_BB__59_18)) begin
+		main_59_61_reg <= main_59_61;
+		if (start == 1'b0 && ^(main_59_61) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_59_61_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %67*/
-	/*   %70 = icmp eq i64 %69, 0*/
-		main_67_70 = (main_67_69 == 64'd0);
+	/* main: %59*/
+	/*   %62 = icmp eq i64 %61, 0*/
+		main_59_62 = (main_59_61 == 64'd0);
 end
 always @(posedge clk) begin
-	/* main: %67*/
-	/*   %70 = icmp eq i64 %69, 0*/
-	if ((cur_state == LEGUP_F_main_BB__67_23)) begin
-		main_67_70_reg <= main_67_70;
-		if (start == 1'b0 && ^(main_67_70) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_67_70_reg"); $finish; end
+	/* main: %59*/
+	/*   %62 = icmp eq i64 %61, 0*/
+	if ((cur_state == LEGUP_F_main_BB__59_18)) begin
+		main_59_62_reg <= main_59_62;
+		if (start == 1'b0 && ^(main_59_62) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_59_62_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %71*/
-	/*   %72 = or i32 %float_exception_flags.0, 16*/
-		main_71_72 = (main_1_float_exception_flags0_reg | 32'd16);
+	/* main: %63*/
+	/*   %64 = or i32 %float_exception_flags.0, 16*/
+		main_63_64 = (main_1_float_exception_flags0_reg | 32'd16);
 end
 always @(posedge clk) begin
-	/* main: %71*/
-	/*   %72 = or i32 %float_exception_flags.0, 16*/
-	if ((cur_state == LEGUP_F_main_BB__71_24)) begin
-		main_71_72_reg <= main_71_72;
-		if (start == 1'b0 && ^(main_71_72) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_71_72_reg"); $finish; end
+	/* main: %63*/
+	/*   %64 = or i32 %float_exception_flags.0, 16*/
+	if ((cur_state == LEGUP_F_main_BB__63_19)) begin
+		main_63_64_reg <= main_63_64;
+		if (start == 1'b0 && ^(main_63_64) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_63_64_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %73*/
-	/*   %74 = shl nuw i64 %13, 63*/
-		main_73_74 = (main_1_13_reg <<< (64'd63 % 64'd64));
+	/* main: %65*/
+	/*   %66 = shl nuw i64 %12, 63*/
+		main_65_66 = (main_1_12_reg <<< (64'd63 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %73*/
-	/*   %74 = shl nuw i64 %13, 63*/
-	if ((cur_state == LEGUP_F_main_BB__73_25)) begin
-		main_73_74_reg <= main_73_74;
-		if (start == 1'b0 && ^(main_73_74) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_73_74_reg"); $finish; end
+	/* main: %65*/
+	/*   %66 = shl nuw i64 %12, 63*/
+	if ((cur_state == LEGUP_F_main_BB__65_20)) begin
+		main_65_66_reg <= main_65_66;
+		if (start == 1'b0 && ^(main_65_66) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_65_66_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %73*/
-	/*   %75 = or i64 %74, 9218868437227405312*/
-		main_73_75 = (main_73_74 | 64'd9218868437227405312);
+	/* main: %65*/
+	/*   %67 = or i64 %66, 9218868437227405312*/
+		main_65_67 = (main_65_66 | 64'd9218868437227405312);
 end
 always @(posedge clk) begin
-	/* main: %73*/
-	/*   %75 = or i64 %74, 9218868437227405312*/
-	if ((cur_state == LEGUP_F_main_BB__73_25)) begin
-		main_73_75_reg <= main_73_75;
-		if (start == 1'b0 && ^(main_73_75) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_73_75_reg"); $finish; end
+	/* main: %65*/
+	/*   %67 = or i64 %66, 9218868437227405312*/
+	if ((cur_state == LEGUP_F_main_BB__65_20)) begin
+		main_65_67_reg <= main_65_67;
+		if (start == 1'b0 && ^(main_65_67) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_65_67_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %76*/
-	/*   %77 = icmp eq i32 %8, 0*/
-		main_76_77 = (main_1_8_reg == 32'd0);
+	/* main: %68*/
+	/*   %69 = icmp eq i32 %7, 0*/
+		main_68_69 = (main_1_7_reg == 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %76*/
-	/*   %77 = icmp eq i32 %8, 0*/
-	if ((cur_state == LEGUP_F_main_BB__76_26)) begin
-		main_76_77_reg <= main_76_77;
-		if (start == 1'b0 && ^(main_76_77) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_76_77_reg"); $finish; end
+	/* main: %68*/
+	/*   %69 = icmp eq i32 %7, 0*/
+	if ((cur_state == LEGUP_F_main_BB__68_21)) begin
+		main_68_69_reg <= main_68_69;
+		if (start == 1'b0 && ^(main_68_69) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_68_69_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %78*/
-	/*   %79 = icmp eq i64 %6, 0*/
-		main_78_79 = (main_1_6_reg == 64'd0);
+	/* main: %70*/
+	/*   %71 = icmp eq i32 %2, 1*/
+		main_70_71 = (main_1_2_reg == 32'd1);
 end
 always @(posedge clk) begin
-	/* main: %78*/
-	/*   %79 = icmp eq i64 %6, 0*/
-	if ((cur_state == LEGUP_F_main_BB__78_27)) begin
-		main_78_79_reg <= main_78_79;
-		if (start == 1'b0 && ^(main_78_79) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_78_79_reg"); $finish; end
+	/* main: %70*/
+	/*   %71 = icmp eq i32 %2, 1*/
+	if ((cur_state == LEGUP_F_main_BB__70_22)) begin
+		main_70_71_reg <= main_70_71;
+		if (start == 1'b0 && ^(main_70_71) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_70_71_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %72*/
+	/*   %73 = shl nuw i64 %12, 63*/
+		main_72_73 = (main_1_12_reg <<< (64'd63 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %72*/
+	/*   %73 = shl nuw i64 %12, 63*/
+	if ((cur_state == LEGUP_F_main_BB__72_23)) begin
+		main_72_73_reg <= main_72_73;
+		if (start == 1'b0 && ^(main_72_73) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_72_73_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %75 = lshr i64 %5, 32*/
+		main_74_75 = (main_1_5_reg >>> (64'd32 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %75 = lshr i64 %5, 32*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_75_reg <= main_74_75;
+		if (start == 1'b0 && ^(main_74_75) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_75_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %extract.t.i.i4.i = trunc i64 %75 to i32*/
+		main_74_extracttii4i = main_74_75[31:0];
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %extract.t.i.i4.i = trunc i64 %75 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_extracttii4i_reg <= main_74_extracttii4i;
+		if (start == 1'b0 && ^(main_74_extracttii4i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_extracttii4i_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %76 = icmp ult i32 %extract.t.i.i4.i, 65536*/
+		main_74_76 = (main_74_extracttii4i < 32'd65536);
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %76 = icmp ult i32 %extract.t.i.i4.i, 65536*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_76_reg <= main_74_76;
+		if (start == 1'b0 && ^(main_74_76) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_76_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %77 = shl nuw nsw i64 %75, 16*/
+		main_74_77 = (main_74_75 <<< (64'd16 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %77 = shl nuw nsw i64 %75, 16*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_77_reg <= main_74_77;
+		if (start == 1'b0 && ^(main_74_77) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_77_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %78 = trunc i64 %77 to i32*/
+		main_74_78 = main_74_77[31:0];
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %78 = trunc i64 %77 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_78_reg <= main_74_78;
+		if (start == 1'b0 && ^(main_74_78) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_78_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %.a.i.i.i5.i = select i1 %76, i32 %78, i32 %extract.t.i.i4.i*/
+		main_74_aiii5i = (main_74_76 ? main_74_78 : main_74_extracttii4i);
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %.a.i.i.i5.i = select i1 %76, i32 %78, i32 %extract.t.i.i4.i*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_aiii5i_reg <= main_74_aiii5i;
+		if (start == 1'b0 && ^(main_74_aiii5i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_aiii5i_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %..i.i.i6.i = select i1 %76, i32 16, i32 0*/
+		main_74_iii6i = (main_74_76 ? 32'd16 : 32'd0);
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %..i.i.i6.i = select i1 %76, i32 16, i32 0*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_iii6i_reg <= main_74_iii6i;
+		if (start == 1'b0 && ^(main_74_iii6i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_iii6i_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %74*/
+	/*   %79 = icmp ult i32 %.a.i.i.i5.i, 16777216*/
+		main_74_79 = (main_74_aiii5i < 32'd16777216);
+end
+always @(posedge clk) begin
+	/* main: %74*/
+	/*   %79 = icmp ult i32 %.a.i.i.i5.i, 16777216*/
+	if ((cur_state == LEGUP_F_main_BB__74_24)) begin
+		main_74_79_reg <= main_74_79;
+		if (start == 1'b0 && ^(main_74_79) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_74_79_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %80*/
-	/*   %81 = shl nuw i64 %13, 63*/
-		main_80_81 = (main_1_13_reg <<< (64'd63 % 64'd64));
+	/*   %81 = or i32 %..i.i.i6.i, 8*/
+		main_80_81 = (main_74_iii6i_reg | 32'd8);
 end
 always @(posedge clk) begin
 	/* main: %80*/
-	/*   %81 = shl nuw i64 %13, 63*/
-	if ((cur_state == LEGUP_F_main_BB__80_28)) begin
+	/*   %81 = or i32 %..i.i.i6.i, 8*/
+	if ((cur_state == LEGUP_F_main_BB__80_25)) begin
 		main_80_81_reg <= main_80_81;
 		if (start == 1'b0 && ^(main_80_81) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_80_81_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %82*/
-	/*   %83 = icmp ult i64 %6, 4294967296*/
-		main_82_83 = (main_1_6_reg < 64'd4294967296);
+	/* main: %80*/
+	/*   %82 = shl i32 %.a.i.i.i5.i, 8*/
+		main_80_82 = (main_74_aiii5i_reg <<< (32'd8 % 32));
 end
 always @(posedge clk) begin
-	/* main: %82*/
-	/*   %83 = icmp ult i64 %6, 4294967296*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_83_reg <= main_82_83;
-		if (start == 1'b0 && ^(main_82_83) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_83_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %84 = lshr i64 %6, 32*/
-		main_82_84 = (main_1_6_reg >>> (64'd32 % 64'd64));
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %84 = lshr i64 %6, 32*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_84_reg <= main_82_84;
-		if (start == 1'b0 && ^(main_82_84) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_84_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %a.sink.i.i2.i = select i1 %83, i64 %3, i64 %84*/
-		main_82_asinkii2i = (main_82_83 ? main_1_3_reg : main_82_84);
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %a.sink.i.i2.i = select i1 %83, i64 %3, i64 %84*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_asinkii2i_reg <= main_82_asinkii2i;
-		if (start == 1'b0 && ^(main_82_asinkii2i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_asinkii2i_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %extract.t.i.i4.i = trunc i64 %a.sink.i.i2.i to i32*/
-		main_82_extracttii4i = main_82_asinkii2i[31:0];
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %extract.t.i.i4.i = trunc i64 %a.sink.i.i2.i to i32*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_extracttii4i_reg <= main_82_extracttii4i;
-		if (start == 1'b0 && ^(main_82_extracttii4i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_extracttii4i_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %85 = icmp ult i32 %extract.t.i.i4.i, 65536*/
-		main_82_85 = (main_82_extracttii4i < 32'd65536);
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %85 = icmp ult i32 %extract.t.i.i4.i, 65536*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_85_reg <= main_82_85;
-		if (start == 1'b0 && ^(main_82_85) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_85_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %86 = shl i32 %extract.t.i.i4.i, 16*/
-		main_82_86 = (main_82_extracttii4i <<< (32'd16 % 32));
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %86 = shl i32 %extract.t.i.i4.i, 16*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_86_reg <= main_82_86;
-		if (start == 1'b0 && ^(main_82_86) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_86_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %.a.i.i.i5.i = select i1 %85, i32 %86, i32 %extract.t.i.i4.i*/
-		main_82_aiii5i = (main_82_85 ? main_82_86 : main_82_extracttii4i);
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %.a.i.i.i5.i = select i1 %85, i32 %86, i32 %extract.t.i.i4.i*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_aiii5i_reg <= main_82_aiii5i;
-		if (start == 1'b0 && ^(main_82_aiii5i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_aiii5i_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %..i.i.i6.i = select i1 %85, i32 16, i32 0*/
-		main_82_iii6i = (main_82_85 ? 32'd16 : 32'd0);
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %..i.i.i6.i = select i1 %85, i32 16, i32 0*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_iii6i_reg <= main_82_iii6i;
-		if (start == 1'b0 && ^(main_82_iii6i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_iii6i_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %82*/
-	/*   %87 = icmp ult i32 %.a.i.i.i5.i, 16777216*/
-		main_82_87 = (main_82_aiii5i < 32'd16777216);
-end
-always @(posedge clk) begin
-	/* main: %82*/
-	/*   %87 = icmp ult i32 %.a.i.i.i5.i, 16777216*/
-	if ((cur_state == LEGUP_F_main_BB__82_29)) begin
-		main_82_87_reg <= main_82_87;
-		if (start == 1'b0 && ^(main_82_87) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_82_87_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %88*/
-	/*   %89 = or i32 %..i.i.i6.i, 8*/
-		main_88_89 = (main_82_iii6i_reg | 32'd8);
-end
-always @(posedge clk) begin
-	/* main: %88*/
-	/*   %89 = or i32 %..i.i.i6.i, 8*/
-	if ((cur_state == LEGUP_F_main_BB__88_30)) begin
-		main_88_89_reg <= main_88_89;
-		if (start == 1'b0 && ^(main_88_89) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_88_89_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %88*/
-	/*   %90 = shl i32 %.a.i.i.i5.i, 8*/
-		main_88_90 = (main_82_aiii5i_reg <<< (32'd8 % 32));
-end
-always @(posedge clk) begin
-	/* main: %88*/
-	/*   %90 = shl i32 %.a.i.i.i5.i, 8*/
-	if ((cur_state == LEGUP_F_main_BB__88_30)) begin
-		main_88_90_reg <= main_88_90;
-		if (start == 1'b0 && ^(main_88_90) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_88_90_reg"); $finish; end
+	/* main: %80*/
+	/*   %82 = shl i32 %.a.i.i.i5.i, 8*/
+	if ((cur_state == LEGUP_F_main_BB__80_25)) begin
+		main_80_82_reg <= main_80_82;
+		if (start == 1'b0 && ^(main_80_82) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_80_82_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %.1.i.i.i7.i = phi i32 [ %90, %88 ], [ %.a.i.i.i5.i, %82 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__82_29) & (memory_controller_waitrequest == 1'd0)) & (main_82_87 == 1'd0))) begin
-		main_normalizeFloat64Subnormalexit9i_1iii7i = main_82_aiii5i;
+	/*   %.1.i.i.i7.i = phi i32 [ %82, %80 ], [ %.a.i.i.i5.i, %74 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__74_24) & (memory_controller_waitrequest == 1'd0)) & (main_74_79 == 1'd0))) begin
+		main_normalizeFloat64Subnormalexit9i_1iii7i = main_74_aiii5i;
 	end
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %.1.i.i.i7.i = phi i32 [ %90, %88 ], [ %.a.i.i.i5.i, %82 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__88_30) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_normalizeFloat64Subnormalexit9i_1iii7i = main_88_90;
+	/*   %.1.i.i.i7.i = phi i32 [ %82, %80 ], [ %.a.i.i.i5.i, %74 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__80_25) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_normalizeFloat64Subnormalexit9i_1iii7i = main_80_82;
 	end
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %.1.i.i.i7.i = phi i32 [ %90, %88 ], [ %.a.i.i.i5.i, %82 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__82_29) & (memory_controller_waitrequest == 1'd0)) & (main_82_87 == 1'd0))) begin
+	/*   %.1.i.i.i7.i = phi i32 [ %82, %80 ], [ %.a.i.i.i5.i, %74 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__74_24) & (memory_controller_waitrequest == 1'd0)) & (main_74_79 == 1'd0))) begin
 		main_normalizeFloat64Subnormalexit9i_1iii7i_reg <= main_normalizeFloat64Subnormalexit9i_1iii7i;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_1iii7i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_1iii7i_reg"); $finish; end
 	end
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %.1.i.i.i7.i = phi i32 [ %90, %88 ], [ %.a.i.i.i5.i, %82 ]*/
-	if (((cur_state == LEGUP_F_main_BB__88_30) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.1.i.i.i7.i = phi i32 [ %82, %80 ], [ %.a.i.i.i5.i, %74 ]*/
+	if (((cur_state == LEGUP_F_main_BB__80_25) & (memory_controller_waitrequest == 1'd0))) begin
 		main_normalizeFloat64Subnormalexit9i_1iii7i_reg <= main_normalizeFloat64Subnormalexit9i_1iii7i;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_1iii7i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_1iii7i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %89, %88 ], [ %..i.i.i6.i, %82 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__82_29) & (memory_controller_waitrequest == 1'd0)) & (main_82_87 == 1'd0))) begin
-		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i = main_82_iii6i;
+	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %81, %80 ], [ %..i.i.i6.i, %74 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__74_24) & (memory_controller_waitrequest == 1'd0)) & (main_74_79 == 1'd0))) begin
+		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i = main_74_iii6i;
 	end
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %89, %88 ], [ %..i.i.i6.i, %82 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__88_30) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i = main_88_89;
+	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %81, %80 ], [ %..i.i.i6.i, %74 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__80_25) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i = main_80_81;
 	end
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %89, %88 ], [ %..i.i.i6.i, %82 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__82_29) & (memory_controller_waitrequest == 1'd0)) & (main_82_87 == 1'd0))) begin
+	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %81, %80 ], [ %..i.i.i6.i, %74 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__74_24) & (memory_controller_waitrequest == 1'd0)) & (main_74_79 == 1'd0))) begin
 		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg <= main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg"); $finish; end
 	end
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %89, %88 ], [ %..i.i.i6.i, %82 ]*/
-	if (((cur_state == LEGUP_F_main_BB__88_30) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %shiftCount.1.i.i.i8.i = phi i32 [ %81, %80 ], [ %..i.i.i6.i, %74 ]*/
+	if (((cur_state == LEGUP_F_main_BB__80_25) & (memory_controller_waitrequest == 1'd0))) begin
 		main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg <= main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %91 = lshr i32 %.1.i.i.i7.i, 24*/
-		main_normalizeFloat64Subnormalexit9i_91 = (main_normalizeFloat64Subnormalexit9i_1iii7i_reg >>> (32'd24 % 32));
+	/*   %83 = lshr i32 %.1.i.i.i7.i, 24*/
+		main_normalizeFloat64Subnormalexit9i_83 = (main_normalizeFloat64Subnormalexit9i_1iii7i_reg >>> (32'd24 % 32));
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %91 = lshr i32 %.1.i.i.i7.i, 24*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_normalizeFloat64Subnormalexit9i_91_reg <= main_normalizeFloat64Subnormalexit9i_91;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_91) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_91_reg"); $finish; end
+	/*   %83 = lshr i32 %.1.i.i.i7.i, 24*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26)) begin
+		main_normalizeFloat64Subnormalexit9i_83_reg <= main_normalizeFloat64Subnormalexit9i_83;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_83) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_83_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep_int4 = ptrtoint [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh to i32*/
-if (reset) begin main_normalizeFloat64Subnormalexit9i_gep_int4 = 0; end
-		main_normalizeFloat64Subnormalexit9i_gep_int4 = 1'd0;
+	/*   %84 = getelementptr inbounds [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh, i32 0, i32 %83*/
+		main_normalizeFloat64Subnormalexit9i_84 = (1'd0 | (4 * main_normalizeFloat64Subnormalexit9i_83));
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep_int4 = ptrtoint [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh to i32*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_normalizeFloat64Subnormalexit9i_gep_int4_reg <= main_normalizeFloat64Subnormalexit9i_gep_int4;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_gep_int4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_gep_int4_reg"); $finish; end
+	/*   %84 = getelementptr inbounds [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh, i32 0, i32 %83*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26)) begin
+		main_normalizeFloat64Subnormalexit9i_84_reg <= main_normalizeFloat64Subnormalexit9i_84;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_84) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_84_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep_array5 = mul i32 %91, 4*/
-		main_normalizeFloat64Subnormalexit9i_gep_array5 = (main_normalizeFloat64Subnormalexit9i_91 * 32'd4);
+	/*   %85 = load i32* %84, align 4, !tbaa !5*/
+		main_normalizeFloat64Subnormalexit9i_85 = countLeadingZeros32countLeadingZerosHigh_out_a;
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep_array5 = mul i32 %91, 4*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_normalizeFloat64Subnormalexit9i_gep_array5_reg <= main_normalizeFloat64Subnormalexit9i_gep_array5;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_gep_array5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_gep_array5_reg"); $finish; end
+	/*   %85 = load i32* %84, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27)) begin
+		main_normalizeFloat64Subnormalexit9i_85_reg <= main_normalizeFloat64Subnormalexit9i_85;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_85) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_85_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep6 = add i32 %gep_int4, %gep_array5*/
-		main_normalizeFloat64Subnormalexit9i_gep6 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %normalizeFloat64Subnormal.exit9.i*/
-/*   %gep6 = add i32 %gep_int4, %gep_array5*/
-	main_normalizeFloat64Subnormalexit9i_gep6_reg = main_1_gep_reg;
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %92 = inttoptr i32 %gep6 to i32**/
-		main_normalizeFloat64Subnormalexit9i_92 = main_normalizeFloat64Subnormalexit9i_gep6;
+	/*   %86 = add nsw i32 %shiftCount.1.i.i.i8.i, -11*/
+		main_normalizeFloat64Subnormalexit9i_86 = (main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg + -32'd11);
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %92 = inttoptr i32 %gep6 to i32**/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
-		main_normalizeFloat64Subnormalexit9i_92_reg <= main_normalizeFloat64Subnormalexit9i_92;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_92) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_92_reg"); $finish; end
+	/*   %86 = add nsw i32 %shiftCount.1.i.i.i8.i, -11*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26)) begin
+		main_normalizeFloat64Subnormalexit9i_86_reg <= main_normalizeFloat64Subnormalexit9i_86;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_86) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_86_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %93 = load i32* %92, align 4, !tbaa !5*/
-		main_normalizeFloat64Subnormalexit9i_93 = countLeadingZeros32countLeadingZerosHigh_out_a;
+	/*   %87 = add i32 %86, %85*/
+		main_normalizeFloat64Subnormalexit9i_87 = (main_normalizeFloat64Subnormalexit9i_86_reg + main_normalizeFloat64Subnormalexit9i_85);
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %93 = load i32* %92, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_normalizeFloat64Subnormalexit9i_93_reg <= main_normalizeFloat64Subnormalexit9i_93;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_93) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_93_reg"); $finish; end
+	/*   %87 = add i32 %86, %85*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27)) begin
+		main_normalizeFloat64Subnormalexit9i_87_reg <= main_normalizeFloat64Subnormalexit9i_87;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_87) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_87_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %94 = select i1 %83, i32 21, i32 -11*/
-		main_normalizeFloat64Subnormalexit9i_94 = (main_82_83_reg ? 32'd21 : -32'd11);
+	/*   %88 = zext i32 %87 to i64*/
+		main_normalizeFloat64Subnormalexit9i_88 = main_normalizeFloat64Subnormalexit9i_87;
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %94 = select i1 %83, i32 21, i32 -11*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_normalizeFloat64Subnormalexit9i_94_reg <= main_normalizeFloat64Subnormalexit9i_94;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_94) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_94_reg"); $finish; end
+	/*   %88 = zext i32 %87 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27)) begin
+		main_normalizeFloat64Subnormalexit9i_88_reg <= main_normalizeFloat64Subnormalexit9i_88;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_88) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_88_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %95 = add nsw i32 %94, %shiftCount.1.i.i.i8.i*/
-		main_normalizeFloat64Subnormalexit9i_95 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %normalizeFloat64Subnormal.exit9.i*/
-/*   %95 = add nsw i32 %94, %shiftCount.1.i.i.i8.i*/
-	main_normalizeFloat64Subnormalexit9i_95_reg = main_normalizeFloat64Subnormalexiti_119_reg;
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %96 = add i32 %95, %93*/
-		main_normalizeFloat64Subnormalexit9i_96 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %normalizeFloat64Subnormal.exit9.i*/
-/*   %96 = add i32 %95, %93*/
-	main_normalizeFloat64Subnormalexit9i_96_reg = main_1_gep_reg;
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %97 = zext i32 %96 to i64*/
-		main_normalizeFloat64Subnormalexit9i_97 = main_normalizeFloat64Subnormalexit9i_96;
+	/*   %89 = shl i64 %5, %88*/
+		main_normalizeFloat64Subnormalexit9i_89 = (main_1_5_reg <<< (main_normalizeFloat64Subnormalexit9i_88 % 64'd64));
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %97 = zext i32 %96 to i64*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_normalizeFloat64Subnormalexit9i_97_reg <= main_normalizeFloat64Subnormalexit9i_97;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_97) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_97_reg"); $finish; end
+	/*   %89 = shl i64 %5, %88*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27)) begin
+		main_normalizeFloat64Subnormalexit9i_89_reg <= main_normalizeFloat64Subnormalexit9i_89;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_89) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_89_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %98 = shl i64 %6, %97*/
-		main_normalizeFloat64Subnormalexit9i_98 = (main_1_6_reg <<< (main_normalizeFloat64Subnormalexit9i_97 % 64'd64));
+	/* main: %90*/
+	/*   %91 = phi i64 [ %89, %normalizeFloat64Subnormal.exit9.i ], [ %5, %68 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__68_21) & (memory_controller_waitrequest == 1'd0)) & (main_68_69 == 1'd0))) begin
+		main_90_91 = main_1_5_reg;
+	end
+	/* main: %90*/
+	/*   %91 = phi i64 [ %89, %normalizeFloat64Subnormal.exit9.i ], [ %5, %68 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_90_91 = main_normalizeFloat64Subnormalexit9i_89;
+	end
 end
 always @(posedge clk) begin
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %98 = shl i64 %6, %97*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_normalizeFloat64Subnormalexit9i_98_reg <= main_normalizeFloat64Subnormalexit9i_98;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_98) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexit9i_98_reg"); $finish; end
+	/* main: %90*/
+	/*   %91 = phi i64 [ %89, %normalizeFloat64Subnormal.exit9.i ], [ %5, %68 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__68_21) & (memory_controller_waitrequest == 1'd0)) & (main_68_69 == 1'd0))) begin
+		main_90_91_reg <= main_90_91;
+		if (start == 1'b0 && ^(main_90_91) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_90_91_reg"); $finish; end
+	end
+	/* main: %90*/
+	/*   %91 = phi i64 [ %89, %normalizeFloat64Subnormal.exit9.i ], [ %5, %68 ]*/
+	if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_27) & (memory_controller_waitrequest == 1'd0))) begin
+		main_90_91_reg <= main_90_91;
+		if (start == 1'b0 && ^(main_90_91) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_90_91_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %99*/
-	/*   %100 = phi i64 [ %98, %normalizeFloat64Subnormal.exit9.i ], [ %6, %76 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__76_26) & (memory_controller_waitrequest == 1'd0)) & (main_76_77 == 1'd0))) begin
-		main_99_100 = main_1_6_reg;
-	end
-	/* main: %99*/
-	/*   %100 = phi i64 [ %98, %normalizeFloat64Subnormal.exit9.i ], [ %6, %76 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_99_100 = main_normalizeFloat64Subnormalexit9i_98;
-	end
+	/* main: %90*/
+	/*   %92 = icmp eq i32 %10, 0*/
+		main_90_92 = (main_1_10_reg == 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %99*/
-	/*   %100 = phi i64 [ %98, %normalizeFloat64Subnormal.exit9.i ], [ %6, %76 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__76_26) & (memory_controller_waitrequest == 1'd0)) & (main_76_77 == 1'd0))) begin
-		main_99_100_reg <= main_99_100;
-		if (start == 1'b0 && ^(main_99_100) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_99_100_reg"); $finish; end
-	end
-	/* main: %99*/
-	/*   %100 = phi i64 [ %98, %normalizeFloat64Subnormal.exit9.i ], [ %6, %76 ]*/
-	if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33) & (memory_controller_waitrequest == 1'd0))) begin
-		main_99_100_reg <= main_99_100;
-		if (start == 1'b0 && ^(main_99_100) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_99_100_reg"); $finish; end
+	/* main: %90*/
+	/*   %92 = icmp eq i32 %10, 0*/
+	if ((cur_state == LEGUP_F_main_BB__90_28)) begin
+		main_90_92_reg <= main_90_92;
+		if (start == 1'b0 && ^(main_90_92) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_90_92_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %99*/
-	/*   %101 = icmp eq i32 %11, 0*/
-		main_99_101 = (main_1_11_reg == 32'd0);
+	/* main: %94*/
+	/*   %95 = shl nuw i64 %12, 63*/
+		main_94_95 = (main_1_12_reg <<< (64'd63 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %99*/
-	/*   %101 = icmp eq i32 %11, 0*/
-	if ((cur_state == LEGUP_F_main_BB__99_34)) begin
-		main_99_101_reg <= main_99_101;
-		if (start == 1'b0 && ^(main_99_101) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_99_101_reg"); $finish; end
+	/* main: %94*/
+	/*   %95 = shl nuw i64 %12, 63*/
+	if ((cur_state == LEGUP_F_main_BB__94_30)) begin
+		main_94_95_reg <= main_94_95;
+		if (start == 1'b0 && ^(main_94_95) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_94_95_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %97 = lshr i64 %8, 32*/
+		main_96_97 = (main_1_8_reg >>> (64'd32 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %97 = lshr i64 %8, 32*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_97_reg <= main_96_97;
+		if (start == 1'b0 && ^(main_96_97) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_97_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %extract.t.i.i.i = trunc i64 %97 to i32*/
+		main_96_extracttiii = main_96_97[31:0];
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %extract.t.i.i.i = trunc i64 %97 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_extracttiii_reg <= main_96_extracttiii;
+		if (start == 1'b0 && ^(main_96_extracttiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_extracttiii_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %98 = icmp ult i32 %extract.t.i.i.i, 65536*/
+		main_96_98 = (main_96_extracttiii < 32'd65536);
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %98 = icmp ult i32 %extract.t.i.i.i, 65536*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_98_reg <= main_96_98;
+		if (start == 1'b0 && ^(main_96_98) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_98_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %99 = shl nuw nsw i64 %97, 16*/
+		main_96_99 = (main_96_97 <<< (64'd16 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %99 = shl nuw nsw i64 %97, 16*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_99_reg <= main_96_99;
+		if (start == 1'b0 && ^(main_96_99) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_99_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %100 = trunc i64 %99 to i32*/
+		main_96_100 = main_96_99[31:0];
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %100 = trunc i64 %99 to i32*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_100_reg <= main_96_100;
+		if (start == 1'b0 && ^(main_96_100) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_100_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %.a.i.i.i.i = select i1 %98, i32 %100, i32 %extract.t.i.i.i*/
+		main_96_aiiii = (main_96_98 ? main_96_100 : main_96_extracttiii);
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %.a.i.i.i.i = select i1 %98, i32 %100, i32 %extract.t.i.i.i*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_aiiii_reg <= main_96_aiiii;
+		if (start == 1'b0 && ^(main_96_aiiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_aiiii_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %..i.i.i.i = select i1 %98, i32 16, i32 0*/
+		main_96_iiii = (main_96_98 ? 32'd16 : 32'd0);
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %..i.i.i.i = select i1 %98, i32 16, i32 0*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_iiii_reg <= main_96_iiii;
+		if (start == 1'b0 && ^(main_96_iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_iiii_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %96*/
+	/*   %101 = icmp ult i32 %.a.i.i.i.i, 16777216*/
+		main_96_101 = (main_96_aiiii < 32'd16777216);
+end
+always @(posedge clk) begin
+	/* main: %96*/
+	/*   %101 = icmp ult i32 %.a.i.i.i.i, 16777216*/
+	if ((cur_state == LEGUP_F_main_BB__96_31)) begin
+		main_96_101_reg <= main_96_101;
+		if (start == 1'b0 && ^(main_96_101) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_96_101_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %102*/
-	/*   %103 = icmp eq i64 %9, 0*/
-		main_102_103 = (main_1_9_reg == 64'd0);
+	/*   %103 = or i32 %..i.i.i.i, 8*/
+		main_102_103 = (main_96_iiii_reg | 32'd8);
 end
 always @(posedge clk) begin
 	/* main: %102*/
-	/*   %103 = icmp eq i64 %9, 0*/
-	if ((cur_state == LEGUP_F_main_BB__102_35)) begin
+	/*   %103 = or i32 %..i.i.i.i, 8*/
+	if ((cur_state == LEGUP_F_main_BB__102_32)) begin
 		main_102_103_reg <= main_102_103;
 		if (start == 1'b0 && ^(main_102_103) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_102_103_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %104*/
-	/*   %105 = shl nuw i64 %13, 63*/
-		main_104_105 = (main_1_13_reg <<< (64'd63 % 64'd64));
+	/* main: %102*/
+	/*   %104 = shl i32 %.a.i.i.i.i, 8*/
+		main_102_104 = (main_96_aiiii_reg <<< (32'd8 % 32));
 end
 always @(posedge clk) begin
-	/* main: %104*/
-	/*   %105 = shl nuw i64 %13, 63*/
-	if ((cur_state == LEGUP_F_main_BB__104_36)) begin
-		main_104_105_reg <= main_104_105;
-		if (start == 1'b0 && ^(main_104_105) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_104_105_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %107 = icmp ult i64 %9, 4294967296*/
-		main_106_107 = (main_1_9_reg < 64'd4294967296);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %107 = icmp ult i64 %9, 4294967296*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_107_reg <= main_106_107;
-		if (start == 1'b0 && ^(main_106_107) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_107_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %108 = lshr i64 %9, 32*/
-		main_106_108 = (main_1_9_reg >>> (64'd32 % 64'd64));
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %108 = lshr i64 %9, 32*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_108_reg <= main_106_108;
-		if (start == 1'b0 && ^(main_106_108) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_108_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %a.sink.i.i.i = select i1 %107, i64 %5, i64 %108*/
-		main_106_asinkiii = (main_106_107 ? main_1_5_reg : main_106_108);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %a.sink.i.i.i = select i1 %107, i64 %5, i64 %108*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_asinkiii_reg <= main_106_asinkiii;
-		if (start == 1'b0 && ^(main_106_asinkiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_asinkiii_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %extract.t.i.i.i = trunc i64 %a.sink.i.i.i to i32*/
-		main_106_extracttiii = main_106_asinkiii[31:0];
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %extract.t.i.i.i = trunc i64 %a.sink.i.i.i to i32*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_extracttiii_reg <= main_106_extracttiii;
-		if (start == 1'b0 && ^(main_106_extracttiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_extracttiii_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %109 = icmp ult i32 %extract.t.i.i.i, 65536*/
-		main_106_109 = (main_106_extracttiii < 32'd65536);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %109 = icmp ult i32 %extract.t.i.i.i, 65536*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_109_reg <= main_106_109;
-		if (start == 1'b0 && ^(main_106_109) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_109_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %110 = shl i32 %extract.t.i.i.i, 16*/
-		main_106_110 = (main_106_extracttiii <<< (32'd16 % 32));
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %110 = shl i32 %extract.t.i.i.i, 16*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_110_reg <= main_106_110;
-		if (start == 1'b0 && ^(main_106_110) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_110_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %.a.i.i.i.i = select i1 %109, i32 %110, i32 %extract.t.i.i.i*/
-		main_106_aiiii = (main_106_109 ? main_106_110 : main_106_extracttiii);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %.a.i.i.i.i = select i1 %109, i32 %110, i32 %extract.t.i.i.i*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_aiiii_reg <= main_106_aiiii;
-		if (start == 1'b0 && ^(main_106_aiiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_aiiii_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %..i.i.i.i = select i1 %109, i32 16, i32 0*/
-		main_106_iiii = (main_106_109 ? 32'd16 : 32'd0);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %..i.i.i.i = select i1 %109, i32 16, i32 0*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_iiii_reg <= main_106_iiii;
-		if (start == 1'b0 && ^(main_106_iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_iiii_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %106*/
-	/*   %111 = icmp ult i32 %.a.i.i.i.i, 16777216*/
-		main_106_111 = (main_106_aiiii < 32'd16777216);
-end
-always @(posedge clk) begin
-	/* main: %106*/
-	/*   %111 = icmp ult i32 %.a.i.i.i.i, 16777216*/
-	if ((cur_state == LEGUP_F_main_BB__106_37)) begin
-		main_106_111_reg <= main_106_111;
-		if (start == 1'b0 && ^(main_106_111) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_106_111_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %112*/
-	/*   %113 = or i32 %..i.i.i.i, 8*/
-		main_112_113 = (main_106_iiii_reg | 32'd8);
-end
-always @(posedge clk) begin
-	/* main: %112*/
-	/*   %113 = or i32 %..i.i.i.i, 8*/
-	if ((cur_state == LEGUP_F_main_BB__112_38)) begin
-		main_112_113_reg <= main_112_113;
-		if (start == 1'b0 && ^(main_112_113) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_112_113_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %112*/
-	/*   %114 = shl i32 %.a.i.i.i.i, 8*/
-		main_112_114 = (main_106_aiiii_reg <<< (32'd8 % 32));
-end
-always @(posedge clk) begin
-	/* main: %112*/
-	/*   %114 = shl i32 %.a.i.i.i.i, 8*/
-	if ((cur_state == LEGUP_F_main_BB__112_38)) begin
-		main_112_114_reg <= main_112_114;
-		if (start == 1'b0 && ^(main_112_114) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_112_114_reg"); $finish; end
+	/* main: %102*/
+	/*   %104 = shl i32 %.a.i.i.i.i, 8*/
+	if ((cur_state == LEGUP_F_main_BB__102_32)) begin
+		main_102_104_reg <= main_102_104;
+		if (start == 1'b0 && ^(main_102_104) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_102_104_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %.1.i.i.i.i = phi i32 [ %114, %112 ], [ %.a.i.i.i.i, %106 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__106_37) & (memory_controller_waitrequest == 1'd0)) & (main_106_111 == 1'd0))) begin
-		main_normalizeFloat64Subnormalexiti_1iiii = main_106_aiiii;
+	/*   %.1.i.i.i.i = phi i32 [ %104, %102 ], [ %.a.i.i.i.i, %96 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__96_31) & (memory_controller_waitrequest == 1'd0)) & (main_96_101 == 1'd0))) begin
+		main_normalizeFloat64Subnormalexiti_1iiii = main_96_aiiii;
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %.1.i.i.i.i = phi i32 [ %114, %112 ], [ %.a.i.i.i.i, %106 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__112_38) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_normalizeFloat64Subnormalexiti_1iiii = main_112_114;
+	/*   %.1.i.i.i.i = phi i32 [ %104, %102 ], [ %.a.i.i.i.i, %96 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__102_32) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_normalizeFloat64Subnormalexiti_1iiii = main_102_104;
 	end
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %.1.i.i.i.i = phi i32 [ %114, %112 ], [ %.a.i.i.i.i, %106 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__106_37) & (memory_controller_waitrequest == 1'd0)) & (main_106_111 == 1'd0))) begin
+	/*   %.1.i.i.i.i = phi i32 [ %104, %102 ], [ %.a.i.i.i.i, %96 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__96_31) & (memory_controller_waitrequest == 1'd0)) & (main_96_101 == 1'd0))) begin
 		main_normalizeFloat64Subnormalexiti_1iiii_reg <= main_normalizeFloat64Subnormalexiti_1iiii;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_1iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_1iiii_reg"); $finish; end
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %.1.i.i.i.i = phi i32 [ %114, %112 ], [ %.a.i.i.i.i, %106 ]*/
-	if (((cur_state == LEGUP_F_main_BB__112_38) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.1.i.i.i.i = phi i32 [ %104, %102 ], [ %.a.i.i.i.i, %96 ]*/
+	if (((cur_state == LEGUP_F_main_BB__102_32) & (memory_controller_waitrequest == 1'd0))) begin
 		main_normalizeFloat64Subnormalexiti_1iiii_reg <= main_normalizeFloat64Subnormalexiti_1iiii;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_1iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_1iiii_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %shiftCount.1.i.i.i.i = phi i32 [ %113, %112 ], [ %..i.i.i.i, %106 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__106_37) & (memory_controller_waitrequest == 1'd0)) & (main_106_111 == 1'd0))) begin
-		main_normalizeFloat64Subnormalexiti_shiftCount1iiii = main_106_iiii;
+	/*   %shiftCount.1.i.i.i.i = phi i32 [ %103, %102 ], [ %..i.i.i.i, %96 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__96_31) & (memory_controller_waitrequest == 1'd0)) & (main_96_101 == 1'd0))) begin
+		main_normalizeFloat64Subnormalexiti_shiftCount1iiii = main_96_iiii;
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %shiftCount.1.i.i.i.i = phi i32 [ %113, %112 ], [ %..i.i.i.i, %106 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__112_38) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_normalizeFloat64Subnormalexiti_shiftCount1iiii = main_112_113;
+	/*   %shiftCount.1.i.i.i.i = phi i32 [ %103, %102 ], [ %..i.i.i.i, %96 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB__102_32) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_normalizeFloat64Subnormalexiti_shiftCount1iiii = main_102_103;
 	end
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %shiftCount.1.i.i.i.i = phi i32 [ %113, %112 ], [ %..i.i.i.i, %106 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__106_37) & (memory_controller_waitrequest == 1'd0)) & (main_106_111 == 1'd0))) begin
+	/*   %shiftCount.1.i.i.i.i = phi i32 [ %103, %102 ], [ %..i.i.i.i, %96 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__96_31) & (memory_controller_waitrequest == 1'd0)) & (main_96_101 == 1'd0))) begin
 		main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg <= main_normalizeFloat64Subnormalexiti_shiftCount1iiii;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_shiftCount1iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg"); $finish; end
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %shiftCount.1.i.i.i.i = phi i32 [ %113, %112 ], [ %..i.i.i.i, %106 ]*/
-	if (((cur_state == LEGUP_F_main_BB__112_38) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %shiftCount.1.i.i.i.i = phi i32 [ %103, %102 ], [ %..i.i.i.i, %96 ]*/
+	if (((cur_state == LEGUP_F_main_BB__102_32) & (memory_controller_waitrequest == 1'd0))) begin
 		main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg <= main_normalizeFloat64Subnormalexiti_shiftCount1iiii;
 		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_shiftCount1iiii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %115 = lshr i32 %.1.i.i.i.i, 24*/
-		main_normalizeFloat64Subnormalexiti_115 = (main_normalizeFloat64Subnormalexiti_1iiii_reg >>> (32'd24 % 32));
+	/*   %105 = lshr i32 %.1.i.i.i.i, 24*/
+		main_normalizeFloat64Subnormalexiti_105 = (main_normalizeFloat64Subnormalexiti_1iiii_reg >>> (32'd24 % 32));
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %115 = lshr i32 %.1.i.i.i.i, 24*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_normalizeFloat64Subnormalexiti_115_reg <= main_normalizeFloat64Subnormalexiti_115;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_115) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_115_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep_int7 = ptrtoint [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh to i32*/
-if (reset) begin main_normalizeFloat64Subnormalexiti_gep_int7 = 0; end
-		main_normalizeFloat64Subnormalexiti_gep_int7 = 1'd0;
-end
-always @(posedge clk) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep_int7 = ptrtoint [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh to i32*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_normalizeFloat64Subnormalexiti_gep_int7_reg <= main_normalizeFloat64Subnormalexiti_gep_int7;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_gep_int7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_gep_int7_reg"); $finish; end
+	/*   %105 = lshr i32 %.1.i.i.i.i, 24*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33)) begin
+		main_normalizeFloat64Subnormalexiti_105_reg <= main_normalizeFloat64Subnormalexiti_105;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_105) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_105_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep_array8 = mul i32 %115, 4*/
-		main_normalizeFloat64Subnormalexiti_gep_array8 = (main_normalizeFloat64Subnormalexiti_115 * 32'd4);
+	/*   %106 = getelementptr inbounds [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh, i32 0, i32 %105*/
+		main_normalizeFloat64Subnormalexiti_106 = (1'd0 | (4 * main_normalizeFloat64Subnormalexiti_105));
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep_array8 = mul i32 %115, 4*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_normalizeFloat64Subnormalexiti_gep_array8_reg <= main_normalizeFloat64Subnormalexiti_gep_array8;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_gep_array8) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_gep_array8_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep9 = add i32 %gep_int7, %gep_array8*/
-		main_normalizeFloat64Subnormalexiti_gep9 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %normalizeFloat64Subnormal.exit.i*/
-/*   %gep9 = add i32 %gep_int7, %gep_array8*/
-	main_normalizeFloat64Subnormalexiti_gep9_reg = main_1_gep_reg;
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %116 = inttoptr i32 %gep9 to i32**/
-		main_normalizeFloat64Subnormalexiti_116 = main_normalizeFloat64Subnormalexiti_gep9;
-end
-always @(posedge clk) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %116 = inttoptr i32 %gep9 to i32**/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
-		main_normalizeFloat64Subnormalexiti_116_reg <= main_normalizeFloat64Subnormalexiti_116;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_116) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_116_reg"); $finish; end
+	/*   %106 = getelementptr inbounds [256 x i32]* @countLeadingZeros32.countLeadingZerosHigh, i32 0, i32 %105*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33)) begin
+		main_normalizeFloat64Subnormalexiti_106_reg <= main_normalizeFloat64Subnormalexiti_106;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_106) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_106_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %117 = load i32* %116, align 4, !tbaa !5*/
-		main_normalizeFloat64Subnormalexiti_117 = countLeadingZeros32countLeadingZerosHigh_out_a;
+	/*   %107 = load i32* %106, align 4, !tbaa !5*/
+		main_normalizeFloat64Subnormalexiti_107 = countLeadingZeros32countLeadingZerosHigh_out_a;
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %117 = load i32* %116, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_normalizeFloat64Subnormalexiti_117_reg <= main_normalizeFloat64Subnormalexiti_117;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_117) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_117_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %118 = select i1 %107, i32 21, i32 -11*/
-		main_normalizeFloat64Subnormalexiti_118 = (main_106_107_reg ? 32'd21 : -32'd11);
-end
-always @(posedge clk) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %118 = select i1 %107, i32 21, i32 -11*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_normalizeFloat64Subnormalexiti_118_reg <= main_normalizeFloat64Subnormalexiti_118;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_118) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_118_reg"); $finish; end
+	/*   %107 = load i32* %106, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34)) begin
+		main_normalizeFloat64Subnormalexiti_107_reg <= main_normalizeFloat64Subnormalexiti_107;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_107) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_107_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %119 = add nsw i32 %118, %shiftCount.1.i.i.i.i*/
-		main_normalizeFloat64Subnormalexiti_119 = main_signed_add_32_0;
+	/*   %108 = add nsw i32 %shiftCount.1.i.i.i.i, -11*/
+		main_normalizeFloat64Subnormalexiti_108 = (main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg + -32'd11);
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %119 = add nsw i32 %118, %shiftCount.1.i.i.i.i*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_normalizeFloat64Subnormalexiti_119_reg <= main_normalizeFloat64Subnormalexiti_119;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_119) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_119_reg"); $finish; end
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %95 = add nsw i32 %94, %shiftCount.1.i.i.i8.i*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_normalizeFloat64Subnormalexiti_119_reg <= main_normalizeFloat64Subnormalexit9i_95;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexit9i_95) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_119_reg"); $finish; end
-	end
-	/* main: %float64_mul.exit*/
-	/*   %173 = add nsw i32 %172, %main_result.02*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) begin
-		main_normalizeFloat64Subnormalexiti_119_reg <= main_float64_mulexit_173;
-		if (start == 1'b0 && ^(main_float64_mulexit_173) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_119_reg"); $finish; end
+	/*   %108 = add nsw i32 %shiftCount.1.i.i.i.i, -11*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33)) begin
+		main_normalizeFloat64Subnormalexiti_108_reg <= main_normalizeFloat64Subnormalexiti_108;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_108) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_108_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %120 = add i32 %119, %117*/
-		main_normalizeFloat64Subnormalexiti_120 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %normalizeFloat64Subnormal.exit.i*/
-/*   %120 = add i32 %119, %117*/
-	main_normalizeFloat64Subnormalexiti_120_reg = main_1_gep_reg;
-end
-always @(*) begin
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %121 = zext i32 %120 to i64*/
-		main_normalizeFloat64Subnormalexiti_121 = main_normalizeFloat64Subnormalexiti_120;
+	/*   %109 = add i32 %108, %107*/
+		main_normalizeFloat64Subnormalexiti_109 = (main_normalizeFloat64Subnormalexiti_108_reg + main_normalizeFloat64Subnormalexiti_107);
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %121 = zext i32 %120 to i64*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_normalizeFloat64Subnormalexiti_121_reg <= main_normalizeFloat64Subnormalexiti_121;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_121) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_121_reg"); $finish; end
+	/*   %109 = add i32 %108, %107*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34)) begin
+		main_normalizeFloat64Subnormalexiti_109_reg <= main_normalizeFloat64Subnormalexiti_109;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_109) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_109_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %122 = shl i64 %9, %121*/
-		main_normalizeFloat64Subnormalexiti_122 = (main_1_9_reg <<< (main_normalizeFloat64Subnormalexiti_121 % 64'd64));
+	/*   %110 = zext i32 %109 to i64*/
+		main_normalizeFloat64Subnormalexiti_110 = main_normalizeFloat64Subnormalexiti_109;
 end
 always @(posedge clk) begin
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %122 = shl i64 %9, %121*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_normalizeFloat64Subnormalexiti_122_reg <= main_normalizeFloat64Subnormalexiti_122;
-		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_122) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_122_reg"); $finish; end
+	/*   %110 = zext i32 %109 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34)) begin
+		main_normalizeFloat64Subnormalexiti_110_reg <= main_normalizeFloat64Subnormalexiti_110;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_110) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_110_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %124 = phi i64 [ %122, %normalizeFloat64Subnormal.exit.i ], [ %9, %99 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__99_34) & (memory_controller_waitrequest == 1'd0)) & (main_99_101 == 1'd0))) begin
-		main_123_124 = main_1_9_reg;
+	/* main: %normalizeFloat64Subnormal.exit.i*/
+	/*   %111 = shl i64 %8, %110*/
+		main_normalizeFloat64Subnormalexiti_111 = (main_1_8_reg <<< (main_normalizeFloat64Subnormalexiti_110 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %normalizeFloat64Subnormal.exit.i*/
+	/*   %111 = shl i64 %8, %110*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34)) begin
+		main_normalizeFloat64Subnormalexiti_111_reg <= main_normalizeFloat64Subnormalexiti_111;
+		if (start == 1'b0 && ^(main_normalizeFloat64Subnormalexiti_111) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_normalizeFloat64Subnormalexiti_111_reg"); $finish; end
 	end
-	/* main: %123*/
-	/*   %124 = phi i64 [ %122, %normalizeFloat64Subnormal.exit.i ], [ %9, %99 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_123_124 = main_normalizeFloat64Subnormalexiti_122;
+end
+always @(*) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %112 = phi i64 [ %111, %normalizeFloat64Subnormal.exit.i ], [ %8, %90 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__90_28) & (memory_controller_waitrequest == 1'd0)) & (main_90_92 == 1'd0))) begin
+		main_roundAndPackFloat64exiti_112 = main_1_8_reg;
+	end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %112 = phi i64 [ %111, %normalizeFloat64Subnormal.exit.i ], [ %8, %90 ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_roundAndPackFloat64exiti_112 = main_normalizeFloat64Subnormalexiti_111;
 	end
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %124 = phi i64 [ %122, %normalizeFloat64Subnormal.exit.i ], [ %9, %99 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__99_34) & (memory_controller_waitrequest == 1'd0)) & (main_99_101 == 1'd0))) begin
-		main_123_124_reg <= main_123_124;
-		if (start == 1'b0 && ^(main_123_124) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_124_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %112 = phi i64 [ %111, %normalizeFloat64Subnormal.exit.i ], [ %8, %90 ]*/
+	if ((((cur_state == LEGUP_F_main_BB__90_28) & (memory_controller_waitrequest == 1'd0)) & (main_90_92 == 1'd0))) begin
+		main_roundAndPackFloat64exiti_112_reg <= main_roundAndPackFloat64exiti_112;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_112) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_112_reg"); $finish; end
 	end
-	/* main: %123*/
-	/*   %124 = phi i64 [ %122, %normalizeFloat64Subnormal.exit.i ], [ %9, %99 ]*/
-	if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41) & (memory_controller_waitrequest == 1'd0))) begin
-		main_123_124_reg <= main_123_124;
-		if (start == 1'b0 && ^(main_123_124) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_124_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %112 = phi i64 [ %111, %normalizeFloat64Subnormal.exit.i ], [ %8, %90 ]*/
+	if (((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_34) & (memory_controller_waitrequest == 1'd0))) begin
+		main_roundAndPackFloat64exiti_112_reg <= main_roundAndPackFloat64exiti_112;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_112) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_112_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %125 = shl i64 %100, 10*/
-		main_123_125 = (main_99_100_reg <<< (64'd10 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %113 = shl i64 %91, 10*/
+		main_roundAndPackFloat64exiti_113 = (main_90_91_reg <<< (64'd10 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %125 = shl i64 %100, 10*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_125_reg <= main_123_125;
-		if (start == 1'b0 && ^(main_123_125) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_125_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %113 = shl i64 %91, 10*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_113_reg <= main_roundAndPackFloat64exiti_113;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_113) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_113_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %126 = shl i64 %124, 11*/
-		main_123_126 = (main_123_124_reg <<< (64'd11 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %114 = shl i64 %112, 11*/
+		main_roundAndPackFloat64exiti_114 = (main_roundAndPackFloat64exiti_112_reg <<< (64'd11 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %126 = shl i64 %124, 11*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_126_reg <= main_123_126;
-		if (start == 1'b0 && ^(main_123_126) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_126_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %114 = shl i64 %112, 11*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_114_reg <= main_roundAndPackFloat64exiti_114;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_114) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_114_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %127 = lshr i64 %100, 22*/
-		main_123_127 = (main_99_100_reg >>> (64'd22 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %115 = lshr i64 %91, 22*/
+		main_roundAndPackFloat64exiti_115 = (main_90_91_reg >>> (64'd22 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %127 = lshr i64 %100, 22*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_127_reg <= main_123_127;
-		if (start == 1'b0 && ^(main_123_127) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_127_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %115 = lshr i64 %91, 22*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_115_reg <= main_roundAndPackFloat64exiti_115;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_115) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_115_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %128 = and i64 %127, 3221225471*/
-		main_123_128 = (main_123_127 & 64'd3221225471);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %116 = and i64 %115, 3221225471*/
+		main_roundAndPackFloat64exiti_116 = (main_roundAndPackFloat64exiti_115 & 64'd3221225471);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %128 = and i64 %127, 3221225471*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_128_reg <= main_123_128;
-		if (start == 1'b0 && ^(main_123_128) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_128_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %116 = and i64 %115, 3221225471*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_116_reg <= main_roundAndPackFloat64exiti_116;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_116) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_116_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %129 = or i64 %128, 1073741824*/
-		main_123_129 = (main_123_128 | 64'd1073741824);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %117 = or i64 %116, 1073741824*/
+		main_roundAndPackFloat64exiti_117 = (main_roundAndPackFloat64exiti_116 | 64'd1073741824);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %129 = or i64 %128, 1073741824*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_129_reg <= main_123_129;
-		if (start == 1'b0 && ^(main_123_129) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_129_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %117 = or i64 %116, 1073741824*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_117_reg <= main_roundAndPackFloat64exiti_117;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_117) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_117_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %130 = lshr i64 %124, 21*/
-		main_123_130 = (main_123_124_reg >>> (64'd21 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %118 = lshr i64 %112, 21*/
+		main_roundAndPackFloat64exiti_118 = (main_roundAndPackFloat64exiti_112_reg >>> (64'd21 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %130 = lshr i64 %124, 21*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_130_reg <= main_123_130;
-		if (start == 1'b0 && ^(main_123_130) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_130_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %118 = lshr i64 %112, 21*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_118_reg <= main_roundAndPackFloat64exiti_118;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_118) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_118_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %131 = and i64 %130, 2147483647*/
-		main_123_131 = (main_123_130 & 64'd2147483647);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %119 = and i64 %118, 2147483647*/
+		main_roundAndPackFloat64exiti_119 = (main_roundAndPackFloat64exiti_118 & 64'd2147483647);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %131 = and i64 %130, 2147483647*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_131_reg <= main_123_131;
-		if (start == 1'b0 && ^(main_123_131) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_131_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %119 = and i64 %118, 2147483647*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_119_reg <= main_roundAndPackFloat64exiti_119;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_119) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_119_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %132 = or i64 %131, 2147483648*/
-		main_123_132 = (main_123_131 | 64'd2147483648);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %120 = or i64 %119, 2147483648*/
+		main_roundAndPackFloat64exiti_120 = (main_roundAndPackFloat64exiti_119 | 64'd2147483648);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %132 = or i64 %131, 2147483648*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_132_reg <= main_123_132;
-		if (start == 1'b0 && ^(main_123_132) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_132_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %120 = or i64 %119, 2147483648*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_120_reg <= main_roundAndPackFloat64exiti_120;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_120) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_120_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %133 = and i64 %125, 4294966272*/
-		main_123_133 = (main_123_125 & 64'd4294966272);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %121 = and i64 %113, 4294966272*/
+		main_roundAndPackFloat64exiti_121 = (main_roundAndPackFloat64exiti_113 & 64'd4294966272);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %133 = and i64 %125, 4294966272*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_133_reg <= main_123_133;
-		if (start == 1'b0 && ^(main_123_133) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_133_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %121 = and i64 %113, 4294966272*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_121_reg <= main_roundAndPackFloat64exiti_121;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_121) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_121_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %134 = and i64 %126, 4294965248*/
-		main_123_134 = (main_123_126 & 64'd4294965248);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %122 = and i64 %114, 4294965248*/
+		main_roundAndPackFloat64exiti_122 = (main_roundAndPackFloat64exiti_114 & 64'd4294965248);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %134 = and i64 %126, 4294965248*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_123_134_reg <= main_123_134;
-		if (start == 1'b0 && ^(main_123_134) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_134_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %122 = and i64 %114, 4294965248*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_122_reg <= main_roundAndPackFloat64exiti_122;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_122) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_122_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_123_135 = main_signed_multiply_64_0;
+	main_roundAndPackFloat64exiti_123 = main_roundAndPackFloat64exiti_123_stage0_reg;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %135 = mul i64 %134, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_135_reg <= main_123_135;
-		if (start == 1'b0 && ^(main_123_135) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_135_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %123 = mul i64 %122, %121*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_123_reg <= main_roundAndPackFloat64exiti_123;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_123) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_123_reg"); $finish; end
 	end
-	/* main: %123*/
-	/*   %135 = mul i64 %134, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_135_reg <= main_123_135;
-		if (start == 1'b0 && ^(main_123_135) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_135_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %123 = mul i64 %122, %121*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_123_reg <= main_roundAndPackFloat64exiti_123;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_123) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_123_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %136 = add i64 %135, %133*/
-		main_123_136 = main_signed_add_64_0;
+	main_roundAndPackFloat64exiti_124 = main_roundAndPackFloat64exiti_124_stage0_reg;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %136 = add i64 %135, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_136_reg <= main_123_136;
-		if (start == 1'b0 && ^(main_123_136) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_136_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %124 = mul i64 %120, %121*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_124_reg <= main_roundAndPackFloat64exiti_124;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_124) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_124_reg"); $finish; end
 	end
-	/* main: %mul64To128.exit.i*/
-	/*   %151 = add i64 %143, %150*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_123_136_reg <= main_mul64To128exiti_151;
-		if (start == 1'b0 && ^(main_mul64To128exiti_151) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_136_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %124 = mul i64 %120, %121*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_124_reg <= main_roundAndPackFloat64exiti_124;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_124) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_124_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_123_137 = main_signed_multiply_64_1;
+	main_roundAndPackFloat64exiti_125 = main_roundAndPackFloat64exiti_125_stage0_reg;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %137 = mul i64 %129, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_137_reg <= main_123_137;
-		if (start == 1'b0 && ^(main_123_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_137_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %125 = mul i64 %122, %117*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_125_reg <= main_roundAndPackFloat64exiti_125;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_125) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_125_reg"); $finish; end
 	end
-	/* main: %123*/
-	/*   %137 = mul i64 %129, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_137_reg <= main_123_137;
-		if (start == 1'b0 && ^(main_123_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_137_reg"); $finish; end
-	end
-	/* main: %147*/
-	/*   %148 = mul i64 %145, %144*/
-	if ((cur_state == LEGUP_F_main_BB__147_47)) begin
-		main_123_137_reg <= main_147_148;
-		if (start == 1'b0 && ^(main_147_148) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_137_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %125 = mul i64 %122, %117*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_125_reg <= main_roundAndPackFloat64exiti_125;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_125) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_125_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_123_138 = main_signed_multiply_64_1;
+	main_roundAndPackFloat64exiti_126 = main_roundAndPackFloat64exiti_126_stage0_reg;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %138 = mul i64 %137, %132*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_138_reg <= main_123_138;
-		if (start == 1'b0 && ^(main_123_138) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_138_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %126 = mul i64 %120, %117*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_126_reg <= main_roundAndPackFloat64exiti_126;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_126) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_126_reg"); $finish; end
 	end
-	/* main: %123*/
-	/*   %138 = mul i64 %137, %132*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_138_reg <= main_123_138;
-		if (start == 1'b0 && ^(main_123_138) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_138_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %126 = mul i64 %120, %117*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_126_reg <= main_roundAndPackFloat64exiti_126;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_126) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_126_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_123_139 = main_signed_multiply_64_2;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic = zext i64 %124 to i65*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic = main_roundAndPackFloat64exiti_124;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %139 = mul i64 %134, %129*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_139_reg <= main_123_139;
-		if (start == 1'b0 && ^(main_123_139) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_139_reg"); $finish; end
-	end
-	/* main: %123*/
-	/*   %139 = mul i64 %134, %129*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_139_reg <= main_123_139;
-		if (start == 1'b0 && ^(main_123_139) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_139_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic = zext i64 %124 to i65*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_123_140 = main_signed_multiply_64_3;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic1 = zext i64 %125 to i65*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic1 = main_roundAndPackFloat64exiti_125;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %140 = mul i64 %132, %129*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_140_reg <= main_123_140;
-		if (start == 1'b0 && ^(main_123_140) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_140_reg"); $finish; end
-	end
-	/* main: %123*/
-	/*   %140 = mul i64 %132, %129*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_140_reg <= main_123_140;
-		if (start == 1'b0 && ^(main_123_140) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_140_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic1 = zext i64 %125 to i65*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic1_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic1;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic1_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic = zext i64 %138 to i65*/
-		main_123_overflow_intrinsic = main_123_138;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic2 = add nuw i65 %overflow_intrinsic, %overflow_intrinsic1*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic2 = (main_roundAndPackFloat64exiti_overflow_intrinsic + main_roundAndPackFloat64exiti_overflow_intrinsic1);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic = zext i64 %138 to i65*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_overflow_intrinsic_reg <= main_123_overflow_intrinsic;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic2 = add nuw i65 %overflow_intrinsic, %overflow_intrinsic1*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic2_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic2;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic2_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic1 = zext i64 %139 to i65*/
-		main_123_overflow_intrinsic1 = main_123_139;
-end
-always @(posedge clk) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic1 = zext i64 %139 to i65*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_123_overflow_intrinsic1_reg <= main_123_overflow_intrinsic1;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic1_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic2 = add i65 %overflow_intrinsic, %overflow_intrinsic1*/
-		main_123_overflow_intrinsic2 = (main_123_overflow_intrinsic + main_123_overflow_intrinsic1_reg);
-end
-always @(posedge clk) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic2 = add i65 %overflow_intrinsic, %overflow_intrinsic1*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_overflow_intrinsic2_reg <= main_123_overflow_intrinsic2;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic2) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic2_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %123*/
+	/* main: %roundAndPackFloat64.exit.i*/
 	/*   %overflow_intrinsic_sum = trunc i65 %overflow_intrinsic2 to i64*/
-		main_123_overflow_intrinsic_sum = main_123_overflow_intrinsic2[63:0];
+		main_roundAndPackFloat64exiti_overflow_intrinsic_sum = main_roundAndPackFloat64exiti_overflow_intrinsic2[63:0];
 end
 always @(posedge clk) begin
-	/* main: %123*/
+	/* main: %roundAndPackFloat64.exit.i*/
 	/*   %overflow_intrinsic_sum = trunc i65 %overflow_intrinsic2 to i64*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_overflow_intrinsic_sum_reg <= main_123_overflow_intrinsic_sum;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic_sum) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic_sum_reg"); $finish; end
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic_sum_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic_sum;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic_sum) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic_sum_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic3 = lshr i65 %overflow_intrinsic2, 64*/
-		main_123_overflow_intrinsic3 = (main_123_overflow_intrinsic2 >>> (65'd64 % 65'd65));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %127 = lshr i65 %overflow_intrinsic2, 32*/
+		main_roundAndPackFloat64exiti_127 = (main_roundAndPackFloat64exiti_overflow_intrinsic2 >>> (65'd32 % 65'd65));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic3 = lshr i65 %overflow_intrinsic2, 64*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_overflow_intrinsic3_reg <= main_123_overflow_intrinsic3;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic3) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic3_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %127 = lshr i65 %overflow_intrinsic2, 32*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_127_reg <= main_roundAndPackFloat64exiti_127;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_127) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_127_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic_carry = trunc i65 %overflow_intrinsic3 to i1*/
-		main_123_overflow_intrinsic_carry = main_123_overflow_intrinsic3;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %.tr = trunc i65 %127 to i64*/
+		main_roundAndPackFloat64exiti_tr = main_roundAndPackFloat64exiti_127[63:0];
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %overflow_intrinsic_carry = trunc i65 %overflow_intrinsic3 to i1*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_overflow_intrinsic_carry_reg <= main_123_overflow_intrinsic_carry;
-		if (start == 1'b0 && ^(main_123_overflow_intrinsic_carry) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_overflow_intrinsic_carry_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %.tr = trunc i65 %127 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_tr_reg <= main_roundAndPackFloat64exiti_tr;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_tr) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_tr_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %141 = zext i1 %overflow_intrinsic_carry to i64*/
-		main_123_141 = main_123_overflow_intrinsic_carry;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %128 = and i64 %.tr, 4294967296*/
+		main_roundAndPackFloat64exiti_128 = (main_roundAndPackFloat64exiti_tr & 64'd4294967296);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %141 = zext i1 %overflow_intrinsic_carry to i64*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_141_reg <= main_123_141;
-		if (start == 1'b0 && ^(main_123_141) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_141_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %128 = and i64 %.tr, 4294967296*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_128_reg <= main_roundAndPackFloat64exiti_128;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_128) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_128_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %142 = shl nuw nsw i64 %141, 32*/
-		main_123_142 = (main_123_141 <<< (64'd32 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %129 = lshr i64 %overflow_intrinsic_sum, 32*/
+		main_roundAndPackFloat64exiti_129 = (main_roundAndPackFloat64exiti_overflow_intrinsic_sum >>> (64'd32 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %142 = shl nuw nsw i64 %141, 32*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_142_reg <= main_123_142;
-		if (start == 1'b0 && ^(main_123_142) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_142_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %129 = lshr i64 %overflow_intrinsic_sum, 32*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_129_reg <= main_roundAndPackFloat64exiti_129;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_129) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_129_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %143 = add i64 %142, %140*/
-		main_123_143 = main_signed_add_64_0;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %130 = or i64 %128, %129*/
+		main_roundAndPackFloat64exiti_130 = (main_roundAndPackFloat64exiti_128_reg | main_roundAndPackFloat64exiti_129_reg);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %143 = add i64 %142, %140*/
-	if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_123_143_reg <= main_123_143;
-		if (start == 1'b0 && ^(main_123_143) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_143_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %130 = or i64 %128, %129*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_37)) begin
+		main_roundAndPackFloat64exiti_130_reg <= main_roundAndPackFloat64exiti_130;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_130) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_130_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %144 = shl i64 %overflow_intrinsic_sum, 32*/
-		main_123_144 = (main_123_overflow_intrinsic_sum <<< (64'd32 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %131 = shl i64 %overflow_intrinsic_sum, 32*/
+		main_roundAndPackFloat64exiti_131 = (main_roundAndPackFloat64exiti_overflow_intrinsic_sum <<< (64'd32 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %144 = shl i64 %overflow_intrinsic_sum, 32*/
-	if ((cur_state == LEGUP_F_main_BB__123_44)) begin
-		main_123_144_reg <= main_123_144;
-		if (start == 1'b0 && ^(main_123_144) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_144_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %131 = shl i64 %overflow_intrinsic_sum, 32*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_131_reg <= main_roundAndPackFloat64exiti_131;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_131) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_131_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %145 = add i64 %136, %144*/
-		main_123_145 = main_signed_add_64_1;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic4 = zext i64 %123 to i65*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic4 = main_roundAndPackFloat64exiti_123;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %145 = add i64 %136, %144*/
-	if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_123_145_reg <= main_123_145;
-		if (start == 1'b0 && ^(main_123_145) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_145_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic4 = zext i64 %123 to i65*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic4_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic4;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic4_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %123*/
-	/*   %146 = icmp ult i64 %145, 100*/
-		main_123_146 = (main_123_145 < 64'd100);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic5 = zext i64 %131 to i65*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic5 = main_roundAndPackFloat64exiti_131;
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %146 = icmp ult i64 %145, 100*/
-	if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_123_146_reg <= main_123_146;
-		if (start == 1'b0 && ^(main_123_146) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_123_146_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic5 = zext i64 %131 to i65*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_36)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic5_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic5;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic5) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic5_reg"); $finish; end
 	end
 end
 always @(*) begin
-	main_147_148 = main_signed_multiply_64_1;
-end
-always @(*) begin
-/* main: %147*/
-/*   %148 = mul i64 %145, %144*/
-	main_147_148_reg = main_123_137_reg;
-end
-always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %z1.0.i.i = phi i64 [ %148, %147 ], [ %145, %123 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__123_45) & (memory_controller_waitrequest == 1'd0)) & (main_123_146 == 1'd0))) begin
-		main_mul64To128exiti_z10ii = main_123_145;
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %z1.0.i.i = phi i64 [ %148, %147 ], [ %145, %123 ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB__147_47) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_mul64To128exiti_z10ii = main_147_148;
-	end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic6 = add nuw i65 %overflow_intrinsic4, %overflow_intrinsic5*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic6 = (main_roundAndPackFloat64exiti_overflow_intrinsic4_reg + main_roundAndPackFloat64exiti_overflow_intrinsic5_reg);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %z1.0.i.i = phi i64 [ %148, %147 ], [ %145, %123 ]*/
-	if ((((cur_state == LEGUP_F_main_BB__123_45) & (memory_controller_waitrequest == 1'd0)) & (main_123_146 == 1'd0))) begin
-		main_mul64To128exiti_z10ii_reg <= main_mul64To128exiti_z10ii;
-		if (start == 1'b0 && ^(main_mul64To128exiti_z10ii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_z10ii_reg"); $finish; end
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %z1.0.i.i = phi i64 [ %148, %147 ], [ %145, %123 ]*/
-	if (((cur_state == LEGUP_F_main_BB__147_47) & (memory_controller_waitrequest == 1'd0))) begin
-		main_mul64To128exiti_z10ii_reg <= main_mul64To128exiti_z10ii;
-		if (start == 1'b0 && ^(main_mul64To128exiti_z10ii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_z10ii_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic6 = add nuw i65 %overflow_intrinsic4, %overflow_intrinsic5*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_37)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic6_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic6;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic6) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic6_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %149 = icmp ult i64 %z1.0.i.i, %144*/
-		main_mul64To128exiti_149 = (main_mul64To128exiti_z10ii_reg < main_123_144_reg);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic_sum7 = trunc i65 %overflow_intrinsic6 to i64*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic_sum7 = main_roundAndPackFloat64exiti_overflow_intrinsic6[63:0];
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %149 = icmp ult i64 %z1.0.i.i, %144*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_149_reg <= main_mul64To128exiti_149;
-		if (start == 1'b0 && ^(main_mul64To128exiti_149) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_149_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic_sum7 = trunc i65 %overflow_intrinsic6 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_37)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic_sum7_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic_sum7;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic_sum7) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic_sum7_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %150 = zext i1 %149 to i64*/
-		main_mul64To128exiti_150 = main_mul64To128exiti_149;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic8 = lshr i65 %overflow_intrinsic6, 64*/
+		main_roundAndPackFloat64exiti_overflow_intrinsic8 = (main_roundAndPackFloat64exiti_overflow_intrinsic6 >>> (65'd64 % 65'd65));
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %150 = zext i1 %149 to i64*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_150_reg <= main_mul64To128exiti_150;
-		if (start == 1'b0 && ^(main_mul64To128exiti_150) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_150_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %overflow_intrinsic8 = lshr i65 %overflow_intrinsic6, 64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_37)) begin
+		main_roundAndPackFloat64exiti_overflow_intrinsic8_reg <= main_roundAndPackFloat64exiti_overflow_intrinsic8;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_overflow_intrinsic8) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_overflow_intrinsic8_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %151 = add i64 %143, %150*/
-		main_mul64To128exiti_151 = main_signed_add_64_0;
-end
-always @(*) begin
-/* main: %mul64To128.exit.i*/
-/*   %151 = add i64 %143, %150*/
-	main_mul64To128exiti_151_reg = main_123_136_reg;
-end
-always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %152 = icmp ne i64 %z1.0.i.i, 0*/
-		main_mul64To128exiti_152 = (main_mul64To128exiti_z10ii_reg != 64'd0);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %132 = trunc i65 %overflow_intrinsic8 to i64*/
+		main_roundAndPackFloat64exiti_132 = main_roundAndPackFloat64exiti_overflow_intrinsic8[63:0];
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %152 = icmp ne i64 %z1.0.i.i, 0*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_152_reg <= main_mul64To128exiti_152;
-		if (start == 1'b0 && ^(main_mul64To128exiti_152) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_152_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %132 = trunc i65 %overflow_intrinsic8 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_37)) begin
+		main_roundAndPackFloat64exiti_132_reg <= main_roundAndPackFloat64exiti_132;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_132) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_132_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %153 = zext i1 %152 to i64*/
-		main_mul64To128exiti_153 = main_mul64To128exiti_152;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %133 = add i64 %132, %126*/
+		main_roundAndPackFloat64exiti_133 = (main_roundAndPackFloat64exiti_132_reg + main_roundAndPackFloat64exiti_126_reg);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %153 = zext i1 %152 to i64*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_153_reg <= main_mul64To128exiti_153;
-		if (start == 1'b0 && ^(main_mul64To128exiti_153) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_153_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %133 = add i64 %132, %126*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_133_reg <= main_roundAndPackFloat64exiti_133;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_133) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_133_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %154 = or i64 %151, %153*/
-		main_mul64To128exiti_154 = (main_mul64To128exiti_151 | main_mul64To128exiti_153);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %134 = add i64 %133, %130*/
+		main_roundAndPackFloat64exiti_134 = (main_roundAndPackFloat64exiti_133 + main_roundAndPackFloat64exiti_130_reg);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %154 = or i64 %151, %153*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_154_reg <= main_mul64To128exiti_154;
-		if (start == 1'b0 && ^(main_mul64To128exiti_154) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_154_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %134 = add i64 %133, %130*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_134_reg <= main_roundAndPackFloat64exiti_134;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_134) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_134_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %155 = shl i64 %154, 1*/
-		main_mul64To128exiti_155 = (main_mul64To128exiti_154 <<< (64'd1 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %135 = icmp ne i64 %overflow_intrinsic_sum7, 0*/
+		main_roundAndPackFloat64exiti_135 = (main_roundAndPackFloat64exiti_overflow_intrinsic_sum7_reg != 64'd0);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %155 = shl i64 %154, 1*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_155_reg <= main_mul64To128exiti_155;
-		if (start == 1'b0 && ^(main_mul64To128exiti_155) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_155_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %135 = icmp ne i64 %overflow_intrinsic_sum7, 0*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_135_reg <= main_roundAndPackFloat64exiti_135;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_135) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_135_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %156 = icmp sgt i64 %155, -1*/
-		main_mul64To128exiti_156 = ($signed(main_mul64To128exiti_155) > $signed(-64'd1));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %136 = zext i1 %135 to i64*/
+		main_roundAndPackFloat64exiti_136 = main_roundAndPackFloat64exiti_135;
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %156 = icmp sgt i64 %155, -1*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_156_reg <= main_mul64To128exiti_156;
-		if (start == 1'b0 && ^(main_mul64To128exiti_156) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_156_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %136 = zext i1 %135 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_136_reg <= main_roundAndPackFloat64exiti_136;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_136) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_136_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %..i = select i1 %156, i64 %155, i64 %154*/
-		main_mul64To128exiti_i = (main_mul64To128exiti_156 ? main_mul64To128exiti_155 : main_mul64To128exiti_154);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %137 = or i64 %134, %136*/
+		main_roundAndPackFloat64exiti_137 = (main_roundAndPackFloat64exiti_134 | main_roundAndPackFloat64exiti_136);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %..i = select i1 %156, i64 %155, i64 %154*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_i_reg <= main_mul64To128exiti_i;
-		if (start == 1'b0 && ^(main_mul64To128exiti_i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_i_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %137 = or i64 %134, %136*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_137_reg <= main_roundAndPackFloat64exiti_137;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_137) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_137_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %138 = shl i64 %137, 1*/
+		main_roundAndPackFloat64exiti_138 = (main_roundAndPackFloat64exiti_137 <<< (64'd1 % 64'd64));
+end
+always @(posedge clk) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %138 = shl i64 %137, 1*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_138_reg <= main_roundAndPackFloat64exiti_138;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_138) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_138_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %139 = icmp sgt i64 %138, -1*/
+		main_roundAndPackFloat64exiti_139 = ($signed(main_roundAndPackFloat64exiti_138) > $signed(-64'd1));
+end
+always @(posedge clk) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %139 = icmp sgt i64 %138, -1*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_139_reg <= main_roundAndPackFloat64exiti_139;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_139) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_139_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %..i = select i1 %139, i64 %138, i64 %137*/
+		main_roundAndPackFloat64exiti_i = (main_roundAndPackFloat64exiti_139 ? main_roundAndPackFloat64exiti_138 : main_roundAndPackFloat64exiti_137);
+end
+always @(posedge clk) begin
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %..i = select i1 %139, i64 %138, i64 %137*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_i_reg <= main_roundAndPackFloat64exiti_i;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_i_reg"); $finish; end
+	end
+end
+always @(*) begin
+	/* main: %roundAndPackFloat64.exit.i*/
 	/*   %.tr.i.i = trunc i64 %..i to i32*/
-		main_mul64To128exiti_trii = main_mul64To128exiti_i[31:0];
+		main_roundAndPackFloat64exiti_trii = main_roundAndPackFloat64exiti_i[31:0];
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
+	/* main: %roundAndPackFloat64.exit.i*/
 	/*   %.tr.i.i = trunc i64 %..i to i32*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_trii_reg <= main_mul64To128exiti_trii;
-		if (start == 1'b0 && ^(main_mul64To128exiti_trii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_trii_reg"); $finish; end
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_trii_reg <= main_roundAndPackFloat64exiti_trii;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_trii) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_trii_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %157 = and i32 %.tr.i.i, 1023*/
-		main_mul64To128exiti_157 = (main_mul64To128exiti_trii & 32'd1023);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %140 = and i32 %.tr.i.i, 1023*/
+		main_roundAndPackFloat64exiti_140 = (main_roundAndPackFloat64exiti_trii & 32'd1023);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %157 = and i32 %.tr.i.i, 1023*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_157_reg <= main_mul64To128exiti_157;
-		if (start == 1'b0 && ^(main_mul64To128exiti_157) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_157_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %140 = and i32 %.tr.i.i, 1023*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_140_reg <= main_roundAndPackFloat64exiti_140;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_140) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_140_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %158 = icmp eq i32 %157, 0*/
-		main_mul64To128exiti_158 = (main_mul64To128exiti_157 == 32'd0);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %not. = icmp ne i32 %140, 0*/
+		main_roundAndPackFloat64exiti_not = (main_roundAndPackFloat64exiti_140 != 32'd0);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %158 = icmp eq i32 %157, 0*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_158_reg <= main_mul64To128exiti_158;
-		if (start == 1'b0 && ^(main_mul64To128exiti_158) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_158_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %not. = icmp ne i32 %140, 0*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_not_reg <= main_roundAndPackFloat64exiti_not;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_not) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_not_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %159 = or i32 %float_exception_flags.0, 1*/
-		main_mul64To128exiti_159 = (main_1_float_exception_flags0_reg | 32'd1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %141 = zext i1 %not. to i32*/
+		main_roundAndPackFloat64exiti_141 = main_roundAndPackFloat64exiti_not;
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %159 = or i32 %float_exception_flags.0, 1*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_159_reg <= main_mul64To128exiti_159;
-		if (start == 1'b0 && ^(main_mul64To128exiti_159) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_159_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %141 = zext i1 %not. to i32*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_141_reg <= main_roundAndPackFloat64exiti_141;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_141) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_141_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %float_exception_flags.0. = select i1 %158, i32 %float_exception_flags.0, i32 %159*/
-		main_mul64To128exiti_float_exception_flags0 = (main_mul64To128exiti_158_reg ? main_1_float_exception_flags0_reg : main_mul64To128exiti_159_reg);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %float_exception_flags.0. = or i32 %float_exception_flags.0, %141*/
+		main_roundAndPackFloat64exiti_float_exception_flags0 = (main_1_float_exception_flags0_reg | main_roundAndPackFloat64exiti_141);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %float_exception_flags.0. = select i1 %158, i32 %float_exception_flags.0, i32 %159*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_49)) begin
-		main_mul64To128exiti_float_exception_flags0_reg <= main_mul64To128exiti_float_exception_flags0;
-		if (start == 1'b0 && ^(main_mul64To128exiti_float_exception_flags0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_float_exception_flags0_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %float_exception_flags.0. = or i32 %float_exception_flags.0, %141*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_float_exception_flags0_reg <= main_roundAndPackFloat64exiti_float_exception_flags0;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_float_exception_flags0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_float_exception_flags0_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %160 = add i64 512, %..i*/
-		main_mul64To128exiti_160 = main_signed_add_64_1;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %142 = add i64 %..i, 512*/
+		main_roundAndPackFloat64exiti_142 = (main_roundAndPackFloat64exiti_i + 64'd512);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %160 = add i64 512, %..i*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_160_reg <= main_mul64To128exiti_160;
-		if (start == 1'b0 && ^(main_mul64To128exiti_160) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_160_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %142 = add i64 %..i, 512*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_142_reg <= main_roundAndPackFloat64exiti_142;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_142) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_142_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %161 = lshr i64 %160, 10*/
-		main_mul64To128exiti_161 = (main_mul64To128exiti_160 >>> (64'd10 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %143 = lshr i64 %142, 10*/
+		main_roundAndPackFloat64exiti_143 = (main_roundAndPackFloat64exiti_142 >>> (64'd10 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %161 = lshr i64 %160, 10*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_161_reg <= main_mul64To128exiti_161;
-		if (start == 1'b0 && ^(main_mul64To128exiti_161) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_161_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %143 = lshr i64 %142, 10*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_143_reg <= main_roundAndPackFloat64exiti_143;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_143) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_143_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %162 = icmp eq i32 %157, 512*/
-		main_mul64To128exiti_162 = (main_mul64To128exiti_157 == 32'd512);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %144 = icmp eq i32 %140, 512*/
+		main_roundAndPackFloat64exiti_144 = (main_roundAndPackFloat64exiti_140 == 32'd512);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %162 = icmp eq i32 %157, 512*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_162_reg <= main_mul64To128exiti_162;
-		if (start == 1'b0 && ^(main_mul64To128exiti_162) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_162_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %144 = icmp eq i32 %140, 512*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_144_reg <= main_roundAndPackFloat64exiti_144;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_144) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_144_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %163 = zext i1 %162 to i32*/
-		main_mul64To128exiti_163 = main_mul64To128exiti_162;
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %145 = zext i1 %144 to i32*/
+		main_roundAndPackFloat64exiti_145 = main_roundAndPackFloat64exiti_144;
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %163 = zext i1 %162 to i32*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_163_reg <= main_mul64To128exiti_163;
-		if (start == 1'b0 && ^(main_mul64To128exiti_163) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_163_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %145 = zext i1 %144 to i32*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_145_reg <= main_roundAndPackFloat64exiti_145;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_145) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_145_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %164 = xor i32 %163, -1*/
-		main_mul64To128exiti_164 = (main_mul64To128exiti_163 ^ -32'd1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %146 = xor i32 %145, -1*/
+		main_roundAndPackFloat64exiti_146 = (main_roundAndPackFloat64exiti_145 ^ -32'd1);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %164 = xor i32 %163, -1*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_164_reg <= main_mul64To128exiti_164;
-		if (start == 1'b0 && ^(main_mul64To128exiti_164) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_164_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %146 = xor i32 %145, -1*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_146_reg <= main_roundAndPackFloat64exiti_146;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_146) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_146_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %165 = sext i32 %164 to i64*/
-		main_mul64To128exiti_165 = $signed(main_mul64To128exiti_164);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %147 = sext i32 %146 to i64*/
+		main_roundAndPackFloat64exiti_147 = $signed(main_roundAndPackFloat64exiti_146);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %165 = sext i32 %164 to i64*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_165_reg <= main_mul64To128exiti_165;
-		if (start == 1'b0 && ^(main_mul64To128exiti_165) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_165_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %147 = sext i32 %146 to i64*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_147_reg <= main_roundAndPackFloat64exiti_147;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_147) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_147_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %166 = and i64 %161, %165*/
-		main_mul64To128exiti_166 = (main_mul64To128exiti_161 & main_mul64To128exiti_165);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %148 = and i64 %143, %147*/
+		main_roundAndPackFloat64exiti_148 = (main_roundAndPackFloat64exiti_143 & main_roundAndPackFloat64exiti_147);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %166 = and i64 %161, %165*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_166_reg <= main_mul64To128exiti_166;
-		if (start == 1'b0 && ^(main_mul64To128exiti_166) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_166_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %148 = and i64 %143, %147*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_38)) begin
+		main_roundAndPackFloat64exiti_148_reg <= main_roundAndPackFloat64exiti_148;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_148) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_148_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %167 = shl nuw i64 %13, 63*/
-		main_mul64To128exiti_167 = (main_1_13_reg <<< (64'd63 % 64'd64));
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %149 = shl nuw i64 %12, 63*/
+		main_roundAndPackFloat64exiti_149 = (main_1_12_reg <<< (64'd63 % 64'd64));
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %167 = shl nuw i64 %13, 63*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) begin
-		main_mul64To128exiti_167_reg <= main_mul64To128exiti_167;
-		if (start == 1'b0 && ^(main_mul64To128exiti_167) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_167_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %149 = shl nuw i64 %12, 63*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_35)) begin
+		main_roundAndPackFloat64exiti_149_reg <= main_roundAndPackFloat64exiti_149;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_149) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_149_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %168 = or i64 %166, %167*/
-		main_mul64To128exiti_168 = (main_mul64To128exiti_166_reg | main_mul64To128exiti_167_reg);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %150 = or i64 %148, %149*/
+		main_roundAndPackFloat64exiti_150 = (main_roundAndPackFloat64exiti_148_reg | main_roundAndPackFloat64exiti_149_reg);
 end
 always @(posedge clk) begin
-	/* main: %mul64To128.exit.i*/
-	/*   %168 = or i64 %166, %167*/
-	if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_49)) begin
-		main_mul64To128exiti_168_reg <= main_mul64To128exiti_168;
-		if (start == 1'b0 && ^(main_mul64To128exiti_168) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_mul64To128exiti_168_reg"); $finish; end
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %150 = or i64 %148, %149*/
+	if ((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_39)) begin
+		main_roundAndPackFloat64exiti_150_reg <= main_roundAndPackFloat64exiti_150;
+		if (start == 1'b0 && ^(main_roundAndPackFloat64exiti_150) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_roundAndPackFloat64exiti_150_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_float64_is_signaling_nanexiti11i_float_exception_flags0_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__41_13) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_float_exception_flags4 = main_41_42;
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__37_10) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_float_exception_flags4 = main_37_38;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__43_14) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__39_11) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_1_float_exception_flags0_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_float64_is_signaling_nanexitii_float_exception_flags05_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__71_24) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_float_exception_flags4 = main_71_72;
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__63_19) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_float_exception_flags4 = main_63_64;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__73_25) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__65_20) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_1_float_exception_flags0_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__80_28) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__72_23) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_1_float_exception_flags0_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__104_36) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__94_30) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4 = main_1_float_exception_flags0_reg;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB_mul64To128exiti_49) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_mulexit_float_exception_flags4 = main_mul64To128exiti_float_exception_flags0;
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_39) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_float64_mulexit_float_exception_flags4 = main_roundAndPackFloat64exiti_float_exception_flags0_reg;
 	end
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__41_13) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__37_10) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__43_14) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__39_11) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__71_24) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__63_19) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__73_25) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__65_20) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__80_28) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__72_23) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__104_36) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__94_30) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %42, %41 ], [ %float_exception_flags.0, %43 ], [ %72, %71 ], [ %float_exception_flags.0, %73 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %80 ], [ %float_exception_flags.0, %104 ], [ %float_exception_flags.0., %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_mul64To128exiti_49) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %float_exception_flags.4 = phi i32 [ %.float_exception_flags.0, %float64_is_signaling_nan.exit.i11.i ], [ %38, %37 ], [ %float_exception_flags.0, %39 ], [ %64, %63 ], [ %float_exception_flags.0, %65 ], [ %.float_exception_flags.05, %float64_is_signaling_nan.exit.i.i ], [ %float_exception_flags.0, %72 ], [ %float_exception_flags.0, %94 ], [ %float_exception_flags.0., %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_39) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_float_exception_flags4_reg <= main_float64_mulexit_float_exception_flags4;
 		if (start == 1'b0 && ^(main_float64_mulexit_float_exception_flags4) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_float_exception_flags4_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i = main_float64_is_signaling_nanexiti11i_mux2i15i;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__41_13) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__37_10) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i = 64'd9223372036854775807;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__43_14) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_0i = main_43_45;
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__39_11) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_0i = main_39_41;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i = main_float64_is_signaling_nanexitii_mux2ii;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__71_24) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__63_19) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i = 64'd9223372036854775807;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__73_25) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_0i = main_73_75;
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__65_20) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_0i = main_65_67;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__80_28) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_0i = main_80_81;
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__72_23) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_0i = main_72_73;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else if (((cur_state == LEGUP_F_main_BB__104_36) & (memory_controller_waitrequest == 1'd0))) begin
-		main_float64_mulexit_0i = main_104_105;
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else if (((cur_state == LEGUP_F_main_BB__94_30) & (memory_controller_waitrequest == 1'd0))) begin
+		main_float64_mulexit_0i = main_94_95;
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	else /* if (((cur_state == LEGUP_F_main_BB_mul64To128exiti_49) & (memory_controller_waitrequest == 1'd0))) */ begin
-		main_float64_mulexit_0i = main_mul64To128exiti_168;
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	else /* if (((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_39) & (memory_controller_waitrequest == 1'd0))) */ begin
+		main_float64_mulexit_0i = main_roundAndPackFloat64exiti_150;
 	end
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_11) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexiti11i_8) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__41_13) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__37_10) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__43_14) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__39_11) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_22) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_float64_is_signaling_nanexitii_17) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__71_24) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__63_19) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__73_25) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__65_20) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__80_28) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__72_23) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB__104_36) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB__94_30) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 	/* main: %float64_mul.exit*/
-	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %41 ], [ %45, %43 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ 9223372036854775807, %71 ], [ %75, %73 ], [ %81, %80 ], [ %105, %104 ], [ %168, %mul64To128.exit.i ]*/
-	if (((cur_state == LEGUP_F_main_BB_mul64To128exiti_49) & (memory_controller_waitrequest == 1'd0))) begin
+	/*   %.0.i = phi i64 [ %.mux2.i15.i, %float64_is_signaling_nan.exit.i11.i ], [ 9223372036854775807, %37 ], [ %41, %39 ], [ 9223372036854775807, %63 ], [ %67, %65 ], [ %.mux2.i.i, %float64_is_signaling_nan.exit.i.i ], [ %73, %72 ], [ %95, %94 ], [ %150, %roundAndPackFloat64.exit.i ]*/
+	if (((cur_state == LEGUP_F_main_BB_roundAndPackFloat64exiti_39) & (memory_controller_waitrequest == 1'd0))) begin
 		main_float64_mulexit_0i_reg <= main_float64_mulexit_0i;
 		if (start == 1'b0 && ^(main_float64_mulexit_0i) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_0i_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %gep_int10 = ptrtoint [20 x i64]* @z_output to i32*/
-if (reset) begin main_float64_mulexit_gep_int10 = 0; end
-		main_float64_mulexit_gep_int10 = 1'd0;
+	/*   %151 = load i64* %scevgep, align 8, !tbaa !1*/
+		main_float64_mulexit_151 = z_output_out_a;
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %gep_int10 = ptrtoint [20 x i64]* @z_output to i32*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_float64_mulexit_gep_int10_reg <= main_float64_mulexit_gep_int10;
-		if (start == 1'b0 && ^(main_float64_mulexit_gep_int10) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_gep_int10_reg"); $finish; end
+	/*   %151 = load i64* %scevgep, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_41)) begin
+		main_float64_mulexit_151_reg <= main_float64_mulexit_151;
+		if (start == 1'b0 && ^(main_float64_mulexit_151) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_151_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %gep_array11 = mul i32 %i.01, 8*/
-		main_float64_mulexit_gep_array11 = (main_1_i01_reg * 32'd8);
+	/*   %152 = icmp eq i64 %.0.i, %151*/
+		main_float64_mulexit_152 = (main_float64_mulexit_0i_reg == main_float64_mulexit_151);
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %gep_array11 = mul i32 %i.01, 8*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_float64_mulexit_gep_array11_reg <= main_float64_mulexit_gep_array11;
-		if (start == 1'b0 && ^(main_float64_mulexit_gep_array11) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_gep_array11_reg"); $finish; end
+	/*   %152 = icmp eq i64 %.0.i, %151*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_41)) begin
+		main_float64_mulexit_152_reg <= main_float64_mulexit_152;
+		if (start == 1'b0 && ^(main_float64_mulexit_152) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_152_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %gep12 = add i32 %gep_int10, %gep_array11*/
-		main_float64_mulexit_gep12 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %float64_mul.exit*/
-/*   %gep12 = add i32 %gep_int10, %gep_array11*/
-	main_float64_mulexit_gep12_reg = main_1_gep_reg;
-end
-always @(*) begin
-	/* main: %float64_mul.exit*/
-	/*   %169 = inttoptr i32 %gep12 to i64**/
-		main_float64_mulexit_169 = main_float64_mulexit_gep12;
+	/*   %153 = zext i1 %152 to i32*/
+		main_float64_mulexit_153 = main_float64_mulexit_152;
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %169 = inttoptr i32 %gep12 to i64**/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
-		main_float64_mulexit_169_reg <= main_float64_mulexit_169;
-		if (start == 1'b0 && ^(main_float64_mulexit_169) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_169_reg"); $finish; end
+	/*   %153 = zext i1 %152 to i32*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_41)) begin
+		main_float64_mulexit_153_reg <= main_float64_mulexit_153;
+		if (start == 1'b0 && ^(main_float64_mulexit_153) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_153_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %170 = load i64* %169, align 8, !tbaa !1*/
-		main_float64_mulexit_170 = z_output_out_a;
+	/*   %154 = add nsw i32 %153, %main_result.02*/
+		main_float64_mulexit_154 = (main_float64_mulexit_153 + main_1_main_result02_reg);
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %170 = load i64* %169, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) begin
-		main_float64_mulexit_170_reg <= main_float64_mulexit_170;
-		if (start == 1'b0 && ^(main_float64_mulexit_170) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_170_reg"); $finish; end
+	/*   %154 = add nsw i32 %153, %main_result.02*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_41)) begin
+		main_float64_mulexit_154_reg <= main_float64_mulexit_154;
+		if (start == 1'b0 && ^(main_float64_mulexit_154) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_154_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %171 = icmp eq i64 %.0.i, %170*/
-		main_float64_mulexit_171 = (main_float64_mulexit_0i_reg == main_float64_mulexit_170);
+	/*   %156 = add nsw i32 %2, 1*/
+		main_float64_mulexit_156 = (main_1_2_reg + 32'd1);
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %171 = icmp eq i64 %.0.i, %170*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) begin
-		main_float64_mulexit_171_reg <= main_float64_mulexit_171;
-		if (start == 1'b0 && ^(main_float64_mulexit_171) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_171_reg"); $finish; end
+	/*   %156 = add nsw i32 %2, 1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_40)) begin
+		main_float64_mulexit_156_reg <= main_float64_mulexit_156;
+		if (start == 1'b0 && ^(main_float64_mulexit_156) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_156_reg"); $finish; end
 	end
 end
 always @(*) begin
 	/* main: %float64_mul.exit*/
-	/*   %172 = zext i1 %171 to i32*/
-		main_float64_mulexit_172 = main_float64_mulexit_171;
+	/*   %exitcond1 = icmp eq i32 %156, 20*/
+		main_float64_mulexit_exitcond1 = (main_float64_mulexit_156 == 32'd20);
 end
 always @(posedge clk) begin
 	/* main: %float64_mul.exit*/
-	/*   %172 = zext i1 %171 to i32*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) begin
-		main_float64_mulexit_172_reg <= main_float64_mulexit_172;
-		if (start == 1'b0 && ^(main_float64_mulexit_172) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_172_reg"); $finish; end
+	/*   %exitcond1 = icmp eq i32 %156, 20*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_40)) begin
+		main_float64_mulexit_exitcond1_reg <= main_float64_mulexit_exitcond1;
+		if (start == 1'b0 && ^(main_float64_mulexit_exitcond1) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_exitcond1_reg"); $finish; end
 	end
 end
 always @(*) begin
-	/* main: %float64_mul.exit*/
-	/*   %173 = add nsw i32 %172, %main_result.02*/
-		main_float64_mulexit_173 = main_signed_add_32_0;
-end
-always @(*) begin
-/* main: %float64_mul.exit*/
-/*   %173 = add nsw i32 %172, %main_result.02*/
-	main_float64_mulexit_173_reg = main_normalizeFloat64Subnormalexiti_119_reg;
-end
-always @(*) begin
-	/* main: %float64_mul.exit*/
-	/*   %175 = add nsw i32 %i.01, 1*/
-		main_float64_mulexit_175 = main_signed_add_32_0;
+	/* main: %157*/
+	/*   %159 = icmp eq i32 %154, 20*/
+		main_157_159 = (main_float64_mulexit_154_reg == 32'd20);
 end
 always @(posedge clk) begin
-	/* main: %float64_mul.exit*/
-	/*   %175 = add nsw i32 %i.01, 1*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_float64_mulexit_175_reg <= main_float64_mulexit_175;
-		if (start == 1'b0 && ^(main_float64_mulexit_175) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_175_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %float64_mul.exit*/
-	/*   %exitcond = icmp eq i32 %175, 20*/
-		main_float64_mulexit_exitcond = (main_float64_mulexit_175 == 32'd20);
-end
-always @(posedge clk) begin
-	/* main: %float64_mul.exit*/
-	/*   %exitcond = icmp eq i32 %175, 20*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_float64_mulexit_exitcond_reg <= main_float64_mulexit_exitcond;
-		if (start == 1'b0 && ^(main_float64_mulexit_exitcond) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_float64_mulexit_exitcond_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %176*/
-	/*   %.lcssa = phi i32 [ %173, %float64_mul.exit ]*/
-		main_176_lcssa = main_float64_mulexit_173;
-end
-always @(posedge clk) begin
-	/* main: %176*/
-	/*   %.lcssa = phi i32 [ %173, %float64_mul.exit ]*/
-	if ((((cur_state == LEGUP_F_main_BB_float64_mulexit_52) & (memory_controller_waitrequest == 1'd0)) & (main_float64_mulexit_exitcond_reg == 1'd1))) begin
-		main_176_lcssa_reg <= main_176_lcssa;
-		if (start == 1'b0 && ^(main_176_lcssa) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_176_lcssa_reg"); $finish; end
-	end
-end
-always @(*) begin
-	/* main: %176*/
-	/*   %178 = icmp eq i32 %.lcssa, 20*/
-		main_176_178 = (main_176_lcssa_reg == 32'd20);
-end
-always @(posedge clk) begin
-	/* main: %176*/
-	/*   %178 = icmp eq i32 %.lcssa, 20*/
-	if ((cur_state == LEGUP_F_main_BB__176_53)) begin
-		main_176_178_reg <= main_176_178;
-		if (start == 1'b0 && ^(main_176_178) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_176_178_reg"); $finish; end
+	/* main: %157*/
+	/*   %159 = icmp eq i32 %154, 20*/
+	if ((cur_state == LEGUP_F_main_BB__157_42)) begin
+		main_157_159_reg <= main_157_159;
+		if (start == 1'b0 && ^(main_157_159) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to main_157_159_reg"); $finish; end
 	end
 end
 always @(*) begin
 	a_input_address_a = 1'd0;
 	/* main: %1*/
-	/*   %3 = load i64* %2, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		a_input_address_a = (main_1_2 >>> 3'd3);
+	/*   %3 = load i64* %scevgep3, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
+		a_input_address_a = (main_1_scevgep3 >>> 3'd3);
 	end
 end
 always @(*) begin
 	a_input_write_enable_a = 1'd0;
 	/* main: %1*/
-	/*   %3 = load i64* %2, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
+	/*   %3 = load i64* %scevgep3, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
 		a_input_write_enable_a = 1'd0;
 	end
 end
 always @(*) begin
 	b_input_address_a = 1'd0;
 	/* main: %1*/
-	/*   %5 = load i64* %4, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		b_input_address_a = (main_1_4 >>> 3'd3);
+	/*   %4 = load i64* %scevgep2, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
+		b_input_address_a = (main_1_scevgep2 >>> 3'd3);
 	end
 end
 always @(*) begin
 	b_input_write_enable_a = 1'd0;
 	/* main: %1*/
-	/*   %5 = load i64* %4, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
+	/*   %4 = load i64* %scevgep2, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB__1_1)) begin
 		b_input_write_enable_a = 1'd0;
 	end
 end
 always @(*) begin
 	z_output_address_a = 1'd0;
 	/* main: %float64_mul.exit*/
-	/*   %170 = load i64* %169, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
-		z_output_address_a = (main_float64_mulexit_169 >>> 3'd3);
+	/*   %151 = load i64* %scevgep, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_40)) begin
+		z_output_address_a = (main_1_scevgep_reg >>> 3'd3);
 	end
 end
 always @(*) begin
 	z_output_write_enable_a = 1'd0;
 	/* main: %float64_mul.exit*/
-	/*   %170 = load i64* %169, align 8, !tbaa !1*/
-	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
+	/*   %151 = load i64* %scevgep, align 8, !tbaa !1*/
+	if ((cur_state == LEGUP_F_main_BB_float64_mulexit_40)) begin
 		z_output_write_enable_a = 1'd0;
 	end
 end
 always @(*) begin
 	countLeadingZeros32countLeadingZerosHigh_address_a = 1'd0;
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %93 = load i32* %92, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
-		countLeadingZeros32countLeadingZerosHigh_address_a = (main_normalizeFloat64Subnormalexit9i_92 >>> 3'd2);
+	/*   %85 = load i32* %84, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26)) begin
+		countLeadingZeros32countLeadingZerosHigh_address_a = (main_normalizeFloat64Subnormalexit9i_84 >>> 3'd2);
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %117 = load i32* %116, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
-		countLeadingZeros32countLeadingZerosHigh_address_a = (main_normalizeFloat64Subnormalexiti_116 >>> 3'd2);
+	/*   %107 = load i32* %106, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33)) begin
+		countLeadingZeros32countLeadingZerosHigh_address_a = (main_normalizeFloat64Subnormalexiti_106 >>> 3'd2);
 	end
 end
 always @(*) begin
 	countLeadingZeros32countLeadingZerosHigh_write_enable_a = 1'd0;
 	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %93 = load i32* %92, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
+	/*   %85 = load i32* %84, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_26)) begin
 		countLeadingZeros32countLeadingZerosHigh_write_enable_a = 1'd0;
 	end
 	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %117 = load i32* %116, align 4, !tbaa !5*/
-	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
+	/*   %107 = load i32* %106, align 4, !tbaa !5*/
+	if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_33)) begin
 		countLeadingZeros32countLeadingZerosHigh_write_enable_a = 1'd0;
 	end
 end
 always @(*) begin
-	/* main: %1*/
-	/*   %gep = add i32 %gep_int, %gep_array*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		main_signed_add_32_0_op0 = main_1_gep_int_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %95 = add nsw i32 %94, %shiftCount.1.i.i.i8.i*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexit9i_94;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep6 = add i32 %gep_int4, %gep_array5*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexit9i_gep_int4_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %96 = add i32 %95, %93*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexit9i_95_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %119 = add nsw i32 %118, %shiftCount.1.i.i.i.i*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexiti_118;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep9 = add i32 %gep_int7, %gep_array8*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexiti_gep_int7_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %120 = add i32 %119, %117*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_signed_add_32_0_op0 = main_normalizeFloat64Subnormalexiti_119_reg;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %175 = add nsw i32 %i.01, 1*/
-	else if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_signed_add_32_0_op0 = main_1_i01_reg;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %gep12 = add i32 %gep_int10, %gep_array11*/
-	else if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
-		main_signed_add_32_0_op0 = main_float64_mulexit_gep_int10_reg;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %173 = add nsw i32 %172, %main_result.02*/
-	else /* if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) */ begin
-		main_signed_add_32_0_op0 = main_float64_mulexit_172;
-	end
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep = add i32 %gep_int, %gep_array*/
-	if ((cur_state == LEGUP_F_main_BB__1_2)) begin
-		main_signed_add_32_0_op1 = main_1_gep_array_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %95 = add nsw i32 %94, %shiftCount.1.i.i.i8.i*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_31)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexit9i_shiftCount1iii8i_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %gep6 = add i32 %gep_int4, %gep_array5*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_32)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexit9i_gep_array5_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit9.i*/
-	/*   %96 = add i32 %95, %93*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexit9i_33)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexit9i_93;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %119 = add nsw i32 %118, %shiftCount.1.i.i.i.i*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_39)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexiti_shiftCount1iiii_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %gep9 = add i32 %gep_int7, %gep_array8*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_40)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexiti_gep_array8_reg;
-	end
-	/* main: %normalizeFloat64Subnormal.exit.i*/
-	/*   %120 = add i32 %119, %117*/
-	else if ((cur_state == LEGUP_F_main_BB_normalizeFloat64Subnormalexiti_41)) begin
-		main_signed_add_32_0_op1 = main_normalizeFloat64Subnormalexiti_117;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %175 = add nsw i32 %i.01, 1*/
-	else if ((cur_state == LEGUP_F_main_BB_float64_mulexit_50)) begin
-		main_signed_add_32_0_op1 = 32'd1;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %gep12 = add i32 %gep_int10, %gep_array11*/
-	else if ((cur_state == LEGUP_F_main_BB_float64_mulexit_51)) begin
-		main_signed_add_32_0_op1 = main_float64_mulexit_gep_array11_reg;
-	end
-	/* main: %float64_mul.exit*/
-	/*   %173 = add nsw i32 %172, %main_result.02*/
-	else /* if ((cur_state == LEGUP_F_main_BB_float64_mulexit_52)) */ begin
-		main_signed_add_32_0_op1 = main_1_main_result02_reg;
-	end
-end
-always @(*) begin
-	main_signed_add_32_0 = (main_signed_add_32_0_op0 + main_signed_add_32_0_op1);
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep3 = add i32 %gep_int1, %gep_array2*/
-		main_signed_add_32_1_op0 = main_1_gep_int1_reg;
-end
-always @(*) begin
-	/* main: %1*/
-	/*   %gep3 = add i32 %gep_int1, %gep_array2*/
-		main_signed_add_32_1_op1 = main_1_gep_array2_reg;
-end
-always @(*) begin
-	main_signed_add_32_1 = (main_signed_add_32_1_op0 + main_signed_add_32_1_op1);
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %135 = mul i64 %134, %133*/
-		main_signed_multiply_64_0_op0 = main_123_134;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %135 = mul i64 %134, %133*/
-		main_signed_multiply_64_0_op1 = main_123_133;
-end
-always @(*) begin
-	lpm_mult_main_123_135_en = (memory_controller_waitrequest == 1'd0);
+	lpm_mult_main_roundAndPackFloat64exiti_123_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %135 = mul i64 %134, %133*/
-	if ((lpm_mult_main_123_135_en == 1'd1)) begin
-		main_123_135_stage0_reg <= (main_signed_multiply_64_0_op0 * main_signed_multiply_64_0_op1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %123 = mul i64 %122, %121*/
+	if ((lpm_mult_main_roundAndPackFloat64exiti_123_en == 1'd1)) begin
+		main_roundAndPackFloat64exiti_123_stage0_reg <= (main_roundAndPackFloat64exiti_122 * main_roundAndPackFloat64exiti_121);
 	end
 end
 always @(*) begin
-	main_signed_multiply_64_0 = main_123_135_stage0_reg;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %136 = add i64 %135, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_signed_add_64_0_op0 = main_123_135;
-	end
-	/* main: %123*/
-	/*   %143 = add i64 %142, %140*/
-	else if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_signed_add_64_0_op0 = main_123_142_reg;
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %151 = add i64 %143, %150*/
-	else /* if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) */ begin
-		main_signed_add_64_0_op0 = main_123_143_reg;
-	end
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %136 = add i64 %135, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_signed_add_64_0_op1 = main_123_133_reg;
-	end
-	/* main: %123*/
-	/*   %143 = add i64 %142, %140*/
-	else if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_signed_add_64_0_op1 = main_123_140_reg;
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %151 = add i64 %143, %150*/
-	else /* if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) */ begin
-		main_signed_add_64_0_op1 = main_mul64To128exiti_150;
-	end
-end
-always @(*) begin
-	main_signed_add_64_0 = (main_signed_add_64_0_op0 + main_signed_add_64_0_op1);
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %137 = mul i64 %129, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_signed_multiply_64_1_op0 = main_123_129;
-	end
-	/* main: %123*/
-	/*   %138 = mul i64 %137, %132*/
-	else if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_signed_multiply_64_1_op0 = main_123_137;
-	end
-	/* main: %147*/
-	/*   %148 = mul i64 %145, %144*/
-	else /* if ((cur_state == LEGUP_F_main_BB__147_46)) */ begin
-		main_signed_multiply_64_1_op0 = main_123_145_reg;
-	end
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %137 = mul i64 %129, %133*/
-	if ((cur_state == LEGUP_F_main_BB__123_42)) begin
-		main_signed_multiply_64_1_op1 = main_123_133;
-	end
-	/* main: %123*/
-	/*   %138 = mul i64 %137, %132*/
-	else if ((cur_state == LEGUP_F_main_BB__123_43)) begin
-		main_signed_multiply_64_1_op1 = main_123_132_reg;
-	end
-	/* main: %147*/
-	/*   %148 = mul i64 %145, %144*/
-	else /* if ((cur_state == LEGUP_F_main_BB__147_46)) */ begin
-		main_signed_multiply_64_1_op1 = main_123_144_reg;
-	end
-end
-always @(*) begin
-	lpm_mult_main_123_137_en = (memory_controller_waitrequest == 1'd0);
+	lpm_mult_main_roundAndPackFloat64exiti_124_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %137 = mul i64 %129, %133*/
-	if ((lpm_mult_main_123_137_en == 1'd1)) begin
-		main_123_137_stage0_reg <= (main_signed_multiply_64_1_op0 * main_signed_multiply_64_1_op1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %124 = mul i64 %120, %121*/
+	if ((lpm_mult_main_roundAndPackFloat64exiti_124_en == 1'd1)) begin
+		main_roundAndPackFloat64exiti_124_stage0_reg <= (main_roundAndPackFloat64exiti_120 * main_roundAndPackFloat64exiti_121);
 	end
 end
 always @(*) begin
-	main_signed_multiply_64_1 = main_123_137_stage0_reg;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %139 = mul i64 %134, %129*/
-		main_signed_multiply_64_2_op0 = main_123_134;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %139 = mul i64 %134, %129*/
-		main_signed_multiply_64_2_op1 = main_123_129;
-end
-always @(*) begin
-	lpm_mult_main_123_139_en = (memory_controller_waitrequest == 1'd0);
+	lpm_mult_main_roundAndPackFloat64exiti_125_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %139 = mul i64 %134, %129*/
-	if ((lpm_mult_main_123_139_en == 1'd1)) begin
-		main_123_139_stage0_reg <= (main_signed_multiply_64_2_op0 * main_signed_multiply_64_2_op1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %125 = mul i64 %122, %117*/
+	if ((lpm_mult_main_roundAndPackFloat64exiti_125_en == 1'd1)) begin
+		main_roundAndPackFloat64exiti_125_stage0_reg <= (main_roundAndPackFloat64exiti_122 * main_roundAndPackFloat64exiti_117);
 	end
 end
 always @(*) begin
-	main_signed_multiply_64_2 = main_123_139_stage0_reg;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %140 = mul i64 %132, %129*/
-		main_signed_multiply_64_3_op0 = main_123_132;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %140 = mul i64 %132, %129*/
-		main_signed_multiply_64_3_op1 = main_123_129;
-end
-always @(*) begin
-	lpm_mult_main_123_140_en = (memory_controller_waitrequest == 1'd0);
+	lpm_mult_main_roundAndPackFloat64exiti_126_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
-	/* main: %123*/
-	/*   %140 = mul i64 %132, %129*/
-	if ((lpm_mult_main_123_140_en == 1'd1)) begin
-		main_123_140_stage0_reg <= (main_signed_multiply_64_3_op0 * main_signed_multiply_64_3_op1);
+	/* main: %roundAndPackFloat64.exit.i*/
+	/*   %126 = mul i64 %120, %117*/
+	if ((lpm_mult_main_roundAndPackFloat64exiti_126_en == 1'd1)) begin
+		main_roundAndPackFloat64exiti_126_stage0_reg <= (main_roundAndPackFloat64exiti_120 * main_roundAndPackFloat64exiti_117);
 	end
-end
-always @(*) begin
-	main_signed_multiply_64_3 = main_123_140_stage0_reg;
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %145 = add i64 %136, %144*/
-	if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_signed_add_64_1_op0 = main_123_136_reg;
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %160 = add i64 512, %..i*/
-	else /* if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) */ begin
-		main_signed_add_64_1_op0 = 64'd512;
-	end
-end
-always @(*) begin
-	/* main: %123*/
-	/*   %145 = add i64 %136, %144*/
-	if ((cur_state == LEGUP_F_main_BB__123_45)) begin
-		main_signed_add_64_1_op1 = main_123_144_reg;
-	end
-	/* main: %mul64To128.exit.i*/
-	/*   %160 = add i64 512, %..i*/
-	else /* if ((cur_state == LEGUP_F_main_BB_mul64To128exiti_48)) */ begin
-		main_signed_add_64_1_op1 = main_mul64To128exiti_i;
-	end
-end
-always @(*) begin
-	main_signed_add_64_1 = (main_signed_add_64_1_op0 + main_signed_add_64_1_op1);
-end
-always @(*) begin
-	lpm_mult_main_123_138_en = (memory_controller_waitrequest == 1'd0);
-end
-always @(*) begin
-	lpm_mult_main_147_148_en = (memory_controller_waitrequest == 1'd0);
 end
 always @(posedge clk) begin
 	if ((cur_state == LEGUP_0)) begin
 		finish <= 1'd0;
 		if (start == 1'b0 && ^(1'd0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
-	/* main: %183*/
-	/*   ret i32 %.lcssa*/
-	if ((cur_state == LEGUP_F_main_BB__183_56)) begin
+	/* main: %164*/
+	/*   ret i32 %154*/
+	if ((cur_state == LEGUP_F_main_BB__164_45)) begin
 		finish <= (memory_controller_waitrequest == 1'd0);
 		if (start == 1'b0 && ^((memory_controller_waitrequest == 1'd0)) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to finish"); $finish; end
 	end
@@ -4325,11 +3607,11 @@ always @(posedge clk) begin
 		return_val <= 0;
 		if (start == 1'b0 && ^(0) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
-	/* main: %183*/
-	/*   ret i32 %.lcssa*/
-	if ((cur_state == LEGUP_F_main_BB__183_56)) begin
-		return_val <= main_176_lcssa_reg;
-		if (start == 1'b0 && ^(main_176_lcssa_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
+	/* main: %164*/
+	/*   ret i32 %154*/
+	if ((cur_state == LEGUP_F_main_BB__164_45)) begin
+		return_val <= main_float64_mulexit_154_reg;
+		if (start == 1'b0 && ^(main_float64_mulexit_154_reg) === 1'bX) begin $display ("ERROR: Right hand side is 'X'. Assigned to return_val"); $finish; end
 	end
 end
 

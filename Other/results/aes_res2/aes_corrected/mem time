@@ -1,0 +1,8 @@
+flow
+mem = 52596
+time = 8.59
+
+
+yosys
+mem = 347.972
+time = 45.94
