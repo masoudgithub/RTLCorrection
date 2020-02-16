@@ -20,10 +20,10 @@ def calc_runtime(args):
     bench_mark_size = args.size # lines
     print("****************************************************************************************")
     print("")
-    ref_size = 200
+    ref_size = 400
     max_number_of_errors = int(bench_mark_size / ref_size)
     print(f"max num of errors {max_number_of_errors}")
-    num_real_fixing_candidates = int( max_number_of_errors / 2 )
+    num_real_fixing_candidates = int( max_number_of_errors )
     print(f"num_real_fixing_candidates = {num_real_fixing_candidates}")
     max_number_of_fixing_type = 2
     number_error_candidare_lines = int(25 * bench_mark_size / 1000) # avg number of error candidate lines 0.25% based on
