@@ -18,15 +18,13 @@ def parsArgument():
 def calc_runtime(args):
     """Calculte runtime for a patch."""
     bench_mark_size = args.size # lines
-    print("****************************************************************************************")
-    print("")
     ref_size = 400
     max_number_of_errors = int(bench_mark_size / ref_size)
     print(f"max num of errors {max_number_of_errors}")
     num_real_fixing_candidates = int( max_number_of_errors )
     print(f"num_real_fixing_candidates = {num_real_fixing_candidates}")
     max_number_of_fixing_type = 2
-    number_error_candidare_lines = int(25 * bench_mark_size / 1000) # avg number of error candidate lines 0.25% based on
+    number_error_candidare_lines = int(7 * bench_mark_size / 1000) # avg number of error candidate lines 0.25% based on
     # Effective error diagnosis for RTL designs in HDLs paper
 
     print(f"number_error_candidare_lines = {number_error_candidare_lines}")
@@ -67,7 +65,11 @@ if __name__ == "__main__":
     avg_time = 0
     num_run = 500
     for i in range(num_run):
+        print("****************************************************************************************")
+        print("")
+        print(f"run {i+1} of {num_run}")
         avg_time += calc_runtime(args)
         if i > 0:
             print(str(timedelta(seconds = (avg_time/i))))
+    print("avg_run_time = ", str(avg_time/num_run), "sec")
     print("avg_run_time = ", str(timedelta(seconds = (avg_time/num_run))), "sec")
