@@ -73,7 +73,7 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
                     break;
                 }
                 if (f2->second > f->second) {
-					cout<<"mine FU = "<<f2->first<<" Num = "<<f2->second << "bigger than leg FU = " << f->first << " Num = "<< f->second<<endl;
+                    cout<<"mine FU = "<<f2->first<<" Num = "<<f2->second << " bigger than leg FU = " << f->first << " Num = "<< f->second<<endl;
                    // f->second = f2->second; no need
 
                 }
@@ -83,7 +83,7 @@ void BipartiteWeightedMatchingBinding::operatorAssignment() {
 
     for (auto& n: numFuncUnitsMap2)
     {
-        cout<<"FU = "<<n.first<<" Num = "<<n.second<<endl;
+        cout<<"Original FU = "<<n.first<<" Num = "<<n.second<<endl;
     }
 
     for (auto& n: numFuncUnitsMap)

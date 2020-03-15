@@ -21,6 +21,7 @@ public:
     bool itHasPort = false;
     int numberOfInputs = 0;
     int inputIndex = 0;
+    int TDiff = 0; // To store total distance of a FU from all Operations
     std::string *inputNames;
     std::string *inputAliases;
     std::string *inputTypes;

@@ -1014,7 +1014,7 @@ void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
     std::ofstream logFile;
     std::string logFileName = std::string(name) + ".log";
     logFile.open(logFileName);
-        for (auto& it: showNodeMap)
+    for (auto& it: showNodeMap)
     {
         it.second.clearInputIndexe();
         logFile<<"**************************** "<<name<<" ***********************************************\n";
@@ -1027,6 +1027,7 @@ void genOCM::showNodeMap (nodeMap &showNodeMap, const char* name)
         logFile<<"Node inOutType = "<<it.second.inOutType<<std::endl<<std::endl;
         logFile<<"Node numInputs = "<<it.second.numberOfInputs<<std::endl;
         logFile<<"Node inputWidth = "<<it.second.inputWidth<<std::endl;
+        logFile<<"Node TDiff = "<<it.second.TDiff<<std::endl;
         for (int i = 0; i < it.second.numberOfInputs; i++)
         {
             logFile<<"Input Alias "<<i<<" = "<<it.second.inputAliases[i]<<std::endl;
@@ -1124,7 +1125,7 @@ int genOCM::retDissimilarity( nMapIt IRIt, nMapIt ocmIt)
 int genOCM::generate_OCM(void)
 {
     int argc = 5;
-    const char *argv[5] = {"", "quad.ll", "main.dot", "memory_controller.dot", "total.dot"};
+    const char *argv[5] = {"", "mpeg2.ll", "main.dot", "memory_controller.dot", "total.dot"};
     genOCM mainGenOCM;
     // creating IR node map
     /*nodeMap IRNodeMap;
@@ -1160,41 +1161,33 @@ int genOCM::generate_OCM(void)
     showNodeMap (ocmNodeMap, "OCM dup Node");
     returnNumberOfreducedNodes(ocmNodeMap, ocmReducedNodeMap);
     findExpandedInputsOfReducedNodeMap(ocmNodeMap, ocmReducedNodeMap);
-    assignNumberedNames(ocmReducedNodeMap);
-    showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
 
-    nMapIt ittest1 = IRreducedNodeMap.begin();
-    nMapIt ittest2 = ocmReducedNodeMap.begin();
-    std::string str;
-
-    for (nMapIt it1 = IRreducedNodeMap.begin(); it1 != IRreducedNodeMap.end(); it1++)
-    {
-        for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++)
-        {
-            int dis = findInstrFUmatch(it1->second.name, it1->second.typeComplete, it2->second.nameNumbered);
-            if (dis < 100)
-            {
-                std::cout<<"dis "<< it1->second.name <<"   and   " << it2->second.nameNumbered<< "    = "<< dis<<std::endl;
+    for (nMapIt it2 = ocmReducedNodeMap.begin(); it2 != ocmReducedNodeMap.end(); it2++) {
+        for (nMapIt it1 = IRreducedNodeMap.begin(); it1 != IRreducedNodeMap.end(); it1++) {
+            int dis = retDissimilarity(it1, it2);
+            if (dis < 100) {
+                it2->second.TDiff += dis;
             }
         }
-
     }
 
-    /*findInstrAlias(ittest1->second.name, ittest1->second.type,IRreducedNodeMap, str);
-    ittest1 = IRreducedNodeMap.find(str);*/
+    std::vector<mainNode> test_vector;
+    for (nMapIt it3 = ocmReducedNodeMap.begin(); it3 != ocmReducedNodeMap.end(); it3++){
+        test_vector.push_back(it3->second);
+    }
 
+    std::sort(test_vector.begin(), test_vector.end(),
+              [] (const mainNode& lhs, const mainNode& rhs)
+              {return lhs.TDiff < rhs.TDiff;});
 
-    /*int mindissimi = 100;
-    int dissimTemp = 100;
-    while ( ittest2 != ocmReducedNodeMap.end())
-    {
-        dissimTemp = retDissimilarity(ittest1, ittest2);
-        if (dissimTemp < mindissimi)
-        {
-            mindissimi = dissimTemp;
-        }
-        ittest2++;
-    }*/
+    int i = 0;
+    for (nMapIt it4 = ocmReducedNodeMap.begin(); it4 != ocmReducedNodeMap.end(); it4++){
+        it4->second = test_vector[i];
+        i++;
+    }
+
+    assignNumberedNames(ocmReducedNodeMap);
+    showNodeMap (ocmReducedNodeMap, "OCM Reduced Node");
 
     return 0;
 }
@@ -1207,8 +1200,8 @@ void genOCM::assignNumberedNames(nodeMap &ocmReducedNodeMap)
         type = n.second.typeComplete;
         if (NumberOfavailableFus.find(type) == NumberOfavailableFus.end()) /* the fu type is not existed before*/
         {
-            n.second.nameNumbered = type+"_0";
-            NumberOfavailableFus.insert({type,1});
+            n.second.nameNumbered = type + "_0";
+            NumberOfavailableFus.insert({type, 1});
         }
         else /* the fu exists in prior*/
         {
