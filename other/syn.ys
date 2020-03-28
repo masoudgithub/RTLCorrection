@@ -1,0 +1,6 @@
+read_verilog fir.v
+write_ilang
+hierarchy
+proc
+opt
+show memory_controller
