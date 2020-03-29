@@ -1,1 +1,0 @@
-/usr/bin/time -f "max memory=%M  CPU time= %E" 

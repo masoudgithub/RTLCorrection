@@ -42,10 +42,12 @@ Before making the patches, make copy of the *legup-4.0* in the same path it is a
 to *original_legup*. The *original_legup* will be used to create the buggy verilog files. 
 
 1. **Patch the legUp:**
--  Replace the **legup-4.0/examples/Makefile.common** with **other/makefile.common**
--  Copy the whole content of **other/genOCM** folder to the **legup-4.0/llvm/lib/Target/Verilog**
+-  Replace the *legup-4.0/examples/Makefile.common* with *other/makefile.common*
+-  Replace the *legup-4.0/examples/legup.tcl* with *other/legup.tcl*
+-  Copy the whole content of *other/genOCM* folder to the *legup-4.0/llvm/lib/Target/Verilog*
    Answer yes to the question about replacing files.
 -  Run the make command to build the **LegUp**
+
 
 2. **Patch the Yosys:**
 -  Replace the *yosys-master/passes/cmds/show.cc* with the *other/show.cc*
@@ -88,15 +90,7 @@ We take the *fir* design as an example here.
 
 3. Create the corrected RTL:
    Now we have netlist of the buggy RTL as input to the fir folder of our modified LegUp. 
--  
+-  Change line 1128 of the *legup-4.0/llvm/lib/Target/Verilog/genOCM.cpp* to point to *fir.ll*
+-  cd to *legup-4.0* and build it with make command to include the above change.
+-  cd to *original_legup/examples/fir* and run the make command to have the corrected *fir.v*. 
 
-
-1- Modify the buggy RTL code to remove 
-
-1- Reading output files of verilog parser (yosys) (the dot files)
-
-2- reading the IR file (.LL) output of LLVM parser
-
-3- considering resource and connections of original rtl (output of phase 1) 
-
-The development is in progress ...
